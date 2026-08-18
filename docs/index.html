@@ -4,9 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#15191D">
-<title>松村僚 X投稿 第1弾｜確認用</title>
-<style>
-:root {
+<title>中の人が書く松村僚｜確認用</title>
+<style>:root {
   --ground:#F1F2F3; --surface:#FFFFFF; --surface-2:#F7F8F8;
   --ink:#15191D; --ink-2:#5C6771; --ink-3:#8B959E;
   --rule:#D9DDE1; --rule-2:#E9ECEE;
@@ -35,11 +34,8 @@ body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--s
   font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
   padding-bottom:env(safe-area-inset-bottom); }
 .wrap { max-width:900px; margin:0 auto; padding:0 16px 100px; }
-
-/* progress bar */
 .bar { position:sticky; top:0; z-index:20; background:var(--surface);
-  border-bottom:1px solid var(--rule); padding:9px 16px;
-  display:flex; align-items:center; gap:12px;
+  border-bottom:1px solid var(--rule); padding:9px 16px; display:flex; align-items:center; gap:12px;
   padding-top:calc(9px + env(safe-area-inset-top)); }
 .bar .pg { flex:1; min-width:0; }
 .bar .pgt { font-family:var(--mono); font-size:11.5px; color:var(--ink-2);
@@ -47,16 +43,14 @@ body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--s
 .bar .pgb { height:4px; background:var(--rule-2); border-radius:2px; overflow:hidden; }
 .bar .pgf { height:100%; width:0%; background:var(--go); transition:width .2s; }
 .bar button { font:inherit; font-size:13px; font-weight:600; min-height:38px; padding:0 14px;
-  background:var(--steel); color:var(--ground); border:0; border-radius:3px; cursor:pointer;
-  white-space:nowrap; }
-.bar button:active { opacity:.8; }
-
+  background:var(--steel); color:var(--ground); border:0; border-radius:3px; cursor:pointer; white-space:nowrap; }
 header.top { padding:36px 0 30px; border-bottom:2px solid var(--ink); margin-bottom:36px; }
 .eyebrow { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em;
   text-transform:uppercase; color:var(--ember); margin:0 0 14px; }
 h1 { font-family:var(--serif); font-size:clamp(27px,6.5vw,42px); line-height:1.3;
-  font-weight:600; margin:0 0 14px; text-wrap:balance; }
-.lede { color:var(--ink-2); max-width:60ch; margin:0 0 24px; font-size:14.5px; }
+  font-weight:600; margin:0 0 16px; text-wrap:balance; }
+.lede { color:var(--ink-2); max-width:62ch; margin:0 0 24px; font-size:14.5px; }
+.lede b { color:var(--ink); }
 .facts { display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
   background:var(--rule); border:1px solid var(--rule); border-radius:2px; overflow:hidden; }
 .fact { background:var(--surface); padding:12px 14px; }
@@ -64,37 +58,33 @@ h1 { font-family:var(--serif); font-size:clamp(27px,6.5vw,42px); line-height:1.3
 .fact b { display:block; font-family:var(--mono); font-size:20px; font-weight:600;
   font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
 .fact span { font-size:10.5px; color:var(--ink-3); letter-spacing:.05em; }
-
 section { margin:0 0 52px; scroll-margin-top:64px; }
 h2 { font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 6px; }
 .sub { color:var(--ink-2); font-size:13.5px; margin:0 0 22px; max-width:62ch; }
-
-/* names */
 .names { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); }
 .ncard { background:var(--surface); border:1px solid var(--rule); border-radius:2px;
   padding:18px 18px 16px; display:flex; flex-direction:column; gap:9px; }
 .ncard.rec { border-color:var(--ember); background:var(--ember-soft); }
 .ncard.chosen { border-color:var(--go); border-width:2px; background:var(--go-soft); }
 .nhead { display:flex; align-items:center; gap:9px; }
-.ntag { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-3);
-  text-transform:uppercase; }
+.ntag { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-3); text-transform:uppercase; }
 .nrec { font-size:9.5px; letter-spacing:.08em; background:var(--ember); color:#fff;
   padding:2px 7px; border-radius:2px; font-weight:700; }
 .nname { font-size:18px; font-weight:700; margin:0; line-height:1.5; word-break:break-word; }
-.nlen { font-family:var(--mono); font-size:10.5px; color:var(--ink-3); margin:0;
-  font-variant-numeric:tabular-nums; }
+.nlen { font-family:var(--mono); font-size:10.5px; color:var(--ink-3); margin:0; font-variant-numeric:tabular-nums; }
 .nwhy { font-size:13.5px; color:var(--ink-2); margin:0; line-height:1.8; }
-.nfor { font-size:12.5px; margin:0; padding-top:10px; border-top:1px dashed var(--rule);
-  color:var(--ink-2); }
+.nfor { font-size:12.5px; margin:0; padding-top:10px; border-top:1px dashed var(--rule); color:var(--ink-2); }
 .nfor span { display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em;
   color:var(--ink-3); text-transform:uppercase; margin-bottom:2px; }
 .pick { font:inherit; font-size:13.5px; font-weight:600; min-height:44px; margin-top:auto;
-  background:var(--surface); color:var(--ink-2); border:1px solid var(--rule);
-  border-radius:3px; cursor:pointer; }
+  background:var(--surface); color:var(--ink-2); border:1px solid var(--rule); border-radius:3px; cursor:pointer; }
 .ncard.chosen .pick { background:var(--go); border-color:var(--go); color:#fff; }
 .ncard.chosen .pick::before { content:"✓ "; }
-
-/* 確認 */
+.bioblock { margin-top:14px; background:var(--surface); border:1px solid var(--rule); border-radius:2px; padding:0 0 16px; }
+.biohead { padding:11px 18px; border-bottom:1px solid var(--rule-2); background:var(--surface-2);
+  font-size:12.5px; font-weight:700; letter-spacing:.04em; }
+.bionote { margin:14px 18px 0; padding:11px 13px; background:var(--ember-soft);
+  border-left:2px solid var(--ember); font-size:12.5px; color:var(--ink-2); line-height:1.75; }
 .cqs { display:flex; flex-direction:column; gap:12px; }
 .cq { background:var(--surface); border:1px solid var(--rule); border-radius:2px; padding:16px 18px; }
 .cq.hi { border-left:3px solid var(--ember); }
@@ -103,8 +93,6 @@ h2 { font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 6px; 
 .cn { font-family:var(--mono); font-size:12px; color:var(--ink-3); font-weight:600; }
 .cd { color:var(--ink-3); font-size:12.5px; margin:5px 0 0; }
 .cw { color:var(--ink-2); font-size:13px; margin:8px 0 12px; line-height:1.75; }
-
-/* filters */
 .filters { display:flex; gap:7px; margin:0 0 20px; overflow-x:auto; padding:2px 0 8px;
   -webkit-overflow-scrolling:touch; scrollbar-width:none; }
 .filters::-webkit-scrollbar { display:none; }
@@ -112,49 +100,38 @@ h2 { font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 6px; 
   color:var(--ink-2); border:1px solid var(--rule); border-radius:3px;
   padding:8px 11px; min-height:40px; display:inline-flex; align-items:center; gap:6px;
   white-space:nowrap; flex:0 0 auto; }
-.fchip i { font-style:normal; font-family:var(--mono); font-size:10.5px; color:var(--ink-3);
-  font-variant-numeric:tabular-nums; }
+.fchip i { font-style:normal; font-family:var(--mono); font-size:10.5px; color:var(--ink-3); font-variant-numeric:tabular-nums; }
 .fchip em { font-style:normal; font-size:9px; letter-spacing:.06em; color:var(--ember);
   border:1px solid var(--ember-line); padding:1px 4px; border-radius:2px; }
 .fchip.on { background:var(--steel); border-color:var(--steel); color:var(--ground); }
 .fchip.on i, .fchip.on em { color:var(--ground); border-color:transparent; opacity:.75; }
-.fchip.warn-f.on { background:var(--ember); border-color:var(--ember); color:#fff; }
 .fchip:focus-visible { outline:2px solid var(--ember); outline-offset:2px; }
-
-/* posts */
 .posts { display:flex; flex-direction:column; gap:12px; }
-.post { background:var(--surface); border:1px solid var(--rule); border-radius:2px;
-  padding:0 0 14px; }
+.post { background:var(--surface); border:1px solid var(--rule); border-radius:2px; padding:0 0 14px; }
 .post[hidden] { display:none; }
 .post.j-ok { border-color:var(--go-line); }
 .post.j-ng { border-color:var(--ember-line); }
 .phead { display:flex; flex-wrap:wrap; align-items:center; gap:8px;
   padding:11px 16px; border-bottom:1px solid var(--rule-2); background:var(--surface-2); }
-.no { font-family:var(--mono); font-size:14px; font-weight:700;
-  font-variant-numeric:tabular-nums; }
+.no { font-family:var(--mono); font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; }
 .tags { display:flex; flex-wrap:wrap; gap:5px; }
 .chip { font-size:10.5px; color:var(--ink-2); border:1px solid var(--rule);
   padding:2px 7px; border-radius:2px; background:var(--surface); white-space:nowrap; }
 .chip.src { font-family:var(--mono); font-size:10px; color:var(--ink-3); }
 .chip.cta { color:var(--ember); border-color:var(--ember-line); background:var(--ember-soft); }
-.chip.pillar.p2, .chip.pillar.p7 { color:var(--ember); border-color:var(--ember-line); }
+.chip.pillar.pQ { color:var(--ember); border-color:var(--ember-line); }
 .stats { margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--ink-3);
   font-variant-numeric:tabular-nums; white-space:nowrap; }
 .stats b { color:var(--ink-2); font-weight:600; }
-.ptext { white-space:pre-wrap; padding:18px 18px 0; font-size:15.5px; line-height:1.95;
-  max-width:52ch; }
+.ptext { white-space:pre-wrap; padding:18px 18px 0; font-size:15.5px; line-height:1.95; max-width:52ch; }
 .warn { margin:16px 18px 0; padding:10px 13px; background:var(--ember-soft);
   border-left:2px solid var(--ember); font-size:12.5px; color:var(--ink-2); line-height:1.7; }
 .warn span { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--ember);
   display:block; margin-bottom:2px; font-weight:700; }
-
-/* judge */
 .judge { display:flex; flex-wrap:wrap; gap:8px; margin:16px 18px 0;
   padding-top:14px; border-top:1px solid var(--rule-2); }
 .jb { font:inherit; font-size:14px; font-weight:600; min-height:44px; flex:1 1 0; min-width:96px;
-  background:var(--surface); color:var(--ink-2); border:1px solid var(--rule);
-  border-radius:3px; cursor:pointer; }
-.jb:active { opacity:.75; }
+  background:var(--surface); color:var(--ink-2); border:1px solid var(--rule); border-radius:3px; cursor:pointer; }
 .jb.on.ok { background:var(--go); border-color:var(--go); color:#fff; }
 .jb.on.ng { background:var(--ember); border-color:var(--ember); color:#fff; }
 .jb.on::before { content:"✓ "; }
@@ -165,15 +142,10 @@ h2 { font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 6px; 
 .memo::placeholder { color:var(--ink-3); }
 .memo:focus { outline:2px solid var(--ember); outline-offset:-1px; }
 .ans { display:block; }
-
-/* pin */
 .pin { background:var(--surface); border:2px solid var(--ink); border-radius:2px; padding:0 0 14px; }
-.pinhead { display:flex; align-items:center; gap:10px; padding:11px 18px;
-  background:var(--ink); color:var(--ground); }
+.pinhead { display:flex; align-items:center; gap:10px; padding:11px 18px; background:var(--ink); color:var(--ground); }
 .pinhead b { font-size:12.5px; letter-spacing:.06em; }
 .pinhead span { margin-left:auto; font-family:var(--mono); font-size:11px; opacity:.72; }
-
-/* export dialog */
 dialog { border:1px solid var(--rule); border-radius:4px; background:var(--surface);
   color:var(--ink); max-width:640px; width:calc(100% - 32px); padding:0; }
 dialog::backdrop { background:rgba(0,0,0,.55); }
@@ -184,1608 +156,587 @@ dialog::backdrop { background:rgba(0,0,0,.55); }
   border-radius:3px; padding:12px; line-height:1.7; resize:vertical; }
 .df { display:flex; gap:8px; padding:0 18px 18px; }
 .df button { font:inherit; font-size:14px; font-weight:600; min-height:44px; flex:1;
-  border-radius:3px; cursor:pointer; border:1px solid var(--rule);
-  background:var(--surface); color:var(--ink-2); }
+  border-radius:3px; cursor:pointer; border:1px solid var(--rule); background:var(--surface); color:var(--ink-2); }
 .df button.pri { background:var(--steel); border-color:var(--steel); color:var(--ground); }
-
 footer { border-top:1px solid var(--rule); padding:22px 0 0; margin-top:48px;
   color:var(--ink-3); font-size:12px; line-height:1.9; }
 footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 @media (max-width:600px) {
   .stats { margin-left:0; width:100%; }
   .ptext { padding:16px 16px 0; }
-  .warn, .judge { margin-left:16px; margin-right:16px; }
+  .warn, .judge, .bionote { margin-left:16px; margin-right:16px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
 </style>
 </head><body>
 
 <div class="bar">
-  <div class="pg"><span class="pgt" id="pgt">0 / 51 チェック済み</span>
+  <div class="pg"><span class="pgt" id="pgt">0 / 74 チェック済み</span>
   <div class="pgb"><div class="pgf" id="pgf"></div></div></div>
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
 <div class="wrap">
 <header class="top">
-  <p class="eyebrow">@Umapro_ryo ／ 同志を増やすアカウント</p>
-  <h1>松村僚 X投稿 第1弾</h1>
-  <p class="lede">松村メッセージ vol.1〜415 から起こした50本と、固定ポスト、表示名の案です。
-  創作したエピソードはゼロで、全文が原文に紐づいています。<br>
-  各投稿の <b>OK</b> か <b>要修正</b> を押していってください。直すところはメモ欄に書けます。
-  最後に上の「結果を送る」でまとめてコピーできます。<br>
-  <b>入力はこの端末に自動保存されるので、途中でやめて後から続けられます。</b></p>
+  <p class="eyebrow">@Umapro_ryo ／ 語り手を変えた第2案</p>
+  <h1>中の人が書く、松村僚</h1>
+  <p class="lede">本人が自分を語るのをやめて、<b>近くで見てきた社員が書く</b>形にしました。
+  オリエンタルラウンジ西山さん（@nyama_oriental）の「※主に秘書がツイートしています」と同じ構造です。<br><br>
+  主力は<b>一問一答</b>。中の人が聞いて、松村さんが一言で切り捨てて、中の人が受ける。
+  松村さんの発言はすべて、松村メッセージ415本の中に実在する言葉です。<br><br>
+  各投稿の <b>OK</b> か <b>要修正</b> を押していってください。入力はこの端末に自動保存されます。</p>
   <div class="facts">
-    <div class="fact"><b>50</b><span>投稿数</span></div>
-    <div class="fact"><b>274</b><span>平均字数</span></div>
-    <div class="fact"><b>240–339</b><span>字数レンジ</span></div>
-    <div class="fact"><b>4</b><span>CTA本数</span></div>
+    <div class="fact"><b>73</b><span>投稿数</span></div>
+    <div class="fact"><b>68</b><span>平均字数</span></div>
+    <div class="fact"><b>36–121</b><span>字数レンジ</span></div>
+    <div class="fact"><b>3</b><span>CTA本数</span></div>
   </div>
 </header>
 
 <section id="name">
   <h2>1. 表示名を決める</h2>
-  <p class="sub">「外食王に、俺はなる」がストレートすぎるとのことなので、4方向で作りました。
-  宣言の生々しさをどう逃がすかで、英語にするか・主語をずらすか・実績に振るかが分かれます。1つ選んでください。</p>
-  <div class="names"><article class="ncard rec" data-name="松村僚｜KING OF FOOD SERVICE">
-<div class="nhead"><span class="ntag">英語で同じ旗を立てる</span><span class="nrec">おすすめ</span></div>
-<p class="nname">松村僚｜KING OF FOOD SERVICE</p><p class="nlen">24文字 / 上限50</p>
-<p class="nwhy">「外食王に、俺はなる」と意味は同じですが、英語にすると自己申告の生々しさが消えて、称号やロゴのように見えます。ONE PIECEも英語版は King of the Pirates。分かる人には旗が伝わり、分からない人には「外食で頂点を狙ってる人」とだけ伝わります。</p>
-<p class="nfor"><span>向いてる場面</span>恥ずかしさを消しつつ、熱量と同志フィルターは落としたくない場合</p>
+  <p class="sub">西山さんの「アイデア出すんで誰かやっていいよ」と同じで、肩書きでも宣言でもなく、キャラが立つ一行にしました。
+  4案とも、出典は本人か社員の実在の言葉です。1つ選んでください。</p>
+  <div class="names"><article class="ncard rec" data-name="松村僚/ネギは切れないけど日本一は獲る">
+<div class="nhead"><span class="ntag">弱さと野望を1行に</span><span class="nrec">おすすめ</span></div>
+<p class="nname">松村僚/ネギは切れないけど日本一は獲る</p><p class="nlen">21文字 / 上限50</p>
+<p class="nwhy">vol.53「ネギ切れへん、包丁さわれない」が出典の実話です。飲食の会社のトップがネギを切れない、というギャップだけで足が止まります。しかも後半で野望も立つ。西山さんの「アイデア出すんで誰かやっていいよ」と同じで、宣言でも肩書きでもない、キャラが立つ一行です。</p>
+<p class="nfor"><span>向いてる場面</span>つかみを最優先する場合。一番おすすめです</p>
 <button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚｜外食日本一を、人でつくる">
-<div class="nhead"><span class="ntag">日本語のまま主語をずらす</span></div>
-<p class="nname">松村僚｜外食日本一を、人でつくる</p><p class="nlen">17文字 / 上限50</p>
-<p class="nwhy">「俺はなる」という一人称の宣言を外して、何をつくるかに振りました。日本語のまま熱量は残りますが、自分を大きく見せる感じは消えます。vol.200「人で、日本一の会社をつくりたい」がそのまま原典です。</p>
-<p class="nfor"><span>向いてる場面</span>英語を混ぜずに、宣言臭だけ抜きたい場合</p>
+<article class="ncard" data-name="松村僚/トイレが汚い店には行きません">
+<div class="nhead"><span class="ntag">具体で殴る</span></div>
+<p class="nname">松村僚/トイレが汚い店には行きません</p><p class="nlen">20文字 / 上限50</p>
+<p class="nwhy">vol.118の本人の言葉そのままです。極端に具体的なので、何を大事にしてる人かが一発で伝わります。飲食関係者には特に刺さります。</p>
+<p class="nfor"><span>向いてる場面</span>同業に効かせたい場合</p>
 <button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚｜Umapro COO / We win with people">
-<div class="nhead"><span class="ntag">会社の思想に振る</span></div>
-<p class="nname">松村僚｜Umapro COO / We win with people</p><p class="nlen">38文字 / 上限50</p>
-<p class="nwhy">vol.90「うまプロは“人”で勝つ会社」が原典。自分の宣言じゃなく会社の方針なので、恥ずかしさはほぼゼロ。価値観が先に出るぶん、採用フィルターとしては一番よく効きます。</p>
-<p class="nfor"><span>向いてる場面</span>採用に全振りする場合。ただし旗としては一番おとなしい</p>
+<article class="ncard" data-name="松村僚/無理とか言わない人（周りは大変）">
+<div class="nhead"><span class="ntag">中の人の視点を入れる</span></div>
+<p class="nname">松村僚/無理とか言わない人（周りは大変）</p><p class="nlen">22文字 / 上限50</p>
+<p class="nwhy">vol.79で社員が書いた「限界なし！無理とか言わへん！」が出典。カッコの中に中の人のツッコミが入っているので、アカウントの構造が名前だけで分かります。</p>
+<p class="nfor"><span>向いてる場面</span>中の人が書いていることを名前でも見せたい場合</p>
 <button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚｜Umapro COO / ex-McDonald&#x27;s 12yrs">
-<div class="nhead"><span class="ntag">経歴で信頼を先に取る</span></div>
-<p class="nname">松村僚｜Umapro COO / ex-McDonald&#x27;s 12yrs</p><p class="nlen">39文字 / 上限50</p>
-<p class="nwhy">宣言をやめて実績を旗にする形。恥ずかしさはゼロで、初見の信頼は一番早く取れます。ただし旗が過去向きなので、これから頂点を獲る人には見えません。</p>
-<p class="nfor"><span>向いてる場面</span>熱量より信頼を優先する場合。※在籍12年の確定が前提</p>
+<article class="ncard" data-name="松村僚/確認の鬼と呼ばれています">
+<div class="nhead"><span class="ntag">あだ名をそのまま</span></div>
+<p class="nname">松村僚/確認の鬼と呼ばれています</p><p class="nlen">18文字 / 上限50</p>
+<p class="nwhy">vol.332で元部下が書いた「本当に確認の鬼で、いい意味でしつこかった」が出典。他人がつけたあだ名なので、自己申告になりません。</p>
+<p class="nfor"><span>向いてる場面</span>他人が言った言葉だけで名前を作りたい場合</p>
 <button class="pick" type="button">これにする</button></article></div>
+  <div class="bioblock">
+    <div class="biohead">プロフィール文（案）</div>
+    <div class="ptext">うまプロCOO｜どてっぱん12店舗、UMACHA（日/米/タイ）、EnU（タイ）
+高校生でマックのバイト→12年→今は外食で日本一を獲りにいってます
+売上より人。スキルより心。
+ネギは切れません。包丁も持てません。
+※中の人が書いています</div>
+    <p class="bionote">最終行の「※中の人が書いています」が、このアカウントの肝です。ここがないと、ただの他人事の投稿に見えます。</p>
+  </div>
 </section>
 
 <section id="check">
   <h2>2. 確認したいこと</h2>
-  <p class="sub">上2件は、決まらないと投稿できません。回答を書いてください。</p>
+  <p class="sub">上5件は、決まらないと投稿できません。回答を書いてください。</p>
   <div class="cqs"><article class="cq hi">
-<div class="cqh"><span class="cn">1</span><b>マクドナルドを始めた年齢と在籍年数</b></div>
-<p class="cd">高校生／高2？ 本当に12年？</p><p class="cw">固定ポストと投稿07で断定して書いています。看板になる数字なので、ここだけは裏取りが要ります</p>
+<div class="cqh"><span class="cn">1</span><b>中の人が書く、という形式でよいか</b></div>
+<p class="cd">西山喜洋さん（@nyama_oriental）の「※主に秘書がツイートしています」と同じ構造</p><p class="cw">アカウント全体の前提が変わります。ここが決まらないと他が全部動きません。本人が一言も自分で発信しない形になります</p>
 <textarea class="memo ans" data-k="q1" rows="2" placeholder="ここに回答を書いてください"></textarea>
 </article>
 <article class="cq hi">
-<div class="cqh"><span class="cn">2</span><b>弱さをどこまで書いてよいか</b></div>
-<p class="cd">ネギが切れない・包丁が触れない・プライベート難あり</p><p class="cw">vol.53の原文どおりですが、社内向けと社外向けでは意味が変わります。NGなら柱7の8本を組み替えます</p>
+<div class="cqh"><span class="cn">2</span><b>中の人を誰にするか</b></div>
+<p class="cd">匿名の「中の人」のままか、実在の側近を立てるか</p><p class="cw">匿名なら今のまま出せます。実在の人を立てるなら、その人が実際に書くか、書く体でよいかの合意が要ります</p>
 <textarea class="memo ans" data-k="q2" rows="2" placeholder="ここに回答を書いてください"></textarea>
 </article>
-<article class="cq">
-<div class="cqh"><span class="cn">3</span><b>CTA4本の文言</b></div>
-<p class="cd">「DMください」「探してます」等</p><p class="cw">実際にDMを受ける体制があるかどうか。投稿01・24・29・49の末尾です</p>
+<article class="cq hi">
+<div class="cqh"><span class="cn">3</span><b>一問一答の「松村」の発言を、この形で出してよいか</b></div>
+<p class="cd">全部メッセージ415本の中の実在の言葉ですが、会話として再構成しています</p><p class="cw">実際にその場でその質問をしたわけではありません。演出として許容できるかの判断が要ります</p>
 <textarea class="memo ans" data-k="q3" rows="2" placeholder="ここに回答を書いてください"></textarea>
+</article>
+<article class="cq hi">
+<div class="cqh"><span class="cn">4</span><b>引用してよいか、書いた本人に確認が要ります</b></div>
+<p class="cd">佐々木さん・若代さん・木村さん・江原さん・畑さん・才木さん・西村さん</p><p class="cw">社内コメントを社外に出します。実名は伏せて立場表記にしていますが、書いた本人への確認は必要です</p>
+<textarea class="memo ans" data-k="q4" rows="2" placeholder="ここに回答を書いてください"></textarea>
+</article>
+<article class="cq hi">
+<div class="cqh"><span class="cn">5</span><b>表示名とプロフィール文をどれにするか</b></div>
+<p class="cd">上の4案から選ぶ</p><p class="cw">決まらないとプロフィール変更に進めません</p>
+<textarea class="memo ans" data-k="q5" rows="2" placeholder="ここに回答を書いてください"></textarea>
+</article>
+<article class="cq">
+<div class="cqh"><span class="cn">6</span><b>マクドナルドを始めた年齢と在籍年数</b></div>
+<p class="cd">高校生／高2？ 本当に12年？</p><p class="cw">固定ポストで断定しています。看板になる数字なので裏取りが要ります</p>
+<textarea class="memo ans" data-k="q6" rows="2" placeholder="ここに回答を書いてください"></textarea>
 </article></div>
 </section>
 
 <section id="pin">
   <h2>3. 固定ポスト</h2>
-  <p class="sub">プロフィールに固定する自己紹介です。vol.288 + vol.248 + vol.1 + vol.201 + vol.237 を1本にまとめています。</p>
+  <p class="sub">プロフィールに固定する、中の人の自己紹介です。なぜ本人が書かないのかを最初に説明しています。</p>
   <div class="pin">
-    <div class="pinhead"><b>固定ポスト</b><span>399字</span></div>
-    <div class="ptext">高校生の時、マクドナルドでバイトを始めた。
+    <div class="pinhead"><b>固定ポスト</b><span>280字</span></div>
+    <div class="ptext">このアカウントは、松村僚本人ではなく、中の人が書いています。
 
-俺はホンマに勉強ができひんかったし、学校もまともに行ってなかった。
-褒められた過去じゃない。
+松村さんを近くで見てきた社員です。
 
-でも、その過去があったからマクドナルドに出会った。
+なぜ本人が書かないのか。
 
-19歳から20歳までの1年間、1日20時間働いた。
-リアルに1日も休んでない。
-結果、最年少・最短で店長になった。
+「自分のことを書いてください」と頼んだら、こう返ってきました。
 
-才能じゃない。
-誰よりも時間を使っただけ。
+松村「自分がどんな人間かは、自分では決められへん」
 
-そこから12年。
-今はうまプロのCOOとして、もんじゃと鉄板のどてっぱんを12店舗、ÜMACHAを日本とアメリカとタイで見てる。
+というわけで、私が書きます。
 
-やってることの根っこは、マックの頃から一つも変わってない。
+高校生でマクドナルドのバイトを始めて12年。
+今はうまプロのCOOとして、どてっぱん12店舗と、ÜMACHAを日本・アメリカ・タイで見ている人です。
 
-掃除。あいさつ。完了報告。レスの速さ。笑顔。
-当たり前を、誰にも真似できひんくらい徹底する。
+ネギは切れません。
+包丁も持てません。
 
-俺が本気でつくりたいのは、人数の多い会社じゃない。
-一生を共にしたいと思える仲間が、数珠繋ぎで広がっていく組織や。
+それでも、10年以上前にマックで一緒に働いていた人たちが、今も同じ会社にいます。
 
-外食王に、俺はなる。
-
-本気で言うてる。
-一緒に日本一を獲りにいく仲間を、探してます。</div>
-    <p class="warn"><span>要確認</span>マック入社年齢（高校生／高2）と在籍12年。ここだけ裏取りが要ります。</p>
+そういう人の話を、ここに書いていきます。</div>
     <div class="judge" data-k="pin"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div>
   </div>
 </section>
 
 <section id="posts">
-  <h2>4. 投稿50本</h2>
-  <p class="sub">2026-08-18から毎朝7時台に1本ずつ、50日分です。柱2（マック12年）と柱7（弱さと失敗）を最も厚くしています。</p>
-  <div class="filters"><button class="fchip on" data-f="all" type="button">すべて<i>50</i></button><button class="fchip" data-f="1" type="button">1 仲間・信頼<i>7</i></button><button class="fchip" data-f="2" type="button">2 マック12年<i>9</i><em>重点</em></button><button class="fchip" data-f="3" type="button">3 当たり前の徹底<i>6</i></button><button class="fchip" data-f="4" type="button">4 人を育てる<i>6</i></button><button class="fchip" data-f="5" type="button">5 現場とお客様<i>5</i></button><button class="fchip" data-f="6" type="button">6 覚悟と姿勢<i>5</i></button><button class="fchip" data-f="7" type="button">7 弱さと失敗<i>8</i><em>重点</em></button><button class="fchip" data-f="8" type="button">8 夢とビジョン<i>4</i></button><button class="fchip warn-f" data-f="warn" type="button">要確認<i>1</i></button><button class="fchip todo-f" data-f="todo" type="button">未チェック<i id="todoN">50</i></button></div>
-  <div class="posts"><article class="post" data-p="2" data-warn="0" id="p1">
-<div class="phead"><span class="no">01</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.248</span><span class="chip cta">CTA</span></div>
-<span class="stats"><b>339</b>字 · 8/18 7:00</span></div>
-<div class="ptext">19歳から20歳までの1年間、俺は1日20時間働いた。
-リアルに1日も休んでない。
-朝から晩まで現場に立って、休みの日も店に出て、考えて、動いて、修正して。
+  <h2>4. 投稿73本</h2>
+  <p class="sub">2026-08-18から毎朝7時台に1本ずつ。主力の一問一答が35本、目撃報告10本、昔の同僚の証言12本、松村イズム8本、中の人の私見8本です。</p>
+  <div class="filters"><button class="fchip on" data-f="all" type="button">すべて<i>73</i></button><button class="fchip" data-f="I" type="button">I 松村イズム<i>8</i></button><button class="fchip" data-f="M" type="button">M 目撃報告<i>10</i></button><button class="fchip" data-f="N" type="button">N 中の人の私見<i>8</i></button><button class="fchip" data-f="Q" type="button">Q 一問一答<i>35</i><em>主力</em></button><button class="fchip" data-f="S" type="button">S 昔の同僚の証言<i>12</i></button><button class="fchip todo-f" data-f="todo" type="button">未チェック<i id="todoN">73</i></button></div>
+  <div class="posts"><article class="post" data-p="Q" data-warn="0" id="p1"><div class="phead"><span class="no">01</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.138</span></div><span class="stats"><b>56</b>字 · 8/18 7:00</span></div><div class="ptext">松村さん、今日ちょっとやる気が出ないんですけど。
 
-結果、マクドナルドで最年少・最短で店長になった。
+松村「やる気なんかいらん。大事なのは覚悟や」
 
-才能があったからじゃない。
-センスがずば抜けてたわけでもない。
-誰よりも時間を使っただけ。
+質問が悪かったです。</div><div class="judge" data-k="post1"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p2"><div class="phead"><span class="no">02</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.118</span></div><span class="stats"><b>65</b>字 · 8/19 7:20</span></div><div class="ptext">松村さん、新しい店を選ぶ基準ってあります？
 
-1万時間の法則ってよく言われる。
-1日8時間で約3年半、1日4時間なら約7年かかる計算らしい。
+松村「トイレの汚い店には、絶対に行かんと決めてる」
 
-でも本当に結果を出す人間は、3年半もかけてへん。
-物理的に、誰よりも時間を突っ込んでるだけ。
+料理の話は最後まで出てきませんでした。</div><div class="judge" data-k="post2"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p3"><div class="phead"><span class="no">03</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.358</span></div><span class="stats"><b>52</b>字 · 8/20 7:40</span></div><div class="ptext">これ、70点くらいの出来なんですけど出していいですか。
 
-あれは才能の話じゃなくて、量の話や。
+松村「70点で動かせ。30点で出すな」
 
-今も変わってない。
-寝てる時も、夢の中でも、うまプロのことを考えてる。
-それが特別やとは思ってない。
-その積み重ねが、今の俺を作ってるだけ。
+通りました。</div><div class="judge" data-k="post3"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p4"><div class="phead"><span class="no">04</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.389</span></div><span class="stats"><b>36</b>字 · 8/21 7:10</span></div><div class="ptext">松村さん、今日ちょっと体調が悪くて。
 
-同じ熱量で外食やりたい人、DMください。</div>
-<div class="judge" data-k="post1"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p2">
-<div class="phead"><span class="no">02</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">D 弱さ開示</span><span class="chip src">vol.288</span></div>
-<span class="stats"><b>317</b>字 · 8/19 7:20</span></div>
-<div class="ptext">俺はホンマに勉強ができひんかった。
-学校もまともに行ってなかった。
+松村「元気は最大の貢献」
 
-周りから見たら、決して褒められた過去じゃない。
+治りました。</div><div class="judge" data-k="post4"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p5"><div class="phead"><span class="no">05</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.415</span></div><span class="stats"><b>55</b>字 · 8/22 7:30</span></div><div class="ptext">松村さん、この案件どう考えても無理だと思うんですが。
 
-でも、その過去があったから、マクドナルドに出会った。
-その出会いがあったから、今の仲間に出会って、いろんな経験をして今がある。
+松村「できない理由より、できる方法を探せ」
 
-もし俺が勉強できてたら。
-もし真面目に学校に行ってたら。
+探しに行きます。</div><div class="judge" data-k="post5"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p6"><div class="phead"><span class="no">06</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>43</b>字 · 8/23 7:50</span></div><div class="ptext">うちって優しくて、いい会社ですよね。
 
-たぶん、今の現実は存在してない。
-こうやって仲間と同じ景色を見れてない。
+松村「優しい組織が一番危ない」
 
-もちろん当時はそんなふうに思えへんかった。
-真面目にやっとけば良かったと思う時もあった。
+褒めたつもりでした。</div><div class="judge" data-k="post6"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p7"><div class="phead"><span class="no">07</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.327</span></div><span class="stats"><b>38</b>字 · 8/24 7:05</span></div><div class="ptext">松村さん、今日ちょっと機嫌悪くないですか。
 
-出来事そのものは変えられへん。
-でも、捉え方でその過去の意味は変えられる。
+松村「上機嫌も実力や」
 
-どうせ同じ過去なら、あの経験があったから今がある、と言える過去に変えたい。
+直りました。</div><div class="judge" data-k="post7"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p8"><div class="phead"><span class="no">08</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.316</span></div><span class="stats"><b>40</b>字 · 8/25 7:25</span></div><div class="ptext">企画が失敗しました。すみません。
 
-傷やと思ってたもんが、武器になることもある。</div>
-<div class="judge" data-k="post2"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p3">
-<div class="phead"><span class="no">03</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.134</span></div>
-<span class="stats"><b>294</b>字 · 8/20 7:40</span></div>
-<div class="ptext">マクドナルドにFASTボタンを全店導入したのは俺です。
+松村「失敗じゃない。学んだだけ」
 
-ドリンクだけのオーダーを先に作って、先に出す。
-たったそれだけの仕組み。
+立ち直りました。</div><div class="judge" data-k="post8"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p9"><div class="phead"><span class="no">09</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.306</span></div><span class="stats"><b>55</b>字 · 8/26 7:45</span></div><div class="ptext">松村さん、この資料まだ完璧じゃなくて。
 
-でも、1分早いだけで「気が利く店」になって、1分遅いだけで「遅い店」になる。
+松村「100点じゃなくてもいい。けど、100%でやったか」
 
-同じ商品でも、出るタイミングひとつで体験の価値が変わる。
+出し直します。</div><div class="judge" data-k="post9"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p10"><div class="phead"><span class="no">10</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.66</span></div><span class="stats"><b>54</b>字 · 8/27 7:15</span></div><div class="ptext">松村さん、なんでそこまで細かく確認するんですか。
 
-料理が出てこん時点で、サービスは成立してへん。
+松村「確認こそがリーダーの仕事や」
 
-早く出せるなら、早く出す。
-先に出せるなら、先に出す。
-置くな。放置するな。
+今日も3回確認されました。</div><div class="judge" data-k="post10"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p11"><div class="phead"><span class="no">11</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>64</b>字 · 8/28 7:35</span></div><div class="ptext">松村さん、部下に厳しく言ったら嫌われませんか。
 
-これ、飲食やってる人なら全員分かってるはずのことやのに、現場では溜めてまう。
-まとめて出そうとしてまう。
+松村「嫌われる覚悟を持ってでも、言うべきことを言う」
 
-その1分が、お客様の印象を180度変えてるって気づいてへん。
+私が嫌われたくないだけでした。</div><div class="judge" data-k="post11"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p12"><div class="phead"><span class="no">12</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.184</span></div><span class="stats"><b>41</b>字 · 8/29 7:55</span></div><div class="ptext">松村さん、忙しくて手が回らないです。
 
-スピードは、感動の第一歩や。
-今日も、溜めずに出そう。</div>
-<div class="judge" data-k="post3"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p4">
-<div class="phead"><span class="no">04</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.115</span></div>
-<span class="stats"><b>304</b>字 · 8/21 7:10</span></div>
-<div class="ptext">マクドナルドで働いてた人なら分かると思う。
-あそこは、全ての返事が「サンキュー」やねん。
+松村「忙しいは、言い訳や」
 
-何か頼まれたらサンキュー。
-何かやってもらったらサンキュー。
-それが当たり前の空気やった。
+一言で終わりました。</div><div class="judge" data-k="post12"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p13"><div class="phead"><span class="no">13</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.230</span></div><span class="stats"><b>47</b>字 · 8/30 7:00</span></div><div class="ptext">松村さん、部下が育たないんですけど。
 
-今もその癖が抜けへん。
+松村「魚を与えるな。釣り方を教えろ」
 
-ありがとうって、言われてから言うもんじゃない。
-自分から先に言うもんや。
+私が全部やってました。</div><div class="judge" data-k="post13"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p14"><div class="phead"><span class="no">14</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.248</span></div><span class="stats"><b>60</b>字 · 8/31 7:20</span></div><div class="ptext">松村さん、やっぱり才能ってあると思いますか。
 
-やってくれてありがとう。
-今日入ってくれて助かった。
-一緒に働けて嬉しい。
+松村「1万時間の法則は、才能の話じゃない。量の話や」
 
-こういう一言を先に言える人は、必ず信頼される。
+言い訳を封じられました。</div><div class="judge" data-k="post14"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p15"><div class="phead"><span class="no">15</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.247</span></div><span class="stats"><b>53</b>字 · 9/1 7:40</span></div><div class="ptext">松村さん、この件どうしましょう。正解が分からなくて。
 
-感謝を伝えるのは恥ずかしいことじゃない。
-逆に、言わへん方が損や。
+松村「正解を探すな。正解にしろ」
 
-言葉に出さんかったら伝わらへんし、伝わらんかったら文化にもならへん。
+考え方が変わりました。</div><div class="judge" data-k="post15"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p16"><div class="phead"><span class="no">16</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.261</span></div><span class="stats"><b>49</b>字 · 9/2 7:10</span></div><div class="ptext">松村さん、最近うまく回ってるので安心してます。
 
-ありがとうを先に言える人が多い現場ほど、空気があったかい。
-そしてその空気は、必ずお客様に伝わる。</div>
-<div class="judge" data-k="post4"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p5">
-<div class="phead"><span class="no">05</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.332</span></div>
-<span class="stats"><b>309</b>字 · 8/22 7:30</span></div>
-<div class="ptext">マック時代、TOTLっていうサービスの基準タイムがあった。
-90秒。
+松村「敵は慣れや」
 
-リアルタイムで画面に出るし、30分に1度レポートにも出てくる。
+安心してる場合じゃないらしいです。</div><div class="judge" data-k="post16"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p17"><div class="phead"><span class="no">17</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.404</span></div><span class="stats"><b>48</b>字 · 9/3 7:30</span></div><div class="ptext">松村さん、報告なんですけど、まだ途中で。
 
-上司はマネジャーに会うたびに「お疲れ様、TOTL何秒やった？」と聞いてくる。
-休みの日でも電話がかかってきて「今、何秒？」。
+松村「いい報告より、早い報告」
 
-正直、怖いくらいやった。
+途中で出してよかったです。</div><div class="judge" data-k="post17"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p18"><div class="phead"><span class="no">18</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.174</span></div><span class="stats"><b>42</b>字 · 9/4 7:50</span></div><div class="ptext">松村さん、これ言った方がいいのか迷ってて。
 
-もちろん、タイムを縮めるための行動の徹底性もすごかった。
+松村「気まずさから逃げるな」
 
-でも今振り返って一番すごかったのは、確認の徹底性の方や。
+言ってきます。</div><div class="judge" data-k="post18"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p19"><div class="phead"><span class="no">19</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.407</span></div><span class="stats"><b>37</b>字 · 9/5 7:05</span></div><div class="ptext">松村さん、来週やろうと思ってます。
 
-基準を決める会社は多い。
-基準を貼り出す会社も多い。
+松村「待つな、取りに行け」
 
-でも、決めた人間が毎日確認し続けてる会社は、めちゃくちゃ少ない。
+今日やります。</div><div class="judge" data-k="post19"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p20"><div class="phead"><span class="no">20</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.196</span></div><span class="stats"><b>42</b>字 · 9/6 7:25</span></div><div class="ptext">松村さん、この店の売上ってどうやったら上がりますか。
 
-基準は、決めただけじゃ絶対に守られへん。
-確認し続けた分しか、現場には残らへん。
+松村「お客様を見ろ」
 
-自分が決めたあの基準、今週何回確認した。</div>
-<div class="judge" data-k="post5"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p6">
-<div class="phead"><span class="no">06</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">B 問いかけ</span><span class="chip src">vol.252</span></div>
-<span class="stats"><b>289</b>字 · 8/23 7:50</span></div>
-<div class="ptext">今の大手も、最初から立派なルールや完璧なマニュアルがあったわけじゃない。
+以上でした。</div><div class="judge" data-k="post20"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p21"><div class="phead"><span class="no">21</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.225</span></div><span class="stats"><b>44</b>字 · 9/7 7:45</span></div><div class="ptext">松村さん、そのうちやろうと思ってて。
 
-ゼンショーも、マクドナルドもそう。
+松村「実行できないのは、決めてないからや」
 
-全部、最初は現場の不便。
-小さな違和感。
-一人の「これ変えたい」。
+決めます。</div><div class="judge" data-k="post21"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p22"><div class="phead"><span class="no">22</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.275</span></div><span class="stats"><b>49</b>字 · 9/8 7:15</span></div><div class="ptext">松村さん、変化が多くてしんどいです。
 
-そこから始まってるだけ。
+松村「変わらないことが一番のリスクや」
 
-誰かが感じて、誰かが声に出して、誰かが形にしてきた。
-それが積み上がって、いつの間にか当たり前になっただけの話。
+しんどいままで行きます。</div><div class="judge" data-k="post22"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p23"><div class="phead"><span class="no">23</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.251</span></div><span class="stats"><b>57</b>字 · 9/9 7:35</span></div><div class="ptext">松村さん、私みたいな凡人はどうしたらいいですか。
 
-やから、決まってないからやらない、前例がないから言わない。
-これが一番もったいない。
+松村「スーパースターはいらん」
 
-現場で一番分かってるのは、机の前の人間じゃない。
-現場に立ってる人間や。
+救われたような、そうでもないような。</div><div class="judge" data-k="post23"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p24"><div class="phead"><span class="no">24</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.257</span></div><span class="stats"><b>41</b>字 · 9/10 7:55</span></div><div class="ptext">松村さん、正直あの人がうらやましいです。
 
-今おかしいと思ってるそれは、未来のスタンダードの種になる。
+松村「嫉妬心を捨てろ」
 
-感じて終わらせるな。
-言って終わらせるな。
-形にするところまでやろう。</div>
-<div class="judge" data-k="post6"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="1" id="p7">
-<div class="phead"><span class="no">07</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.1 / vol.248</span></div>
-<span class="stats"><b>270</b>字 · 8/24 7:05</span></div>
-<div class="ptext">高校生でマクドナルドのバイトを始めて、そこから12年。
+見透かされてました。</div><div class="judge" data-k="post24"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p25"><div class="phead"><span class="no">25</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.89</span></div><span class="stats"><b>51</b>字 · 9/11 7:00</span></div><div class="ptext">松村さん、これ誰の責任ですか。
 
-今はもんじゃと鉄板のどてっぱんを12店舗、それとÜMACHAを日本とアメリカとタイで見てる。
+松村「自分の周りで起こること、全部自分の責任や」
 
-業態も国も、規模も変わった。
-でも、やってることの根っこは一つも変わってない。
+聞くんじゃなかったです。</div><div class="judge" data-k="post25"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p26"><div class="phead"><span class="no">26</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.61</span></div><span class="stats"><b>46</b>字 · 9/12 7:20</span></div><div class="ptext">松村さん、そこまで急がなくてもいいのでは。
 
-掃除。
-あいさつ。
-完了報告。
-レスの速さ。
-笑顔。
+松村「スピードは最高のホスピタリティや」
 
-どれも派手じゃない。
-SNSで映えるもんでもない。
+急ぎます。</div><div class="judge" data-k="post26"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p27"><div class="phead"><span class="no">27</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.58</span></div><span class="stats"><b>46</b>字 · 9/13 7:40</span></div><div class="ptext">松村さん、目立つのが苦手なんです。
 
-でも、この積み重ねがブランドを創る。
-売上を創る。
-信頼を創る。
+松村「カッコつけるな。アホになれ」
 
-新しい手法もツールも毎年出てくるけど、これができてへん店に、それを乗せても意味がない。
+一番アホなのは本人です。</div><div class="judge" data-k="post27"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p28"><div class="phead"><span class="no">28</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.405</span></div><span class="stats"><b>45</b>字 · 9/14 7:10</span></div><div class="ptext">松村さん、記録に残さなくても覚えてます。
 
-できるかどうかじゃない。
-やるかどうか。
+松村「仕事は記憶より記録や」
 
-そこがプロとアマの差やと、ずっと思ってる。</div>
-<p class="warn"><span>要確認</span>★最重要：マック入社年齢（高校生／高2）と在籍12年。本人に要確認</p><div class="judge" data-k="post7"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p8">
-<div class="phead"><span class="no">08</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">B 問いかけ</span><span class="chip src">vol.248</span></div>
-<span class="stats"><b>258</b>字 · 8/25 7:25</span></div>
-<div class="ptext">現場で働く8時間だけが仕事じゃない。
+3日後に忘れてました。</div><div class="judge" data-k="post28"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p29"><div class="phead"><span class="no">29</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.54</span></div><span class="stats"><b>40</b>字 · 9/15 7:30</span></div><div class="ptext">松村さん、どうやったら運が良くなりますか。
 
-差がつくのは、残りの16時間の方や。
+松村「運は実力や」
 
-考えてるか。
-学んでるか。
-振り返ってるか。
-次を想像してるか。
+夢のない答えでした。</div><div class="judge" data-k="post29"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p30"><div class="phead"><span class="no">30</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.345</span></div><span class="stats"><b>52</b>字 · 9/16 7:50</span></div><div class="ptext">松村さん、この子にはまだ早いと思います。
 
-それとも、何も考えずに過ぎていってるか。
+松村「勝手に相手の限界を決めたらあかん」
 
-ここが、成長スピードを決定的に分ける。
+任せることになりました。</div><div class="judge" data-k="post30"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p31"><div class="phead"><span class="no">31</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.166</span></div><span class="stats"><b>44</b>字 · 9/17 7:05</span></div><div class="ptext">松村さん、後輩が言うこと聞かなくて困ってます。
 
-俺がマクドナルドで最年少・最短で店長になれたのは、才能じゃない。
-この16時間の使い方やったと思ってる。
+松村「自分は背中で見せてるか」
 
-今も24時間、寝てる時でさえ、うまプロのことを考えてる。
+黙りました。</div><div class="judge" data-k="post31"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p32"><div class="phead"><span class="no">32</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>44</b>字 · 9/18 7:25</span></div><div class="ptext">松村さん、今年の目標は何ですか。
 
-これを、しんどいとは思ってない。
-仕事とプライベートを分けるという発想がそもそもない。
+松村「外食王に、俺はなる」
 
-今日の8時間、みんな同じように働いてる。
-差がつくのは、そのあとや。</div>
-<div class="judge" data-k="post8"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="2" data-warn="0" id="p9">
-<div class="phead"><span class="no">09</span><div class="tags"><span class="chip pillar p2">2 マック12年</span><span class="chip">A 原体験</span><span class="chip src">vol.288 / vol.319</span></div>
-<span class="stats"><b>279</b>字 · 8/26 7:45</span></div>
-<div class="ptext">人生って、何をやるかで決まってるようで、実は誰と出会うかで決まってると思ってる。
+毎年、同じことを言っています。</div><div class="judge" data-k="post32"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p33"><div class="phead"><span class="no">33</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>48</b>字 · 9/19 7:45</span></div><div class="ptext">松村さん、飲食で一番大事なものって何ですか。
 
-俺はマクドナルドに出会って、そこで働く人に出会って、今の仲間に出会った。
+松村「外食は、人が全てや」
 
-学校もまともに行ってへんかった人間が、今こうやって会社を動かしてる。
+これも毎回、同じ答えです。</div><div class="judge" data-k="post33"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p34"><div class="phead"><span class="no">34</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.79</span></div><span class="stats"><b>74</b>字 · 9/20 7:15</span></div><div class="ptext">松村さん、疲れてませんか。
 
-自分の力やとは一ミリも思ってない。
-出会いに拾われただけや。
+松村「大丈夫や」
 
-やから、うまプロに来てくれた人には本気で向き合いたい。
+社員が書いた松村イズムに、こうあります。
 
-厳しいことも言う。
-基準も下げへん。
+「努力してる姿、疲れてる姿、壁を人には見せない」
 
-でもそれは、その人の未来を本気で考えてるからや。
+本当に見せません。</div><div class="judge" data-k="post34"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="Q" data-warn="0" id="p35"><div class="phead"><span class="no">35</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.53</span><span class="chip cta">CTA</span></div><span class="stats"><b>58</b>字 · 9/21 7:35</span></div><div class="ptext">松村さん、ネギ切れます？
 
-うちで働いた経験が、あの環境で鍛えられたから今がある、と後で言ってもらえるもんであってほしい。
+松村「切れへん」
 
-その出会いが、その人の人生を変えるかもしれんから。</div>
-<div class="judge" data-k="post9"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p10">
-<div class="phead"><span class="no">10</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">D 弱さ開示</span><span class="chip src">vol.53</span></div>
-<span class="stats"><b>278</b>字 · 8/27 7:15</span></div>
-<div class="ptext">正直に言う。
+飲食の会社のCOOです。
 
-俺は、ネギが切られへん。
-包丁もさわれへん。
-プライベートも難あり。
+一緒に働きたい人、DMください。本人に取り次ぎます。</div><div class="judge" data-k="post35"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p36"><div class="phead"><span class="no">36</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>71</b>字 · 9/22 7:55</span></div><div class="ptext">今日の松村さん。
 
-飲食の会社のトップやのに、と思われるかもしれん。
-でも、隠す気は一切ない。
+朝5時に社員向けのメッセージが送られてきました。
 
-できひんことが鬼のようにあるから、みんなが支えてくれる。
-そこに信頼が生まれてると、本気で思ってる。
+今日で415本目です。
 
-逆に、弱さを隠して強がってる奴に人はついてこん。
+一日も飛ばしていません。
 
-悩んでないフリ。
-できるフリ。
-分かったフリ。
+正直、こっちが先に折れそうです。</div><div class="judge" data-k="post36"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p37"><div class="phead"><span class="no">37</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.118</span></div><span class="stats"><b>81</b>字 · 9/23 7:00</span></div><div class="ptext">松村さんが店に行くと、まずトイレに向かいます。
 
-そういうのは、全部見抜かれる。
+料理でも接客でもなく、トイレです。
 
-できひんことは、できひんと言える。
-悩んでる時は、助けてと言える。
-しんどい時は、しんどいと言える。
+本人いわく「トイレを見れば店がわかる」。
 
-それを言える奴が、本当の信頼を手に入れる。
+店長は毎回、その背中を見て青ざめています。</div><div class="judge" data-k="post37"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p38"><div class="phead"><span class="no">38</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">Vol.126 江原さん</span></div><span class="stats"><b>112</b>字 · 9/24 7:20</span></div><div class="ptext">マック時代、松村さんはマネージャールームの壁に「7つの習慣」を貼っていたそうです。
 
-信頼は、完璧な人間じゃなく、人間味のある人に集まる。</div>
-<div class="judge" data-k="post10"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p11">
-<div class="phead"><span class="no">11</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">D 弱さ開示</span><span class="chip src">vol.141</span></div>
-<span class="stats"><b>284</b>字 · 8/28 7:35</span></div>
-<div class="ptext">俺は、ホンマに何にもできひん。
+本人は覚えていませんでした。
 
-ネギも切られへんし、細かい作業は全部人に任せてる。
+理由を聞いたら「引き出しがなかったから、嫌でも目に入るようにした」と。
 
-それでも会社が回ってるのは、支えてくれるメンバーが優秀すぎるから。
-いつもありがとう、としか言いようがない。
+自分の意志を、まったく信用していない人です。</div><div class="judge" data-k="post38"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p39"><div class="phead"><span class="no">39</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.290</span></div><span class="stats"><b>106</b>字 · 9/25 7:40</span></div><div class="ptext">誕生日に、メンバーが本を作って渡していました。
 
-社内の仲間にも、社外の仲間にも、俺は思いっきり頼ってる。
-その代わり、頼られたら全力で助ける。
+開いたら、前書きが本人の文章でした。
 
-助けてください。
-一緒にやってくれませんか。
+「今のBOSSの想いを残したいから書いてください」と頼んで書かせたものを、そのまま入れたそうです。
 
-これを素直に言える人の方が、チームを強くする。
+本人、当日まで知りませんでした。</div><div class="judge" data-k="post39"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p40"><div class="phead"><span class="no">40</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>87</b>字 · 9/26 7:10</span></div><div class="ptext">松村さんは19歳から20歳までの1年間、1日20時間働いていたそうです。
 
-迷惑をかけたくない。
-自分が頑張らなあかん。
+しかも1日も休まずに。
 
-その気持ちは立派やけど、それが限界を生む。
-全部を抱え込む頑張り屋が、結局チームを弱くしてまう。
+その結果、マクドナルドで最年少・最短で店長になりました。
 
-仲間は、助け合うためにおる。
+真似はしないでください。</div><div class="judge" data-k="post40"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p41"><div class="phead"><span class="no">41</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>67</b>字 · 9/27 7:30</span></div><div class="ptext">松村さんに「休みの日、何してるんですか」と聞きました。
 
-頼るのは、逃げじゃない。
-立派な勇気や。</div>
-<div class="judge" data-k="post11"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p12">
-<div class="phead"><span class="no">12</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">B 問いかけ</span><span class="chip src">vol.27</span></div>
-<span class="stats"><b>300</b>字 · 8/29 7:55</span></div>
-<div class="ptext">人がほんまに変われる瞬間は、恥をかいたあとにある。
+「寝てる時も、夢の中でも、うまプロのことを考えてる」
 
-会議で意見を言ったけど、うまく伝わらんくてスルーされた。
-リーダーっぽく振る舞ったけど、空回りした。
-みんなの前で「段取り悪いな」と注意された。
+質問の答えになっていません。</div><div class="judge" data-k="post41"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p42"><div class="phead"><span class="no">42</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.213</span></div><span class="stats"><b>84</b>字 · 9/28 7:50</span></div><div class="ptext">出店計画を50店舗から25店舗に下方修正した時の言葉です。
 
-それでええ。
+「スピードを落とす判断じゃない。土台を強くするための、覚悟の判断や」
 
-大事なのは、恥をかいたままで終わらんこと。
-そこからどう向き合うか。
+数を減らす方が、増やすより勇気がいります。</div><div class="judge" data-k="post42"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p43"><div class="phead"><span class="no">43</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.53</span></div><span class="stats"><b>72</b>字 · 9/29 7:05</span></div><div class="ptext">松村さんは包丁を持てません。
 
-人前で失敗してもええ。
-笑われてもええ。
-プライドなんか捨てたらええ。
+ネギも切れません。
 
-挑戦する奴は、かっこ悪い瞬間を乗り越えるから強くなる。
+飲食の会社のCOOです。
 
-逆に、失敗せんように無難にやる。
-目立たんように、当たり障りなく過ごす。
+それでも会社が回っているのは周りが優秀だからだと、本人が一番言っています。</div><div class="judge" data-k="post43"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p44"><div class="phead"><span class="no">44</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>96</b>字 · 9/30 7:25</span></div><div class="ptext">社内の朝のメッセージに、社員が毎回コメントを返します。
 
-そっちの方が、よっぽどダサいし、一生変われへん。
+その内容が、感想じゃないんです。
 
-見栄より中身。
-プライドより、吸収力。
+自分の失敗談を書く人がいる。
+自分の店での実践を書く人がいる。
 
-恥をかいた分だけ、人は深なる。
-挑戦した数だけ、器が広がる。</div>
-<div class="judge" data-k="post12"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p13">
-<div class="phead"><span class="no">13</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">B 問いかけ</span><span class="chip src">vol.316</span></div>
-<span class="stats"><b>269</b>字 · 8/30 7:00</span></div>
-<div class="ptext">エジソンにこんな言葉がある。
+上司の投稿に、部下が本音で返してくる会社です。</div><div class="judge" data-k="post44"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="M" data-warn="0" id="p45"><div class="phead"><span class="no">45</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.288</span></div><span class="stats"><b>89</b>字 · 10/1 7:45</span></div><div class="ptext">松村さんは、学校にまともに行っていません。
 
-「私は失敗したことがない。ただ、うまくいかない1万通りの方法を見つけただけだ」
+勉強もできなかったそうです。
 
-これ、めちゃくちゃ本質やと思う。
+本人いわく「その過去があったから、マクドナルドに出会った」。
 
-刺さらんかった施策。
-外した採用。
-届かんかった育成。
+コンプレックスを、そのまま経歴にしている人です。</div><div class="judge" data-k="post45"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p46"><div class="phead"><span class="no">46</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>106</b>字 · 10/2 7:15</span></div><div class="ptext">マック時代に松村さんの店にいた、元クルーの言葉です。
 
-一回で全部当たるわけがない。
+「床に物が落ちたらすぐ拾う。そもそも落とさないように綺麗に保ちながらオペレーションする。ポテト1本も落とさない」
 
-うまくいかんかった。
-向いてないかもしれん。
-そうやって終わらせてまう人は、そこで止まる。
+10年以上前のことを、今も一言一句覚えています。</div><div class="judge" data-k="post46"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p47"><div class="phead"><span class="no">47</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>93</b>字 · 10/3 7:35</span></div><div class="ptext">同じ元クルーの、続きの言葉。
 
-うまくいかない方法が一つ分かった、と捉える人は前に進む。
+「最初は言われるからやってたのが、気づけば全員が自然とできるようになって、店全体が“綺麗が当たり前”という空気になっていった」
 
-この差はでかい。
+基準が文化に変わる瞬間の話です。</div><div class="judge" data-k="post47"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p48"><div class="phead"><span class="no">48</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>101</b>字 · 10/4 7:55</span></div><div class="ptext">マック時代のメンバーの証言。
 
-結果を出す人って、全部最初から当ててる人じゃない。
-人より多く試して、人より多く学んで、人より多く修正してる人や。
+「パンのごまが一粒落ちてるだけでも“プレップ！ゴミ！”。拭けたと思っても、ラップの滑りを見てすぐ“ピカピカに！”」
 
-失敗じゃない。
-学んだだけ。
+理由はちゃんとあります。
 
-そこからまた、次を打とう。</div>
-<div class="judge" data-k="post13"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p14">
-<div class="phead"><span class="no">14</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">B 問いかけ</span><span class="chip src">vol.385</span></div>
-<span class="stats"><b>261</b>字 · 8/31 7:20</span></div>
-<div class="ptext">分かってる風。
-やってる風。
-できる風。
+台が滑ると、調理が速くなるからです。</div><div class="judge" data-k="post48"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p49"><div class="phead"><span class="no">49</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>68</b>字 · 10/5 7:00</span></div><div class="ptext">同じメンバーの、続きの一行。
 
-これ、めちゃくちゃある。
+「本当に確認の鬼で、いい意味でしつこかったです。今でも変わらないですが」
 
-それっぽく見えても、中身が伴ってなかったら何の意味もない。
+今でも変わりません。
 
-打ち合わせの反応はええ。
-言うてることも正しい。
-でも実際は、何もできてへんし、何も変わってへん。
+私が保証します。</div><div class="judge" data-k="post49"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p50"><div class="phead"><span class="no">50</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>103</b>字 · 10/6 7:20</span></div><div class="ptext">マック時代のメンバーが書いていた一行です。
 
-できる風は一瞬ごまかせても、継続できひんからすぐバレる。
+「最初は“言われるのが嫌だからやっておこう”でした。でも気づけば、その徹底性が、私自身がクルーに求める基準になっていました」
 
-本当にできる人は違う。
+これが起きた時だけ、文化は次に渡ります。</div><div class="judge" data-k="post50"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p51"><div class="phead"><span class="no">51</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>102</b>字 · 10/7 7:40</span></div><div class="ptext">昔、松村さんの店にいたメンバーの証言。
 
-分かった風を出さへん。
-やってる風で終わらへん。
-できてないなら、できてないと認める。
-分からんなら、素直に聞く。
+「1時間に1回は必ずチェック。汚れてから掃除するんじゃなく、汚れる前に綺麗にする。水滴ひとつ残さない。床の髪の毛1本も見逃さない」
 
-それっぽさじゃなく、中身。
-雰囲気じゃなく、実態。
+細かいです。
 
-できる風をやめよう。
+本人にも自覚はあります。</div><div class="judge" data-k="post51"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p52"><div class="phead"><span class="no">52</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>83</b>字 · 10/8 7:10</span></div><div class="ptext">トイレの話の続きです。
 
-本当にできる人は、それっぽさで勝負せえへん。
-結果で示す。</div>
-<div class="judge" data-k="post14"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p15">
-<div class="phead"><span class="no">15</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">A 原体験</span><span class="chip src">vol.412</span></div>
-<span class="stats"><b>292</b>字 · 9/1 7:40</span></div>
-<div class="ptext">今までの人生を振り返って、
-「あの時、逃げなくて良かった」
-と思うことは何回もある。
+「少しでも跡が残ってたら、すぐ“トイレ見た？”“今の状態、自信持って見せられる？”と言われてました」
 
-でも、
-「あの時、逃げて良かった」
-と思ったことは、ほとんどない。
+この2つ目の質問、今も現役で使われています。</div><div class="judge" data-k="post52"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p53"><div class="phead"><span class="no">53</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 コメント群</span></div><span class="stats"><b>94</b>字 · 10/9 7:30</span></div><div class="ptext">昔のメンバーが書いた文章に、この一行が何度も出てきます。
 
-人って不思議で、逃げたくなる時って、自分の限界に挑戦してる時なんよな。
+「当時は正直、厳しく感じました」
 
-新しい役職。
-新しい仕事。
-新しい環境。
-新しい責任。
+そして全員が、こう続けています。
 
-やから怖いし、苦しいし、逃げたなる。
+「続けてるうちに、自分たちの中で当たり前のラインになっていきました」</div><div class="judge" data-k="post53"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p54"><div class="phead"><span class="no">54</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>108</b>字 · 10/10 7:50</span></div><div class="ptext">マック時代、松村さんの店の店舗ビジョンは「日本一のQuick Service Restaurant」でした。
 
-でもその感情が出てる時は、実は一番成長できる場所に立ってる証拠やと思う。
+当時のメンバーいわく、
 
-ぬるい場所におったら、逃げたいなんて思わへん。
+「このビジョンを知らないクルーは、一人もいませんでした」
 
-やから最近は、逃げたいと思ったらチャンスやと思うようにしてる。
+貼るだけなら、誰でもできます。</div><div class="judge" data-k="post54"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p55"><div class="phead"><span class="no">55</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.394 畑さん</span></div><span class="stats"><b>98</b>字 · 10/11 7:05</span></div><div class="ptext">マック時代に一緒にマネージャーをしていた人の話。
 
-今までの自分を超えるチャンスが、目の前に来てるだけや。
+「どれだけ関与しても仕事ができないクルーがいました。でもある日めっちゃできるようになってて、誰に教わったか聞くと、大抵ボスでした」
 
-今、逃げたいと思ってるそれ。
-たぶん、伸びる場所におる。</div>
-<div class="judge" data-k="post15"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p16">
-<div class="phead"><span class="no">16</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">B 問いかけ</span><span class="chip src">vol.402</span></div>
-<span class="stats"><b>256</b>字 · 9/2 7:10</span></div>
-<div class="ptext">一番の戦う相手は、他人じゃない。
-いつだって自分自身や。
+見切らない人です。</div><div class="judge" data-k="post55"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p56"><div class="phead"><span class="no">56</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.316 畑さん</span></div><span class="stats"><b>94</b>字 · 10/12 7:25</span></div><div class="ptext">昔の同僚の証言。
 
-誰もが自分に甘くなりやすい。
+「BOSSが店長をしていたとき、“失敗した”って言葉を聞いたことがなかったです」
 
-今日はいいや。
-このくらいでいいか。
+続きがあります。
 
-そうやって、やるべきことから少しずつ逃げる。
+「BOSS自身が、失敗を失敗と認めない頑固さもあったのですが」
 
-誰かに負ける前に、自分に負けてる。
-ここが一番の問題やと思ってる。
+正直すぎます。</div><div class="judge" data-k="post56"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="S" data-warn="0" id="p57"><div class="phead"><span class="no">57</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 西村</span><span class="chip cta">CTA</span></div><span class="stats"><b>114</b>字 · 10/13 7:45</span></div><div class="ptext">うちの開発責任者の言葉です。
 
-しんどいことから逃げる。
-面倒なことを後回しにする。
-自分を変える痛みから逃げる。
-向き合うべき課題を、見て見ぬフリする。
+「僕はマクド出身じゃないけど、1年9ヶ月一緒に働かせてもらって感じたこと。決めたならやる。言ったならやる。形になるまでやる」
 
-それを繰り返して、強くなれるわけがない。
+外から来た人の目が、一番正確です。
 
-しんどくてもやる。
-面倒でもやる。
-言い訳したくてもやる。
+こういう会社が気になる人、DM開けてます。</div><div class="judge" data-k="post57"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p58"><div class="phead"><span class="no">58</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>104</b>字 · 10/14 7:15</span></div><div class="ptext">うちには「松村イズム」という言葉があります。
 
-逃げたなる自分を超えた分だけ、人は強なる。
+本人がつくった言葉ではありません。
 
-昨日、自分に負けたことは何個あった。</div>
-<div class="judge" data-k="post16"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="7" data-warn="0" id="p17">
-<div class="phead"><span class="no">17</span><div class="tags"><span class="chip pillar p7">7 弱さと失敗</span><span class="chip">B 問いかけ</span><span class="chip src">vol.306</span></div>
-<span class="stats"><b>256</b>字 · 9/3 7:30</span></div>
-<div class="ptext">100点じゃなくてもいい。
-けど、100%でやろう。
+社員が「松村僚って何者なのか」と問いながら書き出したフィードバックを、そのまま並べたものです。
 
-結果が思うように出ないことはある。
-狙った通りにいかんこともある。
+しばらく、その一行ずつを紹介します。</div><div class="judge" data-k="post58"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p59"><div class="phead"><span class="no">59</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>73</b>字 · 10/15 7:35</span></div><div class="ptext">社員が書いた松村イズムの一行。
 
-環境もあるし、経験値もあるし、タイミングもある。
-最初から何でも完璧にできるわけがない。
-それはある意味しょうがない。
+「限界なし！無理とか言わへん！」
 
-でも、100%で出してないのは話が全然違う。
+褒め言葉として書かれています。
 
-まあこれくらいでいいか。
-この辺で出しとこう。
-どうせ無理やし。
+ただ、無理と言わない人の下では、無理と言いにくいです。</div><div class="judge" data-k="post59"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p60"><div class="phead"><span class="no">60</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>71</b>字 · 10/16 7:55</span></div><div class="ptext">松村イズムの中で、一番正直な一行がこれです。
 
-そうやって手を抜く。
-出し切らへん。
-やり切らへん。
+「その時は“何無理言うてんの?!”と不思議な発想するけど、それが後に理解できる事」
 
-これはあかん。
+前半が本音です。</div><div class="judge" data-k="post60"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p61"><div class="phead"><span class="no">61</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>81</b>字 · 10/17 7:00</span></div><div class="ptext">松村イズムの中に、こんな一行があります。
 
-失敗してもええ。
-未完成でもええ。
+「もしかしたら姿そのものがイズム？？かも」
 
-今の自分が出せる100%を、ちゃんと出し切ってるか。
+はてなが2つついています。
 
-そこだけは、才能も経験も関係ない。</div>
-<div class="judge" data-k="post17"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p18">
-<div class="phead"><span class="no">18</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.201</span></div>
-<span class="stats"><b>260</b>字 · 9/4 7:50</span></div>
-<div class="ptext">俺が本気でつくりたいのは、人数が多い会社じゃない。
+書いた人が迷いながら書いた跡が、そのまま残っています。</div><div class="judge" data-k="post61"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p62"><div class="phead"><span class="no">62</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>48</b>字 · 10/18 7:20</span></div><div class="ptext">松村イズムの中で、一番笑った一行。
 
-一生を共にしたいと思える仲間が、数珠繋ぎで広がっていく組織や。
+「1番最初に裸で踊り始めるバカになれる」
 
-無理に大きくしたいわけでもない。
-でも、一人でできることには限界がある。
-二人になると、世界が広がる。
+褒めています。
 
-やから仲間は増やさなあかん。
-これは現実的に必要。
+たぶん。</div><div class="judge" data-k="post62"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p63"><div class="phead"><span class="no">63</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>78</b>字 · 10/19 7:40</span></div><div class="ptext">松村イズムの一行。
 
-でも、誰でもええわけじゃない。
-強固な信頼関係が前提や。
+「人を思う気持ち。それをまた見せつけずに出来る」
 
-そこで俺がいつも自分に返す問いがある。
+やってあげた、という顔をした瞬間に、それは貸しになります。
 
-一生一緒に戦いたい、と思ってもらえる人間に、自分はなれてるか。
+本人は、絶対にその顔をしません。</div><div class="judge" data-k="post63"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p64"><div class="phead"><span class="no">64</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>75</b>字 · 10/20 7:10</span></div><div class="ptext">松村イズムの一行。
 
-約束を守ってるか。
-逃げてへんか。
-人の成功を、心から喜べてるか。
+「安請け合いのイエスマンではなく、本気で真剣に取り組むイエスマン」
 
-集める前に、まず自分や。
-これ、毎日試されてる。</div>
-<div class="judge" data-k="post18"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p19">
-<div class="phead"><span class="no">19</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.238</span></div>
-<span class="stats"><b>268</b>字 · 9/5 7:05</span></div>
-<div class="ptext">組織が強なるために絶対必要な関係性がある。
+やります、と言うのは簡単です。
 
-それは、ライバルであり、同志。
+問題は、そのあと本当にやるかどうか。</div><div class="judge" data-k="post64"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="I" data-warn="0" id="p65"><div class="phead"><span class="no">65</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>69</b>字 · 10/21 7:30</span></div><div class="ptext">松村イズムに並ぶ言葉を全部読んで、気づいたことがあります。
 
-俺が思い浮かべるのは、ONE PIECEのゾロとサンジ。
+スキルの話が、一個も出てきません。
 
-あいつら、めちゃくちゃケンカする。
-負けたくないし、認めたくない。
+熱量。覚悟。仲間。執念。
 
-でも本気で信頼してる。
-背中は預けるし、いざという時は命を張る。
+全部、姿勢の話でした。</div><div class="judge" data-k="post65"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p66"><div class="phead"><span class="no">66</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">vol.79</span></div><span class="stats"><b>74</b>字 · 10/22 7:50</span></div><div class="ptext">このアカウント、本人は書いていません。
 
-なんでか。
-目指す場所が同じやから。
+私が書いています。
 
-うまプロもそうでありたい。
+理由は、本人に頼んだらこう返ってきたからです。
 
-馴れ合いはいらん。
-なぁなぁもいらん。
-かといって、孤独な戦いでもあかん。
+「自分がどんな人間かは、自分では決められへん」</div><div class="judge" data-k="post66"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p67"><div class="phead"><span class="no">67</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">vol.201</span></div><span class="stats"><b>80</b>字 · 10/23 7:05</span></div><div class="ptext">10年以上前にマックで一緒に働いていた人たちが、今も同じ会社にいます。
 
-あいつには負けたくない。
-でも、あいつと一緒に強くなりたい。
-最後は同じゴールに立ちたい。
+「この人と働きたい」を、自分で言っても意味がありません。
 
-この関係が一番、組織を強くする。
+その事実の方が、よっぽど強いです。</div><div class="judge" data-k="post67"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p68"><div class="phead"><span class="no">68</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">notes全体</span></div><span class="stats"><b>68</b>字 · 10/24 7:25</span></div><div class="ptext">社内の一番の財産は何かと聞かれたら、たぶん空気だと答えます。
 
-今、そう思える相手は社内におるか。</div>
-<div class="judge" data-k="post19"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p20">
-<div class="phead"><span class="no">20</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.8</span></div>
-<span class="stats"><b>252</b>字 · 9/6 7:25</span></div>
-<div class="ptext">信頼される人って、どんな人やろう。
+制度では作れません。
 
-言ったことを、やり切る人。
-どんな時もブレずに動き続ける人。
-弱さを見せながらも、真っ直ぐ向き合う人。
+毎日の積み重ねでしか作れないし、一回壊れたら戻りません。</div><div class="judge" data-k="post68"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p69"><div class="phead"><span class="no">69</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">Vol.128 江原さん</span></div><span class="stats"><b>86</b>字 · 10/25 7:45</span></div><div class="ptext">うちに関わってくれている人が、社内のメンバーを見てこう書いていました。
 
-完璧じゃなくていい。
+「ここにいらっしゃるメンバーの皆さん、凄い人の集まりです」
 
-この人は本気やな。
-この人は信じられるな。
+本人が褒められるより、こっちの方が喜びます。</div><div class="judge" data-k="post69"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p70"><div class="phead"><span class="no">70</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>109</b>字 · 10/26 7:15</span></div><div class="ptext">社員が、自分の過去を社内に書いていました。
 
-そう思ってもらえるかどうかやと思う。
+「中学の時、テニス部から逃げました。逃げる＝楽になる、が気づいたら癖になってました」
 
-俺も、そういう人でありたい。
+「悔しくて、高校でもう一度、同じ環境で団体競技を始めました」
 
-やからこそ、誰よりもやる。
-誰よりも悩んで、誰よりも動く。
-夢を語って、行動で証明する。
+こういう人が現場に立っています。</div><div class="judge" data-k="post70"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p71"><div class="phead"><span class="no">71</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>70</b>字 · 10/27 7:35</span></div><div class="ptext">さっきの続きです。
 
-人は、肩書きや役職じゃ動かへん。
-本気と誠実さに惚れる。
+「今の経験があるから、同じことで悩むクルーに共感できる」
 
-言葉じゃなく、在り方で。
-仕組みじゃなく、人間力で。
+過去の弱さが、そのまま強みになっています。
 
-誰かにとっての「この人についていきたい」を、今日もつくろう。</div>
-<div class="judge" data-k="post20"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p21">
-<div class="phead"><span class="no">21</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.202</span></div>
-<span class="stats"><b>259</b>字 · 9/7 7:45</span></div>
-<div class="ptext">信頼は一日にして成らず。
-失うのは一瞬。
+これが、うちの財産です。</div><div class="judge" data-k="post71"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p72"><div class="phead"><span class="no">72</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">vol.79</span></div><span class="stats"><b>79</b>字 · 10/28 7:55</span></div><div class="ptext">これから入る人に一番求められるのは、スキルではありません。
 
-会社は、社員だけで成り立ってるわけじゃない。
-加盟オーナー、取引先、関わる全員との信頼の上に成り立ってる。
+イズムを持てるかどうかです。
 
-その信頼は、一発の成果で手に入るもんじゃない。
+スキルは、後から身につきます。
 
-時間を守る。
-約束を守る。
-嘘をつかへん。
-誤魔化さへん。
-ミスを隠さへん。
-誠実に向き合う。
+姿勢は、後から変えるのが一番しんどいです。</div><div class="judge" data-k="post72"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
+<article class="post" data-p="N" data-warn="0" id="p73"><div class="phead"><span class="no">73</span><div class="tags"><span class="chip pillar pN">N 中の人の私見</span><span class="chip src">Vol.123 江原さん</span><span class="chip cta">CTA</span></div><span class="stats"><b>121</b>字 · 10/29 7:00</span></div><div class="ptext">うちに関わってくれている人から、突然こんな連絡が来ました。
 
-こんな当たり前を、誰に対しても毎日積み上げる。
-それしかない。
+「クルーが成長し、アルバイトで運営できるシステムを作ろうと思っています。完成させたら共有させてください」
 
-でも、壊れる時はホンマに一瞬や。
+誰も頼んでいません。
 
-仲間が何年もかけて築き上げた信頼を、たった一度の不誠実で壊してまうことがある。
+勝手に作り始めています。
 
-自分は今、誰かの信頼を借りて仕事してへんか。
-その借り物を、雑に扱ってへんか。</div>
-<div class="judge" data-k="post21"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p22">
-<div class="phead"><span class="no">22</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.387</span></div>
-<span class="stats"><b>264</b>字 · 9/8 7:15</span></div>
-<div class="ptext">結局、人は人で辞めるし、人で残る。
-
-給料も、休みも、環境も大事。
-それは間違いない。
-
-でも最後に一番でかいのは、やっぱり人やと思う。
-
-条件がどれだけ良くても、人間関係で心が削られたらしんどい。
-空気が悪かったら苦しい。
-誰とも心で繋がれてへんかったら、長くは続かへん。
-
-逆に、
-
-この人と働きたい。
-この人がおるから頑張れる。
-この人が声をかけてくれるから救われる。
-この人がおるから、もう少し踏ん張ろうと思える。
-
-人が残る理由って、結局こういうことやと思う。
-
-やから組織づくりは、制度づくりだけじゃない。
-人間関係づくりや。
-
-信頼は、心と心でしか築かれへん。</div>
-<div class="judge" data-k="post22"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p23">
-<div class="phead"><span class="no">23</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.319</span></div>
-<span class="stats"><b>267</b>字 · 9/9 7:35</span></div>
-<div class="ptext">仕事は、何をするかも大事や。
-
-どんな業態か。
-どんな商品か。
-どんな役職か。
-どれくらい稼げるか。
-
-もちろん全部大事。
-
-でも、それと同じくらい、場合によってはそれ以上に大事なのが、誰と働くか。
-
-厳しくても、本気で向き合ってくれる人がおる。
-しんどい時に、支えてくれる仲間がおる。
-高い基準を持って、引き上げてくれる人がおる。
-
-それだけで、毎日の質も、成長の質も、人生の質も変わる。
-
-逆に、なあなあで、誰も本気で向き合ってくれへん環境におったら、何年おっても変わらへん。
-
-条件で会社を選ぶのは普通のこと。
-
-でも、一緒に働く人を条件の次に置いたらあかんと思ってる。</div>
-<div class="judge" data-k="post23"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="1" data-warn="0" id="p24">
-<div class="phead"><span class="no">24</span><div class="tags"><span class="chip pillar p1">1 仲間・信頼</span><span class="chip">B 問いかけ</span><span class="chip src">vol.207</span><span class="chip cta">CTA</span></div>
-<span class="stats"><b>280</b>字 · 9/10 7:55</span></div>
-<div class="ptext">信頼関係の構築は、どこまでいってもコミュニケーションの量で決まる。
-これ以外にない。
-
-一回の成果や、一言の名言で生まれるもんじゃない。
-
-どれだけ接触してるか。
-どれだけ関わってるか。
-
-ここで決まる。
-
-信頼を築けてる人の共通点は、とにかく連絡がマメ。
-
-こまめに状況を共有する。
-レスが早い。
-進捗を先に伝える。
-問題を溜めへん。
-小さなことでも連絡する。
-
-これだけで、相手の安心感は一気に上がる。
-
-逆に信頼を失う人は、連絡が遅い。
-必要な時しか連絡してこん。
-何をやってるか分からへん。
-結果だけ後出しする。
-
-能力の差やと思ってるそれ、実はマメさの差かもしれん。
-
-一生一緒に戦える仲間、探してます。</div>
-<div class="judge" data-k="post24"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p25">
-<div class="phead"><span class="no">25</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">B 問いかけ</span><span class="chip src">vol.1</span></div>
-<span class="stats"><b>260</b>字 · 9/11 7:00</span></div>
-<div class="ptext">日本一を獲るためにやるべきことは、実はめちゃくちゃシンプルや。
-
-当たり前のことを、誰にも真似できひんくらい徹底する。
-
-掃除。
-あいさつ。
-完了報告。
-レスの速さ。
-笑顔。
-
-どれも派手じゃない。
-語ってもかっこよくない。
-
-でも、この積み重ねがブランドを創る。
-売上を創る。
-信頼を創る。
-
-戦略とか、マーケとか、新しい手法とか、そういう話の前に、これができてるかどうか。
-
-やってるか。
-徹底してるか。
-
-自分に問い続けてほしい。
-
-できるかどうかじゃない。
-やるかどうか。
-それがプロとアマの差や。
-
-いつかじゃない。
-未来は、今日の「やるか、めっちゃやるか」で決まる。</div>
-<div class="judge" data-k="post25"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p26">
-<div class="phead"><span class="no">26</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">B 問いかけ</span><span class="chip src">vol.309 / vol.205</span></div>
-<span class="stats"><b>249</b>字 · 9/12 7:20</span></div>
-<div class="ptext">誰も見てなくても、やれてるか。
-
-上司がおる時だけ頑張る。
-見られてる時だけ丁寧。
-注意されそうな時だけ動く。
-
-それは、評価を取りにいってるだけ。
-
-見られてなくてもやる人は、基準で動いてる人。
-
-この差はでかい。
-
-誰も見てへん時に掃除するか。
-誰も言わんでも整えるか。
-誰も気づかんところまでやるか。
-見えへんところで手を抜かへんか。
-
-ここに、その人の本質が出る。
-
-見られてる時に頑張るのは、ある意味普通。
-それすらできひん人は論外やけど。
-
-本当の差は、見られてない時に出る。
-
-そして厄介なことに、見てへんようで、周りは全部見てる。</div>
-<div class="judge" data-k="post26"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p27">
-<div class="phead"><span class="no">27</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">C 現場実況</span><span class="chip src">vol.118</span></div>
-<span class="stats"><b>280</b>字 · 9/13 7:40</span></div>
-<div class="ptext">俺は、トイレの汚い飲食店には絶対に行かへんと決めてる。
-
-トイレは、その店のすべてを映す鏡やから。
-
-料理や接客でどれだけ頑張ってても、トイレが汚れてたら一発で冷める。
-
-逆に、トイレまで徹底して綺麗にしてる店は、間違いなく他の部分も整ってる。
-
-細部に魂が宿る。
-まさにその通りやと思う。
-
-トイレ掃除は、作業じゃない。
-
-隅々までチェックする習慣。
-細部にまでこだわる意識。
-お客様の立場に立つ姿勢。
-
-この全部が凝縮されてる。
-
-便座や床だけじゃなく、ドアも手洗い場も見る。
-匂いが残ってへんかも確認する。
-
-自分の店のトイレ、お客様に自信を持って見せられるか。
-
-トイレを磨くことは、心を磨くことや。</div>
-<div class="judge" data-k="post27"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p28">
-<div class="phead"><span class="no">28</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">B 問いかけ</span><span class="chip src">vol.144</span></div>
-<span class="stats"><b>268</b>字 · 9/14 7:10</span></div>
-<div class="ptext">いろんな店舗を見てきて、はっきり言える。
-
-綺麗な店は、強い。
-
-掃除の精度が高い店は、仕事の精度も高い。
-これは例外がない。
-
-掃除って、ただの作業じゃなくて積み上げや。
-
-たった10秒の拭き取り。
-その小さな積み重ねが、店の空気を変えて、チームを変えて、最後は売上を変える。
-
-まあいっか、と思うか。
-ここまでやるか、と徹底するか。
-
-この0.1の差が、プロとアマの分かれ道になる。
-
-1日じゃ何も変わらへん。
-1週間でも変わらへん。
-
-でも毎日0.1ずつ磨いてたら、半年後には別の店になってる。
-
-逆に0.1ずつ手を抜いたら、半年後には誰も気づかんうちに、汚い店になってる。</div>
-<div class="judge" data-k="post28"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p29">
-<div class="phead"><span class="no">29</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">B 問いかけ</span><span class="chip src">vol.406</span><span class="chip cta">CTA</span></div>
-<span class="stats"><b>281</b>字 · 9/15 7:30</span></div>
-<div class="ptext">小さな約束を、軽く扱う人がおる。
-
-ちょっと遅れるくらい。
-返事は後でええ。
-このくらい言わんでも分かるやろ。
-
-その一個一個は、確かに小さい。
-
-でも、信頼はその小さい積み重ねでしかできてへん。
-
-大きな約束を守るのは当たり前。
-そこで差はつかへん。
-
-差がつくのは、小さい約束の方や。
-
-5分の遅刻。
-返さんかった一通。
-やると言うて、やらんかった一個。
-
-本人は忘れてても、相手は覚えてる。
-そしてそれが3回続いたら、もう次から期待されへんようになる。
-
-期待されへんようになった時点で、仕事は回ってこん。
-
-小さい約束を守り切る人が、最後に一番信用される。
-
-うまプロで働きたい人、いつでもDM開けてます。</div>
-<div class="judge" data-k="post29"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="3" data-warn="0" id="p30">
-<div class="phead"><span class="no">30</span><div class="tags"><span class="chip pillar p3">3 当たり前の徹底</span><span class="chip">B 問いかけ</span><span class="chip src">vol.315</span></div>
-<span class="stats"><b>275</b>字 · 9/16 7:50</span></div>
-<div class="ptext">当たり前の基準は、どこにあるか。
-
-これ、人によって全然違う。
-
-ある人にとっての「綺麗」は、ある人にとっての「汚い」。
-ある人にとっての「早い」は、ある人にとっての「遅い」。
-
-同じ言葉を使ってても、頭の中の絵が全然違う。
-
-やから基準は、言葉じゃなく状態で揃えなあかん。
-
-ここまでやって綺麗。
-ここまで出して早い。
-
-見せて、やって見せて、確認する。
-
-そして一番大事なのはここ。
-
-基準を決めた人間が、確認をやめた瞬間に、基準は静かに下がっていく。
-
-誰も宣言せえへんし、誰も気づかへん。
-気づいた時には、それが新しい当たり前になってる。
-
-自分の当たり前は、チームの当たり前より高いか。</div>
-<div class="judge" data-k="post30"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p31">
-<div class="phead"><span class="no">31</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.26</span></div>
-<span class="stats"><b>291</b>字 · 9/17 7:05</span></div>
-<div class="ptext">本気で人を育てるには、優しさだけじゃ足りひん。
-
-厳しさの中にある愛が、真の人望をつくる。
-
-慕われてるだけの上司。
-怒らへん優しさだけのリーダー。
-それでは、チームは育たへん。
-
-一時的には雰囲気よく見えるかもしれん。
-でも緊張感がなくなった組織には、必ずゆるみが出てくる。
-
-言うべきことを言わへん。
-ミスを流す。
-なあなあになる。
-
-その空気はすぐ伝染して、チーム全体の力を削いでいく。
-
-一方で、ちゃんと向き合って、厳しいことも言うてくれる人。
-そういう存在には、人は本気でついていく。
-
-そこに愛があるから。
-
-優しさに甘さが混ざった時、信頼は崩れる。
-でも、厳しさに愛がある時、信頼は深まる。
-
-好かれるだけではあかん。</div>
-<div class="judge" data-k="post31"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p32">
-<div class="phead"><span class="no">32</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.230</span></div>
-<span class="stats"><b>270</b>字 · 9/18 7:25</span></div>
-<div class="ptext">魚を与えるのではなく、釣り方を教えよ。
-
-魚を1匹与えたら、その日は生きられる。
-でも次の日には、また魚が必要になる。
-
-釣り方を教えたら、自分で獲れるようになる。
-一生食べていける力が身につく。
-
-その場しのぎの助けより、自立できる力を育てろという教えや。
-
-昔の人はホンマにすごい。
-本質を突いてる。
-
-育成の現場で、ついやってまうことがある。
-
-答えをすぐ教える。
-代わりにやってまう。
-失敗しそうやから先回りする。
-
-その瞬間は優しいし、早いし、確実や。
-
-でもそれ、相手が自分で考える機会を奪ってるだけかもしれん。
-
-自分は今、魚を渡してへんか。
-それとも、釣り方を教えてるか。</div>
-<div class="judge" data-k="post32"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p33">
-<div class="phead"><span class="no">33</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.264</span></div>
-<span class="stats"><b>262</b>字 · 9/19 7:45</span></div>
-<div class="ptext">人を何よりも大切にする。
-
-この言葉を履き違えた瞬間、組織は一気に弱くなる。
-
-優しい組織が、一番危ない。
-
-何でも許す。
-強く言わへん。
-指摘せえへん。
-波風立てへん。
-
-それは優しさじゃない。
-ただの甘さであり、ぬるま湯や。
-
-じゃあ本当に人を大切にするって何か。
-
-嫌われる覚悟を持ってでも、言うべきことを言うこと。
-基準を下げへんこと。
-成長を止めへんこと。
-
-甘さは、その瞬間は楽や。
-言う側も、言われる側も。
-
-でも長期的に見ると、その人の可能性を奪ってる。
-
-ぬるま湯に浸かった人間は、自分が弱くなってることに気づかへん。
-
-まあいいか、が増えてきたら危険信号や。</div>
-<div class="judge" data-k="post33"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p34">
-<div class="phead"><span class="no">34</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.212</span></div>
-<span class="stats"><b>267</b>字 · 9/20 7:15</span></div>
-<div class="ptext">2:6:2の法則。
-
-どんな組織にも、成果を出す上位2割、平均的な6割、意欲の低い下位2割が自然と生まれる。
-働きアリの法則とも呼ばれてる。
-
-ここで大事なのは、下位2割を切り捨てることじゃない。
-
-真ん中の6割に注力して、組織全体を底上げすること。
-
-組織の強さは、上位2割の優秀さで決まるんじゃない。
-6割の基準で決まる。
-
-エースを1人育てるより、真ん中の6人の基準を1段上げる方が、店は確実に強くなる。
-
-やのに、現場ではつい上位2割とばっかり話してまう。
-話が通じるし、動いてくれるから。
-
-自分は今、誰に一番時間を使ってるか。
-
-そこ、組織の強さと直結してる。</div>
-<div class="judge" data-k="post34"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p35">
-<div class="phead"><span class="no">35</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.346</span></div>
-<span class="stats"><b>249</b>字 · 9/21 7:35</span></div>
-<div class="ptext">人を育てる時、よくある間違いが2つある。
-
-一つは、任せたら終わりやと思ってること。
-
-仕事を振る。
-役割を渡す。
-やってみて、と言う。
-
-でもそのあとを見てへん。
-変化を見てへん。
-困ってても気づかへん。
-ズレても修正せえへん。
-できても認めへん。
-
-それは育成じゃなくて、丸投げや。
-
-もう一つは、そもそも任せへんこと。
-
-まだ無理やろ。
-この子には難しいやろ。
-自分でやった方が早い。
-失敗されたら困る。
-
-そうやって全部自分で抱える。
-その人の成長は、そこで止まる。
-
-任せた瞬間から育成が始まる。
-
-渡して終わりじゃないし、渡さへんのは論外や。</div>
-<div class="judge" data-k="post35"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="4" data-warn="0" id="p36">
-<div class="phead"><span class="no">36</span><div class="tags"><span class="chip pillar p4">4 人を育てる</span><span class="chip">B 問いかけ</span><span class="chip src">vol.394 / vol.345</span></div>
-<span class="stats"><b>285</b>字 · 9/22 7:55</span></div>
-<div class="ptext">人は、自分の限界も相手の限界も、思ってる以上に勝手に決めてる。
-
-自分には無理。
-この人はここまで。
-この子はまだ無理。
-あの人は変わらへん。
-
-そうやって、可能性にフタをしてまう。
-
-でも本来、可能性は無限大や。
-
-どこで伸びるか分からん。
-どこで変わるか分からん。
-どこで覚醒するか分からん。
-
-俺自身、何回も見てきた。
-もう無理やろと思われてた子が、関わる人が変わっただけで別人になる瞬間を。
-
-やから、勝手に見切ったらあかん。
-
-できる人って、自分ができることを増やすだけじゃない。
-周りの可能性も広げる。
-
-この人ならもっといける。
-そう信じて、関わって、任せて、引き上げる。
-
-人の可能性を、広げる側に立とう。</div>
-<div class="judge" data-k="post36"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="5" data-warn="0" id="p37">
-<div class="phead"><span class="no">37</span><div class="tags"><span class="chip pillar p5">5 現場とお客様</span><span class="chip">B 問いかけ</span><span class="chip src">vol.43</span></div>
-<span class="stats"><b>266</b>字 · 9/23 7:00</span></div>
-<div class="ptext">どう来ていただくかよりも、どう帰っていただくか。
-
-うちのCEOからも何度も言われてきた言葉や。
-
-わざわざ時間を割いて来てくれたお客様が、どんな気持ちで帰っていくか。
-そこで、その店の価値は決まる。
-
-現場でよく見る光景がある。
-
-会計が終わったら無言で作業に戻る。
-軽い「ありがとうございました」で終わる。
-お客様が帰る時に、誰も見てへん。声もかけへん。
-
-これは最悪や。
-
-お見送りは最後の勝負所やのに、雑になってる店が多すぎる。
-
-一歩下がって深くお辞儀する。
-見えなくなるまで見送る。
-会話を覚えてたら、それに触れて送り出す。
-
-帰り際の一言が、また来たいを生む。</div>
-<div class="judge" data-k="post37"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="5" data-warn="0" id="p38">
-<div class="phead"><span class="no">38</span><div class="tags"><span class="chip pillar p5">5 現場とお客様</span><span class="chip">C 現場実況</span><span class="chip src">vol.215</span></div>
-<span class="stats"><b>258</b>字 · 9/24 7:20</span></div>
-<div class="ptext">お客様満足度は、マニュアルの中にはない。
-目の前にある。
-
-テーブルを見よう。
-
-取り皿、汚れてへんか。
-おしぼり、足りてるか。
-おかわり、止まってへんか。
-火加減、大丈夫か。
-商品、ちゃんと出揃ってるか。
-
-そしてお客様の表情を見よう。
-
-味、満足そうか。
-少し困ってへんか。
-何か言いたそうじゃないか。
-目線、泳いでへんか。
-
-これ、言われてからやることじゃない。
-見たら分かることやし、気づけること。
-
-呼ばれてから動くのはサービスじゃなくて、対応や。
-
-呼ばれる前に気づけた時、初めてサービスになる。
-
-今日、手元じゃなくてテーブルとお客様の顔を見れてるか。</div>
-<div class="judge" data-k="post38"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="5" data-warn="0" id="p39">
-<div class="phead"><span class="no">39</span><div class="tags"><span class="chip pillar p5">5 現場とお客様</span><span class="chip">B 問いかけ</span><span class="chip src">vol.159</span></div>
-<span class="stats"><b>302</b>字 · 9/25 7:40</span></div>
-<div class="ptext">どんなに料理がうまくても、どんなに接客が丁寧でも、お出迎えとお見送りが雑なら全部台無しになる。
-
-お客様の心をつかむのは、味よりも空気。
-
-その空気を決めるのが、最初の3秒と、最後の3秒や。
-
-扉が開いた瞬間の、笑顔と声のトーンと姿勢とスピード。
-その一瞬で、この店気持ちええな、が決まる。
-
-逆に、誰も目を合わせへん。
-声がバラバラ。
-笑顔がない。
-
-それだけで、また来ようは消える。
-
-お出迎えは、気合いのスイッチ。
-お見送りは、余韻の仕上げ。
-
-そしてどっちも、一人でやるもんじゃなくてチーム戦や。
-
-扉が開いた瞬間に、全員でいらっしゃいませ。
-帰る時は、どのポジションからも、ありがとうございました。
-
-それだけで、店の印象は別次元に上がる。</div>
-<div class="judge" data-k="post39"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="5" data-warn="0" id="p40">
-<div class="phead"><span class="no">40</span><div class="tags"><span class="chip pillar p5">5 現場とお客様</span><span class="chip">B 問いかけ</span><span class="chip src">vol.74</span></div>
-<span class="stats"><b>289</b>字 · 9/26 7:10</span></div>
-<div class="ptext">現場に立って夢中で働いてると、景色の中に埋もれてまうもんがある。
-
-慣れは、良いところも悪いところも全部、風景にしてまう。
-
-これが一番怖い。
-
-店舗を異動した時には気づいてた問題が、慣れで見えんようになる。
-気づかへん、もしくは気にならんようになる。
-
-これは誰が悪いという話じゃなく、必ず起こることや。
-
-やからこそ、あえて客席に座る。
-
-お客様と同じ高さで、入口からの第一印象、スタッフの声の大きさ、匂い、清潔感、空気感。
-全部感じてみる。
-
-その瞬間、ハッとする。
-
-うわ、この席からあの汚れ目立つやん。
-あの子の声、めちゃくちゃ聴きやすいな。
-
-今日、10分でええ。
-自分の店を、お客様として体験してみてほしい。</div>
-<div class="judge" data-k="post40"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="5" data-warn="0" id="p41">
-<div class="phead"><span class="no">41</span><div class="tags"><span class="chip pillar p5">5 現場とお客様</span><span class="chip">B 問いかけ</span><span class="chip src">vol.333</span></div>
-<span class="stats"><b>271</b>字 · 9/27 7:30</span></div>
-<div class="ptext">めちゃくちゃシンプルに原点回帰したい。
-
-どうすればお客様が喜んでくれるか。
-
-結局、そこに全てがある。
-
-売上を上げたい。
-リピートを増やしたい。
-口コミを増やしたい。
-ブランドを強くしたい。
-
-全部、その先の結果でしかない。
-
-料理も、接客も、スピードも、清潔感も、空気感も、お客様の喜びに繋がってるかどうかが全て。
-
-逆に、自分たちの都合。
-自分たちの慣れ。
-自分たちのやりやすさ。
-
-そこを基準にし始めた瞬間から、静かにズレていく。
-
-しかもこのズレ、中にいる人間はまず気づかへん。
-
-お客様は何を求めてるか。
-何があったら嬉しいか。
-何がストレスになるか。
-
-今日の判断、誰基準やった。</div>
-<div class="judge" data-k="post41"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="6" data-warn="0" id="p42">
-<div class="phead"><span class="no">42</span><div class="tags"><span class="chip pillar p6">6 覚悟と姿勢</span><span class="chip">B 問いかけ</span><span class="chip src">vol.59</span></div>
-<span class="stats"><b>240</b>字 · 9/28 7:50</span></div>
-<div class="ptext">雇われ脳を捨てろ。
-
-俺も形式上は雇われの身や。
-筆頭株主以外は、全員そう。
-
-でも、創業メンバーや事業責任者、店長がその感覚では務まらへん。
-店長は経営者やから。
-
-雇われ脳の特徴はこう。
-
-言われたことしかやらへん。
-責任を会社や上司に預ける。
-ルールを守ることだけを考える。
-
-経営者脳は違う。
-
-自分で考えて、提案して、実行する。
-結果に責任を持つ。
-ルールを作る側に回る。
-
-日本一を獲るには、一人ひとりが経営者脳で動かんと成り立たへん。
-
-自分の給料を払ってるのは、会社じゃなくてお客様や。
-
-その感覚、持ててるか。</div>
-<div class="judge" data-k="post42"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="6" data-warn="0" id="p43">
-<div class="phead"><span class="no">43</span><div class="tags"><span class="chip pillar p6">6 覚悟と姿勢</span><span class="chip">B 問いかけ</span><span class="chip src">vol.138</span></div>
-<span class="stats"><b>242</b>字 · 9/29 7:05</span></div>
-<div class="ptext">やる気あります。
-
-この言葉、よく聞く。
-けど正直、やる気はいらん。
-
-大事なのは、やる気より、やる覚悟や。
-
-やる気には波がある。
-朝は高くても、夜には下がる。
-気分で動く人間に、継続はない。
-
-でも覚悟は違う。
-一度決めたら、どんな状況でもブレへん。
-疲れてても、落ち込んでても、やる。
-
-やる気は気持ち。
-覚悟は姿勢。
-
-やる気は口で言える。
-覚悟は行動でしか証明できひん。
-
-そして、その差が一番出るのは現場が忙しい時や。
-
-疲れたから無理、と止まる人。
-しんどくてもやり切る人。
-
-その違いが、成長の差であり、信頼の差になる。</div>
-<div class="judge" data-k="post43"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="6" data-warn="0" id="p44">
-<div class="phead"><span class="no">44</span><div class="tags"><span class="chip pillar p6">6 覚悟と姿勢</span><span class="chip">B 問いかけ</span><span class="chip src">vol.335</span></div>
-<span class="stats"><b>264</b>字 · 9/30 7:25</span></div>
-<div class="ptext">人は、無意識に逃げ道を作る。
-
-これ、意外とあるあるや。
-
-最初から保険をかける。
-できひんかった時の言い訳を、先に用意しとく。
-責任を薄める。
-
-その瞬間に、結果への執着が弱くなる。
-
-逃げ道がある人間は、最後の最後で踏ん張れへん。
-
-まあ仕方ないか。
-やれるだけやったし。
-今回はこういう状況やったし。
-
-そうやって、自分を納得させ始める。
-
-もちろん現実には難しいこともあるし、うまくいかんことも、想定外もある。
-それはしゃあない。
-
-でもそれと、最初から逃げ道を作ることは全然違う。
-
-やると決めたらやる。
-やり切ると決めたらやり切る。
-
-その覚悟が、最後の一歩を変える。</div>
-<div class="judge" data-k="post44"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="6" data-warn="0" id="p45">
-<div class="phead"><span class="no">45</span><div class="tags"><span class="chip pillar p6">6 覚悟と姿勢</span><span class="chip">B 問いかけ</span><span class="chip src">vol.347</span></div>
-<span class="stats"><b>243</b>字 · 10/1 7:45</span></div>
-<div class="ptext">考え方も大事。
-スキルも大事。
-段取りも準備も大事。
-
-でも、最後に結果を分けるのは、執念があるかどうかや。
-
-何が何でもやる。
-何が何でも形にする。
-何が何でも取り切る。
-
-この気持ちがある人間は、めちゃくちゃ強い。
-
-執念がない人間は、どっかで止まる。
-
-これくらいでいいか。
-今回は仕方ないか。
-やれるだけやったし。
-まあ次頑張ろう。
-
-全部、途中で降りてるだけや。
-
-やり切る力の根っこにあるのは、結局これやと思う。
-
-最後まで諦めへん。
-できる方法を探し続ける。
-もう一歩踏み込む。
-
-能力の差やと思ってる差の大半は、執念の差や。</div>
-<div class="judge" data-k="post45"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="6" data-warn="0" id="p46">
-<div class="phead"><span class="no">46</span><div class="tags"><span class="chip pillar p6">6 覚悟と姿勢</span><span class="chip">B 問いかけ</span><span class="chip src">vol.380</span></div>
-<span class="stats"><b>260</b>字 · 10/2 7:15</span></div>
-<div class="ptext">成功に、楽な道はない。
-
-近道ばっかり探す。
-綺麗に勝とうとする。
-ラクして結果だけ取りにいく。
-
-そんな都合のええ話は、現実にはほとんどない。
-
-結局最後に勝つのは、泥臭くやれる人間や。
-
-地味なことをやる。
-面倒くさいことをやる。
-細かいことをやる。
-しんどい時でもやる。
-結果が出るまでやる。
-
-ここを逃げへん人間が、最後に勝つ。
-
-派手な一発より、地道なアクションの継続。
-才能より、積み上げ。
-口だけより、足を使うこと。
-
-泥臭さは、ダサさじゃない。
-
-見えへんところでもやる。
-評価されてなくてもやる。
-すぐ結果が出んくてもやる。
-
-やから、ある時一気に差になる。</div>
-<div class="judge" data-k="post46"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="8" data-warn="0" id="p47">
-<div class="phead"><span class="no">47</span><div class="tags"><span class="chip pillar p8">8 夢とビジョン</span><span class="chip">B 問いかけ</span><span class="chip src">vol.237</span></div>
-<span class="stats"><b>258</b>字 · 10/3 7:35</span></div>
-<div class="ptext">外食王に、俺はなる。
-
-ふざけて言うてない。
-冗談でもない。
-真剣にそこを目指してる。
-
-売上も店舗数も、もちろん重要。
-でも、規模の話だけをしてるんじゃない。
-
-俺が目指してるのは、店を強くして、チームを誇れる会社にすること。
-
-外から見て凄い会社は、もちろん目指す。
-でもそれ以上に、中にいる人間が誇れる会社にしたい。
-
-うまプロの社員って凄いよね。
-どてっぱんで働いてた人は一味違うよね。
-
-そう言われる組織を、本気で作りたい。
-
-そのために、俺は一切妥協せえへん。
-
-外食は、人が全て。
-ピープルビジネスや。
-
-人を雑に扱う会社が、頂点に立てるわけがない。</div>
-<div class="judge" data-k="post47"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="8" data-warn="0" id="p48">
-<div class="phead"><span class="no">48</span><div class="tags"><span class="chip pillar p8">8 夢とビジョン</span><span class="chip">B 問いかけ</span><span class="chip src">vol.200</span></div>
-<span class="stats"><b>289</b>字 · 10/4 7:55</span></div>
-<div class="ptext">俺は本気で、日本一の企業をつくりたい。
-誰にも負けたくない。
-
-世の中で言う日本一は、売上とか店舗数とか、数字で評価されることが多い。
-
-それも大事。
-数字は逃げへんし、結果の証明やから。
-
-でも、俺が本当に目指してる日本一はそこじゃない。
-
-俺がつくりたいのは、日本一のチームワークと、日本一の組織力。
-
-うまプロに関わる全員に、うまプロのメンバーって本当に凄いよね、と言ってもらえる会社。
-
-仲がええだけの組織じゃない。
-なぁなぁでも、馴れ合いでもない。
-
-本気でぶつかって、本気で支え合って、本気で勝ちにいくチーム。
-
-数字で日本一を獲る会社はいつか出てくる。
-
-でも、人で日本一を獲る会社を、俺は本気で作りたい。</div>
-<div class="judge" data-k="post48"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="8" data-warn="0" id="p49">
-<div class="phead"><span class="no">49</span><div class="tags"><span class="chip pillar p8">8 夢とビジョン</span><span class="chip">B 問いかけ</span><span class="chip src">vol.150</span><span class="chip cta">CTA</span></div>
-<span class="stats"><b>294</b>字 · 10/5 7:00</span></div>
-<div class="ptext">俺たちは、まだ何も成し遂げてない。
-
-ここから、夢を掴みにいく。
-
-Umaiで世界を平和にする。
-
-言葉としてはもう知ってる。
-でも、それを現実にするのは誰か。
-
-誰かがやるんじゃない。
-俺らがやる。やり切る。
-
-どてっぱんとÜMACHAを中心に、うまプロを日本を代表する外食集団にする。
-日本のうまいを、世界中に広げていく。
-
-その中心に、俺らが立つ。
-
-どんなに大きな夢も、最初は誰かの妄想から始まってる。
-
-孫正義さんも言うてた。
-最初にあったのは、夢と根拠のない自信だけやと。
-
-うまプロには、その妄想を現実に変える力がある。
-
-夢を語るだけの奴にはならへん。
-現実に変えるところまでやる。
-
-一緒に日本一を獲りにいく人、待ってます。</div>
-<div class="judge" data-k="post49"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="8" data-warn="0" id="p50">
-<div class="phead"><span class="no">50</span><div class="tags"><span class="chip pillar p8">8 夢とビジョン</span><span class="chip">D 弱さ開示</span><span class="chip src">vol.290</span></div>
-<span class="stats"><b>293</b>字 · 10/6 7:20</span></div>
-<div class="ptext">今、大きな岐路に立ってると思ってる。
-
-ここで未来を見据えた土台を作り切れるか。
-それとも、目の前のことに追われて、その場その場をしのぐだけで終わるのか。
-
-この分岐が、この先を大きく左右すると本気で思ってる。
-
-大半の企業や経営者は、未来を本当の意味では見通せずに、目先に重点を置いてまう。
-
-もちろん目先も大事や。
-売上、利益、採用、教育、現場。
-どれも今を生き抜くためには欠かせへん。
-
-でも、目先だけを見てて、理想の未来には辿り着けへん。
-
-正直、しんどい判断も多い。
-急がば回れで、数を落とす決断もした。
-
-それでも俺には、叶えたい未来がある。
-理想の会社像がある。
-
-そこに一緒に立ってくれる人を、まだまだ探してる。</div>
-<div class="judge" data-k="post50"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article></div>
+うまプロで働きたい人、私が窓口です。</div><div class="judge" data-k="post73"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article></div>
 </section>
 
 <footer>
-  作成 2026-08-17 ／ 一次資料 <code>松村メッセージ vol.1〜415</code><br>
+  作成 2026-08-17 ／ 一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
   このページは検索に出ません。URLを知っている人だけが見られます。
 </footer>
 </div>
@@ -1799,16 +750,14 @@ Umaiで世界を平和にする。
   </div>
 </dialog>
 
-<script>
-(function () {
-  var KEY = 'matsumura-x-review-v1';
+<script>(function () {
+  var KEY = 'matsumura-x-review-v2';
+  var N = 73, QN = 6, TOTAL = N + 1;
   var S = {};
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (err) { S = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (err) {} }
+  function done(k) { return !!(S[k] && S[k].v); }
 
-  var TOTAL = 50 + 1;
-
-  /* ---- 判定 ---- */
   document.querySelectorAll('.judge').forEach(function (j) {
     var k = j.dataset.k, memo = j.querySelector('.memo'), host = j.closest('.post, .pin');
     function paint() {
@@ -1825,23 +774,17 @@ Umaiで世界を平和にする。
       });
     });
     memo.value = (S[k] && S[k].m) || '';
-    memo.addEventListener('input', function () {
-      S[k] = S[k] || {}; S[k].m = memo.value; save();
-    });
+    memo.addEventListener('input', function () { S[k] = S[k] || {}; S[k].m = memo.value; save(); });
     paint();
   });
 
-  /* ---- 回答欄 ---- */
   document.querySelectorAll('.ans').forEach(function (t) {
     t.value = S[t.dataset.k] || '';
     t.addEventListener('input', function () { S[t.dataset.k] = t.value; save(); });
   });
 
-  /* ---- 表示名 ---- */
   var ncards = document.querySelectorAll('.ncard');
-  function paintNames() {
-    ncards.forEach(function (c) { c.classList.toggle('chosen', S.name === c.dataset.name); });
-  }
+  function paintNames() { ncards.forEach(function (c) { c.classList.toggle('chosen', S.name === c.dataset.name); }); }
   ncards.forEach(function (c) {
     c.querySelector('.pick').addEventListener('click', function () {
       S.name = (S.name === c.dataset.name) ? null : c.dataset.name;
@@ -1850,23 +793,17 @@ Umaiで世界を平和にする。
   });
   paintNames();
 
-  /* ---- 進捗 ---- */
-  var pgt = document.getElementById('pgt'), pgf = document.getElementById('pgf'),
-      todoN = document.getElementById('todoN');
-  function done(k) { return !!(S[k] && S[k].v); }
+  var pgt = document.getElementById('pgt'), pgf = document.getElementById('pgf'), todoN = document.getElementById('todoN');
   function progress() {
-    var n = 0, i;
+    var n = 0, todo = 0, i;
     if (done('pin')) n++;
-    for (i = 1; i <= 50; i++) { if (done('post' + i)) n++; }
+    for (i = 1; i <= N; i++) { if (done('post' + i)) n++; else todo++; }
     pgt.textContent = n + ' / ' + TOTAL + ' チェック済み';
     pgf.style.width = (n / TOTAL * 100) + '%';
-    var todo = 0;
-    for (i = 1; i <= 50; i++) { if (!done('post' + i)) todo++; }
     todoN.textContent = todo;
   }
   progress();
 
-  /* ---- フィルタ ---- */
   var chips = document.querySelectorAll('.fchip'), posts = document.querySelectorAll('.post');
   chips.forEach(function (c) {
     c.addEventListener('click', function () {
@@ -1874,33 +811,29 @@ Umaiで世界を平和にする。
       c.classList.add('on');
       var f = c.dataset.f;
       posts.forEach(function (p, idx) {
-        var show = f === 'all'
-          || (f === 'warn' ? p.dataset.warn === '1'
-          : (f === 'todo' ? !done('post' + (idx + 1)) : p.dataset.p === f));
-        p.hidden = !show;
+        p.hidden = !(f === 'all' || (f === 'todo' ? !done('post' + (idx + 1)) : p.dataset.p === f));
       });
       window.scrollTo({ top: document.getElementById('posts').offsetTop - 60, behavior: 'smooth' });
     });
   });
 
-  /* ---- 書き出し ---- */
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
   function build() {
-    var L = ['【松村僚 X投稿 第1弾 確認結果】', ''];
+    var L = ['【松村僚 X 中の人版 確認結果】', ''];
     L.push('■ 表示名', S.name ? S.name : '（未選択）', '');
     L.push('■ 確認したいこと');
-    ['q1', 'q2', 'q3'].forEach(function (q, i) {
-      var names = ['マック入社年齢と在籍年数', '弱さをどこまで書いてよいか', 'CTA4本の文言'];
-      L.push((i + 1) + '. ' + names[i] + ': ' + (S[q] ? S[q] : '（未回答）'));
-    });
+    var qs = document.querySelectorAll('.cq');
+    for (var q = 1; q <= QN; q++) {
+      var label = qs[q - 1] ? qs[q - 1].querySelector('b').textContent : ('質問' + q);
+      L.push(q + '. ' + label + ': ' + (S['q' + q] ? S['q' + q] : '（未回答）'));
+    }
     L.push('');
     var ng = [], ok = 0, none = [];
     if (S.pin && S.pin.v === 'ng') ng.push('固定ポスト' + (S.pin.m ? ' → ' + S.pin.m : ''));
     else if (S.pin && S.pin.v === 'ok') ok++;
     else none.push('固定ポスト');
-    for (var i = 1; i <= 50; i++) {
-      var s = S['post' + i];
-      var no = ('0' + i).slice(-2);
+    for (var i = 1; i <= N; i++) {
+      var s = S['post' + i], no = ('0' + i).slice(-2);
       if (s && s.v === 'ng') ng.push('#' + no + (s.m ? ' → ' + s.m : ' → （メモなし）'));
       else if (s && s.v === 'ok') ok++;
       else none.push('#' + no);
