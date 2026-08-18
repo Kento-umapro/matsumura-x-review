@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#15191D">
-<title>側近が書く松村僚｜確認用</title>
+<title>一問一喝 投稿ストック</title>
 <style>:root {
   --ground:#F1F2F3; --surface:#FFFFFF; --surface-2:#F7F8F8;
   --ink:#15191D; --ink-2:#5C6771; --ink-3:#8B959E;
@@ -167,89 +167,100 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   .warn, .judge, .bionote { margin-left:16px; margin-right:16px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+
+.decided { background:var(--go-soft); border:2px solid var(--go); border-radius:2px; padding:18px 20px; }
+.dlabel { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--go); font-weight:700; margin-bottom:6px; }
+.dname { font-size:clamp(21px,5vw,28px); font-weight:700; margin:0 0 10px; line-height:1.4;
+  word-break:break-word; }
+.dwhy { font-size:13.5px; color:var(--ink-2); margin:0; line-height:1.8; }
+
+.bar .stock { display:flex; align-items:baseline; gap:3px; padding:0 4px; }
+.bar .stock b { font-family:var(--mono); font-size:19px; font-weight:700; color:var(--go);
+  font-variant-numeric:tabular-nums; }
+.bar .stock span { font-size:10.5px; color:var(--ink-3); }
+.stockbar { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  background:var(--go-soft); border:1px solid var(--go-line); border-radius:2px;
+  padding:12px 16px; margin:0 0 18px; }
+.stockbar div { font-size:14px; }
+.stockbar b { font-family:var(--mono); font-size:24px; font-weight:700; color:var(--go);
+  font-variant-numeric:tabular-nums; margin-right:2px; }
+.stockbar span { font-size:12.5px; color:var(--ink-2); }
+.tab { font:inherit; font-size:13px; font-weight:600; cursor:pointer; background:var(--surface);
+  color:var(--ink-2); border:1px solid var(--rule); border-radius:3px;
+  padding:8px 12px; min-height:42px; display:inline-flex; align-items:center; gap:7px;
+  white-space:nowrap; flex:0 0 auto; }
+.tab i { font-style:normal; font-family:var(--mono); font-size:11px; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; }
+.tab.on { background:var(--steel); border-color:var(--steel); color:var(--ground); }
+.tab.on i { color:var(--ground); opacity:.8; }
+.tab:focus-visible { outline:2px solid var(--ember); outline-offset:2px; }
+.chip.slot { font-weight:700; }
+.chip.slot.sA { color:var(--ember); border-color:var(--ember-line); background:var(--ember-soft); }
+.chip.slot.sP { color:var(--steel); border-color:var(--rule); background:var(--surface-2); }
+.rank { width:100%; font-family:var(--mono); font-size:11px; color:var(--go); font-weight:700;
+  font-variant-numeric:tabular-nums; }
+.post.j-done { opacity:.5; }
+.post.j-ng { border-color:var(--ember-line); background:var(--surface-2); }
+.jb.done { background:var(--surface); color:var(--ink-3); }
+.jb.done.on { background:var(--ink-3); border-color:var(--ink-3); color:var(--ground); }
+.empty { text-align:center; color:var(--ink-3); font-size:13.5px; padding:36px 0; margin:0; }
 </style>
 </head><body>
 
 <div class="bar">
-  <div class="pg"><span class="pgt" id="pgt">0 / 75 チェック済み</span>
+  <div class="pg"><span class="pgt" id="pgt">未確認 86 件</span>
   <div class="pgb"><div class="pgf" id="pgf"></div></div></div>
+  <div class="stock"><b id="stockDays">0</b><span>日分</span></div>
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
 <div class="wrap">
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ 語り手を変えた第2案</p>
-  <h1>側近が書く、松村僚</h1>
+  <h1>一問一喝｜投稿ストック</h1>
   <p class="lede">本人が自分を語るのをやめて、<b>側近が交代でつぶやく</b>形にしました。
   オリエンタルラウンジ西山さん（@nyama_oriental）の「※主に秘書がツイートしています」の松村版です。<br><br>
   主力は<b>一問一答</b>。側近が聞いて、松村さんが一言で切り捨てて、側近が受ける。
   松村さんの発言はすべて、松村メッセージ415本の中に実在する言葉です。<br><br>
-  前回いただいた回答は反映済みです。<b>マクドナルドは高校2年から31歳までの約15年</b>に修正しました。
-  残っている未決事項は<b>表示名だけ</b>です。<br><br>
-  本文は前回の倍の長さにしました（平均125字）。状況説明と、その言葉の背景を足しています。<br><br>
+  表示名は <b>松村僚/一問一喝</b> に決まりました。プロフィール文も確定しています。<br><br>
+  ここから先は<b>ストックを貯める運用</b>です。OKを押した投稿だけが投稿キューに入り、NGはゴミ箱に残って二度と出ません。
+  週1本ぐらいのペースで新しい文章を足していくので、そのたびに見ていただければ、OKのストックが貯まっていきます。<br><br>
   各投稿の <b>OK</b> か <b>要修正</b> を押していってください。入力はこの端末に自動保存されます。</p>
   <div class="facts">
-    <div class="fact"><b>74</b><span>投稿数</span></div>
-    <div class="fact"><b>125</b><span>平均字数</span></div>
-    <div class="fact"><b>107–154</b><span>字数レンジ</span></div>
+    <div class="fact"><b>86</b><span>投稿数</span></div>
+    <div class="fact"><b>131</b><span>平均字数</span></div>
+    <div class="fact"><b>107–184</b><span>字数レンジ</span></div>
     <div class="fact"><b>3</b><span>CTA本数</span></div>
   </div>
 </header>
 
 <section id="name">
-  <h2>1. 表示名を決める</h2>
-  <p class="sub">このアカウントの主力である<b>「一問一答」を、熟語ごといじる</b>方向で作り直しました。
-  一問投げると、答えではない何かが返ってくる。その実態を名前にしています。
-  西山さんの「アイデア出すんで誰かやっていいよ」と同じで、<b>一見ふざけていて、説明されると腑に落ちる</b>構造です。
-  上ほどひねっています。1つ選んでください。</p>
-  <div class="names"><article class="ncard rec" data-name="松村僚/一問一僚">
-<div class="nhead"><span class="ntag">熟語に名前を埋め込む</span><span class="nrec">おすすめ</span></div>
-<p class="nname">松村僚/一問一僚</p><p class="nlen">9文字 / 上限50</p>
-<p class="nwhy">「一問一答」の答を、本人の名前に差し替えました。質問しても答えが返ってくるんじゃなく、僚が返ってくる。パッと見て違和感、二度見で気づく構造です。名前が熟語の一部になっているので、このアカウントしか使えません。読みは、いちもんいちりょう。</p>
-<p class="nfor"><span>向いてる場面</span>一番ひねる場合。独自性は5案で最強です</p>
-<button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚/一問一喝">
-<div class="nhead"><span class="ntag">答えじゃなく喝</span></div>
-<p class="nname">松村僚/一問一喝</p><p class="nlen">9文字 / 上限50</p>
-<p class="nwhy">実態に一番忠実です。何を聞いても一言で斬られるので、返ってくるのは答えというより喝。読みが、いちもんいっかつ、で四字熟語のリズムが崩れないぶん、口に出しやすく覚えやすい案です。</p>
-<p class="nfor"><span>向いてる場面</span>分かりやすさと笑いのバランスを取る場合</p>
-<button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚/一問一蹴">
-<div class="nhead"><span class="ntag">聞いた側の被害届</span></div>
-<p class="nname">松村僚/一問一蹴</p><p class="nlen">9文字 / 上限50</p>
-<p class="nwhy">質問が一蹴される。答える側じゃなく、聞いた側の視点で書かれているので、このアカウントを書いているのが本人ではないことが名前だけで伝わります。3案の中では一番かわいそうな響きです。</p>
-<p class="nfor"><span>向いてる場面</span>側近が書いている構造を、名前で見せたい場合</p>
-<button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚/一問一答（答えてない）">
-<div class="nhead"><span class="ntag">括弧でツッコミ</span></div>
-<p class="nname">松村僚/一問一答（答えてない）</p><p class="nlen">15文字 / 上限50</p>
-<p class="nwhy">真面目に「一問一答」と名乗っておいて、括弧の中で側近が全部ひっくり返しています。ふざけ方が一番わかりやすいので、外食に詳しくない人にも一発で伝わります。大衆向けに振るならこれです。</p>
-<p class="nfor"><span>向いてる場面</span>一番間口を広く取る場合</p>
-<button class="pick" type="button">これにする</button></article>
-<article class="ncard" data-name="松村僚/だいたい一喝で終わります">
-<div class="nhead"><span class="ntag">側近の敬語のまま</span></div>
-<p class="nname">松村僚/だいたい一喝で終わります</p><p class="nlen">16文字 / 上限50</p>
-<p class="nwhy">側近の口調をそのまま名前にした案。「だいたい」と「終わります」に、毎回そうなんです、という諦めがにじみます。投稿が毎日並んだ時に、一番中の人感が出るのはこれです。</p>
-<p class="nfor"><span>向いてる場面</span>名前と本文のトーンを完全に揃えたい場合</p>
-<button class="pick" type="button">これにする</button></article></div>
+  <h2>1. 決まったこと</h2>
+  <p class="sub">表示名とプロフィール文が確定しました。あとは投稿74本のチェックだけです。</p>
+  <div class="decided">
+    <div class="dlabel">表示名</div>
+    <p class="dname">松村僚/一問一喝</p>
+    <p class="dwhy">何を聞いても一言で斬られるので、返ってくるのは答えというより喝。読みは、いちもんいっかつ。四字熟語のリズムが崩れないので口に出しやすく、覚えやすい案です。</p>
+  </div>
   <div class="bioblock">
-    <div class="biohead">プロフィール文（案）</div>
+    <div class="biohead">プロフィール文</div>
     <div class="ptext">うまプロCOO｜どてっぱん12店舗、UMACHA（日/米/タイ）、EnU（タイ）
-高2でマックのバイト→31歳まで15年→今は外食で日本一を獲りにいってます
+16歳でマックのバイト→31歳まで15年→今は外食で日本一を獲りにいってます
 売上より人。スキルより心。
-ネギは切れません。包丁も持てません。
+みんなのBOSSです。
 ※主に側近がつぶやいてます</div>
     <p class="bionote">最終行の「※主に側近がつぶやいてます」が、このアカウントの肝です。ここがないと、ただの他人事の投稿に見えます。<br>
-    在籍期間は、いただいた回答どおり「高2でマックのバイト→31歳まで15年」に修正しました。</p>
+    「みんなのBOSS」を追加し、ネギの行は削除しました。在籍期間は「16歳でマックのバイト→31歳まで15年」に修正済みです。</p>
   </div>
 </section>
 
 <section id="check">
-  <h2>2. 確認したいこと</h2>
-  <p class="sub">残っているのは<b>表示名だけ</b>です。下の5件は前回いただいた回答で確定し、すべて反映済みです。</p>
-  <div class="cqs"><article class="cq hi">
-<div class="cqh"><span class="cn">1</span><b>表示名をどれにするか</b></div>
-<p class="cd">「一問一答」を熟語ごといじる方向で5案。3回目の提案です</p><p class="cw">残っている唯一の未決事項です。上の5案から選ぶか、方向性だけ指定してください</p>
+  <h2>2. 確認の記録</h2>
+  <p class="sub">未決事項はもうありません。下の6件はすべて確定し、反映済みです。記録として残しています。</p>
+  <div class="cqs"><article class="cq">
+<div class="cqh"><span class="cn">1</span><b>【確定】表示名</b></div>
+<p class="cd">→ 松村僚/一問一喝</p><p class="cw">3回目の提案で決定。プロフィール文も「みんなのBOSS」を入れ、ネギの行は削除しました</p>
 <textarea class="memo ans" data-k="q1" rows="2" placeholder="ここに回答を書いてください"></textarea>
 </article>
 <article class="cq">
@@ -274,7 +285,7 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 </article>
 <article class="cq">
 <div class="cqh"><span class="cn">6</span><b>【確定】マクドナルドの在籍期間</b></div>
-<p class="cd">→ 高校2年から31歳まで。約15年</p><p class="cw">指示書の「12年」は誤りでした。固定ポストとプロフィール文を15年に修正済みです</p>
+<p class="cd">→ 16歳から31歳まで。15年</p><p class="cw">指示書の「12年」は誤りでした。固定ポストとプロフィール文を15年に修正済みです</p>
 <textarea class="memo ans" data-k="q6" rows="2" placeholder="ここに回答を書いてください"></textarea>
 </article></div>
 </section>
@@ -283,7 +294,7 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   <h2>3. 固定ポスト</h2>
   <p class="sub">プロフィールに固定する、側近からの自己紹介です。なぜ本人が書かないのかを最初に説明しています。</p>
   <div class="pin">
-    <div class="pinhead"><b>固定ポスト</b><span>314字</span></div>
+    <div class="pinhead"><b>固定ポスト</b><span>312字</span></div>
     <div class="ptext">このアカウントは、松村僚本人ではなく、側近が交代でつぶやいています。
 
 近くで見てきた人間が、何人かで書いています。
@@ -296,7 +307,7 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 というわけで、代わりに書いてます。
 
-高校2年でマクドナルドのバイトを始めて、31歳まで。約15年です。
+16歳でマクドナルドのバイトを始めて、31歳まで。15年です。
 今はうまプロのCOOとして、どてっぱん12店舗と、ÜMACHAを日本・アメリカ・タイで見ている人です。
 
 ネギは切れません。
@@ -307,15 +318,21 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 そういう人の話を、ここに書いていきます。
 
 たまに本人も見てます。</div>
-    <div class="judge" data-k="pin"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div>
+    <div class="judge" data-k="pin"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div>
   </div>
 </section>
 
 <section id="posts">
-  <h2>4. 投稿74本</h2>
-  <p class="sub">2026-08-18から毎朝7時台に1本ずつ。主力の一問一答が35本、目撃報告11本、昔の同僚の証言12本、松村イズム8本、側近の私見8本です。</p>
-  <div class="filters"><button class="fchip on" data-f="all" type="button">すべて<i>74</i></button><button class="fchip" data-f="I" type="button">I 松村イズム<i>8</i></button><button class="fchip" data-f="M" type="button">M 目撃報告<i>11</i></button><button class="fchip" data-f="N" type="button">N 側近の私見<i>8</i></button><button class="fchip" data-f="Q" type="button">Q 一問一答<i>35</i><em>主力</em></button><button class="fchip" data-f="S" type="button">S 昔の同僚の証言<i>12</i></button><button class="fchip todo-f" data-f="todo" type="button">未チェック<i id="todoN">74</i></button></div>
-  <div class="posts"><article class="post" data-p="Q" data-warn="0" id="p1"><div class="phead"><span class="no">01</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.138</span></div><span class="stats"><b>135</b>字 · 8/18 7:00</span></div><div class="ptext">朝から気分が乗らず、雑談のつもりで振ってみました。
+  <h2>4. 投稿の添削とストック</h2>
+  <p class="sub"><b>OK</b>を押すと投稿ストックに入り、押した順に並びます。<b>NG</b>はゴミ箱に入って、投稿されることはありません。消えないので後から見返せます。<br>
+  投稿は<b>朝7時台に気合いが入る系、夕方17時台に振り返り系</b>の1日2本。朝と夕が1本ずつ揃って1日分です。<br>
+  実際に投稿したら「投稿した」を押すと、ストックから外れて投稿済みに移ります。</p>
+  <div class="stockbar">
+    <div><b id="stockDays2">0</b> 日分のストック</div>
+    <span id="stockNote">朝と夕が揃うと1日分になります</span>
+  </div>
+  <div class="filters"><button class="tab on" data-v="todo" type="button">未確認<i id="c-todo">0</i></button><button class="tab" data-v="ok朝" type="button">OK 朝<i id="c-ok朝">0</i></button><button class="tab" data-v="ok夕" type="button">OK 夕<i id="c-ok夕">0</i></button><button class="tab" data-v="ng" type="button">ゴミ箱<i id="c-ng">0</i></button><button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button></div>
+  <div class="posts"><article class="post" data-k="post1" data-no="1" data-slot="朝" id="p1"><div class="phead"><span class="no">01</span><div class="tags"><span class="chip slot sA">朝 8/18 7:00</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.138</span></div><span class="stats"><b>135</b>字</span><span class="rank" hidden></span></div><div class="ptext">朝から気分が乗らず、雑談のつもりで振ってみました。
 
 「松村さん、今日ちょっとやる気が出ないんですけど」
 
@@ -323,8 +340,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 やる気は気分で上下するけど、覚悟は一度決めたらブレへん。社内でも何度も言っている話です。
 
-雑談として処理してもらえませんでした。</div><div class="judge" data-k="post1"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p2"><div class="phead"><span class="no">02</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.118</span></div><span class="stats"><b>148</b>字 · 8/19 7:20</span></div><div class="ptext">新規開拓で店を回っていたので、参考までに聞いてみました。
+雑談として処理してもらえませんでした。</div><div class="judge" data-k="post1"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post2" data-no="2" data-slot="朝" id="p2"><div class="phead"><span class="no">02</span><div class="tags"><span class="chip slot sA">朝 8/19 7:20</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.118</span></div><span class="stats"><b>148</b>字</span><span class="rank" hidden></span></div><div class="ptext">新規開拓で店を回っていたので、参考までに聞いてみました。
 
 「松村さん、新しい店を選ぶ基準ってあります？」
 
@@ -334,8 +351,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 トイレが汚い店は他も必ず崩れている、というのが理由だそうです。
 
-最後まで料理の話は出てきませんでした。</div><div class="judge" data-k="post2"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p3"><div class="phead"><span class="no">03</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.358</span></div><span class="stats"><b>132</b>字 · 8/20 7:40</span></div><div class="ptext">締切が近く、正直まだ詰め切れていない資料を持っていきました。
+最後まで料理の話は出てきませんでした。</div><div class="judge" data-k="post2"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post3" data-no="3" data-slot="朝" id="p3"><div class="phead"><span class="no">03</span><div class="tags"><span class="chip slot sA">朝 8/20 7:40</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.358</span></div><span class="stats"><b>132</b>字</span><span class="rank" hidden></span></div><div class="ptext">締切が近く、正直まだ詰め切れていない資料を持っていきました。
 
 「これ、70点くらいの出来なんですけど出していいですか」
 
@@ -343,8 +360,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 完璧にしてから出すより、7割で出して直す方が速い。ただし出す最低ラインは下げるな、という意味です。
 
-通りました。</div><div class="judge" data-k="post3"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p4"><div class="phead"><span class="no">04</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.389</span></div><span class="stats"><b>118</b>字 · 8/21 7:10</span></div><div class="ptext">体調が悪く、その日は静かに仕事をしようと思っていました。
+通りました。</div><div class="judge" data-k="post3"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post4" data-no="4" data-slot="朝" id="p4"><div class="phead"><span class="no">04</span><div class="tags"><span class="chip slot sA">朝 8/21 7:10</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.389</span></div><span class="stats"><b>118</b>字</span><span class="rank" hidden></span></div><div class="ptext">体調が悪く、その日は静かに仕事をしようと思っていました。
 
 「松村さん、今日ちょっと体調が悪くて」
 
@@ -352,8 +369,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 売上を上げることより、スキルがあることより、まず現場を明るくできるか。本人が一番大事にしている考え方です。
 
-治りました。</div><div class="judge" data-k="post4"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p5"><div class="phead"><span class="no">05</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.415</span></div><span class="stats"><b>133</b>字 · 8/22 7:30</span></div><div class="ptext">どう計算しても数字が合わない案件があり、諦める前提で相談に行きました。
+治りました。</div><div class="judge" data-k="post4"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post5" data-no="5" data-slot="朝" id="p5"><div class="phead"><span class="no">05</span><div class="tags"><span class="chip slot sA">朝 8/22 7:30</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.415</span></div><span class="stats"><b>133</b>字</span><span class="rank" hidden></span></div><div class="ptext">どう計算しても数字が合わない案件があり、諦める前提で相談に行きました。
 
 「松村さん、これどう考えても無理だと思うんですが」
 
@@ -361,8 +378,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 できない理由は誰でも並べられる。並べても結果は1ミリも変わらない、といつも言っています。
 
-探しに行きます。</div><div class="judge" data-k="post5"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p6"><div class="phead"><span class="no">06</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>118</b>字 · 8/23 7:50</span></div><div class="ptext">社内の雰囲気の良さを、褒めるつもりで口にしました。
+探しに行きます。</div><div class="judge" data-k="post5"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post6" data-no="6" data-slot="朝" id="p6"><div class="phead"><span class="no">06</span><div class="tags"><span class="chip slot sA">朝 8/23 7:50</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>118</b>字</span><span class="rank" hidden></span></div><div class="ptext">社内の雰囲気の良さを、褒めるつもりで口にしました。
 
 「うちって優しくて、いい会社ですよね」
 
@@ -372,8 +389,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 それは優しさじゃなくて、ただの甘さでありぬるま湯や、と。
 
-褒めたつもりでした。</div><div class="judge" data-k="post6"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p7"><div class="phead"><span class="no">07</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.327</span></div><span class="stats"><b>117</b>字 · 8/24 7:05</span></div><div class="ptext">その日は珍しく空気が固かったので、思い切って聞いてみました。
+褒めたつもりでした。</div><div class="judge" data-k="post6"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post7" data-no="7" data-slot="朝" id="p7"><div class="phead"><span class="no">07</span><div class="tags"><span class="chip slot sA">朝 8/24 7:05</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.327</span></div><span class="stats"><b>117</b>字</span><span class="rank" hidden></span></div><div class="ptext">その日は珍しく空気が固かったので、思い切って聞いてみました。
 
 「松村さん、今日ちょっと機嫌悪くないですか」
 
@@ -381,8 +398,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 機嫌は性格じゃなくて技術。上に立つ人間の不機嫌は、そのまま現場の空気になる、というのが持論です。
 
-直りました。</div><div class="judge" data-k="post7"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p8"><div class="phead"><span class="no">08</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.316</span></div><span class="stats"><b>118</b>字 · 8/25 7:25</span></div><div class="ptext">自分で立てた企画が空振りして、報告に行くのが憂鬱でした。
+直りました。</div><div class="judge" data-k="post7"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post8" data-no="8" data-slot="朝" id="p8"><div class="phead"><span class="no">08</span><div class="tags"><span class="chip slot sA">朝 8/25 7:25</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.316</span></div><span class="stats"><b>118</b>字</span><span class="rank" hidden></span></div><div class="ptext">自分で立てた企画が空振りして、報告に行くのが憂鬱でした。
 
 「企画が失敗しました。すみません」
 
@@ -390,8 +407,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 エジソンの「うまくいかない1万通りの方法を見つけただけ」が元ネタです。一回で当たる方が珍しい、と。
 
-立ち直りました。</div><div class="judge" data-k="post8"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p9"><div class="phead"><span class="no">09</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.306</span></div><span class="stats"><b>130</b>字 · 8/26 7:45</span></div><div class="ptext">時間が足りず、明らかに詰めの甘い資料を出した時のことです。
+立ち直りました。</div><div class="judge" data-k="post8"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post9" data-no="9" data-slot="朝" id="p9"><div class="phead"><span class="no">09</span><div class="tags"><span class="chip slot sA">朝 8/26 7:45</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.306</span></div><span class="stats"><b>130</b>字</span><span class="rank" hidden></span></div><div class="ptext">時間が足りず、明らかに詰めの甘い資料を出した時のことです。
 
 「松村さん、この資料まだ完璧じゃなくて」
 
@@ -399,8 +416,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 結果が出ないのは仕方ない。でも出し切ってないのは別の話や、というのが基準です。
 
-言い訳ができませんでした。</div><div class="judge" data-k="post9"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p10"><div class="phead"><span class="no">10</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.66</span></div><span class="stats"><b>128</b>字 · 8/27 7:15</span></div><div class="ptext">同じ案件について、その日3回目の確認が来た時に聞きました。
+言い訳ができませんでした。</div><div class="judge" data-k="post9"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post10" data-no="10" data-slot="朝" id="p10"><div class="phead"><span class="no">10</span><div class="tags"><span class="chip slot sA">朝 8/27 7:15</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.66</span></div><span class="stats"><b>128</b>字</span><span class="rank" hidden></span></div><div class="ptext">同じ案件について、その日3回目の確認が来た時に聞きました。
 
 「松村さん、なんでそこまで細かく確認するんですか」
 
@@ -408,8 +425,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 決めるだけなら誰でもできる。決めたことが現場に残るかどうかは、確認した回数で決まる、と。
 
-今日も3回確認されました。</div><div class="judge" data-k="post10"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p11"><div class="phead"><span class="no">11</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>129</b>字 · 8/28 7:35</span></div><div class="ptext">部下に厳しいことを言うべきか迷って、相談に行きました。
+今日も3回確認されました。</div><div class="judge" data-k="post10"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post11" data-no="11" data-slot="朝" id="p11"><div class="phead"><span class="no">11</span><div class="tags"><span class="chip slot sA">朝 8/28 7:35</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.264</span></div><span class="stats"><b>129</b>字</span><span class="rank" hidden></span></div><div class="ptext">部下に厳しいことを言うべきか迷って、相談に行きました。
 
 「松村さん、厳しく言ったら嫌われませんか」
 
@@ -417,8 +434,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 言わない方が楽なのは、言う側です。その楽を優しさと呼ぶな、といつも言っています。
 
-私が嫌われたくないだけでした。</div><div class="judge" data-k="post11"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p12"><div class="phead"><span class="no">12</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.184</span></div><span class="stats"><b>112</b>字 · 8/29 7:55</span></div><div class="ptext">案件が重なって手が回らず、正直に伝えました。
+私が嫌われたくないだけでした。</div><div class="judge" data-k="post11"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post12" data-no="12" data-slot="朝" id="p12"><div class="phead"><span class="no">12</span><div class="tags"><span class="chip slot sA">朝 8/29 7:55</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.184</span></div><span class="stats"><b>112</b>字</span><span class="rank" hidden></span></div><div class="ptext">案件が重なって手が回らず、正直に伝えました。
 
 「松村さん、忙しくて手が回らないです」
 
@@ -426,8 +443,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本当に忙しいのか、優先順位をつけていないだけなのか。だいたい後者や、というのが本人の見立てです。
 
-一言で終わりました。</div><div class="judge" data-k="post12"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p13"><div class="phead"><span class="no">13</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.230</span></div><span class="stats"><b>128</b>字 · 8/30 7:00</span></div><div class="ptext">何度教えても同じところで止まる部下がいて、相談しました。
+一言で終わりました。</div><div class="judge" data-k="post12"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post13" data-no="13" data-slot="朝" id="p13"><div class="phead"><span class="no">13</span><div class="tags"><span class="chip slot sA">朝 8/30 7:00</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.230</span></div><span class="stats"><b>128</b>字</span><span class="rank" hidden></span></div><div class="ptext">何度教えても同じところで止まる部下がいて、相談しました。
 
 「松村さん、部下が育たないんですけど」
 
@@ -437,8 +454,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 その場は優しいけれど、相手が考える機会を奪っている、と。
 
-私が全部やってました。</div><div class="judge" data-k="post13"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p14"><div class="phead"><span class="no">14</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.248</span></div><span class="stats"><b>132</b>字 · 8/31 7:20</span></div><div class="ptext">どうしても差が埋まらない人がいて、才能の話を持ち出しました。
+私が全部やってました。</div><div class="judge" data-k="post13"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post14" data-no="14" data-slot="朝" id="p14"><div class="phead"><span class="no">14</span><div class="tags"><span class="chip slot sA">朝 8/31 7:20</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.248</span></div><span class="stats"><b>132</b>字</span><span class="rank" hidden></span></div><div class="ptext">どうしても差が埋まらない人がいて、才能の話を持ち出しました。
 
 「松村さん、やっぱり才能ってあると思いますか」
 
@@ -446,8 +463,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本人は19歳から20歳までの1年間、1日20時間働いて一日も休まなかったそうです。
 
-言い訳を封じられました。</div><div class="judge" data-k="post14"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p15"><div class="phead"><span class="no">15</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.247</span></div><span class="stats"><b>124</b>字 · 9/1 7:40</span></div><div class="ptext">判断がつかない案件を抱えて、指示を仰ぎに行きました。
+言い訳を封じられました。</div><div class="judge" data-k="post14"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post15" data-no="15" data-slot="朝" id="p15"><div class="phead"><span class="no">15</span><div class="tags"><span class="chip slot sA">朝 9/1 7:40</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.247</span></div><span class="stats"><b>124</b>字</span><span class="rank" hidden></span></div><div class="ptext">判断がつかない案件を抱えて、指示を仰ぎに行きました。
 
 「松村さん、どっちが正解か分からなくて」
 
@@ -455,8 +472,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 どっちが正解かを悩む時間より、選んだ方を正解にするまでやり切る時間の方が価値がある、という考え方です。
 
-考え方が変わりました。</div><div class="judge" data-k="post15"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p16"><div class="phead"><span class="no">16</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.261</span></div><span class="stats"><b>129</b>字 · 9/2 7:10</span></div><div class="ptext">数字が安定していたので、いい報告のつもりで言いました。
+考え方が変わりました。</div><div class="judge" data-k="post15"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post16" data-no="16" data-slot="朝" id="p16"><div class="phead"><span class="no">16</span><div class="tags"><span class="chip slot sA">朝 9/2 7:10</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.261</span></div><span class="stats"><b>129</b>字</span><span class="rank" hidden></span></div><div class="ptext">数字が安定していたので、いい報告のつもりで言いました。
 
 「松村さん、最近うまく回ってるので安心してます」
 
@@ -464,8 +481,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 慣れは、良いところも悪いところも風景にしてしまう。だから店に入る時はあえて客席に座る、とも言っています。
 
-安心してる場合じゃないらしいです。</div><div class="judge" data-k="post16"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p17"><div class="phead"><span class="no">17</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.404</span></div><span class="stats"><b>125</b>字 · 9/3 7:30</span></div><div class="ptext">まだ結論が出ていない案件で、報告を後回しにしていました。
+安心してる場合じゃないらしいです。</div><div class="judge" data-k="post16"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post17" data-no="17" data-slot="朝" id="p17"><div class="phead"><span class="no">17</span><div class="tags"><span class="chip slot sA">朝 9/3 7:30</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.404</span></div><span class="stats"><b>125</b>字</span><span class="rank" hidden></span></div><div class="ptext">まだ結論が出ていない案件で、報告を後回しにしていました。
 
 「松村さん、報告なんですけど、まだ途中で」
 
@@ -473,8 +490,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 きれいにまとまるまで待つと、手が打てなくなる。悪い話ほど早く上げろ、というのが徹底されています。
 
-途中で出してよかったです。</div><div class="judge" data-k="post17"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p18"><div class="phead"><span class="no">18</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.174</span></div><span class="stats"><b>117</b>字 · 9/4 7:50</span></div><div class="ptext">言うべきか迷っていた話があり、判断を仰ぎました。
+途中で出してよかったです。</div><div class="judge" data-k="post17"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post18" data-no="18" data-slot="朝" id="p18"><div class="phead"><span class="no">18</span><div class="tags"><span class="chip slot sA">朝 9/4 7:50</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.174</span></div><span class="stats"><b>117</b>字</span><span class="rank" hidden></span></div><div class="ptext">言うべきか迷っていた話があり、判断を仰ぎました。
 
 「松村さん、これ言った方がいいのか迷ってて」
 
@@ -482,8 +499,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 迷っている時点で、たいてい言った方がいい。気まずいのは今だけで、放置した方が後で何倍も重くなる、と。
 
-言ってきます。</div><div class="judge" data-k="post18"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p19"><div class="phead"><span class="no">19</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.407</span></div><span class="stats"><b>111</b>字 · 9/5 7:05</span></div><div class="ptext">段取りが整ってから動こうと思い、そう報告しました。
+言ってきます。</div><div class="judge" data-k="post18"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post19" data-no="19" data-slot="朝" id="p19"><div class="phead"><span class="no">19</span><div class="tags"><span class="chip slot sA">朝 9/5 7:05</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.407</span></div><span class="stats"><b>111</b>字</span><span class="rank" hidden></span></div><div class="ptext">段取りが整ってから動こうと思い、そう報告しました。
 
 「松村さん、来週やろうと思ってます」
 
@@ -491,8 +508,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 情報もチャンスも許可も、待っていたら来ない。取りに行った人にだけ回ってくる、というのが口癖です。
 
-今日やります。</div><div class="judge" data-k="post19"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p20"><div class="phead"><span class="no">20</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.196</span></div><span class="stats"><b>121</b>字 · 9/6 7:25</span></div><div class="ptext">売上が伸び悩んでいる店について、施策を相談しに行きました。
+今日やります。</div><div class="judge" data-k="post19"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post20" data-no="20" data-slot="朝" id="p20"><div class="phead"><span class="no">20</span><div class="tags"><span class="chip slot sA">朝 9/6 7:25</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.196</span></div><span class="stats"><b>121</b>字</span><span class="rank" hidden></span></div><div class="ptext">売上が伸び悩んでいる店について、施策を相談しに行きました。
 
 「松村さん、この店の売上ってどうやったら上がりますか」
 
@@ -500,8 +517,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 テーブルの取り皿、おしぼり、火加減、そしてお客様の表情。答えはマニュアルじゃなく目の前にある、と。
 
-以上でした。</div><div class="judge" data-k="post20"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p21"><div class="phead"><span class="no">21</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.225</span></div><span class="stats"><b>120</b>字 · 9/7 7:45</span></div><div class="ptext">ずっと保留にしていた案件について、進捗を聞かれました。
+以上でした。</div><div class="judge" data-k="post20"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post21" data-no="21" data-slot="朝" id="p21"><div class="phead"><span class="no">21</span><div class="tags"><span class="chip slot sA">朝 9/7 7:45</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.225</span></div><span class="stats"><b>120</b>字</span><span class="rank" hidden></span></div><div class="ptext">ずっと保留にしていた案件について、進捗を聞かれました。
 
 「松村さん、そのうちやろうと思ってて」
 
@@ -509,8 +526,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 やる気がないんじゃなくて、いつ誰が何をやるかを決めていないだけ。だから動かない、という指摘です。
 
-決めます。</div><div class="judge" data-k="post21"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p22"><div class="phead"><span class="no">22</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.275</span></div><span class="stats"><b>126</b>字 · 9/8 7:15</span></div><div class="ptext">仕組みが次々変わる時期で、正直しんどくて漏らしました。
+決めます。</div><div class="judge" data-k="post21"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post22" data-no="22" data-slot="朝" id="p22"><div class="phead"><span class="no">22</span><div class="tags"><span class="chip slot sA">朝 9/8 7:15</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.275</span></div><span class="stats"><b>126</b>字</span><span class="rank" hidden></span></div><div class="ptext">仕組みが次々変わる時期で、正直しんどくて漏らしました。
 
 「松村さん、変化が多くてしんどいです」
 
@@ -518,8 +535,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 今の大手も最初から完璧だったわけじゃない。現場の違和感から変えてきただけや、といつも言っています。
 
-しんどいままで行きます。</div><div class="judge" data-k="post22"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p23"><div class="phead"><span class="no">23</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.251</span></div><span class="stats"><b>132</b>字 · 9/9 7:35</span></div><div class="ptext">周りが優秀すぎて気後れしていた時期に、正直に言いました。
+しんどいままで行きます。</div><div class="judge" data-k="post22"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post23" data-no="23" data-slot="朝" id="p23"><div class="phead"><span class="no">23</span><div class="tags"><span class="chip slot sA">朝 9/9 7:35</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.251</span></div><span class="stats"><b>132</b>字</span><span class="rank" hidden></span></div><div class="ptext">周りが優秀すぎて気後れしていた時期に、正直に言いました。
 
 「松村さん、私みたいな凡人はどうしたらいいですか」
 
@@ -527,8 +544,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 組織の強さは上位2割じゃなく、真ん中の6割の基準で決まる。だから真ん中に一番時間を使う、と。
 
-救われたような、そうでもないような。</div><div class="judge" data-k="post23"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p24"><div class="phead"><span class="no">24</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.257</span></div><span class="stats"><b>108</b>字 · 9/10 7:55</span></div><div class="ptext">同期が先に評価された時、つい本音が出ました。
+救われたような、そうでもないような。</div><div class="judge" data-k="post23"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post24" data-no="24" data-slot="朝" id="p24"><div class="phead"><span class="no">24</span><div class="tags"><span class="chip slot sA">朝 9/10 7:55</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.257</span></div><span class="stats"><b>108</b>字</span><span class="rank" hidden></span></div><div class="ptext">同期が先に評価された時、つい本音が出ました。
 
 「松村さん、正直あの人がうらやましいです」
 
@@ -536,8 +553,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 人の成功を喜べない人間は、そこで止まる。うらやましいと思う時間を、自分の打席に使え、と。
 
-見透かされてました。</div><div class="judge" data-k="post24"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p25"><div class="phead"><span class="no">25</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.89</span></div><span class="stats"><b>128</b>字 · 9/11 7:00</span></div><div class="ptext">トラブルが起きて、原因の切り分けをしようとしました。
+見透かされてました。</div><div class="judge" data-k="post24"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post25" data-no="25" data-slot="朝" id="p25"><div class="phead"><span class="no">25</span><div class="tags"><span class="chip slot sA">朝 9/11 7:00</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.89</span></div><span class="stats"><b>128</b>字</span><span class="rank" hidden></span></div><div class="ptext">トラブルが起きて、原因の切り分けをしようとしました。
 
 「松村さん、これ誰の責任ですか」
 
@@ -545,8 +562,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 誰が悪いかを決めても、状況は1ミリも良くならない。それより次にどうするか、というのが基本の姿勢です。
 
-聞くんじゃなかったです。</div><div class="judge" data-k="post25"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p26"><div class="phead"><span class="no">26</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.61</span></div><span class="stats"><b>121</b>字 · 9/12 7:20</span></div><div class="ptext">丁寧にやりたいので時間をください、と伝えた時のことです。
+聞くんじゃなかったです。</div><div class="judge" data-k="post25"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post26" data-no="26" data-slot="朝" id="p26"><div class="phead"><span class="no">26</span><div class="tags"><span class="chip slot sA">朝 9/12 7:20</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.61</span></div><span class="stats"><b>121</b>字</span><span class="rank" hidden></span></div><div class="ptext">丁寧にやりたいので時間をください、と伝えた時のことです。
 
 「松村さん、そこまで急がなくてもいいのでは」
 
@@ -554,8 +571,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 同じ料理でも、出るタイミングひとつで体験の価値が変わる。1分早いだけで気が利く店になる、と。
 
-急ぎます。</div><div class="judge" data-k="post26"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p27"><div class="phead"><span class="no">27</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.58</span></div><span class="stats"><b>119</b>字 · 9/13 7:40</span></div><div class="ptext">朝礼で前に出るのが嫌で、逃げようとして言いました。
+急ぎます。</div><div class="judge" data-k="post26"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post27" data-no="27" data-slot="朝" id="p27"><div class="phead"><span class="no">27</span><div class="tags"><span class="chip slot sA">朝 9/13 7:40</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.58</span></div><span class="stats"><b>119</b>字</span><span class="rank" hidden></span></div><div class="ptext">朝礼で前に出るのが嫌で、逃げようとして言いました。
 
 「松村さん、目立つのが苦手なんです」
 
@@ -563,8 +580,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 誰かが最初に恥をかかないと、場は動かない。無難に立っているだけの人間には誰もついてこない、と。
 
-一番アホなのは本人です。</div><div class="judge" data-k="post27"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p28"><div class="phead"><span class="no">28</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.405</span></div><span class="stats"><b>110</b>字 · 9/14 7:10</span></div><div class="ptext">口頭で受けた指示を、メモも取らずに聞いていました。
+一番アホなのは本人です。</div><div class="judge" data-k="post27"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post28" data-no="28" data-slot="朝" id="p28"><div class="phead"><span class="no">28</span><div class="tags"><span class="chip slot sA">朝 9/14 7:10</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.405</span></div><span class="stats"><b>110</b>字</span><span class="rank" hidden></span></div><div class="ptext">口頭で受けた指示を、メモも取らずに聞いていました。
 
 「松村さん、記録に残さなくても覚えてます」
 
@@ -572,8 +589,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 覚えているつもりが一番危ない。記録がないと、認識がズレた時に誰も戻れない、と。
 
-3日後に忘れてました。</div><div class="judge" data-k="post28"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p29"><div class="phead"><span class="no">29</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.54</span></div><span class="stats"><b>118</b>字 · 9/15 7:30</span></div><div class="ptext">うまくいっている人の話になり、軽い気持ちで聞きました。
+3日後に忘れてました。</div><div class="judge" data-k="post28"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post29" data-no="29" data-slot="朝" id="p29"><div class="phead"><span class="no">29</span><div class="tags"><span class="chip slot sA">朝 9/15 7:30</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.54</span></div><span class="stats"><b>118</b>字</span><span class="rank" hidden></span></div><div class="ptext">うまくいっている人の話になり、軽い気持ちで聞きました。
 
 「松村さん、どうやったら運が良くなりますか」
 
@@ -581,8 +598,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 打席に立った回数が多い人ほど、当たりを引く確率が上がる。運が良く見える人は、単に量を出している、と。
 
-夢のない答えでした。</div><div class="judge" data-k="post29"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p30"><div class="phead"><span class="no">30</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.345</span></div><span class="stats"><b>128</b>字 · 9/16 7:50</span></div><div class="ptext">まだ経験の浅いメンバーに、大きい仕事を振る話が出ました。
+夢のない答えでした。</div><div class="judge" data-k="post29"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post30" data-no="30" data-slot="朝" id="p30"><div class="phead"><span class="no">30</span><div class="tags"><span class="chip slot sA">朝 9/16 7:50</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.345</span></div><span class="stats"><b>128</b>字</span><span class="rank" hidden></span></div><div class="ptext">まだ経験の浅いメンバーに、大きい仕事を振る話が出ました。
 
 「松村さん、この子にはまだ早いと思います」
 
@@ -590,8 +607,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 見切った瞬間に、その人の可能性は終わる。どこで伸びるかは誰にも分からない、というのが持論です。
 
-任せることになりました。</div><div class="judge" data-k="post30"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p31"><div class="phead"><span class="no">31</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.166</span></div><span class="stats"><b>119</b>字 · 9/17 7:05</span></div><div class="ptext">後輩が指示どおりに動いてくれず、愚痴のように相談しました。
+任せることになりました。</div><div class="judge" data-k="post30"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post31" data-no="31" data-slot="朝" id="p31"><div class="phead"><span class="no">31</span><div class="tags"><span class="chip slot sA">朝 9/17 7:05</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.166</span></div><span class="stats"><b>119</b>字</span><span class="rank" hidden></span></div><div class="ptext">後輩が指示どおりに動いてくれず、愚痴のように相談しました。
 
 「松村さん、後輩が言うこと聞かなくて困ってます」
 
@@ -599,8 +616,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 言葉で伝えられることには限界がある。現場は、何を言ったかより何をやってるかを見ている、と。
 
-黙りました。</div><div class="judge" data-k="post31"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p32"><div class="phead"><span class="no">32</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>115</b>字 · 9/18 7:25</span></div><div class="ptext">年始の面談で、今年の目標を聞きました。
+黙りました。</div><div class="judge" data-k="post31"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post32" data-no="32" data-slot="朝" id="p32"><div class="phead"><span class="no">32</span><div class="tags"><span class="chip slot sA">朝 9/18 7:25</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>115</b>字</span><span class="rank" hidden></span></div><div class="ptext">年始の面談で、今年の目標を聞きました。
 
 「松村さん、今年の目標は何ですか」
 
@@ -610,8 +627,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 ちなみに去年も同じ答えでした。
 
-その前の年も同じです。</div><div class="judge" data-k="post32"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p33"><div class="phead"><span class="no">33</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>118</b>字 · 9/19 7:45</span></div><div class="ptext">新しく入る人の面接基準について相談していた時のことです。
+その前の年も同じです。</div><div class="judge" data-k="post32"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post33" data-no="33" data-slot="朝" id="p33"><div class="phead"><span class="no">33</span><div class="tags"><span class="chip slot sA">朝 9/19 7:45</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.237</span></div><span class="stats"><b>118</b>字</span><span class="rank" hidden></span></div><div class="ptext">新しく入る人の面接基準について相談していた時のことです。
 
 「松村さん、飲食で一番大事なものって何ですか」
 
@@ -619,8 +636,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 商品でも立地でも仕組みでもなく、人。人を雑に扱う会社が頂点に立てるわけがない、と。
 
-これも毎回、同じ答えです。</div><div class="judge" data-k="post33"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p34"><div class="phead"><span class="no">34</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.79</span></div><span class="stats"><b>133</b>字 · 9/20 7:15</span></div><div class="ptext">連日の出張と会議が続いていたので、心配になって聞きました。
+これも毎回、同じ答えです。</div><div class="judge" data-k="post33"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post34" data-no="34" data-slot="朝" id="p34"><div class="phead"><span class="no">34</span><div class="tags"><span class="chip slot sA">朝 9/20 7:15</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.79</span></div><span class="stats"><b>133</b>字</span><span class="rank" hidden></span></div><div class="ptext">連日の出張と会議が続いていたので、心配になって聞きました。
 
 「松村さん、疲れてませんか」
 
@@ -632,8 +649,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本当に見せません。
 
-見せてないだけだと思います。</div><div class="judge" data-k="post34"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="Q" data-warn="0" id="p35"><div class="phead"><span class="no">35</span><div class="tags"><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.53</span><span class="chip cta">CTA</span></div><span class="stats"><b>140</b>字 · 9/21 7:35</span></div><div class="ptext">店の応援に入ってもらう話が出たので、一応確認しました。
+見せてないだけだと思います。</div><div class="judge" data-k="post34"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post35" data-no="35" data-slot="朝" id="p35"><div class="phead"><span class="no">35</span><div class="tags"><span class="chip slot sA">朝 9/21 7:35</span><span class="chip pillar pQ">Q 一問一答</span><span class="chip src">vol.53</span><span class="chip cta">CTA</span></div><span class="stats"><b>140</b>字</span><span class="rank" hidden></span></div><div class="ptext">店の応援に入ってもらう話が出たので、一応確認しました。
 
 「松村さん、ネギ切れます？」
 
@@ -645,8 +662,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 できないことが多いから周りが支えてくれる、というのが本人の言い分でした。
 
-一緒に働きたい人、DMください。本人に取り次ぎます。</div><div class="judge" data-k="post35"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p36"><div class="phead"><span class="no">36</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>113</b>字 · 9/22 7:55</span></div><div class="ptext">今日の松村さん。
+一緒に働きたい人、DMください。本人に取り次ぎます。</div><div class="judge" data-k="post35"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post36" data-no="36" data-slot="夕" id="p36"><div class="phead"><span class="no">36</span><div class="tags"><span class="chip slot sP">夕 9/22 7:55</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>113</b>字</span><span class="rank" hidden></span></div><div class="ptext">今日の松村さん。
 
 朝5時に、社員向けのメッセージが送られてきました。
 
@@ -656,8 +673,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 しかも定型文じゃなく、毎回1000字以上あります。
 
-正直、読む側のこっちが先に折れそうです。</div><div class="judge" data-k="post36"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p37"><div class="phead"><span class="no">37</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.118</span></div><span class="stats"><b>113</b>字 · 9/23 7:00</span></div><div class="ptext">松村さんが店に行くと、まずトイレに向かいます。
+正直、読む側のこっちが先に折れそうです。</div><div class="judge" data-k="post36"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post37" data-no="37" data-slot="夕" id="p37"><div class="phead"><span class="no">37</span><div class="tags"><span class="chip slot sP">夕 9/23 7:00</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.118</span></div><span class="stats"><b>113</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村さんが店に行くと、まずトイレに向かいます。
 
 料理でも接客でもなく、トイレです。
 
@@ -665,8 +682,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 便座や床だけじゃなく、ドア、手洗い場、鏡の水滴、匂いまで見ます。
 
-店長は毎回、その背中を見て青ざめています。</div><div class="judge" data-k="post37"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p38"><div class="phead"><span class="no">38</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">Vol.126 江原さん</span></div><span class="stats"><b>149</b>字 · 9/24 7:20</span></div><div class="ptext">マック時代、松村さんはマネージャールームの壁に「7つの習慣」を貼っていたそうです。
+店長は毎回、その背中を見て青ざめています。</div><div class="judge" data-k="post37"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post38" data-no="38" data-slot="夕" id="p38"><div class="phead"><span class="no">38</span><div class="tags"><span class="chip slot sP">夕 9/24 7:20</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">Vol.126 江原さん</span></div><span class="stats"><b>149</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代、松村さんはマネージャールームの壁に「7つの習慣」を貼っていたそうです。
 
 本人は覚えていませんでした。
 
@@ -674,8 +691,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 学校にまともに行っていないので、人より遅れている自覚しかなかったそうです。
 
-自分の意志を、まったく信用していない人です。</div><div class="judge" data-k="post38"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p39"><div class="phead"><span class="no">39</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.290</span></div><span class="stats"><b>134</b>字 · 9/25 7:40</span></div><div class="ptext">誕生日に、メンバーが本を作って渡していました。
+自分の意志を、まったく信用していない人です。</div><div class="judge" data-k="post38"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post39" data-no="39" data-slot="夕" id="p39"><div class="phead"><span class="no">39</span><div class="tags"><span class="chip slot sP">夕 9/25 7:40</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.290</span></div><span class="stats"><b>134</b>字</span><span class="rank" hidden></span></div><div class="ptext">誕生日に、メンバーが本を作って渡していました。
 
 開いたら、前書きが本人の文章でした。
 
@@ -683,8 +700,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本人、当日まで何も知りませんでした。
 
-こういうことをする人間が、周りにいます。</div><div class="judge" data-k="post39"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p40"><div class="phead"><span class="no">40</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>124</b>字 · 9/26 7:10</span></div><div class="ptext">松村さんは19歳から20歳までの1年間、1日20時間働いていたそうです。
+こういうことをする人間が、周りにいます。</div><div class="judge" data-k="post39"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post40" data-no="40" data-slot="夕" id="p40"><div class="phead"><span class="no">40</span><div class="tags"><span class="chip slot sP">夕 9/26 7:10</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>124</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村さんは19歳から20歳までの1年間、1日20時間働いていたそうです。
 
 しかも、1日も休まずに。
 
@@ -692,8 +709,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 才能でもセンスでもなく、誰よりも時間を使っただけだと本人は言っています。
 
-真似はしないでください。</div><div class="judge" data-k="post40"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p41"><div class="phead"><span class="no">41</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>108</b>字 · 9/27 7:30</span></div><div class="ptext">休日の過ごし方を聞いてみました。
+真似はしないでください。</div><div class="judge" data-k="post40"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post41" data-no="41" data-slot="夕" id="p41"><div class="phead"><span class="no">41</span><div class="tags"><span class="chip slot sP">夕 9/27 7:30</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.248</span></div><span class="stats"><b>108</b>字</span><span class="rank" hidden></span></div><div class="ptext">休日の過ごし方を聞いてみました。
 
 「松村さん、休みの日って何してるんですか」
 
@@ -701,24 +718,24 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 質問の答えになっていません。
 
-ちなみに、これをしんどいと思ったことは一度もないそうです。</div><div class="judge" data-k="post41"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p42"><div class="phead"><span class="no">42</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">本人確認済み</span></div><span class="stats"><b>110</b>字 · 9/28 7:50</span></div><div class="ptext">松村さんがマクドナルドにいた期間を、本人に確認しました。
+ちなみに、これをしんどいと思ったことは一度もないそうです。</div><div class="judge" data-k="post41"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post42" data-no="42" data-slot="夕" id="p42"><div class="phead"><span class="no">42</span><div class="tags"><span class="chip slot sP">夕 9/28 7:50</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">本人確認済み</span></div><span class="stats"><b>111</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村さんがマクドナルドにいた期間を、本人に確認しました。
 
-高校2年から、31歳まで。
+16歳から、31歳まで。
 
 約15年です。
 
-人生の半分近くをマックで過ごして、今はもんじゃと鉄板の会社にいます。
+人生のちょうど半分をマックで過ごして、今はもんじゃと鉄板の会社にいます。
 
-うちの基準や口癖のほとんどは、この15年が出どころです。</div><div class="judge" data-k="post42"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p43"><div class="phead"><span class="no">43</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.213</span></div><span class="stats"><b>114</b>字 · 9/29 7:05</span></div><div class="ptext">出店計画を50店舗から25店舗に下方修正した時の言葉です。
+うちの基準や口癖のほとんどは、この15年が出どころです。</div><div class="judge" data-k="post42"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post43" data-no="43" data-slot="夕" id="p43"><div class="phead"><span class="no">43</span><div class="tags"><span class="chip slot sP">夕 9/29 7:05</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.213</span></div><span class="stats"><b>114</b>字</span><span class="rank" hidden></span></div><div class="ptext">出店計画を50店舗から25店舗に下方修正した時の言葉です。
 
 「スピードを落とす判断じゃない。土台を強くするための、覚悟の判断や」
 
 文化が揃っていないのに数を増やしても意味がない、と。
 
-数を減らす方が、増やすよりよっぽど勇気がいります。</div><div class="judge" data-k="post43"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p44"><div class="phead"><span class="no">44</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.53</span></div><span class="stats"><b>108</b>字 · 9/30 7:25</span></div><div class="ptext">松村さんは包丁を持てません。
+数を減らす方が、増やすよりよっぽど勇気がいります。</div><div class="judge" data-k="post43"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post44" data-no="44" data-slot="夕" id="p44"><div class="phead"><span class="no">44</span><div class="tags"><span class="chip slot sP">夕 9/30 7:25</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.53</span></div><span class="stats"><b>108</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村さんは包丁を持てません。
 
 ネギも切れません。
 
@@ -728,8 +745,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 それでも会社が回っているのは周りが優秀だからだと、本人が一番言っています。
 
-隠す気はまったくないようです。</div><div class="judge" data-k="post44"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p45"><div class="phead"><span class="no">45</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>115</b>字 · 10/1 7:45</span></div><div class="ptext">社内の朝のメッセージに、社員が毎回コメントを返します。
+隠す気はまったくないようです。</div><div class="judge" data-k="post44"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post45" data-no="45" data-slot="夕" id="p45"><div class="phead"><span class="no">45</span><div class="tags"><span class="chip slot sP">夕 10/1 7:45</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">notes全体</span></div><span class="stats"><b>115</b>字</span><span class="rank" hidden></span></div><div class="ptext">社内の朝のメッセージに、社員が毎回コメントを返します。
 
 その内容が、感想じゃないんです。
 
@@ -737,8 +754,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 自分の店での実践を書く人がいる。
 本人が忘れていた昔の話を書く人がいる。
 
-上司の投稿に、部下が本音で返してくる会社です。</div><div class="judge" data-k="post45"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="M" data-warn="0" id="p46"><div class="phead"><span class="no">46</span><div class="tags"><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.288</span></div><span class="stats"><b>124</b>字 · 10/2 7:15</span></div><div class="ptext">松村さんは、学校にまともに行っていません。
+上司の投稿に、部下が本音で返してくる会社です。</div><div class="judge" data-k="post45"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post46" data-no="46" data-slot="夕" id="p46"><div class="phead"><span class="no">46</span><div class="tags"><span class="chip slot sP">夕 10/2 7:15</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.288</span></div><span class="stats"><b>124</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村さんは、学校にまともに行っていません。
 
 勉強もできなかったそうです。
 
@@ -746,22 +763,22 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 もし真面目に勉強していたら、今の景色は存在していないとも言っています。
 
-コンプレックスを、そのまま経歴にしている人です。</div><div class="judge" data-k="post46"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p47"><div class="phead"><span class="no">47</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>147</b>字 · 10/3 7:35</span></div><div class="ptext">マック時代に松村さんの店にいた、元クルーの言葉です。
+コンプレックスを、そのまま経歴にしている人です。</div><div class="judge" data-k="post46"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post47" data-no="47" data-slot="夕" id="p47"><div class="phead"><span class="no">47</span><div class="tags"><span class="chip slot sP">夕 10/3 7:35</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>147</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代に松村さんの店にいた、元クルーの言葉です。
 
 「床に物が落ちたらすぐ拾う。そもそも落とさないように綺麗に保ちながらオペレーションする。ポテト1本も落とさない」
 
 ストロー1本、ポテト1本も原価でありオペレーション時間だ、と言われ続けたそうです。
 
-10年以上前のことを、今も一言一句覚えています。</div><div class="judge" data-k="post47"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p48"><div class="phead"><span class="no">48</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>131</b>字 · 10/4 7:55</span></div><div class="ptext">同じ元クルーの、続きの言葉です。
+10年以上前のことを、今も一言一句覚えています。</div><div class="judge" data-k="post47"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post48" data-no="48" data-slot="夕" id="p48"><div class="phead"><span class="no">48</span><div class="tags"><span class="chip slot sP">夕 10/4 7:55</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>131</b>字</span><span class="rank" hidden></span></div><div class="ptext">同じ元クルーの、続きの言葉です。
 
 「最初は言われるからやってたのが、気づけば全員が自然とできるようになって、店全体が“綺麗が当たり前”という空気になっていった」
 
 言い続けた側の中じゃなく、受け取った側の当たり前に変わった時に、初めて文化になります。
 
-その瞬間の話です。</div><div class="judge" data-k="post48"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p49"><div class="phead"><span class="no">49</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>149</b>字 · 10/5 7:00</span></div><div class="ptext">マック時代のメンバーの証言です。
+その瞬間の話です。</div><div class="judge" data-k="post48"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post49" data-no="49" data-slot="夕" id="p49"><div class="phead"><span class="no">49</span><div class="tags"><span class="chip slot sP">夕 10/5 7:00</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>149</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代のメンバーの証言です。
 
 「パンのごまが一粒落ちてるだけでも“プレップ！ゴミ！”。拭けたと思っても、ラップの滑りを見てすぐ“ピカピカに！”」
 
@@ -769,8 +786,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 台がピカピカだとラップが滑って、引っかかりがなくなって、調理スピードが上がるからです。
 
-細かいのではなく、点と点を線にしています。</div><div class="judge" data-k="post49"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p50"><div class="phead"><span class="no">50</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>120</b>字 · 10/6 7:20</span></div><div class="ptext">同じメンバーの、続きの一行です。
+細かいのではなく、点と点を線にしています。</div><div class="judge" data-k="post49"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post50" data-no="50" data-slot="夕" id="p50"><div class="phead"><span class="no">50</span><div class="tags"><span class="chip slot sP">夕 10/6 7:20</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>120</b>字</span><span class="rank" hidden></span></div><div class="ptext">同じメンバーの、続きの一行です。
 
 「本当に確認の鬼で、いい意味でしつこかったです。今でも変わらないですが」
 
@@ -778,15 +795,15 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 私が保証します。
 
-ただ、基準は決めただけでは守られません。確認し続けた分しか現場に残らない、というのが本人の考えです。</div><div class="judge" data-k="post50"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p51"><div class="phead"><span class="no">51</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>127</b>字 · 10/7 7:40</span></div><div class="ptext">マック時代のメンバーが書いていた一行です。
+ただ、基準は決めただけでは守られません。確認し続けた分しか現場に残らない、というのが本人の考えです。</div><div class="judge" data-k="post50"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post51" data-no="51" data-slot="夕" id="p51"><div class="phead"><span class="no">51</span><div class="tags"><span class="chip slot sP">夕 10/7 7:40</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>127</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代のメンバーが書いていた一行です。
 
 「最初は“言われるのが嫌だからやっておこう”でした。でも気づけば、その徹底性が、私自身がクルーに求める基準になっていました」
 
 言われてやる、から、自分が求める側になる。
 
-これが起きた時だけ、文化は次の世代に渡ります。</div><div class="judge" data-k="post51"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p52"><div class="phead"><span class="no">52</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>130</b>字 · 10/8 7:10</span></div><div class="ptext">昔、松村さんの店にいたメンバーの証言です。
+これが起きた時だけ、文化は次の世代に渡ります。</div><div class="judge" data-k="post51"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post52" data-no="52" data-slot="夕" id="p52"><div class="phead"><span class="no">52</span><div class="tags"><span class="chip slot sP">夕 10/8 7:10</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>130</b>字</span><span class="rank" hidden></span></div><div class="ptext">昔、松村さんの店にいたメンバーの証言です。
 
 「1時間に1回は必ずチェック。汚れてから掃除するんじゃなく、汚れる前に綺麗にする。水滴ひとつ残さないレベルで拭き上げる。床の髪の毛1本も見逃さない」
 
@@ -794,15 +811,15 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本人にも自覚はあります。
 
-それでも、やめる気はないそうです。</div><div class="judge" data-k="post52"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p53"><div class="phead"><span class="no">53</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>128</b>字 · 10/9 7:30</span></div><div class="ptext">トイレの話の続きです。
+それでも、やめる気はないそうです。</div><div class="judge" data-k="post52"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post53" data-no="53" data-slot="夕" id="p53"><div class="phead"><span class="no">53</span><div class="tags"><span class="chip slot sP">夕 10/9 7:30</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>128</b>字</span><span class="rank" hidden></span></div><div class="ptext">トイレの話の続きです。
 
 「少しでも水が跳ねていたり、鏡に跡が残っていたりすると、すぐ“トイレ見た？”“今の状態、自信持って見せられる？”と言われてました」
 
 この2つ目の質問、今も現役で使われています。
 
-やったかどうかより、見せられるかどうか。基準が一段違います。</div><div class="judge" data-k="post53"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p54"><div class="phead"><span class="no">54</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 コメント群</span></div><span class="stats"><b>129</b>字 · 10/10 7:50</span></div><div class="ptext">昔のメンバーが書いた文章に、この一行が何度も出てきます。
+やったかどうかより、見せられるかどうか。基準が一段違います。</div><div class="judge" data-k="post53"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post54" data-no="54" data-slot="夕" id="p54"><div class="phead"><span class="no">54</span><div class="tags"><span class="chip slot sP">夕 10/10 7:50</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 コメント群</span></div><span class="stats"><b>129</b>字</span><span class="rank" hidden></span></div><div class="ptext">昔のメンバーが書いた文章に、この一行が何度も出てきます。
 
 「当時は正直、厳しく感じました」
 
@@ -810,22 +827,22 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 「続けてるうちに基準が上がって、自分たちの中で“これくらいは当たり前”というラインになっていきました」
 
-厳しさだけだったら、人は残りません。</div><div class="judge" data-k="post54"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p55"><div class="phead"><span class="no">55</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>151</b>字 · 10/11 7:05</span></div><div class="ptext">マック時代、松村さんの店の店舗ビジョンは「日本一のQuick Service Restaurant」でした。
+厳しさだけだったら、人は残りません。</div><div class="judge" data-k="post54"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post55" data-no="55" data-slot="夕" id="p55"><div class="phead"><span class="no">55</span><div class="tags"><span class="chip slot sP">夕 10/11 7:05</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>151</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代、松村さんの店の店舗ビジョンは「日本一のQuick Service Restaurant」でした。
 
 当時のメンバーいわく、
 
 「このビジョンを知らないクルーは一人もいませんでした。松村さんが常日頃このビジョンを口にして、社員もクルーも何をすればいいかを導いていました」
 
-貼るだけなら、誰でもできます。</div><div class="judge" data-k="post55"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p56"><div class="phead"><span class="no">56</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.394 畑さん</span></div><span class="stats"><b>136</b>字 · 10/12 7:25</span></div><div class="ptext">マック時代に一緒にマネージャーをしていた人の話です。
+貼るだけなら、誰でもできます。</div><div class="judge" data-k="post55"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post56" data-no="56" data-slot="夕" id="p56"><div class="phead"><span class="no">56</span><div class="tags"><span class="chip slot sP">夕 10/12 7:25</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.394 畑さん</span></div><span class="stats"><b>138</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代に一緒にマネージャーをしていた人の話です。
 
-「どれだけ関与しても仕事ができないクルーがいました。でもある日めっちゃできるようになってて、誰に教わったか聞くと、大抵ボスでした」
+「どれだけ関与しても仕事ができないクルーがいました。でもある日めっちゃできるようになってて、誰に教わったか聞くと、大抵BOSSでした」
 
 その子に合うやり方が見つかるまで、角度を変えて教え続けただけだそうです。
 
-見切らない人です。</div><div class="judge" data-k="post56"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p57"><div class="phead"><span class="no">57</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.316 畑さん</span><span class="chip cta">CTA</span></div><span class="stats"><b>154</b>字 · 10/13 7:45</span></div><div class="ptext">昔の同僚の証言です。
+見切らない人です。</div><div class="judge" data-k="post56"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post57" data-no="57" data-slot="夕" id="p57"><div class="phead"><span class="no">57</span><div class="tags"><span class="chip slot sP">夕 10/13 7:45</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.316 畑さん</span><span class="chip cta">CTA</span></div><span class="stats"><b>154</b>字</span><span class="rank" hidden></span></div><div class="ptext">昔の同僚の証言です。
 
 「BOSSがマクドナルドで店長をしていたとき、“失敗した”って言葉を聞いたことがなかったです」
 
@@ -837,15 +854,15 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本人に確認したら「悔しかっただけや」と言っていました。
 
-こういう会社が気になる人、DM開けてます。</div><div class="judge" data-k="post57"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="S" data-warn="0" id="p58"><div class="phead"><span class="no">58</span><div class="tags"><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>130</b>字 · 10/14 7:15</span></div><div class="ptext">うちの開発責任者の言葉です。
+こういう会社が気になる人、DM開けてます。</div><div class="judge" data-k="post57"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post58" data-no="58" data-slot="夕" id="p58"><div class="phead"><span class="no">58</span><div class="tags"><span class="chip slot sP">夕 10/14 7:15</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>130</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちの開発責任者の言葉です。
 
 「僕はマクド出身じゃないけど、1年9ヶ月一緒に働かせてもらって感じたこと。決めたならやる。言ったならやる。形になるまでやる」
 
 同じ会社に長くいると、それが普通になります。
 
-外から来た人の目に何が映るか。そこにしか、本当の文化は出ません。</div><div class="judge" data-k="post58"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p59"><div class="phead"><span class="no">59</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>143</b>字 · 10/15 7:35</span></div><div class="ptext">うちには「松村イズム」という言葉があります。
+外から来た人の目に何が映るか。そこにしか、本当の文化は出ません。</div><div class="judge" data-k="post58"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post59" data-no="59" data-slot="朝" id="p59"><div class="phead"><span class="no">59</span><div class="tags"><span class="chip slot sA">朝 10/15 7:35</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>143</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちには「松村イズム」という言葉があります。
 
 本人がつくった言葉ではありません。
 
@@ -853,8 +870,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 本人も「これは俺が言ったものじゃない」と書いています。
 
-しばらく、その一行ずつを紹介します。</div><div class="judge" data-k="post59"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p60"><div class="phead"><span class="no">60</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>125</b>字 · 10/16 7:55</span></div><div class="ptext">社員が書いた松村イズムの一行です。
+しばらく、その一行ずつを紹介します。</div><div class="judge" data-k="post59"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post60" data-no="60" data-slot="朝" id="p60"><div class="phead"><span class="no">60</span><div class="tags"><span class="chip slot sA">朝 10/16 7:55</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>125</b>字</span><span class="rank" hidden></span></div><div class="ptext">社員が書いた松村イズムの一行です。
 
 「限界なし！無理とか言わへん！」
 
@@ -862,8 +879,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 ただ、無理と言わない人の下では、無理と言いにくいです。
 
-本人もそこは自覚しているようで、限界を決めないのと限界に気づかないのは違う、と最近よく言っています。</div><div class="judge" data-k="post60"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p61"><div class="phead"><span class="no">61</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>129</b>字 · 10/17 7:00</span></div><div class="ptext">松村イズムの中で、一番正直な一行がこれです。
+本人もそこは自覚しているようで、限界を決めないのと限界に気づかないのは違う、と最近よく言っています。</div><div class="judge" data-k="post60"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post61" data-no="61" data-slot="朝" id="p61"><div class="phead"><span class="no">61</span><div class="tags"><span class="chip slot sA">朝 10/17 7:00</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>129</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムの中で、一番正直な一行がこれです。
 
 「その時は“何無理言うてんの?!”と不思議な発想するけど、それが後に理解できる事」
 
@@ -871,8 +888,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 ただ、その場で全員が納得することしか言わなかったら、今の景色はなかったとも思います。
 
-後で理解される、が前提の人です。</div><div class="judge" data-k="post61"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p62"><div class="phead"><span class="no">62</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>126</b>字 · 10/18 7:20</span></div><div class="ptext">松村イズムの中に、こんな一行があります。
+後で理解される、が前提の人です。</div><div class="judge" data-k="post61"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post62" data-no="62" data-slot="朝" id="p62"><div class="phead"><span class="no">62</span><div class="tags"><span class="chip slot sA">朝 10/18 7:20</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>126</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムの中に、こんな一行があります。
 
 「もしかしたら姿そのものがイズム？？かも」
 
@@ -880,8 +897,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 書いた人が迷いながら書いた跡が、そのまま残っています。
 
-でも、たぶんこれが一番当たっています。言葉より、毎日どう動いているかしか見られていません。</div><div class="judge" data-k="post62"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p63"><div class="phead"><span class="no">63</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>119</b>字 · 10/19 7:40</span></div><div class="ptext">松村イズムの中で、一番笑った一行です。
+でも、たぶんこれが一番当たっています。言葉より、毎日どう動いているかしか見られていません。</div><div class="judge" data-k="post62"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post63" data-no="63" data-slot="朝" id="p63"><div class="phead"><span class="no">63</span><div class="tags"><span class="chip slot sA">朝 10/19 7:40</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>119</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムの中で、一番笑った一行です。
 
 「1番最初に裸で踊り始めるバカになれる」
 
@@ -891,8 +908,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 意味は、誰かが最初に恥をかかないと場は動かない、ということだと思います。
 
-盛り上げようとして誰も動かない空気ほど、しんどいものはありません。</div><div class="judge" data-k="post63"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p64"><div class="phead"><span class="no">64</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>108</b>字 · 10/20 7:10</span></div><div class="ptext">松村イズムの一行です。
+盛り上げようとして誰も動かない空気ほど、しんどいものはありません。</div><div class="judge" data-k="post63"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post64" data-no="64" data-slot="朝" id="p64"><div class="phead"><span class="no">64</span><div class="tags"><span class="chip slot sA">朝 10/20 7:10</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>108</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムの一行です。
 
 「人を思う気持ち。それをまた見せつけずに出来る」
 
@@ -900,8 +917,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 貸しになった時点で、もう思いやりではありません。
 
-本人は、絶対にその顔をしません。</div><div class="judge" data-k="post64"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p65"><div class="phead"><span class="no">65</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>133</b>字 · 10/21 7:30</span></div><div class="ptext">松村イズムの一行です。
+本人は、絶対にその顔をしません。</div><div class="judge" data-k="post64"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post65" data-no="65" data-slot="朝" id="p65"><div class="phead"><span class="no">65</span><div class="tags"><span class="chip slot sA">朝 10/21 7:30</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>133</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムの一行です。
 
 「安請け合いのイエスマンではなく、本気で真剣に取り組むイエスマン」
 
@@ -911,8 +928,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 安請け合いはその場だけ空気がよくなって、後で全部壊れます。
 
-引き受けるか、その場で断るか。どちらかしかありません。</div><div class="judge" data-k="post65"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="I" data-warn="0" id="p66"><div class="phead"><span class="no">66</span><div class="tags"><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>124</b>字 · 10/22 7:50</span></div><div class="ptext">松村イズムに並ぶ言葉を全部読んで、気づいたことがあります。
+引き受けるか、その場で断るか。どちらかしかありません。</div><div class="judge" data-k="post65"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post66" data-no="66" data-slot="朝" id="p66"><div class="phead"><span class="no">66</span><div class="tags"><span class="chip slot sA">朝 10/22 7:50</span><span class="chip pillar pI">I 松村イズム</span><span class="chip src">vol.79</span></div><span class="stats"><b>124</b>字</span><span class="rank" hidden></span></div><div class="ptext">松村イズムに並ぶ言葉を全部読んで、気づいたことがあります。
 
 スキルの話が、一個も出てきません。
 
@@ -920,8 +937,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 全部、姿勢の話でした。
 
-だからうちは、これから入る人にも同じ基準で見ています。スキルより先に、イズムを持てるかどうかです。</div><div class="judge" data-k="post66"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p67"><div class="phead"><span class="no">67</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.79</span></div><span class="stats"><b>115</b>字 · 10/23 7:05</span></div><div class="ptext">このアカウント、本人は書いていません。
+だからうちは、これから入る人にも同じ基準で見ています。スキルより先に、イズムを持てるかどうかです。</div><div class="judge" data-k="post66"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post67" data-no="67" data-slot="夕" id="p67"><div class="phead"><span class="no">67</span><div class="tags"><span class="chip slot sP">夕 10/23 7:05</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.79</span></div><span class="stats"><b>115</b>字</span><span class="rank" hidden></span></div><div class="ptext">このアカウント、本人は書いていません。
 
 側近が交代で書いています。
 
@@ -929,15 +946,15 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 松村「自分がどんな人間かは、自分では決められへん」
 
-というわけで、代わりに書いています。</div><div class="judge" data-k="post67"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p68"><div class="phead"><span class="no">68</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.201</span></div><span class="stats"><b>108</b>字 · 10/24 7:25</span></div><div class="ptext">ここで出している証言は、ほとんどが10年以上前にマックで一緒に働いていた人たちのものです。
+というわけで、代わりに書いています。</div><div class="judge" data-k="post67"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post68" data-no="68" data-slot="夕" id="p68"><div class="phead"><span class="no">68</span><div class="tags"><span class="chip slot sP">夕 10/24 7:25</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.201</span></div><span class="stats"><b>108</b>字</span><span class="rank" hidden></span></div><div class="ptext">ここで出している証言は、ほとんどが10年以上前にマックで一緒に働いていた人たちのものです。
 
 その人たちが、今も同じ会社にいます。
 
 「この人と働きたい」を、自分で言っても意味がありません。
 
-その事実の方が、よっぽど強いです。</div><div class="judge" data-k="post68"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p69"><div class="phead"><span class="no">69</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">notes全体</span></div><span class="stats"><b>107</b>字 · 10/25 7:45</span></div><div class="ptext">社内の一番の財産は何かと聞かれたら、たぶん空気だと答えます。
+その事実の方が、よっぽど強いです。</div><div class="judge" data-k="post68"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post69" data-no="69" data-slot="夕" id="p69"><div class="phead"><span class="no">69</span><div class="tags"><span class="chip slot sP">夕 10/25 7:45</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">notes全体</span></div><span class="stats"><b>107</b>字</span><span class="rank" hidden></span></div><div class="ptext">社内の一番の財産は何かと聞かれたら、たぶん空気だと答えます。
 
 制度では作れません。
 
@@ -945,22 +962,22 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 毎日の積み重ねでしか作れないし、一回壊れたら戻りません。
 
-そこに一番時間を使っている会社です。</div><div class="judge" data-k="post69"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p70"><div class="phead"><span class="no">70</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">Vol.128 江原さん</span></div><span class="stats"><b>134</b>字 · 10/26 7:15</span></div><div class="ptext">うちに関わってくれている人が、社内のメンバーを見てこう書いていました。
+そこに一番時間を使っている会社です。</div><div class="judge" data-k="post69"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post70" data-no="70" data-slot="夕" id="p70"><div class="phead"><span class="no">70</span><div class="tags"><span class="chip slot sP">夕 10/26 7:15</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">Vol.128 江原さん</span></div><span class="stats"><b>134</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちに関わってくれている人が、社内のメンバーを見てこう書いていました。
 
 「ここにいらっしゃるメンバーの皆さん、凄い人の集まりです。本当に素晴らしい逸材の方々ばかり」
 
 本人が褒められるより、こっちの方が何倍も喜びます。
 
-会社の価値は、真ん中にいる人間のレベルで決まるからです。</div><div class="judge" data-k="post70"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p71"><div class="phead"><span class="no">71</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>144</b>字 · 10/27 7:35</span></div><div class="ptext">社員が、自分の過去を社内にこう書いていました。
+会社の価値は、真ん中にいる人間のレベルで決まるからです。</div><div class="judge" data-k="post70"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post71" data-no="71" data-slot="夕" id="p71"><div class="phead"><span class="no">71</span><div class="tags"><span class="chip slot sP">夕 10/27 7:35</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>144</b>字</span><span class="rank" hidden></span></div><div class="ptext">社員が、自分の過去を社内にこう書いていました。
 
 「中学の時、団体競技から逃げました。あ、無理。休も。から始まって、辞めたら楽になれるし、と。逃げる＝楽になる、が気づいたら癖になってました」
 
 「悔しくて、高校でもう一度、同じ環境で団体競技を始めました」
 
-こういう人が、今うちの現場に立っています。</div><div class="judge" data-k="post71"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p72"><div class="phead"><span class="no">72</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>126</b>字 · 10/28 7:55</span></div><div class="ptext">さっきの続きです。
+こういう人が、今うちの現場に立っています。</div><div class="judge" data-k="post71"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post72" data-no="72" data-slot="夕" id="p72"><div class="phead"><span class="no">72</span><div class="tags"><span class="chip slot sP">夕 10/28 7:55</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>126</b>字</span><span class="rank" hidden></span></div><div class="ptext">さっきの続きです。
 
 「逃げずにできることはまだある。それを支えてくれる人が周りにいる。そう思えた時、自分の殻が破れて成長できました」
 
@@ -968,8 +985,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 過去の弱さが、そのまま強みになっています。
 
-これが、うちの財産です。</div><div class="judge" data-k="post72"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p73"><div class="phead"><span class="no">73</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.79</span><span class="chip cta">CTA</span></div><span class="stats"><b>133</b>字 · 10/29 7:00</span></div><div class="ptext">これから入る人に一番求められるのは、スキルではありません。
+これが、うちの財産です。</div><div class="judge" data-k="post72"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post73" data-no="73" data-slot="夕" id="p73"><div class="phead"><span class="no">73</span><div class="tags"><span class="chip slot sP">夕 10/29 7:00</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.79</span><span class="chip cta">CTA</span></div><span class="stats"><b>133</b>字</span><span class="rank" hidden></span></div><div class="ptext">これから入る人に一番求められるのは、スキルではありません。
 
 イズムを持てるかどうかです。
 
@@ -979,8 +996,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 だから面接でも、できることより、どう向き合ってきたかを聞いています。
 
-うまプロで働きたい人、私が窓口です。</div><div class="judge" data-k="post73"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article>
-<article class="post" data-p="N" data-warn="0" id="p74"><div class="phead"><span class="no">74</span><div class="tags"><span class="chip pillar pN">N 側近の私見</span><span class="chip src">Vol.123 江原さん</span></div><span class="stats"><b>122</b>字 · 10/30 7:20</span></div><div class="ptext">うちに関わってくれている人から、突然こんな連絡が来ました。
+うまプロで働きたい人、私が窓口です。</div><div class="judge" data-k="post73"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post74" data-no="74" data-slot="夕" id="p74"><div class="phead"><span class="no">74</span><div class="tags"><span class="chip slot sP">夕 10/30 7:20</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">Vol.123 江原さん</span></div><span class="stats"><b>122</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちに関わってくれている人から、突然こんな連絡が来ました。
 
 「クルーが成長し、アルバイトで運営できるシステムを作ろうと思っています。完成させたら共有させてください」
 
@@ -988,11 +1005,119 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 
 勝手に作り始めています。
 
-こういう人がいるから、会社が進みます。</div><div class="judge" data-k="post74"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">要修正</button><textarea class="memo" rows="2" placeholder="どこを直すか（任意）"></textarea></div></article></div>
+こういう人がいるから、会社が進みます。</div><div class="judge" data-k="post74"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post75" data-no="75" data-slot="夕" id="p75"><div class="phead"><span class="no">75</span><div class="tags"><span class="chip slot sP">夕 10/31 7:40</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.393 畑さん</span></div><span class="stats"><b>164</b>字</span><span class="rank" hidden></span></div><div class="ptext">昔のメンバーが、こう書いていました。
+
+「マクドナルドで店長してた時、エリア全体にも影響力ありましたよね。1つ上、2つ上の目線で仕事してらっしゃったんだな、と思います」
+
+本人に聞いたら、意識していなかったそうです。
+
+自分の店だけ良くても意味がない、と思っていただけ、と。
+
+店長が店長の仕事しかしなければ、その店は店長のサイズで止まります。</div><div class="judge" data-k="post75"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post76" data-no="76" data-slot="夕" id="p76"><div class="phead"><span class="no">76</span><div class="tags"><span class="chip slot sP">夕 11/1 7:10</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.118 若代さん</span></div><span class="stats"><b>173</b>字</span><span class="rank" hidden></span></div><div class="ptext">本部の巡回チェックを、マックではトラベルパスと呼んでいたそうです。
+
+当時のメンバーの言葉です。
+
+「松村さんがトラベルパスに出たのを見つけたら、真っ先に自分がトイレチェックのエラーを無くしに行ってたのを覚えています」
+
+つまり、BOSSが着く前に走っていた、ということです。
+
+本当は見られていない時にできているのが一番ですが、まずはそこからでいいと思います。</div><div class="judge" data-k="post76"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post77" data-no="77" data-slot="夕" id="p77"><div class="phead"><span class="no">77</span><div class="tags"><span class="chip slot sP">夕 11/2 7:30</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.118 佐々木さん</span></div><span class="stats"><b>175</b>字</span><span class="rank" hidden></span></div><div class="ptext">「1GC1トイレ」
+
+お客様1組が帰られるたびに、トイレを1回清掃する。
+
+マック時代、クルーにずっと言い続けていたルールだそうです。
+
+当時のクルーはこう書いています。
+
+「このシンプルで分かりやすい取り組みを続けたことで、トイレだけじゃなく店内すべてのクレンリネスを自然と意識できるようになった気がします」
+
+長いマニュアルより、5文字の合言葉の方が現場は動きます。</div><div class="judge" data-k="post77"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post78" data-no="78" data-slot="夕" id="p78"><div class="phead"><span class="no">78</span><div class="tags"><span class="chip slot sP">夕 11/3 7:50</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 増尾さん</span></div><span class="stats"><b>168</b>字</span><span class="rank" hidden></span></div><div class="ptext">マック時代のメンバーの証言です。
+
+「松村さんが常日頃このビジョンを口にし、社員、クルーが何をすればいいかを導いておられました。決定したアクションは、継続的に進捗のコミュニケーションを取り続けていた姿をずっと見てきました」
+
+「伝え続ける徹底性は、本当にズバ抜けてると思います」
+
+決めた日の熱量ではなく、その後に何回触れたか。そこで差がつきます。</div><div class="judge" data-k="post78"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post79" data-no="79" data-slot="夕" id="p79"><div class="phead"><span class="no">79</span><div class="tags"><span class="chip slot sP">夕 11/4 7:05</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 大川さん</span></div><span class="stats"><b>168</b>字</span><span class="rank" hidden></span></div><div class="ptext">出会った頃から変わらない、とメンバーが書いていました。
+
+「改善すべきことを、妥協せず何度でも言い続ける。厳しさではなく、成果に対する本気、執着だと思います」
+
+「目標は一人では達成できないからこそ、チームで挑む。同じ方向を向くために、ビジョンも伝え続ける」
+
+しつこさを、厳しさではなく執着だと受け取ってもらえていたなら、それが答えだと思います。</div><div class="judge" data-k="post79"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post80" data-no="80" data-slot="夕" id="p80"><div class="phead"><span class="no">80</span><div class="tags"><span class="chip slot sP">夕 11/5 7:25</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>184</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちの開発責任者が、加盟開発の現実をこう書いていました。
+
+「初期費用が4000万、5000万の契約が、一回や二回の打ち合わせで決まるわけがない。資料を見せて“いいですね”と言われた瞬間はゴールじゃなく、そこからがスタート」
+
+「確認する。声をかける。追う。修正する。何回でも言う。このしつこさを止めた瞬間に、相手の熱は冷める」
+
+こういう文章が社内から出てくる会社は、強いです。</div><div class="judge" data-k="post80"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post81" data-no="81" data-slot="夕" id="p81"><div class="phead"><span class="no">81</span><div class="tags"><span class="chip slot sP">夕 11/6 7:45</span><span class="chip pillar pS">S 昔の同僚の証言</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>172</b>字</span><span class="rank" hidden></span></div><div class="ptext">今も現役でマックにいるメンバーが、当時をこう振り返っています。
+
+「日本一のQuick Service Restaurantが松村さんの店舗ビジョンで、スピードはエリアNo.1の店舗でした」
+
+「その目標や基準をクルーまで浸透させる徹底性が素晴らしいと感じていました」
+
+決めたことを末端まで落とし込めるか。そこが店舗力と組織力になる、とも書いていました。</div><div class="judge" data-k="post81"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post82" data-no="82" data-slot="夕" id="p82"><div class="phead"><span class="no">82</span><div class="tags"><span class="chip slot sP">夕 11/7 7:15</span><span class="chip pillar pM">M 目撃報告</span><span class="chip src">vol.396 畑さん</span></div><span class="stats"><b>148</b>字</span><span class="rank" hidden></span></div><div class="ptext">朝のメッセージに、メンバーがこう返してきた日がありました。
+
+「サボり方とか、甘え方とか、逃げ方とか、言い訳のし方とか。もっと覚えたい事が山のようにある。のびしろしか無いわ。俺らまだのびしろしかないわ」
+
+歌詞です。
+
+上司のメッセージに歌詞で返してくる人間がいる会社です。
+
+BOSSも普通に返信していました。</div><div class="judge" data-k="post82"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post83" data-no="83" data-slot="夕" id="p83"><div class="phead"><span class="no">83</span><div class="tags"><span class="chip slot sP">夕 11/8 7:35</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.411 畑さん</span></div><span class="stats"><b>166</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちのメンバーが、こう書いていました。
+
+「リーダーシップはスキルだと学びました。身につけることができるもので、逆に言うと努力しないと身につかない」
+
+「だから役職をもらってからでは発揮できなくて、メンバークラスのときから訓練しとかないと、そもそも発揮できない」
+
+肩書きは、今まで発揮してきたものを追認するだけです。
+
+順番が逆なんだと思います。</div><div class="judge" data-k="post83"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post84" data-no="84" data-slot="夕" id="p84"><div class="phead"><span class="no">84</span><div class="tags"><span class="chip slot sP">夕 11/9 7:55</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.397 畑さん</span></div><span class="stats"><b>154</b>字</span><span class="rank" hidden></span></div><div class="ptext">損得を超えろ、という話が社内で出た時、メンバーからこう返ってきました。
+
+「まさにこれを、BOSSが一番に体現されてますよね」
+
+本人に伝えたら、そんな立派なものじゃない、と言っていました。
+
+損得で動いた相手とは、損得がなくなった瞬間に切れる。
+
+それが嫌なだけ、だそうです。
+
+長く一緒にいたい人には、計算せずに動く人です。</div><div class="judge" data-k="post84"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post85" data-no="85" data-slot="夕" id="p85"><div class="phead"><span class="no">85</span><div class="tags"><span class="chip slot sP">夕 11/10 7:00</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">vol.403 畑さん</span></div><span class="stats"><b>155</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちのメンバーが、自分のことをこう書いていました。
+
+「自分はよく家族から頑固やって言われます。BOSSからも言われたことあります」
+
+本人に確認したら、言った覚えがあるそうです。
+
+ただ、今思うと頑固なのは自分の方かもしれん、とも言っていました。
+
+自分の頑固さは見えないのに、人の頑固さはよく見える。
+
+たぶん、全員そうです。</div><div class="judge" data-k="post85"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article>
+<article class="post" data-k="post86" data-no="86" data-slot="夕" id="p86"><div class="phead"><span class="no">86</span><div class="tags"><span class="chip slot sP">夕 11/11 7:20</span><span class="chip pillar pN">N 側近の私見</span><span class="chip src">Vol.125 江原さん</span></div><span class="stats"><b>166</b>字</span><span class="rank" hidden></span></div><div class="ptext">うちに関わってくれている現役の店長が、こう書いていました。
+
+「共有できてたら避けられたであろうお客様とのトラブル。引き継ぎ不足。時間帯マネージャー同士の引き継ぎで防げた資材の廃棄。クルーの気持ちを共有していたら防げたであろう退職」
+
+きれいごとが一つもありません。
+
+現場の実感なので、重いです。
+
+報連相は、精神論じゃなく損得の話でもあります。</div><div class="judge" data-k="post86"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div></article></div>
+  <p class="empty" id="empty" hidden>ここは今、空です。</p>
 </section>
 
 <footer>
-  作成 2026-08-17 ／ 一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
+  第1弾 2026-08-17／一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
+  判定はこの端末に自動保存されます。ゴミ箱の中身は消えません。<br>
   このページは検索に出ません。URLを知っている人だけが見られます。
 </footer>
 </div>
@@ -1007,31 +1132,67 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 </dialog>
 
 <script>(function () {
-  var KEY = 'matsumura-x-review-v4';
-  var N = 74, QN = 6, TOTAL = N + 1;
+  var KEY = 'matsumura-x-stock-v1';
+  var N = 86, QN = 6;
   var S = {};
-  try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (err) { S = {}; }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (err) {} }
-  function done(k) { return !!(S[k] && S[k].v); }
+  try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function st(k) { return S[k] || {}; }
+
+  var cards = {};   // key -> {el, slot, no}
+  document.querySelectorAll('.post').forEach(function (el) {
+    cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no };
+  });
+
+  /* ---- 判定 ---- */
+  function paintCard(k) {
+    var c = cards[k]; if (!c) return;
+    var s = st(k), el = c.el;
+    el.classList.toggle('j-ok', s.v === 'ok' && !s.posted);
+    el.classList.toggle('j-ng', s.v === 'ng');
+    el.classList.toggle('j-done', !!s.posted);
+    el.querySelectorAll('.jb').forEach(function (b) {
+      if (b.dataset.v) b.classList.toggle('on', b.dataset.v === s.v);
+    });
+    var done = el.querySelector('.jb.done');
+    if (done) {
+      done.hidden = !(s.v === 'ok');
+      done.classList.toggle('on', !!s.posted);
+      done.textContent = s.posted ? '投稿済み' : '投稿した';
+    }
+    var memo = el.querySelector('.memo');
+    memo.classList.toggle('show', s.v === 'ng' || !!s.m);
+    var rank = el.querySelector('.rank');
+    if (rank) {
+      if (s.v === 'ok' && !s.posted) {
+        var q = queue(c.slot), i = q.indexOf(k);
+        rank.textContent = c.slot + 'ストック ' + (i + 1) + '番目';
+        rank.hidden = false;
+      } else if (s.posted) { rank.textContent = '投稿済み'; rank.hidden = false; }
+      else rank.hidden = true;
+    }
+  }
+  function queue(slot) {
+    return Object.keys(cards)
+      .filter(function (k) { var s = st(k); return s.v === 'ok' && !s.posted && cards[k].slot === slot; })
+      .sort(function (a, b) { return (st(a).t || 0) - (st(b).t || 0); });
+  }
 
   document.querySelectorAll('.judge').forEach(function (j) {
-    var k = j.dataset.k, memo = j.querySelector('.memo'), host = j.closest('.post, .pin');
-    function paint() {
-      var v = S[k] && S[k].v;
-      j.querySelectorAll('.jb').forEach(function (b) { b.classList.toggle('on', b.dataset.v === v); });
-      memo.classList.toggle('show', v === 'ng' || !!(S[k] && S[k].m));
-      if (host) { host.classList.toggle('j-ok', v === 'ok'); host.classList.toggle('j-ng', v === 'ng'); }
-    }
+    var k = j.dataset.k, memo = j.querySelector('.memo');
     j.querySelectorAll('.jb').forEach(function (b) {
       b.addEventListener('click', function () {
-        S[k] = S[k] || {};
-        S[k].v = (S[k].v === b.dataset.v) ? null : b.dataset.v;
-        save(); paint(); progress();
+        var s = S[k] = S[k] || {};
+        if (b.dataset.v) {
+          s.v = (s.v === b.dataset.v) ? null : b.dataset.v;
+          if (s.v === 'ok' && !s.t) s.t = Date.now();
+          if (s.v !== 'ok') s.posted = 0;
+        } else { s.posted = s.posted ? 0 : 1; }
+        save(); repaint();
       });
     });
-    memo.value = (S[k] && S[k].m) || '';
-    memo.addEventListener('input', function () { S[k] = S[k] || {}; S[k].m = memo.value; save(); });
-    paint();
+    memo.value = st(k).m || '';
+    memo.addEventListener('input', function () { (S[k] = S[k] || {}).m = memo.value; save(); });
   });
 
   document.querySelectorAll('.ans').forEach(function (t) {
@@ -1039,66 +1200,94 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
     t.addEventListener('input', function () { S[t.dataset.k] = t.value; save(); });
   });
 
-  var ncards = document.querySelectorAll('.ncard');
-  function paintNames() { ncards.forEach(function (c) { c.classList.toggle('chosen', S.name === c.dataset.name); }); }
-  ncards.forEach(function (c) {
-    c.querySelector('.pick').addEventListener('click', function () {
-      S.name = (S.name === c.dataset.name) ? null : c.dataset.name;
-      save(); paintNames();
+  /* ---- 集計とタブ ---- */
+  var view = 'todo';
+  function counts() {
+    var c = { todo: 0, ok朝: 0, ok夕: 0, ng: 0, done: 0 };
+    Object.keys(cards).forEach(function (k) {
+      var s = st(k);
+      if (s.posted) c.done++;
+      else if (s.v === 'ok') c['ok' + cards[k].slot]++;
+      else if (s.v === 'ng') c.ng++;
+      else c.todo++;
     });
-  });
-  paintNames();
-
-  var pgt = document.getElementById('pgt'), pgf = document.getElementById('pgf'), todoN = document.getElementById('todoN');
-  function progress() {
-    var n = 0, todo = 0, i;
-    if (done('pin')) n++;
-    for (i = 1; i <= N; i++) { if (done('post' + i)) n++; else todo++; }
-    pgt.textContent = n + ' / ' + TOTAL + ' チェック済み';
-    pgf.style.width = (n / TOTAL * 100) + '%';
-    todoN.textContent = todo;
+    return c;
   }
-  progress();
+  function inView(k) {
+    var s = st(k), slot = cards[k].slot;
+    if (view === 'todo') return !s.v && !s.posted;
+    if (view === 'ok朝') return s.v === 'ok' && !s.posted && slot === '朝';
+    if (view === 'ok夕') return s.v === 'ok' && !s.posted && slot === '夕';
+    if (view === 'ng') return s.v === 'ng';
+    if (view === 'done') return !!s.posted;
+    return true;
+  }
+  function repaint() {
+    var c = counts();
+    ['todo', 'ok朝', 'ok夕', 'ng', 'done'].forEach(function (v) {
+      var el = document.getElementById('c-' + v); if (el) el.textContent = c[v];
+    });
+    var days = Math.min(c['ok朝'], c['ok夕']);
+    ['stockDays','stockDays2'].forEach(function (id) {
+      var el = document.getElementById(id); if (el) el.textContent = days;
+    });
+    document.getElementById('stockNote').textContent =
+      days === 0 ? '朝と夕が揃うと1日分になります' : (days < 3 ? 'そろそろ補充どきです' : '余裕があります');
+    var pgf = document.getElementById('pgf');
+    pgf.style.width = ((N - c.todo) / N * 100) + '%';
+    document.getElementById('pgt').textContent = '未確認 ' + c.todo + ' 件 / 全' + N + '本';
 
-  var chips = document.querySelectorAll('.fchip'), posts = document.querySelectorAll('.post');
-  chips.forEach(function (c) {
-    c.addEventListener('click', function () {
-      chips.forEach(function (x) { x.classList.remove('on'); });
-      c.classList.add('on');
-      var f = c.dataset.f;
-      posts.forEach(function (p, idx) {
-        p.hidden = !(f === 'all' || (f === 'todo' ? !done('post' + (idx + 1)) : p.dataset.p === f));
-      });
+    var qA = queue('朝'), qP = queue('夕');
+    var list = document.querySelector('.posts');
+    var order = (view === 'ok朝') ? qA : (view === 'ok夕') ? qP : null;
+    Object.keys(cards).forEach(function (k) { cards[k].el.hidden = !inView(k); paintCard(k); });
+    if (order) order.forEach(function (k) { list.appendChild(cards[k].el); });
+    else Object.keys(cards).sort(function (a, b) { return cards[a].no - cards[b].no; })
+      .forEach(function (k) { list.appendChild(cards[k].el); });
+    document.getElementById('empty').hidden = order ? order.length > 0 : (c[view] || 0) > 0;
+  }
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
+      t.classList.add('on'); view = t.dataset.v; repaint();
       window.scrollTo({ top: document.getElementById('posts').offsetTop - 60, behavior: 'smooth' });
     });
   });
+  repaint();
 
+  /* ---- 書き出し ---- */
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
+  function num(k) { return '#' + ('0' + cards[k].no).slice(-2); }
   function build() {
-    var L = ['【松村僚 X 側近版 確認結果】', ''];
-    L.push('■ 表示名', S.name ? S.name : '（未選択）', '');
-    L.push('■ 確認したいこと');
-    var qs = document.querySelectorAll('.cq');
-    for (var q = 1; q <= QN; q++) {
-      var label = qs[q - 1] ? qs[q - 1].querySelector('b').textContent : ('質問' + q);
-      L.push(q + '. ' + label + ': ' + (S['q' + q] ? S['q' + q] : '（未回答）'));
-    }
+    var c = counts(), L = ['【松村僚 X 添削結果】', '', '■ 表示名', '松村僚/一問一喝（確定）', ''];
+    L.push('■ ストック状況');
+    L.push('朝 ' + c['ok朝'] + '本 / 夕 ' + c['ok夕'] + '本 → ' + Math.min(c['ok朝'], c['ok夕']) + '日分');
+    L.push('未確認 ' + c.todo + '本 / ゴミ箱 ' + c.ng + '本 / 投稿済み ' + c.done + '本', '');
+    ['朝', '夕'].push;
+    ['朝', '夕'].forEach(function (slot) {
+      var q = queue(slot);
+      L.push('■ 投稿キュー（' + slot + '）' + q.length + '本');
+      L.push(q.length ? q.map(function (k, i) { return (i + 1) + '. ' + num(k); }).join('  ') : 'なし');
+      L.push('');
+    });
+    var ng = Object.keys(cards).filter(function (k) { return st(k).v === 'ng'; })
+      .sort(function (a, b) { return cards[a].no - cards[b].no; });
+    L.push('■ ゴミ箱 ' + ng.length + '本');
+    L.push(ng.length ? ng.map(function (k) {
+      return num(k) + (st(k).m ? ' → ' + st(k).m : ' → （理由なし）');
+    }).join('\n') : 'なし');
     L.push('');
-    var ng = [], ok = 0, none = [];
-    if (S.pin && S.pin.v === 'ng') ng.push('固定ポスト' + (S.pin.m ? ' → ' + S.pin.m : ''));
-    else if (S.pin && S.pin.v === 'ok') ok++;
-    else none.push('固定ポスト');
-    for (var i = 1; i <= N; i++) {
-      var s = S['post' + i], no = ('0' + i).slice(-2);
-      if (s && s.v === 'ng') ng.push('#' + no + (s.m ? ' → ' + s.m : ' → （メモなし）'));
-      else if (s && s.v === 'ok') ok++;
-      else none.push('#' + no);
+    var todo = Object.keys(cards).filter(function (k) { return !st(k).v && !st(k).posted; })
+      .sort(function (a, b) { return cards[a].no - cards[b].no; });
+    L.push('■ 未確認 ' + todo.length + '本');
+    L.push(todo.length ? todo.map(num).join(' ') : 'なし');
+    L.push('');
+    L.push('■ 確認の記録');
+    var qs = document.querySelectorAll('.cq');
+    for (var i = 1; i <= QN; i++) {
+      var lb = qs[i - 1] ? qs[i - 1].querySelector('b').textContent : ('質問' + i);
+      L.push(i + '. ' + lb + ': ' + (S['q' + i] || '（未回答）'));
     }
-    L.push('■ 要修正 ' + ng.length + '件');
-    L.push(ng.length ? ng.join('\n') : 'なし');
-    L.push('', '■ OK ' + ok + '件');
-    L.push('', '■ 未チェック ' + none.length + '件');
-    L.push(none.length ? none.join(' ') : 'なし');
     return L.join('\n');
   }
   document.getElementById('exportBtn').addEventListener('click', function () {
