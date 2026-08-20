@@ -1,12 +1,12 @@
-# 一問一喝｜松村僚 X 投稿ストック
+# 勝手に！松村僚広報部
 
 うまプロ COO 松村僚（[@Umapro_ryo](https://x.com/Umapro_ryo)）のX運用ページ。
 
 - 公開URL: https://kento-umapro.github.io/matsumura-x-review/
-- **表示名**: 松村僚/一問一喝（確定）
-- **コンセプト**: 本人ではなく側近が交代でつぶやく。西山喜洋さん（@nyama_oriental）の「※主に秘書がツイートしています」と同じ構造
-- **主力の型**: 一問一答（側近が聞く → 松村が一言で切る → 側近が受ける）
-- **投稿設計**: 1日2本。朝7時台＝気合いが入る系、夕方17時台＝振り返り系
+- **参考にしたアカウント**: [@phads_kouhou](https://www.instagram.com/phads_kouhou)（勝手に！さのなおし広報部）/ [@sanonaoshi.everydaylife](https://www.instagram.com/sanonaoshi.everydaylife)
+- **コンセプト**: 本人非公認。側近が「勝手に」広報部を名乗って発信する。人物観察コンテンツ
+- **シリーズ**: 質問編35 / 証言編19 / 分析編20 / 目撃編12 / 図鑑編12
+- **投稿設計**: 1日2本。朝7時台＝気合いが入る系、夕方17時台＝振り返り系。朝49／夕49＝49日分
 
 ## 運用フロー
 
@@ -18,9 +18,17 @@
 
 朝と夕が1本ずつ揃って「1日分」。上部に残り日数が出る。
 
-## 追加のしかた
+## 構成（すべてこのリポジトリ内で完結）
 
-`scratchpad/posts_data3.py` の `BATCH` を上げて `add()` で追記 → `python3 build_pages3.py` → commit & push。
-判定は端末のlocalStorageに保存（キー `matsumura-x-stock-v1`）。投稿の並び順を変えると判定がズレるので、**追記は末尾に**。
+```
+src/posts.json   本文・表示名案・bio・固定ポスト・確認事項の正本
+src/build.py     → docs/index.html を生成
+src/page.css
+src/page.js
+```
+
+追加のしかた: `src/posts.json` の `posts` 配列の **末尾に追記**（並び順を変えると端末に保存済みの判定がズレる）→ `python3 src/build.py` → commit & push。
+
+判定は端末のlocalStorage（キー `matsumura-x-stock-v1`）に保存。
 
 一次資料: 松村メッセージ vol.1〜415（本文＋コメント欄）。松村さんの発言は全て実在の言葉。
