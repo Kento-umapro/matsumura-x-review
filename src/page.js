@@ -73,13 +73,15 @@
           if (s.v === 'ok' && !s.t) s.t = Date.now();
           if (s.v !== 'ok') s.posted = 0;
         } else { s.posted = s.posted ? 0 : 1; }
+        if (s.v) stay[k] = 1; else delete stay[k];
         save(); repaint();
+        if (s.v === 'ng') { memo.classList.add('show'); memo.focus(); }
       });
     });
     memo.value = st(k).m || '';
     memo.addEventListener('input', function () {
       (S[k] = S[k] || {}).m = memo.value; save();
-      if (st(k).v === 'ng') repaint();
+      if (st(k).v === 'ng') softUpdate(k);   // 並べ替えないのでフォーカスが外れない
     });
   });
 
@@ -89,6 +91,7 @@
   });
 
   var view = 'todo';
+  var stay = {};   // このタブで判定したものはタブを切り替えるまで消さない
   function hasMemo(k) { var m = st(k).m; return !!(m && m.trim()); }
   function counts() {
     var c = { todo: 0, ok: 0, redo: 0, bin: 0, done: 0 };
@@ -103,6 +106,7 @@
   }
   function inView(k) {
     var s = st(k);
+    if (stay[k]) return true;
     if (view === 'todo') return !s.v && !s.posted;
     if (view === 'ok') return s.v === 'ok' && !s.posted;
     if (view === 'redo') return s.v === 'ng' && hasMemo(k);
@@ -110,8 +114,7 @@
     if (view === 'done') return !!s.posted;
     return true;
   }
-  function repaint() {
-    var c = counts(), pl = plan();
+  function updateCounters(c, pl) {
     ['todo', 'ok', 'redo', 'bin', 'done'].forEach(function (v) {
       var el = document.getElementById('c-' + v); if (el) el.textContent = c[v];
     });
@@ -127,24 +130,42 @@
     var pgf = document.getElementById('pgf');
     if (pgf) pgf.style.width = (sep / SEPTOTAL * 100) + '%';
     document.getElementById('pgt').textContent = '未確認 ' + c.todo + ' 件 / 全' + N + '本';
+  }
+
+  function softUpdate(k) {
+    var pl = plan();
+    updateCounters(counts(), pl);
+    paintCard(k, pl);
+  }
+
+  function repaint() {
+    var c = counts(), pl = plan();
+    updateCounters(c, pl);
 
     var list = document.querySelector('.posts');
     Object.keys(cards).forEach(function (k) { cards[k].el.hidden = !inView(k); paintCard(k, pl); });
-    var keys = Object.keys(cards);
+    var want;
     if (view === 'ok') {
-      keys.filter(function (k) { return pl[k]; })
-          .sort(function (a, b) { return pl[a].order - pl[b].order; })
-          .forEach(function (k) { list.appendChild(cards[k].el); });
+      want = Object.keys(cards).filter(function (k) { return pl[k]; })
+        .sort(function (a, b) { return pl[a].order - pl[b].order; });
     } else {
-      keys.sort(function (a, b) { return cards[a].no - cards[b].no; })
-          .forEach(function (k) { list.appendChild(cards[k].el); });
+      want = Object.keys(cards).sort(function (a, b) { return cards[a].no - cards[b].no; });
+    }
+    // 実際に順番が変わる時だけ並べ替える。毎回appendChildするとフォーカスが外れる
+    var now = [].map.call(list.children, function (el) { return el.dataset.k; })
+                 .filter(function (k) { return k; });
+    var same = now.length === want.length && want.every(function (k, i) { return now[i] === k; });
+    if (!same) {
+      var act = document.activeElement;
+      want.forEach(function (k) { list.appendChild(cards[k].el); });
+      if (act && act.focus && document.contains(act)) act.focus();
     }
     document.getElementById('empty').hidden = (c[view] || 0) > 0;
   }
   document.querySelectorAll('.tab').forEach(function (t) {
     t.addEventListener('click', function () {
       document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
-      t.classList.add('on'); view = t.dataset.v; repaint();
+      t.classList.add('on'); view = t.dataset.v; stay = {}; repaint();
       window.scrollTo({ top: document.getElementById('posts').offsetTop - 60, behavior: 'smooth' });
     });
   });
