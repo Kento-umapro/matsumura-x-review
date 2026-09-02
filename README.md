@@ -1,4 +1,4 @@
-# 勝手に！松村僚広報部
+# 一問一喝｜秘書とBOSS
 
 うまプロ COO 松村僚（[@Umapro_ryo](https://x.com/Umapro_ryo)）のX運用ページ。
 

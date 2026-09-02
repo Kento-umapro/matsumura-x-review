@@ -75,7 +75,7 @@ HTML = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#15191D">
-<title>勝手に！松村僚広報部</title>
+<title>一問一喝｜秘書とBOSS</title>
 <style>{css}</style>
 </head><body>
 
@@ -89,11 +89,14 @@ HTML = f"""<!doctype html>
 <div class="wrap">
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ コンセプト第3案</p>
-  <h1>勝手に！松村僚広報部</h1>
-  <p class="lede">いただいた2アカウントの建て付けに寄せて作り直しました。<br>
-  <b>@phads_kouhou（勝手に！さのなおし広報部）</b>の「勝手に」＝本人非公認で周りが面白がって発信する構造と、
-  <b>@sanonaoshi.everydaylife</b>の「知れば知るほど、この人が面白い」＝人物観察コンテンツ。この2つを合わせています。<br><br>
-  投稿は<b>【質問編】【図鑑編】【目撃編】【証言編】【分析編】</b>のシリーズ制。
+  <h1>秘書とBOSSの一問一喝</h1>
+  <p class="lede">語り手を<b>架空の秘書</b>にして、全部を一問一答にしました。
+  秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけです。<br><br>
+  <b>@phads_kouhou（勝手に！さのなおし広報部）</b>の「本人非公認で周りが面白がって発信する」構造と、
+  <b>@sanonaoshi.everydaylife</b>の「知れば知るほど、この人が面白い」＝人物観察。この2つを合わせています。<br><br>
+  トーンは<b>面白おかしく、時々まじめに</b>。だいたいは秘書が食い下がって斬られますが、
+  たまにBOSSが長めに答えて、秘書が黙る回を混ぜています。<br><br>
+  <b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>秘書だけが架空です。
   {serchips}<br><br>
   1日2本で、朝7時台が気合いが入る系、夕方17時台が振り返り系。<b>朝49本／夕49本＝49日分</b>あります。<br><br>
   <b>OK</b>を押すと投稿ストックへ、<b>NG</b>はゴミ箱へ。判定はこの端末に自動保存されます。</p>
@@ -101,15 +104,15 @@ HTML = f"""<!doctype html>
     <div class="fact"><b>{len(P)}</b><span>投稿数</span></div>
     <div class="fact"><b>49</b><span>日分</span></div>
     <div class="fact"><b>{sum(L)//len(L)}</b><span>平均字数</span></div>
-    <div class="fact"><b>5</b><span>シリーズ</span></div>
+    <div class="fact"><b>4</b><span>シリーズ</span></div>
   </div>
 </header>
 
 <section id="name">
   <h2>1. 表示名を決める</h2>
-  <p class="sub">さのなおしさん方式に寄せた4案です。1つ選んでください。<br>
-  <b>その前に決めることが1つあります。</b>さのなおしさんは 本人／日常／広報部 の3アカウント運用ですが、松村さんは @Umapro_ryo の1つだけです。
-  ここを広報部にするか、別アカウントを立てるか。下の確認1件目です。</p>
+  <p class="sub">表示名は <b>松村僚/一問一喝</b> で確定しています。参考までに他の候補も残しています。<br>
+  <b>1つだけ決めることがあります。</b>さのなおしさんは 本人／日常／広報部 の3アカウント運用ですが、松村さんは @Umapro_ryo の1つだけです。
+  ここを秘書名義にするか、別アカウントを立てるか。下の確認3件目です。</p>
   <div class="names">{namecards}</div>
   <div class="bioblock">
     <div class="biohead">プロフィール文（案）</div>
