@@ -2,7 +2,7 @@
 
 うまプロ COO 松村僚（[@Umapro_ryo](https://x.com/Umapro_ryo)）のX運用ページ。
 
-- 添削・ストック: https://kento-umapro.github.io/matsumura-x-review/
+- 添削・ストック（表示名や確認事項のセクションは廃止。投稿の添削とストックのみ）: https://kento-umapro.github.io/matsumura-x-review/
 - **Xデモ（実物に近い見え方）: https://kento-umapro.github.io/matsumura-x-review/demo.html**
 - **参考にしたアカウント**: [@phads_kouhou](https://www.instagram.com/phads_kouhou)（勝手に！さのなおし広報部）/ [@sanonaoshi.everydaylife](https://www.instagram.com/sanonaoshi.everydaylife)
 - **コンセプト**: 本人非公認。側近が「勝手に」広報部を名乗って発信する。人物観察コンテンツ

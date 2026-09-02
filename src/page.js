@@ -1,6 +1,6 @@
 (function () {
   var KEY = 'matsumura-x-stock-v2';
-  var N = __N__, QN = __QN__;
+  var N = __N__;
   var SLOTS = __SLOTS__, SEPCAP = __SEPCAP__, SEPTOTAL = __SEPTOTAL__;
   var S = {};
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
@@ -140,7 +140,8 @@
   repaint();
 
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
-  function num(k) { return '#' + ('0' + cards[k].no).slice(-2); }
+  function pad(n) { return n < 10 ? '00' + n : (n < 100 ? '0' + n : '' + n); }
+  function num(k) { return '#' + pad(cards[k].no); }
   function build() {
     var c = counts(), pl = plan();
     var L = ['【一問一喝 添削結果】', '', '■ 表示名', '__NAME__', ''];
@@ -163,12 +164,6 @@
       .sort(function (a, b) { return cards[a].no - cards[b].no; });
     L.push('■ 未確認 ' + todo.length + '本');
     L.push(todo.length ? todo.map(num).join(' ') : 'なし');
-    L.push('', '■ 確認の記録');
-    var qs = document.querySelectorAll('.cq');
-    for (var i = 1; i <= QN; i++) {
-      var lb = qs[i - 1] ? qs[i - 1].querySelector('b').textContent : ('質問' + i);
-      L.push(i + '. ' + lb + ': ' + (S['q' + i] || '（未回答）'));
-    }
     return L.join('\n');
   }
   document.getElementById('exportBtn').addEventListener('click', function () {

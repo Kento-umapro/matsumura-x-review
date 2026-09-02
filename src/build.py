@@ -50,20 +50,6 @@ tabs = ('<button class="tab on" data-v="todo" type="button">未確認<i id="c-to
         '<button class="tab tab-ok" data-v="ok" type="button">OK<i id="c-ok">0</i></button>'
         '<button class="tab tab-ng" data-v="ng" type="button">NG<i id="c-ng">0</i></button>'
         '<button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button>')
-namecards = "\n".join(
-    f'<article class="ncard{" rec" if rec else ""}" data-name="{e(n)}">'
-    f'<div class="nhead"><span class="ntag">{e(tag)}</span>'
-    + ('<span class="nrec">おすすめ</span>' if rec else '') + '</div>'
-    f'<p class="nname">{e(n)}</p><p class="nlen">{ln}文字 / 上限50</p>'
-    f'<p class="nwhy">{e(why)}</p>'
-    f'<p class="nfor"><span>向いてる場面</span>{e(fo)}</p>'
-    '<button class="pick" type="button">これにする</button></article>'
-    for n, ln, tag, rec, why, fo in NAMES)
-checkitems = "\n".join(
-    f'<article class="cq{" hi" if hi else ""}"><div class="cqh"><span class="cn">{i}</span>'
-    f'<b>{e(t)}</b></div><p class="cd">{e(dd)}</p><p class="cw">{e(w)}</p>'
-    f'<textarea class="memo ans" data-k="q{i}" rows="2" placeholder="ここに回答を書いてください"></textarea></article>'
-    for i, (t, dd, w, hi) in enumerate(CHECKS, 1))
 serchips = " ".join(f'<span class="serchip">{e(k)} {v}</span>' for k, v in SERC.most_common())
 
 css = open(os.path.join(HERE, "page.css")).read()
@@ -91,58 +77,27 @@ HTML = f"""<!doctype html>
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ コンセプト第3案</p>
   <h1>秘書とBOSSの一問一喝</h1>
-  <p class="lede">語り手は<b>秘書</b>。秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけです。<br><br>
-  トーンは<b>面白おかしく、時々まじめに</b>。だいたいは秘書が食い下がって斬られますが、
-  たまにBOSSが長めに答えて、秘書が黙る回を混ぜています。<br><br>
-  <b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
+  <p class="lede">秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけの一問一答です。<br>
+  トーンは<b>面白おかしく、時々まじめに</b>。<b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
   {serchips}<br><br>
-  <b>投稿は今日 9/2 の夕方17時台から始めて、翌日以降は朝7時台と夕方17時台の1日2本です。</b>
-  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・夕{SEPCAP["夕"]}）必要で、ここには{len(P)}本あります。<br><br>
+  <b>投稿は今日 9/2 の夕方17時台から。翌日以降は朝7時台と夕方17時台の1日2本です。</b>
+  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・夕{SEPCAP["夕"]}）必要で、ここには<b>{len(P)}本</b>あります。<br><br>
   <b>OKを押した順に、投稿する日時が自動で決まります。</b>NGを押したものは投稿されません。
-  スケジュールを登録するのは、この確認が終わってからです。判定はこの端末に自動保存されます。</p>
+  判定はこの端末に自動保存されるので、途中でやめて後から続けられます。</p>
   <a class="demolink" href="./demo.html">
     <span class="dl1">Xでどう見えるかのデモを見る</span>
     <span class="dl2">プロフィールとタイムラインを実物に近い形で再現しています</span>
   </a>
   <div class="facts">
-    <div class="fact"><b>{len(P)}</b><span>投稿数</span></div>
+    <div class="fact"><b>{len(P)}</b><span>ストック</span></div>
+    <div class="fact"><b>{len(P)//2}</b><span>日分</span></div>
     <div class="fact"><b>{SEPTOTAL}</b><span>9月に必要</span></div>
     <div class="fact"><b>{sum(L)//len(L)}</b><span>平均字数</span></div>
-    <div class="fact"><b>4</b><span>シリーズ</span></div>
   </div>
 </header>
 
-<section id="name">
-  <h2>1. 表示名を決める</h2>
-  <p class="sub">表示名は <b>松村僚/一問一喝</b> で確定しています。参考までに他の候補も残しています。<br>
-  <b>1つだけ決めることがあります。</b>さのなおしさんは 本人／日常／広報部 の3アカウント運用ですが、松村さんは @Umapro_ryo の1つだけです。
-  ここを秘書名義にするか、別アカウントを立てるか。下の確認3件目です。</p>
-  <div class="names">{namecards}</div>
-  <div class="bioblock">
-    <div class="biohead">プロフィール文（案）</div>
-    <div class="ptext">{e(BIO)}</div>
-    <p class="bionote">phads_kouhouと同じ3段構造にしています。<b>実績の数字</b>→<b>誰が発信しているか</b>→<b>何が読めるか</b>。
-    最後の「※本人は書いてません」が、さのなおしさんの「勝手に」に当たる部分です。</p>
-  </div>
-</section>
-
-<section id="check">
-  <h2>2. 確認したいこと</h2>
-  <p class="sub">色がついている1件だけ、決めていただく必要があります。残りは前回までに確定した内容です。</p>
-  <div class="cqs">{checkitems}</div>
-</section>
-
-<section id="pin">
-  <h2>3. 固定ポスト</h2>
-  <p class="sub">プロフィールに固定する、広報部からの自己紹介です。「勝手に作りました」から始めています。</p>
-  <div class="pin">
-    <div class="pinhead"><b>固定ポスト</b><span>{len(PIN.replace(chr(10),''))}字</span></div>
-    <div class="ptext">{e(PIN)}</div>
-  </div>
-</section>
-
 <section id="posts">
-  <h2>4. 投稿の添削とストック</h2>
+  <h2>投稿の添削とストック</h2>
   <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
   <b>NG</b>を押したものは投稿されません。理由をメモに残せて、消えないので後から見返せます。<br>
   投稿は今日 9/2 の夕方から。翌日以降は朝7時台と夕方17時台の1日2本です。<br>

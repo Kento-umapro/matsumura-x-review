@@ -6,7 +6,7 @@ TODAY = date(2026, 9, 2)
 SEP_END = date(2026, 9, 30)
 MIN = [0, 10, 20, 30, 40, 50]
 
-def slots(n_days=70):
+def slots(n_days=200):
     """{'朝':[(date,h,m)...], '夕':[...]} 夕は今日から、朝は明日から"""
     s = {"朝": [], "夕": []}
     for i in range(n_days):

@@ -1170,6 +1170,12 @@ BOSS「好きにせえ」
 秘書「好きに書きます」
 """)
 
+# ---------------- 追加分を取り込み ----------------
+from posts_extra import EX_A, EX_P
+SER = {"一問一喝": "一問一喝", "今日のBOSS": "今日のBOSS"}
+for src, body in EX_A: A.append(("一問一喝", src, body))
+for src, body in EX_P: P.append(("今日のBOSS", src, body))
+
 # ---------------- 組み立て ----------------
 CTA_IDX = {}   # 通し番号(1始まり) -> 追記文
 posts, no = [], 0
@@ -1180,8 +1186,9 @@ for slot, rows in (("朝", A), ("夕", P)):
                       "src": src, "body": body, "cta": False, "series": series})
 # CTAを3本（朝1・夕2）
 for idx, txt in ((10, "\n\n一緒に働きたい人、DMください。私が取り次ぎます。"),
-                 (60, "\n\nこういう会社が気になる人、DM開けてます。"),
-                 (95, "\n\nうまプロで働きたい人、秘書が窓口です。")):
+                 (75, "\n\nこういう会社が気になる人、DM開けてます。"),
+                 (160, "\n\nうまプロで働きたい人、秘書が窓口です。"),
+                 (245, "\n\n中の話を聞いてみたい人、DMどうぞ。")):
     posts[idx - 1]["body"] += txt
     posts[idx - 1]["cta"] = True
 
