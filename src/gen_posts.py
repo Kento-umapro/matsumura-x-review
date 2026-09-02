@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """秘書とBOSSの一問一喝 — posts.json を生成
-   BOSSの発言はすべて松村メッセージ vol.1〜415 内の実在の言葉。秘書は架空。"""
+   BOSSの発言はすべて松村メッセージ vol.1〜415 内の実在の言葉。語り手は秘書。"""
 import json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -1189,8 +1189,6 @@ d = json.load(open(os.path.join(HERE, "posts.json")))
 d["posts"] = posts
 d["pin"] = """はじめまして。BOSSの秘書です。
 
-架空です。
-
 このアカウントは、うまプロCOO 松村僚を、勝手に広報するために作られました。
 
 本人は書きません。理由を聞いたら、こう返ってきました。
@@ -1209,11 +1207,11 @@ BOSS「自分がどんな人間かは、自分では決められへん」
 面白おかしく、時々まじめに。
 
 知れば知るほど、面白い人です。"""
-d["bio"] = """どてっぱん12店舗とUMACHA（日/米/タイ）のうまプロCOO 松村僚に、架空の秘書が質問して一喝される場所。
-16歳でマックのバイト→31歳まで15年→今は外食で日本一を獲りにいってます。
+d["bio"] = """どてっぱん12店舗とUMACHA（日/米/タイ）のうまプロCOO 松村僚に、秘書が質問して一喝される場所。
+外食で日本一を獲りにいってます。
 毎朝社員に送るメッセージは415本。みんなのBOSSです。
 面白おかしく、時にまじめに。
-※秘書は架空です"""
+※秘書が書いています"""
 json.dump(d, open(os.path.join(HERE, "posts.json"), "w"), ensure_ascii=False, indent=1)
 
 L = [len(p["body"].replace("\n", "")) for p in posts]

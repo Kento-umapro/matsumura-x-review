@@ -12,23 +12,25 @@ P, PIN, BIO = d["posts"], d["pin"], d["bio"]
 NAMES, CHECKS, CHOSEN = d["names"], d["checks"], d["chosen"]
 e = lambda s: html.escape(s, quote=True)
 
-# 朝7時台／夕17時台、1日2本。朝夕それぞれ順番に日付を振る
-mins = [0, 20, 40, 10, 30, 50, 5, 25, 45, 15, 35, 55]
-start = date(2026, 8, 21)
+import sys; sys.path.insert(0, HERE)
+import schedule as SC
+SLOTS = SC.slots()
+SEPCAP = SC.sep_capacity()
+SEPTOTAL = sum(SEPCAP.values())
 cnt = {"朝": 0, "夕": 0}
 for p in P:
     i = cnt[p["slot"]]; cnt[p["slot"]] += 1
-    dt = start + timedelta(days=i)
-    hh = 7 if p["slot"] == "朝" else 17
-    p["when"] = f"{dt.month}/{dt.day} {hh}:{mins[i % len(mins)]:02d}"
+    p["when"] = SC.label(SLOTS[p["slot"]][i])
     p["len"] = len(p["body"].replace("\n", ""))
+SLOTS_JS = json.dumps({k: [SC.label(x) for x in v] for k, v in SLOTS.items()}, ensure_ascii=False)
+SEPCAP_JS = json.dumps(SEPCAP, ensure_ascii=False)
 
 SERC = Counter(p["series"] for p in P)
 L = [p["len"] for p in P]
 
 def card(p):
     i, slot, pn = p["no"], p["slot"], p["pillar"][0]
-    t = [f'<span class="chip slot s{"A" if slot=="朝" else "P"}">{slot} {p["when"]}</span>',
+    t = [f'<span class="chip slot s{"A" if slot=="朝" else "P"}">{slot}{"7時台" if slot=="朝" else "17時台"}</span>',
          f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
          f'<span class="chip src">{e(p["src"])}</span>']
     if p.get("cta"): t.append('<span class="chip cta">CTA</span>')
@@ -45,9 +47,8 @@ def card(p):
 
 cards = "\n".join(card(p) for p in P)
 tabs = ('<button class="tab on" data-v="todo" type="button">未確認<i id="c-todo">0</i></button>'
-        '<button class="tab" data-v="ok朝" type="button">OK 朝<i id="c-ok朝">0</i></button>'
-        '<button class="tab" data-v="ok夕" type="button">OK 夕<i id="c-ok夕">0</i></button>'
-        '<button class="tab" data-v="ng" type="button">ゴミ箱<i id="c-ng">0</i></button>'
+        '<button class="tab tab-ok" data-v="ok" type="button">OK<i id="c-ok">0</i></button>'
+        '<button class="tab tab-ng" data-v="ng" type="button">NG<i id="c-ng">0</i></button>'
         '<button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button>')
 namecards = "\n".join(
     f'<article class="ncard{" rec" if rec else ""}" data-name="{e(n)}">'
@@ -67,7 +68,7 @@ serchips = " ".join(f'<span class="serchip">{e(k)} {v}</span>' for k, v in SERC.
 
 css = open(os.path.join(HERE, "page.css")).read()
 js = (open(os.path.join(HERE, "page.js")).read()
-      .replace("__N__", str(len(P))).replace("__QN__", str(len(CHECKS))).replace("__NAME__", CHOSEN))
+      .replace("__SLOTS__", SLOTS_JS).replace("__SEPCAP__", SEPCAP_JS).replace("__SEPTOTAL__", str(SEPTOTAL)).replace("__N__", str(len(P))).replace("__QN__", str(len(CHECKS))).replace("__NAME__", CHOSEN))
 
 HTML = f"""<!doctype html>
 <html lang="ja"><head>
@@ -82,7 +83,7 @@ HTML = f"""<!doctype html>
 <div class="bar">
   <div class="pg"><span class="pgt" id="pgt">未確認 {len(P)} 件</span>
   <div class="pgb"><div class="pgf" id="pgf"></div></div></div>
-  <div class="stock"><b id="stockDays">0</b><span>日分</span></div>
+  <div class="stock"><b id="sepDone">0</b><span>/{SEPTOTAL} 9月分</span></div>
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
@@ -90,23 +91,22 @@ HTML = f"""<!doctype html>
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ コンセプト第3案</p>
   <h1>秘書とBOSSの一問一喝</h1>
-  <p class="lede">語り手を<b>架空の秘書</b>にして、全部を一問一答にしました。
-  秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけです。<br><br>
-  <b>@phads_kouhou（勝手に！さのなおし広報部）</b>の「本人非公認で周りが面白がって発信する」構造と、
-  <b>@sanonaoshi.everydaylife</b>の「知れば知るほど、この人が面白い」＝人物観察。この2つを合わせています。<br><br>
+  <p class="lede">語り手は<b>秘書</b>。秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけです。<br><br>
   トーンは<b>面白おかしく、時々まじめに</b>。だいたいは秘書が食い下がって斬られますが、
   たまにBOSSが長めに答えて、秘書が黙る回を混ぜています。<br><br>
-  <b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>秘書だけが架空です。
+  <b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
   {serchips}<br><br>
-  1日2本で、朝7時台が気合いが入る系、夕方17時台が振り返り系。<b>朝49本／夕49本＝49日分</b>あります。<br><br>
-  <b>OK</b>を押すと投稿ストックへ、<b>NG</b>はゴミ箱へ。判定はこの端末に自動保存されます。</p>
+  <b>投稿は今日 9/2 の夕方17時台から始めて、翌日以降は朝7時台と夕方17時台の1日2本です。</b>
+  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・夕{SEPCAP["夕"]}）必要で、ここには{len(P)}本あります。<br><br>
+  <b>OKを押した順に、投稿する日時が自動で決まります。</b>NGを押したものは投稿されません。
+  スケジュールを登録するのは、この確認が終わってからです。判定はこの端末に自動保存されます。</p>
   <a class="demolink" href="./demo.html">
     <span class="dl1">Xでどう見えるかのデモを見る</span>
     <span class="dl2">プロフィールとタイムラインを実物に近い形で再現しています</span>
   </a>
   <div class="facts">
     <div class="fact"><b>{len(P)}</b><span>投稿数</span></div>
-    <div class="fact"><b>49</b><span>日分</span></div>
+    <div class="fact"><b>{SEPTOTAL}</b><span>9月に必要</span></div>
     <div class="fact"><b>{sum(L)//len(L)}</b><span>平均字数</span></div>
     <div class="fact"><b>4</b><span>シリーズ</span></div>
   </div>
@@ -143,11 +143,13 @@ HTML = f"""<!doctype html>
 
 <section id="posts">
   <h2>4. 投稿の添削とストック</h2>
-  <p class="sub"><b>OK</b>を押すと投稿ストックに入り、押した順に並びます。<b>NG</b>はゴミ箱に入って、投稿されることはありません。消えないので後から見返せます。<br>
-  実際に投稿したら「投稿した」を押すと、ストックから外れて投稿済みに移ります。</p>
+  <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
+  <b>NG</b>を押したものは投稿されません。理由をメモに残せて、消えないので後から見返せます。<br>
+  投稿は今日 9/2 の夕方から。翌日以降は朝7時台と夕方17時台の1日2本です。<br>
+  実際に投稿したら「投稿した」を押すと、投稿済みに移ります。</p>
   <div class="stockbar">
-    <div><b id="stockDays2">0</b> 日分のストック</div>
-    <span id="stockNote">朝と夕が揃うと1日分になります</span>
+    <div><b id="sepDone2">0</b> / {SEPTOTAL} 本</div>
+    <span id="stockNote">あと {SEPTOTAL} 本OKを出すと9月が埋まります</span>
   </div>
   <div class="filters">{tabs}</div>
   <div class="posts">{cards}</div>
@@ -157,7 +159,7 @@ HTML = f"""<!doctype html>
 <footer>
   {e(d.get('batch','第1弾 2026-08-17'))}／一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
   参考: <code>@phads_kouhou</code> / <code>@sanonaoshi.everydaylife</code><br>
-  判定はこの端末に自動保存されます。ゴミ箱の中身は消えません。<br>
+  判定はこの端末に自動保存されます。NGにしたものも消えません。<br>
   このページは検索に出ません。URLを知っている人だけが見られます。
 </footer>
 </div>

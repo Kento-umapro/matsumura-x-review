@@ -9,15 +9,14 @@ d = json.load(open(os.path.join(HERE, "posts.json")))
 P, PIN, BIO, CHOSEN = d["posts"], d["pin"], d["bio"], d["chosen"]
 e = lambda s: html.escape(s, quote=True)
 
-# 朝7時台／夕17時台で日付を振り、時系列に並べ替え
-mins = [0, 20, 40, 10, 30, 50, 5, 25, 45, 15, 35, 55]
-start = date(2026, 8, 21)
+# 9/2夕スタート、翌日以降は朝7時台＋夕17時台
+import sys; sys.path.insert(0, HERE)
+import schedule as SC
+SLOTS = SC.slots()
 cnt = {"朝": 0, "夕": 0}
 for p in P:
     i = cnt[p["slot"]]; cnt[p["slot"]] += 1
-    dt = start + timedelta(days=i)
-    hh = 7 if p["slot"] == "朝" else 17
-    mm = mins[i % len(mins)]
+    dt, hh, mm = SLOTS[p["slot"]][i]
     p["_dt"] = (dt, hh, mm)
     p["_label"] = f"{dt.month}月{dt.day}日"
     p["_time"] = f"{hh}:{mm:02d}"

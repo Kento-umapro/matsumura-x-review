@@ -1,20 +1,39 @@
 (function () {
-  var KEY = 'matsumura-x-stock-v1';
+  var KEY = 'matsumura-x-stock-v2';
   var N = __N__, QN = __QN__;
+  var SLOTS = __SLOTS__, SEPCAP = __SEPCAP__, SEPTOTAL = __SEPTOTAL__;
   var S = {};
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function st(k) { return S[k] || {}; }
 
-  var cards = {};   // key -> {el, slot, no}
+  var cards = {};
   document.querySelectorAll('.post').forEach(function (el) {
     cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no };
   });
 
-  /* ---- 判定 ---- */
-  function paintCard(k) {
-    var c = cards[k]; if (!c) return;
-    var s = st(k), el = c.el;
+  /* 承認順に投稿枠を割り当てる。夕は当日17時、朝は翌日7時から */
+  function queue(slot) {
+    return Object.keys(cards)
+      .filter(function (k) { var s = st(k); return s.v === 'ok' && !s.posted && cards[k].slot === slot; })
+      .sort(function (a, b) { return (st(a).t || 0) - (st(b).t || 0); });
+  }
+  function plan() {
+    var out = {};
+    ['朝', '夕'].forEach(function (slot) {
+      queue(slot).forEach(function (k, i) {
+        var lab = SLOTS[slot][i];
+        if (!lab) return;
+        var day = (slot === '夕') ? i : i + 1;
+        var hour = (slot === '夕') ? 17 : 7;
+        out[k] = { label: lab, order: day * 100 + hour, sep: i < SEPCAP[slot] };
+      });
+    });
+    return out;
+  }
+
+  function paintCard(k, pl) {
+    var c = cards[k], s = st(k), el = c.el;
     el.classList.toggle('j-ok', s.v === 'ok' && !s.posted);
     el.classList.toggle('j-ng', s.v === 'ng');
     el.classList.toggle('j-done', !!s.posted);
@@ -27,22 +46,17 @@
       done.classList.toggle('on', !!s.posted);
       done.textContent = s.posted ? '投稿済み' : '投稿した';
     }
-    var memo = el.querySelector('.memo');
-    memo.classList.toggle('show', s.v === 'ng' || !!s.m);
+    el.querySelector('.memo').classList.toggle('show', s.v === 'ng' || !!s.m);
     var rank = el.querySelector('.rank');
     if (rank) {
-      if (s.v === 'ok' && !s.posted) {
-        var q = queue(c.slot), i = q.indexOf(k);
-        rank.textContent = c.slot + 'ストック ' + (i + 1) + '番目';
+      if (s.posted) { rank.textContent = '投稿済み'; rank.className = 'rank done'; rank.hidden = false; }
+      else if (s.v === 'ok' && pl[k]) {
+        rank.textContent = pl[k].label + ' に投稿' + (pl[k].sep ? '' : '（10月）');
+        rank.className = 'rank' + (pl[k].sep ? '' : ' over');
         rank.hidden = false;
-      } else if (s.posted) { rank.textContent = '投稿済み'; rank.hidden = false; }
+      } else if (s.v === 'ng') { rank.textContent = '投稿しません'; rank.className = 'rank ng'; rank.hidden = false; }
       else rank.hidden = true;
     }
-  }
-  function queue(slot) {
-    return Object.keys(cards)
-      .filter(function (k) { var s = st(k); return s.v === 'ok' && !s.posted && cards[k].slot === slot; })
-      .sort(function (a, b) { return (st(a).t || 0) - (st(b).t || 0); });
   }
 
   document.querySelectorAll('.judge').forEach(function (j) {
@@ -62,68 +76,59 @@
     memo.addEventListener('input', function () { (S[k] = S[k] || {}).m = memo.value; save(); });
   });
 
-  var ncards = document.querySelectorAll('.ncard');
-  function paintNames() {
-    ncards.forEach(function (c) { c.classList.toggle('chosen', S._name === c.dataset.name); });
-  }
-  ncards.forEach(function (c) {
-    c.querySelector('.pick').addEventListener('click', function () {
-      S._name = (S._name === c.dataset.name) ? null : c.dataset.name;
-      save(); paintNames();
-    });
-  });
-  paintNames();
-
   document.querySelectorAll('.ans').forEach(function (t) {
     t.value = S[t.dataset.k] || '';
     t.addEventListener('input', function () { S[t.dataset.k] = t.value; save(); });
   });
 
-  /* ---- 集計とタブ ---- */
   var view = 'todo';
   function counts() {
-    var c = { todo: 0, ok朝: 0, ok夕: 0, ng: 0, done: 0 };
+    var c = { todo: 0, ok: 0, ng: 0, done: 0 };
     Object.keys(cards).forEach(function (k) {
       var s = st(k);
-      if (s.posted) c.done++;
-      else if (s.v === 'ok') c['ok' + cards[k].slot]++;
-      else if (s.v === 'ng') c.ng++;
-      else c.todo++;
+      if (s.posted) c.done++; else if (s.v === 'ok') c.ok++;
+      else if (s.v === 'ng') c.ng++; else c.todo++;
     });
     return c;
   }
   function inView(k) {
-    var s = st(k), slot = cards[k].slot;
+    var s = st(k);
     if (view === 'todo') return !s.v && !s.posted;
-    if (view === 'ok朝') return s.v === 'ok' && !s.posted && slot === '朝';
-    if (view === 'ok夕') return s.v === 'ok' && !s.posted && slot === '夕';
+    if (view === 'ok') return s.v === 'ok' && !s.posted;
     if (view === 'ng') return s.v === 'ng';
     if (view === 'done') return !!s.posted;
     return true;
   }
   function repaint() {
-    var c = counts();
-    ['todo', 'ok朝', 'ok夕', 'ng', 'done'].forEach(function (v) {
+    var c = counts(), pl = plan();
+    ['todo', 'ok', 'ng', 'done'].forEach(function (v) {
       var el = document.getElementById('c-' + v); if (el) el.textContent = c[v];
     });
-    var days = Math.min(c['ok朝'], c['ok夕']);
-    ['stockDays','stockDays2'].forEach(function (id) {
-      var el = document.getElementById(id); if (el) el.textContent = days;
+    var sep = 0;
+    Object.keys(pl).forEach(function (k) { if (pl[k].sep) sep++; });
+    ['sepDone', 'sepDone2'].forEach(function (id) {
+      var el = document.getElementById(id); if (el) el.textContent = sep;
     });
-    document.getElementById('stockNote').textContent =
-      days === 0 ? '朝と夕が揃うと1日分になります' : (days < 3 ? 'そろそろ補充どきです' : '余裕があります');
+    var note = document.getElementById('stockNote');
+    if (note) note.textContent = sep >= SEPTOTAL
+      ? '9月末まで全部埋まりました'
+      : 'あと ' + (SEPTOTAL - sep) + ' 本OKを出すと9月が埋まります';
     var pgf = document.getElementById('pgf');
-    pgf.style.width = ((N - c.todo) / N * 100) + '%';
+    if (pgf) pgf.style.width = (sep / SEPTOTAL * 100) + '%';
     document.getElementById('pgt').textContent = '未確認 ' + c.todo + ' 件 / 全' + N + '本';
 
-    var qA = queue('朝'), qP = queue('夕');
     var list = document.querySelector('.posts');
-    var order = (view === 'ok朝') ? qA : (view === 'ok夕') ? qP : null;
-    Object.keys(cards).forEach(function (k) { cards[k].el.hidden = !inView(k); paintCard(k); });
-    if (order) order.forEach(function (k) { list.appendChild(cards[k].el); });
-    else Object.keys(cards).sort(function (a, b) { return cards[a].no - cards[b].no; })
-      .forEach(function (k) { list.appendChild(cards[k].el); });
-    document.getElementById('empty').hidden = order ? order.length > 0 : (c[view] || 0) > 0;
+    Object.keys(cards).forEach(function (k) { cards[k].el.hidden = !inView(k); paintCard(k, pl); });
+    var keys = Object.keys(cards);
+    if (view === 'ok') {
+      keys.filter(function (k) { return pl[k]; })
+          .sort(function (a, b) { return pl[a].order - pl[b].order; })
+          .forEach(function (k) { list.appendChild(cards[k].el); });
+    } else {
+      keys.sort(function (a, b) { return cards[a].no - cards[b].no; })
+          .forEach(function (k) { list.appendChild(cards[k].el); });
+    }
+    document.getElementById('empty').hidden = (c[view] || 0) > 0;
   }
   document.querySelectorAll('.tab').forEach(function (t) {
     t.addEventListener('click', function () {
@@ -134,31 +139,22 @@
   });
   repaint();
 
-  /* ---- 書き出し ---- */
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
   function num(k) { return '#' + ('0' + cards[k].no).slice(-2); }
   function build() {
-    var c = counts(), L = ['【勝手に！松村僚広報部 添削結果】', '', '■ 表示名', (S._name || '（未選択）'), ''];
-    L.push('■ ストック状況');
-    L.push('朝 ' + c['ok朝'] + '本 / 夕 ' + c['ok夕'] + '本 → ' + Math.min(c['ok朝'], c['ok夕']) + '日分');
-    L.push('未確認 ' + c.todo + '本 / ゴミ箱 ' + c.ng + '本 / 投稿済み ' + c.done + '本', '');
-    ['朝', '夕'].push;
-    ['朝', '夕'].forEach(function (slot) {
-      var q = queue(slot);
-      L.push('■ 投稿キュー（' + slot + '）' + q.length + '本');
-      L.push(q.length ? q.map(function (k, i) { return (i + 1) + '. ' + num(k); }).join('  ') : 'なし');
-      L.push('');
-    });
+    var c = counts(), pl = plan();
+    var L = ['【一問一喝 添削結果】', '', '■ 表示名', '__NAME__', ''];
+    var sep = 0; Object.keys(pl).forEach(function (k) { if (pl[k].sep) sep++; });
+    L.push('■ 9月の埋まり具合');
+    L.push(sep + ' / ' + SEPTOTAL + ' 本');
+    L.push('未確認 ' + c.todo + ' / OK ' + c.ok + ' / NG ' + c.ng + ' / 投稿済み ' + c.done, '');
+    var okq = Object.keys(pl).sort(function (a, b) { return pl[a].order - pl[b].order; });
+    L.push('■ 投稿スケジュール ' + okq.length + '本');
+    L.push(okq.length ? okq.map(function (k) { return pl[k].label + '　' + num(k); }).join('\n') : 'なし');
+    L.push('');
     var ng = Object.keys(cards).filter(function (k) { return st(k).v === 'ng'; })
       .sort(function (a, b) { return cards[a].no - cards[b].no; });
-    var sers = {};
-    Object.keys(cards).forEach(function (k) {
-      var s = st(k); if (s.v !== 'ok' || s.posted) return;
-      var se = cards[k].el.dataset.series; sers[se] = (sers[se] || 0) + 1;
-    });
-    var sk = Object.keys(sers);
-    if (sk.length) { L.push('■ ストックの内訳'); L.push(sk.map(function (x) { return x + ' ' + sers[x] + '本'; }).join(' / ')); L.push(''); }
-    L.push('■ ゴミ箱 ' + ng.length + '本');
+    L.push('■ NG ' + ng.length + '本');
     L.push(ng.length ? ng.map(function (k) {
       return num(k) + (st(k).m ? ' → ' + st(k).m : ' → （理由なし）');
     }).join('\n') : 'なし');
@@ -167,8 +163,7 @@
       .sort(function (a, b) { return cards[a].no - cards[b].no; });
     L.push('■ 未確認 ' + todo.length + '本');
     L.push(todo.length ? todo.map(num).join(' ') : 'なし');
-    L.push('');
-    L.push('■ 確認の記録');
+    L.push('', '■ 確認の記録');
     var qs = document.querySelectorAll('.cq');
     for (var i = 1; i <= QN; i++) {
       var lb = qs[i - 1] ? qs[i - 1].querySelector('b').textContent : ('質問' + i);
