@@ -100,6 +100,10 @@ HTML = f"""<!doctype html>
   {serchips}<br><br>
   1日2本で、朝7時台が気合いが入る系、夕方17時台が振り返り系。<b>朝49本／夕49本＝49日分</b>あります。<br><br>
   <b>OK</b>を押すと投稿ストックへ、<b>NG</b>はゴミ箱へ。判定はこの端末に自動保存されます。</p>
+  <a class="demolink" href="./demo.html">
+    <span class="dl1">Xでどう見えるかのデモを見る</span>
+    <span class="dl2">プロフィールとタイムラインを実物に近い形で再現しています</span>
+  </a>
   <div class="facts">
     <div class="fact"><b>{len(P)}</b><span>投稿数</span></div>
     <div class="fact"><b>49</b><span>日分</span></div>

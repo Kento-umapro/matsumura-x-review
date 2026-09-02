@@ -210,6 +210,14 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   border:1px solid var(--rule); border-radius:2px; padding:2px 7px; margin:3px 3px 0 0;
   background:var(--surface); }
 .chip.pillar.pZ { color:var(--go); border-color:var(--go-line); background:var(--go-soft); }
+
+.demolink { display:block; margin:0 0 16px; padding:16px 18px; border-radius:3px;
+  text-decoration:none; background:var(--ink); color:var(--ground); }
+.demolink .dl1 { display:block; font-size:15.5px; font-weight:700; margin-bottom:3px; }
+.demolink .dl1::after { content:" →"; }
+.demolink .dl2 { display:block; font-size:12.5px; opacity:.72; line-height:1.7; }
+.demolink:hover { opacity:.88; }
+.demolink:focus-visible { outline:2px solid var(--ember); outline-offset:2px; }
 </style>
 </head><body>
 
@@ -234,6 +242,10 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   <span class="serchip">一問一喝 49</span> <span class="serchip">今日のBOSS 18</span> <span class="serchip">昔の一喝 16</span> <span class="serchip">BOSS図鑑 15</span><br><br>
   1日2本で、朝7時台が気合いが入る系、夕方17時台が振り返り系。<b>朝49本／夕49本＝49日分</b>あります。<br><br>
   <b>OK</b>を押すと投稿ストックへ、<b>NG</b>はゴミ箱へ。判定はこの端末に自動保存されます。</p>
+  <a class="demolink" href="./demo.html">
+    <span class="dl1">Xでどう見えるかのデモを見る</span>
+    <span class="dl2">プロフィールとタイムラインを実物に近い形で再現しています</span>
+  </a>
   <div class="facts">
     <div class="fact"><b>98</b><span>投稿数</span></div>
     <div class="fact"><b>49</b><span>日分</span></div>
