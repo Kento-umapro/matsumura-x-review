@@ -54,7 +54,11 @@
         rank.textContent = pl[k].label + ' に投稿' + (pl[k].sep ? '' : '（10月）');
         rank.className = 'rank' + (pl[k].sep ? '' : ' over');
         rank.hidden = false;
-      } else if (s.v === 'ng') { rank.textContent = '投稿しません'; rank.className = 'rank ng'; rank.hidden = false; }
+      } else if (s.v === 'ng') {
+        rank.textContent = hasMemo(k) ? '書き直して再提案します' : '投稿しません（コメントを書くと再提案されます）';
+        rank.className = 'rank ' + (hasMemo(k) ? 'redo' : 'ng');
+        rank.hidden = false;
+      }
       else rank.hidden = true;
     }
   }
@@ -73,7 +77,10 @@
       });
     });
     memo.value = st(k).m || '';
-    memo.addEventListener('input', function () { (S[k] = S[k] || {}).m = memo.value; save(); });
+    memo.addEventListener('input', function () {
+      (S[k] = S[k] || {}).m = memo.value; save();
+      if (st(k).v === 'ng') repaint();
+    });
   });
 
   document.querySelectorAll('.ans').forEach(function (t) {
@@ -82,12 +89,15 @@
   });
 
   var view = 'todo';
+  function hasMemo(k) { var m = st(k).m; return !!(m && m.trim()); }
   function counts() {
-    var c = { todo: 0, ok: 0, ng: 0, done: 0 };
+    var c = { todo: 0, ok: 0, redo: 0, bin: 0, done: 0 };
     Object.keys(cards).forEach(function (k) {
       var s = st(k);
-      if (s.posted) c.done++; else if (s.v === 'ok') c.ok++;
-      else if (s.v === 'ng') c.ng++; else c.todo++;
+      if (s.posted) c.done++;
+      else if (s.v === 'ok') c.ok++;
+      else if (s.v === 'ng') { if (hasMemo(k)) c.redo++; else c.bin++; }
+      else c.todo++;
     });
     return c;
   }
@@ -95,13 +105,14 @@
     var s = st(k);
     if (view === 'todo') return !s.v && !s.posted;
     if (view === 'ok') return s.v === 'ok' && !s.posted;
-    if (view === 'ng') return s.v === 'ng';
+    if (view === 'redo') return s.v === 'ng' && hasMemo(k);
+    if (view === 'bin') return s.v === 'ng' && !hasMemo(k);
     if (view === 'done') return !!s.posted;
     return true;
   }
   function repaint() {
     var c = counts(), pl = plan();
-    ['todo', 'ok', 'ng', 'done'].forEach(function (v) {
+    ['todo', 'ok', 'redo', 'bin', 'done'].forEach(function (v) {
       var el = document.getElementById('c-' + v); if (el) el.textContent = c[v];
     });
     var sep = 0;
@@ -148,17 +159,21 @@
     var sep = 0; Object.keys(pl).forEach(function (k) { if (pl[k].sep) sep++; });
     L.push('■ 9月の埋まり具合');
     L.push(sep + ' / ' + SEPTOTAL + ' 本');
-    L.push('未確認 ' + c.todo + ' / OK ' + c.ok + ' / NG ' + c.ng + ' / 投稿済み ' + c.done, '');
+    L.push('未確認 ' + c.todo + ' / OK ' + c.ok + ' / 再提案 ' + c.redo + ' / ボツ ' + c.bin + ' / 投稿済み ' + c.done, '');
     var okq = Object.keys(pl).sort(function (a, b) { return pl[a].order - pl[b].order; });
     L.push('■ 投稿スケジュール ' + okq.length + '本');
     L.push(okq.length ? okq.map(function (k) { return pl[k].label + '　' + num(k); }).join('\n') : 'なし');
     L.push('');
-    var ng = Object.keys(cards).filter(function (k) { return st(k).v === 'ng'; })
+    var ngAll = Object.keys(cards).filter(function (k) { return st(k).v === 'ng'; })
       .sort(function (a, b) { return cards[a].no - cards[b].no; });
-    L.push('■ NG ' + ng.length + '本');
-    L.push(ng.length ? ng.map(function (k) {
-      return num(k) + (st(k).m ? ' → ' + st(k).m : ' → （理由なし）');
+    var redo = ngAll.filter(hasMemo), bin = ngAll.filter(function (k) { return !hasMemo(k); });
+    L.push('■ 書き直して再提案してほしい ' + redo.length + '本');
+    L.push(redo.length ? redo.map(function (k) {
+      return num(k) + ' → ' + st(k).m.trim();
     }).join('\n') : 'なし');
+    L.push('');
+    L.push('■ ボツ（コメントなし・再提案しない） ' + bin.length + '本');
+    L.push(bin.length ? bin.map(num).join(' ') : 'なし');
     L.push('');
     var todo = Object.keys(cards).filter(function (k) { return !st(k).v && !st(k).posted; })
       .sort(function (a, b) { return cards[a].no - cards[b].no; });

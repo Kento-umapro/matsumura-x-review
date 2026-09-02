@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """追加分。BOSSの発言はすべて松村メッセージ vol.1〜415 内の実在の言葉。"""
 EX_A, EX_P = [], []
-def a(src, body): EX_A.append((src, body.strip()))
-def p(src, body): EX_P.append((src, body.strip()))
+def a(src, body, redo=None): EX_A.append((src, body.strip(), redo) if redo else (src, body.strip()))
+def p(src, body, redo=None): EX_P.append((src, body.strip(), redo) if redo else (src, body.strip()))
 
 # ===== 朝 前半 =====
 a("vol.2","""

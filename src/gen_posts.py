@@ -1172,18 +1172,21 @@ BOSS「好きにせえ」
 
 # ---------------- 追加分を取り込み ----------------
 from posts_extra import EX_A, EX_P
-SER = {"一問一喝": "一問一喝", "今日のBOSS": "今日のBOSS"}
-for src, body in EX_A: A.append(("一問一喝", src, body))
-for src, body in EX_P: P.append(("今日のBOSS", src, body))
+for row in EX_A: A.append(("一問一喝",) + tuple(row))
+for row in EX_P: P.append(("今日のBOSS",) + tuple(row))
 
 # ---------------- 組み立て ----------------
 CTA_IDX = {}   # 通し番号(1始まり) -> 追記文
 posts, no = [], 0
 for slot, rows in (("朝", A), ("夕", P)):
-    for series, src, body in rows:
+    for row in rows:
+        series, src, body = row[0], row[1], row[2]
+        redo = row[3] if len(row) > 3 else None
         no += 1
-        posts.append({"no": no, "slot": slot, "pillar": series[0] + " " + series,
-                      "src": src, "body": body, "cta": False, "series": series})
+        rec = {"no": no, "slot": slot, "pillar": series[0] + " " + series,
+               "src": src, "body": body, "cta": False, "series": series}
+        if redo: rec["redo"] = redo
+        posts.append(rec)
 # CTAを3本（朝1・夕2）
 for idx, txt in ((10, "\n\n一緒に働きたい人、DMください。私が取り次ぎます。"),
                  (75, "\n\nこういう会社が気になる人、DM開けてます。"),

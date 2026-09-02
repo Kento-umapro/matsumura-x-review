@@ -33,12 +33,13 @@ def card(p):
     t = [f'<span class="chip slot s{"A" if slot=="朝" else "P"}">{slot}{"7時台" if slot=="朝" else "17時台"}</span>',
          f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
          f'<span class="chip src">{e(p["src"])}</span>']
+    if p.get("redo"): t.append(f'<span class="chip redo">再提案 #{p["redo"]:03d}</span>')
     if p.get("cta"): t.append('<span class="chip cta">CTA</span>')
     judge = (f'<div class="judge" data-k="post{i}">'
              '<button class="jb ok" data-v="ok" type="button">OK</button>'
              '<button class="jb ng" data-v="ng" type="button">NG</button>'
              '<button class="jb done" type="button" hidden>投稿した</button>'
-             '<textarea class="memo" rows="2" placeholder="NGの理由・直すところ（任意）"></textarea></div>')
+             '<textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div>')
     return (f'<article class="post" data-k="post{i}" data-no="{i}" data-slot="{slot}" '
             f'data-series="{e(p["series"])}" id="p{i}">'
             f'<div class="phead"><span class="no">{i:02d}</span><div class="tags">{"".join(t)}</div>'
@@ -48,7 +49,8 @@ def card(p):
 cards = "\n".join(card(p) for p in P)
 tabs = ('<button class="tab on" data-v="todo" type="button">未確認<i id="c-todo">0</i></button>'
         '<button class="tab tab-ok" data-v="ok" type="button">OK<i id="c-ok">0</i></button>'
-        '<button class="tab tab-ng" data-v="ng" type="button">NG<i id="c-ng">0</i></button>'
+        '<button class="tab tab-redo" data-v="redo" type="button">再提案<i id="c-redo">0</i></button>'
+        '<button class="tab tab-ng" data-v="bin" type="button">ボツ<i id="c-bin">0</i></button>'
         '<button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button>')
 serchips = " ".join(f'<span class="serchip">{e(k)} {v}</span>' for k, v in SERC.most_common())
 
@@ -82,7 +84,9 @@ HTML = f"""<!doctype html>
   {serchips}<br><br>
   <b>投稿は今日 9/2 の夕方17時台から。翌日以降は朝7時台と夕方17時台の1日2本です。</b>
   9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・夕{SEPCAP["夕"]}）必要で、ここには<b>{len(P)}本</b>あります。<br><br>
-  <b>OKを押した順に、投稿する日時が自動で決まります。</b>NGを押したものは投稿されません。
+  <b>OKを押した順に、投稿する日時が自動で決まります。</b><br>
+  <b>NGにコメントを書くと「再提案」に回ります。</b>そのコメントを見てこちらで書き直し、新しい案として戻します。
+  コメントを書かなければ、そのままボツです。<br>
   判定はこの端末に自動保存されるので、途中でやめて後から続けられます。</p>
   <a class="demolink" href="./demo.html">
     <span class="dl1">Xでどう見えるかのデモを見る</span>
@@ -99,7 +103,8 @@ HTML = f"""<!doctype html>
 <section id="posts">
   <h2>投稿の添削とストック</h2>
   <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
-  <b>NG</b>を押したものは投稿されません。理由をメモに残せて、消えないので後から見返せます。<br>
+  <b>NG</b>を押すと投稿されません。<b>そこにコメントを書けば「再提案」タブに入り、こちらで書き直して戻します。</b>
+  コメントなしなら「ボツ」タブに残ります。どちらも消えません。<br>
   投稿は今日 9/2 の夕方から。翌日以降は朝7時台と夕方17時台の1日2本です。<br>
   実際に投稿したら「投稿した」を押すと、投稿済みに移ります。</p>
   <div class="stockbar">
