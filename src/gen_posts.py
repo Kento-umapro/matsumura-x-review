@@ -1161,7 +1161,7 @@ BOSS「書かん」
 
 秘書「なんでですか」
 
-BOSS「自分がどんな人間かは、自分では決められへん」
+BOSS「自分がどんな人間かは、自分では決められへん！！」
 
 秘書「じゃあ私が書きます」
 
@@ -1195,6 +1195,11 @@ for idx, txt in ((10, "\n\n一緒に働きたい人、DMください。私が取
     posts[idx - 1]["body"] += txt
     posts[idx - 1]["cta"] = True
 
+# BOSSの口ぐせ（！！ ／ ？？ ／ w）を入れる
+from punch import punch
+for rec in posts:
+    rec["body"] = punch(rec["body"], rec["no"])
+
 d = json.load(open(os.path.join(HERE, "posts.json")))
 d["posts"] = posts
 d["pin"] = """はじめまして。BOSSの秘書です。
@@ -1203,7 +1208,7 @@ d["pin"] = """はじめまして。BOSSの秘書です。
 
 本人は書きません。理由を聞いたら、こう返ってきました。
 
-BOSS「自分がどんな人間かは、自分では決められへん」
+BOSS「自分がどんな人間かは、自分では決められへん！！」
 
 というわけで、私が質問して、BOSSが答えます。
 
@@ -1220,7 +1225,7 @@ BOSS「自分がどんな人間かは、自分では決められへん」
 d["bio"] = """どてっぱん12店舗とUMACHA（日/米/タイ）のうまプロCOO 松村僚に、秘書が質問して一喝される場所。
 外食で日本一を獲りにいってます。
 毎朝社員に送るメッセージは415本。みんなのBOSSです。
-面白おかしく、時にまじめに。
+面白おかしく、時にまじめに！！
 ※秘書が書いています"""
 json.dump(d, open(os.path.join(HERE, "posts.json"), "w"), ensure_ascii=False, indent=1)
 
