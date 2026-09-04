@@ -1195,6 +1195,11 @@ for idx, txt in ((10, "\n\n一緒に働きたい人、DMください。私が取
     posts[idx - 1]["body"] += txt
     posts[idx - 1]["cta"] = True
 
+# 会話量を増やした本文があれば差し替える
+from posts_long import LONG
+for rec in posts:
+    if rec["no"] in LONG: rec["body"] = LONG[rec["no"]]
+
 # BOSSの口ぐせ（！！ ／ ？？ ／ w）を入れる
 from punch import punch
 for rec in posts:
@@ -1229,6 +1234,9 @@ d["bio"] = """どてっぱん12店舗とUMACHA（日/米/タイ）のうまプ�
 ※秘書が書いています"""
 json.dump(d, open(os.path.join(HERE, "posts.json"), "w"), ensure_ascii=False, indent=1)
 
+from validate import check_all
+bad = check_all(posts)
+if bad: print("⚠ 要修正:", bad[:10])
 L = [len(p["body"].replace("\n", "")) for p in posts]
 from collections import Counter
 print("本数", len(posts), "／朝夕", dict(Counter(p["slot"] for p in posts)))
