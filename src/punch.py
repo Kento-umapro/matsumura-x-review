@@ -15,6 +15,8 @@ LIGHT  = ('たぶん', 'せやろな', 'せやな', 'ふーん', '余計', '早�
 HAHA   = ('でした', 'ました', 'ですね', 'ですか', 'んですが', 'ないです', 'すみません')
 
 def punch(body, seed):
+    if '！！' in body or '？？' in body:
+        return body          # すでに手で入っている回は触らない
     lines = body.split('\n')
     boss = [i for i, l in enumerate(lines) if l.startswith('BOSS「')]
     hide = [i for i, l in enumerate(lines) if l.startswith('秘書「')]

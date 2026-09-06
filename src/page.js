@@ -28,8 +28,25 @@
 
   var cards = {};
   document.querySelectorAll('.post').forEach(function (el) {
-    cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no };
+    cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no, rev: el.dataset.rev || '' };
   });
+
+  /* REVCHECK 書き直した投稿は、前の判定を外して未確認に戻す */
+  (function () {
+    var back = 0;
+    Object.keys(cards).forEach(function (k) {
+      var r = cards[k].rev; if (!r) return;
+      var s = S[k]; if (!s) return;
+      if (s.rev === r) return;
+      if (s.v || (s.m || '').trim()) {
+        s.prev = { v: s.v, m: s.m };      // 前回の判定とコメントは残しておく
+        s.v = null; s.m = ''; s.posted = 0; s.rev = r; back++;
+      }
+    });
+    if (back) { save(); }
+    var n = document.getElementById('revNote');
+    if (n && back) { n.hidden = false; n.textContent = '書き直した ' + back + ' 本を、未確認に戻しました。'; }
+  })();
 
   /* 承認順に投稿枠を割り当てる。夕は当日17時、朝は翌日7時から */
   function queue(slot) {
@@ -90,7 +107,7 @@
           if (s.v === 'ok' && !s.t) s.t = Date.now();
           if (s.v !== 'ok') s.posted = 0;
         } else { s.posted = s.posted ? 0 : 1; }
-        if (s.v) stay[k] = 1; else delete stay[k];
+        if (s.v) { stay[k] = 1; if (cards[k].rev) s.rev = cards[k].rev; } else delete stay[k];
         save(); repaint();
         if (s.v === 'ng') { memo.classList.add('show'); memo.focus(); }
       });

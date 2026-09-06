@@ -1211,10 +1211,32 @@ from posts_long import LONG
 for rec in posts:
     if rec["no"] in LONG: rec["body"] = LONG[rec["no"]]
 
+# 添削の反映
+import revisions as R
+REV = "2026-09-06"
+for rec in posts:
+    n = rec["no"]
+    if n in R.REPLACE:
+        rec["body"] = R.REPLACE[n].strip(); rec["nopunch"] = True; rec["rev"] = REV
+    else:
+        if n in R.EDIT:
+            for a, b in R.EDIT[n]:
+                if a in rec["body"]:
+                    rec["body"] = rec["body"].replace(a, b); rec["rev"] = REV
+                else:
+                    print("⚠ #%d の置換対象が見つかりません: %s" % (n, a[:30]))
+        if n in R.KILL_LAST:
+            rec["body"] = R.kill_last_hisyo(rec["body"]); rec["rev"] = REV
+        elif n > 100 and R.is_shodaku(rec["body"]):
+            rec["body"] = R.kill_last_hisyo(rec["body"])   # 未判定分は横展開（判定はまだ無いのでrev不要）
+    if n in R.BOTSU: rec["botsu"] = True
+    if n in R.ASK:   rec["ask"] = R.ASK[n]
+
 # BOSSの口ぐせ（！！ ／ ？？ ／ w）を入れる
 from punch import punch
 for rec in posts:
-    rec["body"] = punch(rec["body"], rec["no"])
+    if not rec.get("nopunch"):
+        rec["body"] = punch(rec["body"], rec["no"])
 
 d = json.load(open(os.path.join(HERE, "posts.json")))
 d["posts"] = posts

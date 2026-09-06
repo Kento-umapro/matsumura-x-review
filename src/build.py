@@ -34,6 +34,9 @@ def card(p):
     t = [f'<span class="chip slot s{ {"朝":"A","昼":"N","夕":"P"}[slot] }">{slot}{SC.HOUR[slot]}時台</span>',
          f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
          f'<span class="chip src">{e(p["src"])}</span>']
+    if p.get("rev"): t.append('<span class="chip redo">書き直し済み</span>')
+    if p.get("botsu"): t.append('<span class="chip botsu">ボツ</span>')
+    if p.get("ask"): t.append('<span class="chip ask">要確認</span>')
     if p.get("redo"): t.append(f'<span class="chip redo">再提案 #{p["redo"]:03d}</span>')
     if p.get("cta"): t.append('<span class="chip cta">CTA</span>')
     judge = (f'<div class="judge" data-k="post{i}">'
@@ -42,7 +45,9 @@ def card(p):
              '<button class="jb done" type="button" hidden>投稿した</button>'
              '<textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div>')
     return (f'<article class="post" data-k="post{i}" data-no="{i}" data-slot="{slot}" '
-            f'data-series="{e(p["series"])}" id="p{i}">'
+            f'data-series="{e(p["series"])}"'
+            + (f' data-rev="{e(p["rev"])}"' if p.get("rev") else "")
+            + f' id="p{i}">'
             f'<div class="phead"><span class="no">{i:02d}</span><div class="tags">{"".join(t)}</div>'
             f'<span class="stats"><b>{p["len"]}</b>字</span><span class="rank" hidden></span></div>'
             f'<div class="ptext">{e(p["body"])}</div>{judge}</article>')
@@ -116,6 +121,7 @@ HTML = f"""<!doctype html>
     <div><b id="sepDone2">0</b> / {SEPTOTAL} 本</div>
     <span id="stockNote">あと {SEPTOTAL} 本OKを出すと9月が埋まります</span>
   </div>
+  <p class="revnote" id="revNote" hidden></p>
   <div class="filters">{tabs}</div>
   <div class="bulkbox" id="bulkbox" hidden>
     <div class="bulkhead">予約登録が済んだ番号を貼り付けて、まとめて投稿済みにする</div>

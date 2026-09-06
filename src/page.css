@@ -237,3 +237,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .recoverbar {
   background:#3b2f12; color:#f3dfae; border-color:#5a4a1e; }
   :root:not([data-theme="light"]) .recoverbar a { color:#f3dfae; } }
+.chip.botsu { color:var(--ink-3); border-color:var(--rule); background:var(--surface-2); }
+.chip.ask { color:#8a6d1f; border-color:#d8c68a; background:#fdf6e3; font-weight:700; }
+.revnote { background:var(--go-soft); border:1px solid var(--go-line); border-radius:2px;
+  padding:11px 14px; font-size:13px; color:var(--ink-2); margin:0 0 14px; }
+.revnote[hidden] { display:none; }
