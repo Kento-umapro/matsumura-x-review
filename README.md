@@ -4,6 +4,7 @@
 
 - 添削・ストック（表示名や確認事項のセクションは廃止。投稿の添削とストックのみ）: https://kento-umapro.github.io/matsumura-x-review/
 - **Xデモ（実物に近い見え方）: https://kento-umapro.github.io/matsumura-x-review/demo.html**
+- **判定の復元: https://kento-umapro.github.io/matsumura-x-review/recover.html**（古いキーに残った判定を探して戻す）
 - **参考にしたアカウント**: [@phads_kouhou](https://www.instagram.com/phads_kouhou)（勝手に！さのなおし広報部）/ [@sanonaoshi.everydaylife](https://www.instagram.com/sanonaoshi.everydaylife)
 - **コンセプト**: 本人非公認。側近が「勝手に」広報部を名乗って発信する。人物観察コンテンツ
 - **シリーズ**: 質問編35 / 証言編19 / 分析編20 / 目撃編12 / 図鑑編12
@@ -41,3 +42,10 @@ python3 src/gen_posts.py   # 本文を生成（src/gen_posts.py が本文の正�
 python3 src/build.py       # docs/index.html（添削・ストック）
 python3 src/build_demo.py  # docs/demo.html（Xデモ）
 ```
+
+## localStorageキーの注意
+
+判定は端末の localStorage に保存される。**キーは `matsumura-x-stock-v2` から二度と変えないこと。**
+過去に v1→v2 と変えたせいで、判定が消えたように見える事故が起きた。
+番号の意味も変えてはいけない（98本→302本の時に夕の番号が +102 ずれた）。
+`docs/recover.html` が古いキーを探して、必要なら番号を変換して復元する。

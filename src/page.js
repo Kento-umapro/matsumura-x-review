@@ -7,6 +7,25 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function st(k) { return S[k] || {}; }
 
+  /* 古いキーに判定が残っていたら知らせる */
+  (function () {
+    var OLD = ['matsumura-x-stock-v1', 'matsumura-x-review-v4', 'matsumura-x-review-v3',
+               'matsumura-x-review-v2', 'matsumura-x-review-v1'];
+    var curCount = 0;
+    Object.keys(S).forEach(function (k) { if (/^post\d+$/.test(k) && (S[k].v || S[k].posted)) curCount++; });
+    var oldCount = 0;
+    OLD.forEach(function (k) {
+      try {
+        var o = JSON.parse(localStorage.getItem(k) || 'null') || {};
+        Object.keys(o).forEach(function (x) { if (/^post\d+$/.test(x) && (o[x].v || o[x].posted)) oldCount++; });
+      } catch (e) {}
+    });
+    if (oldCount > 0 && oldCount > curCount) {
+      var bar = document.getElementById('recoverbar');
+      if (bar) { bar.hidden = false; bar.querySelector('b').textContent = '以前の判定 ' + oldCount + ' 件が見つかりました。'; }
+    }
+  })();
+
   var cards = {};
   document.querySelectorAll('.post').forEach(function (el) {
     cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no };

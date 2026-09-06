@@ -236,6 +236,14 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 #bulkBtn { font:inherit; font-size:14px; font-weight:600; min-height:44px; width:100%; margin-top:8px;
   background:var(--steel); color:var(--ground); border:0; border-radius:3px; cursor:pointer; }
 .bulknote { font-size:12.5px; color:var(--go); margin:8px 0 0; line-height:1.7; }
+
+.recoverbar { background:#ffe8b3; color:#4a3200; font-size:13.5px; line-height:1.8;
+  padding:12px 16px; text-align:center; border-bottom:1px solid #e5cf95; }
+.recoverbar[hidden] { display:none; }
+.recoverbar a { color:#4a3200; font-weight:700; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .recoverbar {
+  background:#3b2f12; color:#f3dfae; border-color:#5a4a1e; }
+  :root:not([data-theme="light"]) .recoverbar a { color:#f3dfae; } }
 </style>
 </head><body>
 
@@ -246,6 +254,10 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
+<div class="recoverbar" id="recoverbar" hidden>
+  <b>以前の判定データが見つかりました。</b>
+  今のページには反映されていません。<a href="./recover.html">復元ページを開く</a>
+</div>
 <div class="wrap">
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ コンセプト第3案</p>
@@ -5738,7 +5750,8 @@ BOSS「スキルは後から必ず身につく。姿勢は、後から変える�
   第1弾 2026-08-17／一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
   参考: <code>@phads_kouhou</code> / <code>@sanonaoshi.everydaylife</code><br>
   判定はこの端末に自動保存されます。NGにしたものも消えません。<br>
-  このページは検索に出ません。URLを知っている人だけが見られます。
+  このページは検索に出ません。URLを知っている人だけが見られます。<br>
+  判定が消えた時は <a href="./recover.html">復元ページ</a> から探せます。
 </footer>
 </div>
 
@@ -5759,6 +5772,25 @@ BOSS「スキルは後から必ず身につく。姿勢は、後から変える�
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function st(k) { return S[k] || {}; }
+
+  /* 古いキーに判定が残っていたら知らせる */
+  (function () {
+    var OLD = ['matsumura-x-stock-v1', 'matsumura-x-review-v4', 'matsumura-x-review-v3',
+               'matsumura-x-review-v2', 'matsumura-x-review-v1'];
+    var curCount = 0;
+    Object.keys(S).forEach(function (k) { if (/^post\d+$/.test(k) && (S[k].v || S[k].posted)) curCount++; });
+    var oldCount = 0;
+    OLD.forEach(function (k) {
+      try {
+        var o = JSON.parse(localStorage.getItem(k) || 'null') || {};
+        Object.keys(o).forEach(function (x) { if (/^post\d+$/.test(x) && (o[x].v || o[x].posted)) oldCount++; });
+      } catch (e) {}
+    });
+    if (oldCount > 0 && oldCount > curCount) {
+      var bar = document.getElementById('recoverbar');
+      if (bar) { bar.hidden = false; bar.querySelector('b').textContent = '以前の判定 ' + oldCount + ' 件が見つかりました。'; }
+    }
+  })();
 
   var cards = {};
   document.querySelectorAll('.post').forEach(function (el) {

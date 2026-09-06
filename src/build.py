@@ -76,6 +76,10 @@ HTML = f"""<!doctype html>
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
+<div class="recoverbar" id="recoverbar" hidden>
+  <b>以前の判定データが見つかりました。</b>
+  今のページには反映されていません。<a href="./recover.html">復元ページを開く</a>
+</div>
 <div class="wrap">
 <header class="top">
   <p class="eyebrow">@Umapro_ryo ／ コンセプト第3案</p>
@@ -127,7 +131,8 @@ HTML = f"""<!doctype html>
   {e(d.get('batch','第1弾 2026-08-17'))}／一次資料 <code>松村メッセージ vol.1〜415</code>（本文とコメント欄）<br>
   参考: <code>@phads_kouhou</code> / <code>@sanonaoshi.everydaylife</code><br>
   判定はこの端末に自動保存されます。NGにしたものも消えません。<br>
-  このページは検索に出ません。URLを知っている人だけが見られます。
+  このページは検索に出ません。URLを知っている人だけが見られます。<br>
+  判定が消えた時は <a href="./recover.html">復元ページ</a> から探せます。
 </footer>
 </div>
 
