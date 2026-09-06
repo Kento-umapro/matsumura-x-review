@@ -226,6 +226,16 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 .chip.redo { color:var(--ember); border-color:var(--ember); background:var(--ember-soft); font-weight:700; }
 .chip.slot.sN { color:#8a6d1f; border-color:#d8c68a; background:#fdf6e3; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.slot.sN { color:#d9b95c; border-color:#4a3f1e; background:#2a2314; } }
+
+.bulkbox { background:var(--surface); border:1px solid var(--rule); border-radius:2px;
+  padding:14px 16px; margin:0 0 18px; }
+.bulkbox[hidden] { display:none; }
+.bulkhead { font-size:13px; font-weight:700; margin-bottom:8px; }
+#bulkText { font:inherit; font-size:16px; width:100%; background:var(--surface-2); color:var(--ink);
+  border:1px solid var(--rule); border-radius:3px; padding:10px 12px; line-height:1.7; resize:vertical; }
+#bulkBtn { font:inherit; font-size:14px; font-weight:600; min-height:44px; width:100%; margin-top:8px;
+  background:var(--steel); color:var(--ground); border:0; border-radius:3px; cursor:pointer; }
+.bulknote { font-size:12.5px; color:var(--go); margin:8px 0 0; line-height:1.7; }
 </style>
 </head><body>
 
@@ -273,6 +283,12 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
     <span id="stockNote">あと 74 本OKを出すと9月が埋まります</span>
   </div>
   <div class="filters"><button class="tab on" data-v="todo" type="button">未確認<i id="c-todo">0</i></button><button class="tab tab-ok" data-v="ok" type="button">OK<i id="c-ok">0</i></button><button class="tab tab-redo" data-v="redo" type="button">再提案<i id="c-redo">0</i></button><button class="tab tab-ng" data-v="bin" type="button">ボツ<i id="c-bin">0</i></button><button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button></div>
+  <div class="bulkbox" id="bulkbox" hidden>
+    <div class="bulkhead">予約登録が済んだ番号を貼り付けて、まとめて投稿済みにする</div>
+    <textarea id="bulkText" rows="2" placeholder="#101 #201 #001 のように貼り付け（カンマや改行区切りでも可）"></textarea>
+    <button id="bulkBtn" type="button">まとめて投稿済みにする</button>
+    <p class="bulknote" id="bulkNote"></p>
+  </div>
   <div class="posts"><article class="post" data-k="post1" data-no="1" data-slot="朝" data-series="一問一喝" id="p1"><div class="phead"><span class="no">01</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.138</span></div><span class="stats"><b>219</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日ちょっとやる気が出ません」
 
 BOSS「やる気なんかいらん」
@@ -5901,10 +5917,34 @@ BOSS「スキルは後から必ず身につく。姿勢は、後から変える�
     t.addEventListener('click', function () {
       document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
       t.classList.add('on'); view = t.dataset.v; stay = {}; repaint();
+      var bb = document.getElementById('bulkbox');
+      if (bb) bb.hidden = (view !== 'ok');
       window.scrollTo({ top: document.getElementById('posts').offsetTop - 60, behavior: 'smooth' });
     });
   });
   repaint();
+
+  /* 予約登録が済んだ番号をまとめて投稿済みにする */
+  var bulkBtn = document.getElementById('bulkBtn');
+  if (bulkBtn) {
+    bulkBtn.addEventListener('click', function () {
+      var raw = document.getElementById('bulkText').value || '';
+      var nums = (raw.match(/\d+/g) || []).map(Number);
+      var done = 0, skip = [];
+      nums.forEach(function (n) {
+        var k = 'post' + n;
+        if (!cards[k]) { skip.push(n); return; }
+        var s = st(k);
+        if (s.v !== 'ok') { skip.push(n); return; }
+        (S[k] = S[k] || {}).posted = 1; done++;
+      });
+      save(); repaint();
+      var note = document.getElementById('bulkNote');
+      note.textContent = done + ' 本を投稿済みにしました。'
+        + (skip.length ? '対象外だった番号: ' + skip.join(' ') : '');
+      document.getElementById('bulkText').value = '';
+    });
+  }
 
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
   function pad(n) { return n < 10 ? '00' + n : (n < 100 ? '0' + n : '' + n); }

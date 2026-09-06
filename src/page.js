@@ -164,10 +164,34 @@
     t.addEventListener('click', function () {
       document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
       t.classList.add('on'); view = t.dataset.v; stay = {}; repaint();
+      var bb = document.getElementById('bulkbox');
+      if (bb) bb.hidden = (view !== 'ok');
       window.scrollTo({ top: document.getElementById('posts').offsetTop - 60, behavior: 'smooth' });
     });
   });
   repaint();
+
+  /* 予約登録が済んだ番号をまとめて投稿済みにする */
+  var bulkBtn = document.getElementById('bulkBtn');
+  if (bulkBtn) {
+    bulkBtn.addEventListener('click', function () {
+      var raw = document.getElementById('bulkText').value || '';
+      var nums = (raw.match(/\d+/g) || []).map(Number);
+      var done = 0, skip = [];
+      nums.forEach(function (n) {
+        var k = 'post' + n;
+        if (!cards[k]) { skip.push(n); return; }
+        var s = st(k);
+        if (s.v !== 'ok') { skip.push(n); return; }
+        (S[k] = S[k] || {}).posted = 1; done++;
+      });
+      save(); repaint();
+      var note = document.getElementById('bulkNote');
+      note.textContent = done + ' 本を投稿済みにしました。'
+        + (skip.length ? '対象外だった番号: ' + skip.join(' ') : '');
+      document.getElementById('bulkText').value = '';
+    });
+  }
 
   var dlg = document.getElementById('dlg'), out = document.getElementById('outText');
   function pad(n) { return n < 10 ? '00' + n : (n < 100 ? '0' + n : '' + n); }

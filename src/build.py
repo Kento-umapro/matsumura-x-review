@@ -113,6 +113,12 @@ HTML = f"""<!doctype html>
     <span id="stockNote">あと {SEPTOTAL} 本OKを出すと9月が埋まります</span>
   </div>
   <div class="filters">{tabs}</div>
+  <div class="bulkbox" id="bulkbox" hidden>
+    <div class="bulkhead">予約登録が済んだ番号を貼り付けて、まとめて投稿済みにする</div>
+    <textarea id="bulkText" rows="2" placeholder="#101 #201 #001 のように貼り付け（カンマや改行区切りでも可）"></textarea>
+    <button id="bulkBtn" type="button">まとめて投稿済みにする</button>
+    <p class="bulknote" id="bulkNote"></p>
+  </div>
   <div class="posts">{cards}</div>
   <p class="empty" id="empty" hidden>ここは今、空です。</p>
 </section>
