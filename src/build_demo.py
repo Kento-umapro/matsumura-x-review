@@ -9,11 +9,11 @@ d = json.load(open(os.path.join(HERE, "posts.json")))
 P, PIN, BIO, CHOSEN = d["posts"], d["pin"], d["bio"], d["chosen"]
 e = lambda s: html.escape(s, quote=True)
 
-# 9/2夕スタート、翌日以降は朝7時台＋夕17時台
+# 9/6昼スタート、翌日以降は朝7時台＋昼12時台＋夕17時台の1日3本
 import sys; sys.path.insert(0, HERE)
 import schedule as SC
 SLOTS = SC.slots()
-cnt = {"朝": 0, "夕": 0}
+cnt = {"朝": 0, "昼": 0, "夕": 0}
 for p in P:
     i = cnt[p["slot"]]; cnt[p["slot"]] += 1
     dt, hh, mm = SLOTS[p["slot"]][i]

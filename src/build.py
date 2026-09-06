@@ -17,12 +17,13 @@ import schedule as SC
 SLOTS = SC.slots()
 SEPCAP = SC.sep_capacity()
 SEPTOTAL = sum(SEPCAP.values())
-cnt = {"朝": 0, "夕": 0}
+cnt = {"朝": 0, "昼": 0, "夕": 0}
 for p in P:
     i = cnt[p["slot"]]; cnt[p["slot"]] += 1
     p["when"] = SC.label(SLOTS[p["slot"]][i])
     p["len"] = len(p["body"].replace("\n", ""))
-SLOTS_JS = json.dumps({k: [SC.label(x) for x in v] for k, v in SLOTS.items()}, ensure_ascii=False)
+SLOTS_JS = json.dumps({k: [{"l": SC.label(x), "o": SC.sortkey(x)[0] * 10000 + SC.sortkey(x)[1] * 100 + SC.sortkey(x)[2],
+                            "s": SC.in_sep(x)} for x in v] for k, v in SLOTS.items()}, ensure_ascii=False)
 SEPCAP_JS = json.dumps(SEPCAP, ensure_ascii=False)
 
 SERC = Counter(p["series"] for p in P)
@@ -30,7 +31,7 @@ L = [p["len"] for p in P]
 
 def card(p):
     i, slot, pn = p["no"], p["slot"], p["pillar"][0]
-    t = [f'<span class="chip slot s{"A" if slot=="朝" else "P"}">{slot}{"7時台" if slot=="朝" else "17時台"}</span>',
+    t = [f'<span class="chip slot s{ {"朝":"A","昼":"N","夕":"P"}[slot] }">{slot}{SC.HOUR[slot]}時台</span>',
          f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
          f'<span class="chip src">{e(p["src"])}</span>']
     if p.get("redo"): t.append(f'<span class="chip redo">再提案 #{p["redo"]:03d}</span>')
@@ -82,8 +83,8 @@ HTML = f"""<!doctype html>
   <p class="lede">秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけの一問一答です。<br>
   トーンは<b>面白おかしく、時々まじめに</b>。<b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
   {serchips}<br><br>
-  <b>投稿は今日 9/2 の夕方17時台から。翌日以降は朝7時台と夕方17時台の1日2本です。</b>
-  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・夕{SEPCAP["夕"]}）必要で、ここには<b>{len(P)}本</b>あります。<br><br>
+  <b>投稿は今日 9/6 の昼12時台から。翌日以降は 朝7時台・昼12時台・夕方17時台 の1日3本です。</b>
+  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・昼{SEPCAP["昼"]}・夕{SEPCAP["夕"]}）必要で、ここには<b>{len(P)}本</b>あります。<br><br>
   <b>OKを押した順に、投稿する日時が自動で決まります。</b><br>
   <b>NGにコメントを書くと「再提案」に回ります。</b>そのコメントを見てこちらで書き直し、新しい案として戻します。
   コメントを書かなければ、そのままボツです。<br>
@@ -94,7 +95,7 @@ HTML = f"""<!doctype html>
   </a>
   <div class="facts">
     <div class="fact"><b>{len(P)}</b><span>ストック</span></div>
-    <div class="fact"><b>{len(P)//2}</b><span>日分</span></div>
+    <div class="fact"><b>{len(P)//3}</b><span>日分</span></div>
     <div class="fact"><b>{SEPTOTAL}</b><span>9月に必要</span></div>
     <div class="fact"><b>{sum(L)//len(L)}</b><span>平均字数</span></div>
   </div>
@@ -105,7 +106,7 @@ HTML = f"""<!doctype html>
   <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
   <b>NG</b>を押すと投稿されません。<b>そこにコメントを書けば「再提案」タブに入り、こちらで書き直して戻します。</b>
   コメントなしなら「ボツ」タブに残ります。どちらも消えません。<br>
-  投稿は今日 9/2 の夕方から。翌日以降は朝7時台と夕方17時台の1日2本です。<br>
+  投稿は今日 9/6 の昼から。翌日以降は 朝7時台（気合い）・昼12時台（読み物）・夕17時台（振り返り）の1日3本です。<br>
   実際に投稿したら「投稿した」を押すと、投稿済みに移ります。</p>
   <div class="stockbar">
     <div><b id="sepDone2">0</b> / {SEPTOTAL} 本</div>

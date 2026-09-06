@@ -1195,6 +1195,17 @@ for idx, txt in ((10, "\n\n一緒に働きたい人、DMください。私が取
     posts[idx - 1]["body"] += txt
     posts[idx - 1]["cta"] = True
 
+# 1日3本に振り分け（朝=気合い／昼=読み物・人物ネタ／夕=振り返り）
+_q = [p for p in posts if p["series"] == "一問一喝"]
+for _i, _p in enumerate(_q):
+    _p["slot"] = "朝" if _i < 100 else "昼"
+for _p in posts:
+    if _p["series"] in ("BOSS図鑑", "昔の一喝"):
+        _p["slot"] = "昼"
+_t = [p for p in posts if p["series"] == "今日のBOSS"]
+for _i, _p in enumerate(_t):
+    _p["slot"] = "昼" if _i < 18 else "夕"
+
 # 会話量を増やした本文があれば差し替える
 from posts_long import LONG
 for rec in posts:

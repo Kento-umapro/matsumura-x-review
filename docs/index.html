@@ -224,13 +224,15 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 .tab.tab-redo.on { background:var(--ember); border-color:var(--ember); color:#fff; }
 .post.j-ng.has-memo { border-color:var(--ember); }
 .chip.redo { color:var(--ember); border-color:var(--ember); background:var(--ember-soft); font-weight:700; }
+.chip.slot.sN { color:#8a6d1f; border-color:#d8c68a; background:#fdf6e3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.slot.sN { color:#d9b95c; border-color:#4a3f1e; background:#2a2314; } }
 </style>
 </head><body>
 
 <div class="bar">
   <div class="pg"><span class="pgt" id="pgt">未確認 302 件</span>
   <div class="pgb"><div class="pgf" id="pgf"></div></div></div>
-  <div class="stock"><b id="sepDone">0</b><span>/57 9月分</span></div>
+  <div class="stock"><b id="sepDone">0</b><span>/74 9月分</span></div>
   <button id="exportBtn" type="button">結果を送る</button>
 </div>
 
@@ -241,8 +243,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   <p class="lede">秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけの一問一答です。<br>
   トーンは<b>面白おかしく、時々まじめに</b>。<b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
   <span class="serchip">一問一喝 151</span> <span class="serchip">今日のBOSS 120</span> <span class="serchip">昔の一喝 16</span> <span class="serchip">BOSS図鑑 15</span><br><br>
-  <b>投稿は今日 9/2 の夕方17時台から。翌日以降は朝7時台と夕方17時台の1日2本です。</b>
-  9月末まで埋めるには <b>57本</b>（朝28・夕29）必要で、ここには<b>302本</b>あります。<br><br>
+  <b>投稿は今日 9/6 の昼12時台から。翌日以降は 朝7時台・昼12時台・夕方17時台 の1日3本です。</b>
+  9月末まで埋めるには <b>74本</b>（朝24・昼25・夕25）必要で、ここには<b>302本</b>あります。<br><br>
   <b>OKを押した順に、投稿する日時が自動で決まります。</b><br>
   <b>NGにコメントを書くと「再提案」に回ります。</b>そのコメントを見てこちらで書き直し、新しい案として戻します。
   コメントを書かなければ、そのままボツです。<br>
@@ -253,8 +255,8 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   </a>
   <div class="facts">
     <div class="fact"><b>302</b><span>ストック</span></div>
-    <div class="fact"><b>151</b><span>日分</span></div>
-    <div class="fact"><b>57</b><span>9月に必要</span></div>
+    <div class="fact"><b>100</b><span>日分</span></div>
+    <div class="fact"><b>74</b><span>9月に必要</span></div>
     <div class="fact"><b>191</b><span>平均字数</span></div>
   </div>
 </header>
@@ -264,11 +266,11 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
   <b>NG</b>を押すと投稿されません。<b>そこにコメントを書けば「再提案」タブに入り、こちらで書き直して戻します。</b>
   コメントなしなら「ボツ」タブに残ります。どちらも消えません。<br>
-  投稿は今日 9/2 の夕方から。翌日以降は朝7時台と夕方17時台の1日2本です。<br>
+  投稿は今日 9/6 の昼から。翌日以降は 朝7時台（気合い）・昼12時台（読み物）・夕17時台（振り返り）の1日3本です。<br>
   実際に投稿したら「投稿した」を押すと、投稿済みに移ります。</p>
   <div class="stockbar">
-    <div><b id="sepDone2">0</b> / 57 本</div>
-    <span id="stockNote">あと 57 本OKを出すと9月が埋まります</span>
+    <div><b id="sepDone2">0</b> / 74 本</div>
+    <span id="stockNote">あと 74 本OKを出すと9月が埋まります</span>
   </div>
   <div class="filters"><button class="tab on" data-v="todo" type="button">未確認<i id="c-todo">0</i></button><button class="tab tab-ok" data-v="ok" type="button">OK<i id="c-ok">0</i></button><button class="tab tab-redo" data-v="redo" type="button">再提案<i id="c-redo">0</i></button><button class="tab tab-ng" data-v="bin" type="button">ボツ<i id="c-bin">0</i></button><button class="tab" data-v="done" type="button">投稿済み<i id="c-done">0</i></button></div>
   <div class="posts"><article class="post" data-k="post1" data-no="1" data-slot="朝" data-series="一問一喝" id="p1"><div class="phead"><span class="no">01</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.138</span></div><span class="stats"><b>219</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日ちょっとやる気が出ません」
@@ -1983,7 +1985,7 @@ BOSS「伝えた、で終わる人間は、だいたい相手の反応を見て�
 BOSS「安心したかどうかは顔に出る。そこまで見て、やっと報告や」
 
 秘書「見てきます」</div><div class="judge" data-k="post100"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post101" data-no="101" data-slot="朝" data-series="一問一喝" id="p101"><div class="phead"><span class="no">101</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.109</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、言われたことはやってます」
+<article class="post" data-k="post101" data-no="101" data-slot="昼" data-series="一問一喝" id="p101"><div class="phead"><span class="no">101</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.109</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、言われたことはやってます」
 
 BOSS「目配り、気配り、心配りや」
 
@@ -2000,7 +2002,7 @@ BOSS「言われてからやるのは、どれにも入ってへんぞ」
 BOSS「呼ばれてから動くのは対応や。呼ばれる前に気づけて、初めてサービスになる」
 
 秘書「気づきにいきます」</div><div class="judge" data-k="post101"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post102" data-no="102" data-slot="朝" data-series="一問一喝" id="p102"><div class="phead"><span class="no">102</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.110</span></div><span class="stats"><b>173</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、急いでるので少し無理します」
+<article class="post" data-k="post102" data-no="102" data-slot="昼" data-series="一問一喝" id="p102"><div class="phead"><span class="no">102</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.110</span></div><span class="stats"><b>173</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、急いでるので少し無理します」
 
 BOSS「安全はすべてに優先する」
 
@@ -2017,7 +2019,7 @@ BOSS「一回で終わるならな。無理した記憶は、次も無理して�
 BOSS「なる。売上も評価も、事故ひとつで全部飛ぶぞ」
 
 秘書「やめます」</div><div class="judge" data-k="post102"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post103" data-no="103" data-slot="朝" data-series="一問一喝" id="p103"><div class="phead"><span class="no">103</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.111</span></div><span class="stats"><b>180</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、去年と同じやり方でいきます」
+<article class="post" data-k="post103" data-no="103" data-slot="昼" data-series="一問一喝" id="p103"><div class="phead"><span class="no">103</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.111</span></div><span class="stats"><b>180</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、去年と同じやり方でいきます」
 
 BOSS「変化を先取りしろ！！」
 
@@ -2034,7 +2036,7 @@ BOSS「客も競合も、去年と同じ場所におらんぞ」
 BOSS「全部やない。何を残して何を捨てるかを、毎年ちゃんと決めろ」
 
 秘書「見直します」</div><div class="judge" data-k="post103"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post104" data-no="104" data-slot="朝" data-series="一問一喝" id="p104"><div class="phead"><span class="no">104</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.112</span></div><span class="stats"><b>169</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、条件が悪すぎます」
+<article class="post" data-k="post104" data-no="104" data-slot="昼" data-series="一問一喝" id="p104"><div class="phead"><span class="no">104</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.112</span></div><span class="stats"><b>169</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、条件が悪すぎます」
 
 BOSS「磨かれるのは逆境のときや！！」
 
@@ -2051,7 +2053,7 @@ BOSS「やろ。うまくいってる時は、考えんでも回るからな」
 BOSS「それが磨かれてるということや。今が一番伸びてる」
 
 秘書「そう思うことにします」</div><div class="judge" data-k="post104"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post105" data-no="105" data-slot="朝" data-series="一問一喝" id="p105"><div class="phead"><span class="no">105</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.113</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私にできることはないと思います」
+<article class="post" data-k="post105" data-no="105" data-slot="昼" data-series="一問一喝" id="p105"><div class="phead"><span class="no">105</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.113</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私にできることはないと思います」
 
 BOSS「自分にできることは何か、を先に聞け」
 
@@ -2068,7 +2070,7 @@ BOSS「3個出たら十分や！！」
 BOSS「権限がなくてもできることを全部やった人間にだけ、権限は回ってくる」
 
 秘書「全部やります」</div><div class="judge" data-k="post105"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post106" data-no="106" data-slot="朝" data-series="一問一喝" id="p106"><div class="phead"><span class="no">106</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.114</span></div><span class="stats"><b>180</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、真面目にやってます」
+<article class="post" data-k="post106" data-no="106" data-slot="昼" data-series="一問一喝" id="p106"><div class="phead"><span class="no">106</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.114</span></div><span class="stats"><b>180</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、真面目にやってます」
 
 BOSS「遊び心を忘れるな」
 
@@ -2085,7 +2087,7 @@ BOSS「しんどい現場ほど遊び心がいる。笑ってる店は強いぞ�
 BOSS「余裕がないから要るんや。笑えた瞬間に、全員の肩が下りる」
 
 秘書「笑わせにいきます」</div><div class="judge" data-k="post106"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post107" data-no="107" data-slot="朝" data-series="一問一喝" id="p107"><div class="phead"><span class="no">107</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.116</span></div><span class="stats"><b>177</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うちは口コミで十分では」
+<article class="post" data-k="post107" data-no="107" data-slot="昼" data-series="一問一喝" id="p107"><div class="phead"><span class="no">107</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.116</span></div><span class="stats"><b>177</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うちは口コミで十分では」
 
 BOSS「情報発信は武器や」
 
@@ -2102,7 +2104,7 @@ BOSS「お客様からしたら、存在を知らんのやから選びようが�
 BOSS「うまくやらんでええ。やってることをそのまま出すだけで十分や！！」
 
 秘書「発信します」</div><div class="judge" data-k="post107"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post108" data-no="108" data-slot="朝" data-series="一問一喝" id="p108"><div class="phead"><span class="no">108</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.117</span></div><span class="stats"><b>199</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、最後に挽回すればいいですよね」
+<article class="post" data-k="post108" data-no="108" data-slot="昼" data-series="一問一喝" id="p108"><div class="phead"><span class="no">108</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.117</span></div><span class="stats"><b>199</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、最後に挽回すればいいですよね」
 
 BOSS「お客様の第一印象がすべてや」
 
@@ -2119,7 +2121,7 @@ BOSS「扉が開いた瞬間の、笑顔と声のトーンと姿勢や。それ�
 BOSS「最初と最後、両方や。真ん中は覚えられてへん」
 
 秘書「最初にいきます」</div><div class="judge" data-k="post108"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post109" data-no="109" data-slot="朝" data-series="一問一喝" id="p109"><div class="phead"><span class="no">109</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.119</span></div><span class="stats"><b>168</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、セミナー行ってきました」
+<article class="post" data-k="post109" data-no="109" data-slot="昼" data-series="一問一喝" id="p109"><div class="phead"><span class="no">109</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.119</span></div><span class="stats"><b>168</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、セミナー行ってきました」
 
 BOSS「学びを成果に変えろ」
 
@@ -2136,7 +2138,7 @@ BOSS「それは何も変わらんやつや」
 BOSS「一つでええ。明日やることを一個決めて帰ってきたら、それは成果や！！」
 
 秘書「一個決めます」</div><div class="judge" data-k="post109"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post110" data-no="110" data-slot="朝" data-series="一問一喝" id="p110"><div class="phead"><span class="no">110</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.120</span></div><span class="stats"><b>171</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、店長が暗いんです」
+<article class="post" data-k="post110" data-no="110" data-slot="昼" data-series="一問一喝" id="p110"><div class="phead"><span class="no">110</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.120</span></div><span class="stats"><b>171</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、店長が暗いんです」
 
 BOSS「店長は現場の太陽や！！」
 
@@ -2153,7 +2155,7 @@ BOSS「太陽が曇ってる店で、クルーだけ晴れることはないか�
 BOSS「なら教えたれ。知らんまま損してるのは本人や」
 
 秘書「伝えます」</div><div class="judge" data-k="post110"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post111" data-no="111" data-slot="朝" data-series="一問一喝" id="p111"><div class="phead"><span class="no">111</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.121</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、これくらいの経費なら大丈夫かと」
+<article class="post" data-k="post111" data-no="111" data-slot="昼" data-series="一問一喝" id="p111"><div class="phead"><span class="no">111</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.121</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、これくらいの経費なら大丈夫かと」
 
 BOSS「お金の感覚を養え」
 
@@ -2170,7 +2172,7 @@ BOSS「客単価で割ってみ。何人に来てもらって、やっと戻る�
 BOSS「ストロー1本、ポテト1本も原価や。マックの頃からずっとそう教わってきた」
 
 秘書「計算してから出します」</div><div class="judge" data-k="post111"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post112" data-no="112" data-slot="朝" data-series="一問一喝" id="p112"><div class="phead"><span class="no">112</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.122</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、販促は本部の仕事では」
+<article class="post" data-k="post112" data-no="112" data-slot="昼" data-series="一問一喝" id="p112"><div class="phead"><span class="no">112</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.122</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、販促は本部の仕事では」
 
 BOSS「販売促進活動は店長の仕事や」
 
@@ -2187,7 +2189,7 @@ BOSS「本部は地域を知らん。誰が来てて、何が刺さるかを一�
 BOSS「大掛かりでなくてええ。声をかける、覚える、また来たいと思わせる。それも販促や！！」
 
 秘書「動きます」</div><div class="judge" data-k="post112"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post113" data-no="113" data-slot="朝" data-series="一問一喝" id="p113"><div class="phead"><span class="no">113</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.127</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日は暇でした」
+<article class="post" data-k="post113" data-no="113" data-slot="昼" data-series="一問一喝" id="p113"><div class="phead"><span class="no">113</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.127</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日は暇でした」
 
 BOSS「暇な時の動き方に出る」
 
@@ -2204,7 +2206,7 @@ BOSS「みんな逆をやる。暇な時にゆっくりやって、忙しい時�
 BOSS「暇な時に速さを体に入れといたら、忙しい時に丁寧さの余裕が出る」
 
 秘書「順番が分かりました」</div><div class="judge" data-k="post113"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post114" data-no="114" data-slot="朝" data-series="一問一喝" id="p114"><div class="phead"><span class="no">114</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.129</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、頑張ったんですけど数字が出ませんでした」
+<article class="post" data-k="post114" data-no="114" data-slot="昼" data-series="一問一喝" id="p114"><div class="phead"><span class="no">114</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.129</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、頑張ったんですけど数字が出ませんでした」
 
 BOSS「結果がすべて、の本当の意味を分かってるか？？」
 
@@ -2221,7 +2223,7 @@ BOSS「結果が出るまで過程を変え続けろ、という意味や」
 BOSS「同じやり方で頑張り続けるのは、頑張ってるようで止まってるのと同じやぞ」
 
 秘書「変え続けます」</div><div class="judge" data-k="post114"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post115" data-no="115" data-slot="朝" data-series="一問一喝" id="p115"><div class="phead"><span class="no">115</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.131</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、みんな個々に頑張ってます」
+<article class="post" data-k="post115" data-no="115" data-slot="昼" data-series="一問一喝" id="p115"><div class="phead"><span class="no">115</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.131</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、みんな個々に頑張ってます」
 
 BOSS「一体感が組織を強くする」
 
@@ -2238,7 +2240,7 @@ BOSS「なる。引っ張り合って、結局どこにも進まん」
 BOSS「方向が揃った瞬間に、同じ人数で倍の力が出る。これはほんまや」
 
 秘書「揃えます」</div><div class="judge" data-k="post115"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post116" data-no="116" data-slot="朝" data-series="一問一喝" id="p116"><div class="phead"><span class="no">116</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.132</span></div><span class="stats"><b>162</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、共有はしておきました」
+<article class="post" data-k="post116" data-no="116" data-slot="昼" data-series="一問一喝" id="p116"><div class="phead"><span class="no">116</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.132</span></div><span class="stats"><b>162</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、共有はしておきました」
 
 BOSS「やった気になるな」
 
@@ -2255,7 +2257,7 @@ BOSS「相手が読んで、動いて、初めてやったことになる」
 BOSS「決めただけ、頼んだだけ、任せただけ。全部同じ落とし穴や！！」
 
 秘書「確認します」</div><div class="judge" data-k="post116"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post117" data-no="117" data-slot="朝" data-series="一問一喝" id="p117"><div class="phead"><span class="no">117</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.133</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、失敗が続いて自信をなくしました」
+<article class="post" data-k="post117" data-no="117" data-slot="昼" data-series="一問一喝" id="p117"><div class="phead"><span class="no">117</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.133</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、失敗が続いて自信をなくしました」
 
 BOSS「挑戦する人間は、いつも輝いてる」
 
@@ -2272,7 +2274,7 @@ BOSS「挑戦してへん人間から見たら、めちゃくちゃ眩しい。�
 BOSS「失敗が続いてるのは、打席に立ってる証拠や。立ってへん人間は失敗すらせん」
 
 秘書「もう一回いきます」</div><div class="judge" data-k="post117"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post118" data-no="118" data-slot="朝" data-series="一問一喝" id="p118"><div class="phead"><span class="no">118</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.135</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、一気に3つ進めます」
+<article class="post" data-k="post118" data-no="118" data-slot="昼" data-series="一問一喝" id="p118"><div class="phead"><span class="no">118</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.135</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、一気に3つ進めます」
 
 BOSS「段階を飛ばすな」
 
@@ -2289,7 +2291,7 @@ BOSS「うまくいってる時ほど気づかん。ズレに気づくのは、�
 BOSS「3つ同時にやって全部中途半端になるより、1つ完了させた方が早い」
 
 秘書「順番にやります」</div><div class="judge" data-k="post118"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post119" data-no="119" data-slot="朝" data-series="一問一喝" id="p119"><div class="phead"><span class="no">119</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.136</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ちゃんと説明しました」
+<article class="post" data-k="post119" data-no="119" data-slot="昼" data-series="一問一喝" id="p119"><div class="phead"><span class="no">119</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.136</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ちゃんと説明しました」
 
 BOSS「伝わってこそ意味がある」
 
@@ -2306,7 +2308,7 @@ BOSS「受け手のせいにした瞬間に、伝える力は一生伸びひん�
 BOSS「相手に一回言い直してもらえ。それでズレてたら、伝わってへんということや！！」
 
 秘書「聞いてきます」</div><div class="judge" data-k="post119"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post120" data-no="120" data-slot="朝" data-series="一問一喝" id="p120"><div class="phead"><span class="no">120</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.137</span></div><span class="stats"><b>181</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、資格を取ろうと思います」
+<article class="post" data-k="post120" data-no="120" data-slot="昼" data-series="一問一喝" id="p120"><div class="phead"><span class="no">120</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.137</span></div><span class="stats"><b>181</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、資格を取ろうと思います」
 
 BOSS「人間力が、最強のスキルや！！」
 
@@ -2323,7 +2325,7 @@ BOSS「ただ、スキルは会社が変われば変わる。心のありよう�
 BOSS「忙しい時にどう振る舞うか、誰も見てへん時にどう仕事するか。そっちの方が先や」
 
 秘書「両方いきます」</div><div class="judge" data-k="post120"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post121" data-no="121" data-slot="朝" data-series="一問一喝" id="p121"><div class="phead"><span class="no">121</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.139</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、まだ何も成果が出ません」
+<article class="post" data-k="post121" data-no="121" data-slot="昼" data-series="一問一喝" id="p121"><div class="phead"><span class="no">121</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.139</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、まだ何も成果が出ません」
 
 BOSS「積み上げは裏切らない」
 
@@ -2340,7 +2342,7 @@ BOSS「期待は見返りを待つこと。積み上げは、見返りがなく�
 BOSS「毎日0.1ずつやからな。気づいた時には、もう別の場所に立ってる」
 
 秘書「積み上げます」</div><div class="judge" data-k="post121"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post122" data-no="122" data-slot="朝" data-series="一問一喝" id="p122"><div class="phead"><span class="no">122</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.140</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの部署のせいで遅れてます」
+<article class="post" data-k="post122" data-no="122" data-slot="昼" data-series="一問一喝" id="p122"><div class="phead"><span class="no">122</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.140</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの部署のせいで遅れてます」
 
 BOSS「プロ意識とは、他責をゼロにすることや」
 
@@ -2357,7 +2359,7 @@ BOSS「事実と、自分にできたことは別の話やぞ」
 BOSS「3日前に一本連絡入れてたら、今日この話になってへんかったやろ？？」
 
 秘書「できたことを探します」</div><div class="judge" data-k="post122"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post123" data-no="123" data-slot="朝" data-series="一問一喝" id="p123"><div class="phead"><span class="no">123</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.142</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの子いいところあるんですよ」
+<article class="post" data-k="post123" data-no="123" data-slot="昼" data-series="一問一喝" id="p123"><div class="phead"><span class="no">123</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.142</span></div><span class="stats"><b>183</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの子いいところあるんですよ」
 
 BOSS「仲間のいいところを口に出せ！！」
 
@@ -2374,7 +2376,7 @@ BOSS「照れくさいのは1秒や。言われた方は3年覚えてる」
 BOSS「残る。ええことも悪いことも、上から言われた一言は100倍残るからな」
 
 秘書「言ってきます」</div><div class="judge" data-k="post123"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post124" data-no="124" data-slot="朝" data-series="一問一喝" id="p124"><div class="phead"><span class="no">124</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.143</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、揉めたくないので合わせておきました」
+<article class="post" data-k="post124" data-no="124" data-slot="昼" data-series="一問一喝" id="p124"><div class="phead"><span class="no">124</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.143</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、揉めたくないので合わせておきました」
 
 BOSS「意見はぶつけてこそ価値がある」
 
@@ -2391,7 +2393,7 @@ BOSS「その場だけな。半年後に同じ問題が3倍の大きさで出て
 BOSS「揉められへんチームの方が、よっぽど危ない」
 
 秘書「ぶつけます」</div><div class="judge" data-k="post124"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post125" data-no="125" data-slot="朝" data-series="一問一喝" id="p125"><div class="phead"><span class="no">125</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.145</span></div><span class="stats"><b>197</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、忙しくて何も手につきません」
+<article class="post" data-k="post125" data-no="125" data-slot="昼" data-series="一問一喝" id="p125"><div class="phead"><span class="no">125</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.145</span></div><span class="stats"><b>197</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、忙しくて何も手につきません」
 
 BOSS「忙しさは、言い訳じゃなくて美学にしろ」
 
@@ -2408,7 +2410,7 @@ BOSS「追われてる忙しさは、他人が作った予定を消化してる�
 BOSS「自分で決めた予定で埋まる。しんどさは同じでも、疲れ方が全然ちゃう」
 
 秘書「攻めます」</div><div class="judge" data-k="post125"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post126" data-no="126" data-slot="朝" data-series="一問一喝" id="p126"><div class="phead"><span class="no">126</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.146</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、心配なので自分でやります」
+<article class="post" data-k="post126" data-no="126" data-slot="昼" data-series="一問一喝" id="p126"><div class="phead"><span class="no">126</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.146</span></div><span class="stats"><b>185</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、心配なので自分でやります」
 
 BOSS「任せる勇気が、リーダーを育てる」
 
@@ -2425,7 +2427,7 @@ BOSS「任せへん方は一生困るぞ。自分の手が空かへんし、相�
 BOSS「それは違う。任せた瞬間から育成が始まる。見て、ズレたら直せ」
 
 秘書「任せます」</div><div class="judge" data-k="post126"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post127" data-no="127" data-slot="朝" data-series="一問一喝" id="p127"><div class="phead"><span class="no">127</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.147</span></div><span class="stats"><b>177</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私が全部引っ張ります」
+<article class="post" data-k="post127" data-no="127" data-slot="昼" data-series="一問一喝" id="p127"><div class="phead"><span class="no">127</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.147</span></div><span class="stats"><b>177</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私が全部引っ張ります」
 
 BOSS「引っ張るより、巻き込め」
 
@@ -2442,7 +2444,7 @@ BOSS「止まる。引っ張られてる側は、自分で決めてへんから�
 BOSS「自分で決めた人間は、こっちが見てなくても勝手に動く」
 
 秘書「巻き込みます」</div><div class="judge" data-k="post127"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post128" data-no="128" data-slot="朝" data-series="一問一喝" id="p128"><div class="phead"><span class="no">128</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.148</span></div><span class="stats"><b>195</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、できる範囲でやります」
+<article class="post" data-k="post128" data-no="128" data-slot="昼" data-series="一問一喝" id="p128"><div class="phead"><span class="no">128</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.148</span></div><span class="stats"><b>195</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、できる範囲でやります」
 
 BOSS「結果にコミットするとは、使命を守ることや」
 
@@ -2459,7 +2461,7 @@ BOSS「そこや。できる範囲を決めるのは自分じゃなく、約束�
 BOSS「先に約束がある。それに合わせて、できる範囲を広げにいくのが仕事や！！」
 
 秘書「約束に合わせます」</div><div class="judge" data-k="post128"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post129" data-no="129" data-slot="朝" data-series="一問一喝" id="p129"><div class="phead"><span class="no">129</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.149</span></div><span class="stats"><b>173</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、落ち着いて動いてます」
+<article class="post" data-k="post129" data-no="129" data-slot="昼" data-series="一問一喝" id="p129"><div class="phead"><span class="no">129</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.149</span></div><span class="stats"><b>173</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、落ち着いて動いてます」
 
 BOSS「テキパキ、チャキチャキが現場を変える」
 
@@ -2476,7 +2478,7 @@ BOSS「動きにキレがない店は、お客様から見たら暇な店や」
 BOSS「見える。同じ作業でも、キレがあるだけで店が生きてるように見える」
 
 秘書「キレを出します」</div><div class="judge" data-k="post129"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post130" data-no="130" data-slot="朝" data-series="一問一喝" id="p130"><div class="phead"><span class="no">130</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.151</span></div><span class="stats"><b>179</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、だいたい終わりました」
+<article class="post" data-k="post130" data-no="130" data-slot="昼" data-series="一問一喝" id="p130"><div class="phead"><span class="no">130</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.151</span></div><span class="stats"><b>179</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、だいたい終わりました」
 
 BOSS「やるべきことを、やり切っているか？？」
 
@@ -2493,7 +2495,7 @@ BOSS「そこに、だいたい大事なもんが入ってるぞ」
 BOSS「仕事は詰めで決まる。その1割を放置したせいで、9割が無駄になることがある」
 
 秘書「やり切ります」</div><div class="judge" data-k="post130"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post131" data-no="131" data-slot="朝" data-series="一問一喝" id="p131"><div class="phead"><span class="no">131</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.153</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日はきつかったです」
+<article class="post" data-k="post131" data-no="131" data-slot="昼" data-series="一問一喝" id="p131"><div class="phead"><span class="no">131</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.153</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日はきつかったです」
 
 BOSS「今日の負荷が、明日のスタンダードになる」
 
@@ -2510,7 +2512,7 @@ BOSS「一日下げたら、そこが新しい当たり前になる。上げ直�
 BOSS「休むのはええ。基準を下げるのとは別の話や！！」
 
 秘書「同じ負荷でいきます」</div><div class="judge" data-k="post131"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post132" data-no="132" data-slot="朝" data-series="一問一喝" id="p132"><div class="phead"><span class="no">132</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.155</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、言われた通りにやりました」
+<article class="post" data-k="post132" data-no="132" data-slot="昼" data-series="一問一喝" id="p132"><div class="phead"><span class="no">132</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.155</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、言われた通りにやりました」
 
 BOSS「何のために、を忘れるな」
 
@@ -2527,7 +2529,7 @@ BOSS「そうや。目的を知ってたら、途中でおかしいと気づけ�
 BOSS「何のためにやるんですか、は聞いてええ質問や。むしろ聞かん方が問題や！！」
 
 秘書「目的を聞きます」</div><div class="judge" data-k="post132"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post133" data-no="133" data-slot="朝" data-series="一問一喝" id="p133"><div class="phead"><span class="no">133</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.156</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、本部の戦略が甘いのでは」
+<article class="post" data-k="post133" data-no="133" data-slot="昼" data-series="一問一喝" id="p133"><div class="phead"><span class="no">133</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.156</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、本部の戦略が甘いのでは」
 
 BOSS「現場力が、企業力や！！」
 
@@ -2544,7 +2546,7 @@ BOSS「それはその通り。ただ、今日どっちを鍛える方が早い�
 BOSS「せやろ。戦略が5点上がるより、実行力が5点上がる方が早く効く」
 
 秘書「現場を見ます」</div><div class="judge" data-k="post133"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post134" data-no="134" data-slot="朝" data-series="一問一喝" id="p134"><div class="phead"><span class="no">134</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.160</span></div><span class="stats"><b>184</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、続けるのがしんどくなってきました」
+<article class="post" data-k="post134" data-no="134" data-slot="昼" data-series="一問一喝" id="p134"><div class="phead"><span class="no">134</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.160</span></div><span class="stats"><b>184</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、続けるのがしんどくなってきました」
 
 BOSS「続けることの難しさと、強さや」
 
@@ -2561,7 +2563,7 @@ BOSS「認める。だからこそ、続けてるだけで差になるんや」
 BOSS「99人がやめる。残った1人が全部持っていく。そういう仕組みや！！」
 
 秘書「続けます」</div><div class="judge" data-k="post134"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post135" data-no="135" data-slot="朝" data-series="一問一喝" id="p135"><div class="phead"><span class="no">135</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.161</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、1分くらい誤差です」
+<article class="post" data-k="post135" data-no="135" data-slot="昼" data-series="一問一喝" id="p135"><div class="phead"><span class="no">135</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.161</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、1分くらい誤差です」
 
 BOSS「1分の使い方で、結果は変わる！！」
 
@@ -2578,7 +2580,7 @@ BOSS「6時間や。丸一日の仕事が消えてる」
 BOSS「1分早いだけで気が利く店になる。1分遅いだけで遅い店になる。それも同じ話や」
 
 秘書「1分を取りにいきます」</div><div class="judge" data-k="post135"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post136" data-no="136" data-slot="朝" data-series="一問一喝" id="p136"><div class="phead"><span class="no">136</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.162</span></div><span class="stats"><b>191</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、状況を見て判断します」
+<article class="post" data-k="post136" data-no="136" data-slot="昼" data-series="一問一喝" id="p136"><div class="phead"><span class="no">136</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.162</span></div><span class="stats"><b>191</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、状況を見て判断します」
 
 BOSS「リアクションで終わるな。アクションで変えろ」
 
@@ -2595,7 +2597,7 @@ BOSS「なる。反応してるだけの人間は、いつも後手に回る」
 BOSS「外す。ただ、外した分だけ次が読めるようになる」
 
 秘書「作りにいきます」</div><div class="judge" data-k="post136"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post137" data-no="137" data-slot="朝" data-series="一問一喝" id="p137"><div class="phead"><span class="no">137</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.163</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、期待されてるみたいで嬉しいです」
+<article class="post" data-k="post137" data-no="137" data-slot="昼" data-series="一問一喝" id="p137"><div class="phead"><span class="no">137</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.163</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、期待されてるみたいで嬉しいです」
 
 BOSS「期待される人で終わるな。応える人になれ」
 
@@ -2612,7 +2614,7 @@ BOSS「前借りしてる状態や。返さんかったら、次から貸して�
 BOSS「怖がらんでええ。返し方は簡単や。結果で返すだけやからな」
 
 秘書「返します」</div><div class="judge" data-k="post137"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post138" data-no="138" data-slot="朝" data-series="一問一喝" id="p138"><div class="phead"><span class="no">138</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.165</span></div><span class="stats"><b>179</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、見てないところは手を抜いてもいいですか」
+<article class="post" data-k="post138" data-no="138" data-slot="昼" data-series="一問一喝" id="p138"><div class="phead"><span class="no">138</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.165</span></div><span class="stats"><b>179</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、見てないところは手を抜いてもいいですか」
 
 BOSS「見られている意識が、仕事の質を決める」
 
@@ -2629,7 +2631,7 @@ BOSS「知ってて聞いたんかい」
 BOSS「見られてる時だけやる人間は評価を取りにいってる。見てなくてもやる人間は基準で動いてる」
 
 秘書「基準でいきます」</div><div class="judge" data-k="post138"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post139" data-no="139" data-slot="朝" data-series="一問一喝" id="p139"><div class="phead"><span class="no">139</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.169</span></div><span class="stats"><b>194</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、こんなにやってあげたのに」
+<article class="post" data-k="post139" data-no="139" data-slot="昼" data-series="一問一喝" id="p139"><div class="phead"><span class="no">139</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.169</span></div><span class="stats"><b>194</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、こんなにやってあげたのに」
 
 BOSS「義務を果たし、GIVEを無駄にするな」
 
@@ -2646,7 +2648,7 @@ BOSS「義務を果たしてへんのに、GIVEした気になってへんか？
 BOSS「やってあげた、という顔をした瞬間に、それは貸しになる。貸しは思いやりちゃう」
 
 秘書「顔に出てました」</div><div class="judge" data-k="post139"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post140" data-no="140" data-slot="朝" data-series="一問一喝" id="p140"><div class="phead"><span class="no">140</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.170</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、体調管理も仕事のうちですか」
+<article class="post" data-k="post140" data-no="140" data-slot="昼" data-series="一問一喝" id="p140"><div class="phead"><span class="no">140</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.170</span></div><span class="stats"><b>182</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、体調管理も仕事のうちですか」
 
 BOSS「自己管理ができないと、何も始まらない」
 
@@ -2663,7 +2665,7 @@ BOSS「体調も、時間も、感情もや。全部同じ筋肉や！！」
 BOSS「余裕がない時に本性が出る。そこを管理できたら、もう十分プロや」
 
 秘書「鍛えます」</div><div class="judge" data-k="post140"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post141" data-no="141" data-slot="朝" data-series="一問一喝" id="p141"><div class="phead"><span class="no">141</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.172</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、やり方を変えてみます」
+<article class="post" data-k="post141" data-no="141" data-slot="昼" data-series="一問一喝" id="p141"><div class="phead"><span class="no">141</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.172</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、やり方を変えてみます」
 
 BOSS「やり方じゃなく、あり方が結果を決める」
 
@@ -2680,7 +2682,7 @@ BOSS「同じマニュアルを渡して、店が全部同じになったこと�
 BOSS「差はやり方やない。どういう気持ちで立ってるかや！！」
 
 秘書「あり方から見直します」</div><div class="judge" data-k="post141"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post142" data-no="142" data-slot="朝" data-series="一問一喝" id="p142"><div class="phead"><span class="no">142</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.175</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私一人が変わっても何も変わりません」
+<article class="post" data-k="post142" data-no="142" data-slot="昼" data-series="一問一喝" id="p142"><div class="phead"><span class="no">142</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.175</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、私一人が変わっても何も変わりません」
 
 BOSS「一人の姿勢が、店全体の空気を変える」
 
@@ -2697,7 +2699,7 @@ BOSS「全員が同じことを思て、全員が動かんかった結果や！�
 BOSS「誰かが最初に動かんかったら、場は一生変わらへん」
 
 秘書「私からいきます」</div><div class="judge" data-k="post142"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post143" data-no="143" data-slot="朝" data-series="一問一喝" id="p143"><div class="phead"><span class="no">143</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.176</span></div><span class="stats"><b>172</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日はここまでにします」
+<article class="post" data-k="post143" data-no="143" data-slot="昼" data-series="一問一喝" id="p143"><div class="phead"><span class="no">143</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.176</span></div><span class="stats"><b>172</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日はここまでにします」
 
 BOSS「未来の自分を裏切るな」
 
@@ -2714,7 +2716,7 @@ BOSS「その明日の自分も、同じこと言うて明後日に渡すから�
 BOSS「あと10分でええ。10分だけ未来の自分を助けたれ」
 
 秘書「10分だけやります」</div><div class="judge" data-k="post143"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post144" data-no="144" data-slot="朝" data-series="一問一喝" id="p144"><div class="phead"><span class="no">144</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.177</span></div><span class="stats"><b>172</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、めちゃくちゃ努力してます」
+<article class="post" data-k="post144" data-no="144" data-slot="昼" data-series="一問一喝" id="p144"><div class="phead"><span class="no">144</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.177</span></div><span class="stats"><b>172</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、めちゃくちゃ努力してます」
 
 BOSS「努力の方向を合わせろ」
 
@@ -2731,7 +2733,7 @@ BOSS「ズレた方向の努力は、進んだ分だけ遠ざかるぞ」
 BOSS「月に一回でええ。この方向で合ってますか、と聞け。それだけで全然ちゃう」
 
 秘書「確認します」</div><div class="judge" data-k="post144"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post145" data-no="145" data-slot="朝" data-series="一問一喝" id="p145"><div class="phead"><span class="no">145</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.178</span></div><span class="stats"><b>175</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ちゃんと自立してます」
+<article class="post" data-k="post145" data-no="145" data-slot="昼" data-series="一問一喝" id="p145"><div class="phead"><span class="no">145</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.178</span></div><span class="stats"><b>175</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ちゃんと自立してます」
 
 BOSS「自立と自律は違う」
 
@@ -2748,7 +2750,7 @@ BOSS「一人でできるのが自立。誰も見てへん時に自分を律す�
 BOSS「みんなそうや。ただ、そっちができる人間だけが最後に残る」
 
 秘書「鍛えます」</div><div class="judge" data-k="post145"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post146" data-no="146" data-slot="朝" data-series="一問一喝" id="p146"><div class="phead"><span class="no">146</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.179</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、品切れですが今日は仕方ないです」
+<article class="post" data-k="post146" data-no="146" data-slot="昼" data-series="一問一喝" id="p146"><div class="phead"><span class="no">146</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.179</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、品切れですが今日は仕方ないです」
 
 BOSS「チャンスロスを許すな」
 
@@ -2765,7 +2767,7 @@ BOSS「その一回で、二度と来んようになる人がおる」
 BOSS「近い商品を勧める、次回使えるもんを渡す、理由を丁寧に伝える。何かできるやろ？？」
 
 秘書「今日中に手を打ちます」</div><div class="judge" data-k="post146"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post147" data-no="147" data-slot="朝" data-series="一問一喝" id="p147"><div class="phead"><span class="no">147</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.180</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、応用的なやり方を試したいです」
+<article class="post" data-k="post147" data-no="147" data-slot="昼" data-series="一問一喝" id="p147"><div class="phead"><span class="no">147</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.180</span></div><span class="stats"><b>186</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、応用的なやり方を試したいです」
 
 BOSS「基本ができない人が、応用できるわけがない」
 
@@ -2782,7 +2784,7 @@ BOSS「ほな、昨日の基本を全部言うてみ」
 BOSS「守らんまま破ったやつは、ただの自己流や。守破離の守からやれ！！」
 
 秘書「基本からやります」</div><div class="judge" data-k="post147"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post148" data-no="148" data-slot="朝" data-series="一問一喝" id="p148"><div class="phead"><span class="no">148</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.186</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの人とは元々の差があります」
+<article class="post" data-k="post148" data-no="148" data-slot="昼" data-series="一問一喝" id="p148"><div class="phead"><span class="no">148</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.186</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、あの人とは元々の差があります」
 
 BOSS「差は偶然やない。全部、姿勢の差で生まれる」
 
@@ -2799,7 +2801,7 @@ BOSS「同じ時間に来て、同じ量を出して、同じだけ振り返っ�
 BOSS「そこが揃ってから、才能の話をしよか」
 
 秘書「揃えます」</div><div class="judge" data-k="post148"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post149" data-no="149" data-slot="朝" data-series="一問一喝" id="p149"><div class="phead"><span class="no">149</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.188</span></div><span class="stats"><b>196</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、これくらいで十分では」
+<article class="post" data-k="post149" data-no="149" data-slot="昼" data-series="一問一喝" id="p149"><div class="phead"><span class="no">149</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.188</span></div><span class="stats"><b>196</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、これくらいで十分では」
 
 BOSS「強い人ほど、自分に厳しい基準を持ってる」
 
@@ -2816,7 +2818,7 @@ BOSS「一番のライバルは、いつも昨日の自分やと言うてるや�
 BOSS「ほな明日は今日より上げろ。それを1年続けたら、周りの話じゃなくなる」
 
 秘書「基準を上げます」</div><div class="judge" data-k="post149"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post150" data-no="150" data-slot="朝" data-series="一問一喝" id="p150"><div class="phead"><span class="no">150</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.190</span></div><span class="stats"><b>176</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、もう少し考えてから動きます」
+<article class="post" data-k="post150" data-no="150" data-slot="昼" data-series="一問一喝" id="p150"><div class="phead"><span class="no">150</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.190</span></div><span class="stats"><b>176</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、もう少し考えてから動きます」
 
 BOSS「迷う前に動け」
 
@@ -2833,7 +2835,7 @@ BOSS「あとは迷ってるだけや。情報が足りてへんのやから、�
 BOSS「70点で動かせ。動いてから分かることの方が、はるかに多い」
 
 秘書「動きます」</div><div class="judge" data-k="post150"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post151" data-no="151" data-slot="朝" data-series="一問一喝" id="p151"><div class="phead"><span class="no">151</span><div class="tags"><span class="chip slot sA">朝7時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.192</span></div><span class="stats"><b>191</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うまくいかなくて空気が悪いです」
+<article class="post" data-k="post151" data-no="151" data-slot="昼" data-series="一問一喝" id="p151"><div class="phead"><span class="no">151</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p一">一問一喝</span><span class="chip src">vol.192</span></div><span class="stats"><b>191</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うまくいかなくて空気が悪いです」
 
 BOSS「前を向く力が、チームを強くする」
 
@@ -2850,7 +2852,7 @@ BOSS「ただ、下を向いたまま分析すると、全部言い訳になる�
 BOSS「前を向いてたら次の手が出る。下を向いてたら犯人が出てくる。それだけの違いや！！」
 
 秘書「前を向きます」</div><div class="judge" data-k="post151"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post152" data-no="152" data-slot="夕" data-series="今日のBOSS" id="p152"><div class="phead"><span class="no">152</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.118</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日お店に着いて最初に何を見てました？」
+<article class="post" data-k="post152" data-no="152" data-slot="昼" data-series="今日のBOSS" id="p152"><div class="phead"><span class="no">152</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.118</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今日お店に着いて最初に何を見てました？」
 
 BOSS「トイレや」
 
@@ -2869,7 +2871,7 @@ BOSS「料理や接客でどれだけ頑張っても、トイレが汚れてた�
 秘書「店長が真っ青になってました」
 
 BOSS「せやろな」</div><div class="judge" data-k="post152"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post153" data-no="153" data-slot="夕" data-series="BOSS図鑑" id="p153"><div class="phead"><span class="no">153</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">本人確認済み</span></div><span class="stats"><b>174</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マックって結局何年いたんですか」
+<article class="post" data-k="post153" data-no="153" data-slot="昼" data-series="BOSS図鑑" id="p153"><div class="phead"><span class="no">153</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">本人確認済み</span></div><span class="stats"><b>174</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マックって結局何年いたんですか」
 
 BOSS「16から31までや」
 
@@ -2886,7 +2888,7 @@ BOSS「そこで覚えたことしか持ってへん。あとは全部その応�
 BOSS「せやねん。だから今もマックの話ばっかりしてまう」
 
 秘書「毎日聞いてます」</div><div class="judge" data-k="post153"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post154" data-no="154" data-slot="夕" data-series="BOSS図鑑" id="p154"><div class="phead"><span class="no">154</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.53</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、応援で厨房入れます？」
+<article class="post" data-k="post154" data-no="154" data-slot="昼" data-series="BOSS図鑑" id="p154"><div class="phead"><span class="no">154</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.53</span></div><span class="stats"><b>187</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、応援で厨房入れます？」
 
 BOSS「無理やw」
 
@@ -2905,7 +2907,7 @@ BOSS「隠す気ない。できひんことが多いから、周りが支えて�
 秘書「本当にそう思ってます？」
 
 BOSS「思てる。ネギ切れる人間が偉いなら、俺は今ここにおらん」</div><div class="judge" data-k="post154"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post155" data-no="155" data-slot="夕" data-series="BOSS図鑑" id="p155"><div class="phead"><span class="no">155</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">notes全体</span></div><span class="stats"><b>156</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、朝のメッセージ今日で何本目ですか」
+<article class="post" data-k="post155" data-no="155" data-slot="昼" data-series="BOSS図鑑" id="p155"><div class="phead"><span class="no">155</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">notes全体</span></div><span class="stats"><b>156</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、朝のメッセージ今日で何本目ですか」
 
 BOSS「415や！！」
 
@@ -2924,7 +2926,7 @@ BOSS「読め」
 秘書「一言でした」
 
 BOSS「書いてる方は、もっとしんどいぞ」</div><div class="judge" data-k="post155"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post156" data-no="156" data-slot="夕" data-series="BOSS図鑑" id="p156"><div class="phead"><span class="no">156</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.288</span></div><span class="stats"><b>217</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、学生時代ってどんな感じでした？」
+<article class="post" data-k="post156" data-no="156" data-slot="昼" data-series="BOSS図鑑" id="p156"><div class="phead"><span class="no">156</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.288</span></div><span class="stats"><b>217</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、学生時代ってどんな感じでした？」
 
 BOSS「勉強できひんかった。学校もまともに行ってへん」
 
@@ -2943,7 +2945,7 @@ BOSS「もし真面目に勉強してたら、たぶん今の景色は存在し�
 秘書「後悔はないですか」
 
 BOSS「ない。あの遠回りが全部、今の材料になってる」</div><div class="judge" data-k="post156"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post157" data-no="157" data-slot="夕" data-series="BOSS図鑑" id="p157"><div class="phead"><span class="no">157</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.248</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、休みの日って何してるんですか」
+<article class="post" data-k="post157" data-no="157" data-slot="昼" data-series="BOSS図鑑" id="p157"><div class="phead"><span class="no">157</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.248</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、休みの日って何してるんですか」
 
 BOSS「寝てる時も、夢の中でも、うまプロのこと考えてる」
 
@@ -2962,7 +2964,7 @@ BOSS「仕事とプライベートを分ける、という発想がそもそも�
 秘書「質問の答えになってません」
 
 BOSS「せやなw」</div><div class="judge" data-k="post157"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post158" data-no="158" data-slot="夕" data-series="昔の一喝" id="p158"><div class="phead"><span class="no">158</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>235</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マック時代の部下の方がこう書いてました」
+<article class="post" data-k="post158" data-no="158" data-slot="昼" data-series="昔の一喝" id="p158"><div class="phead"><span class="no">158</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 佐々木さん</span></div><span class="stats"><b>235</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マック時代の部下の方がこう書いてました」
 
 『床に物が落ちたらすぐ拾う。ポテト1本も落とさない』
 
@@ -2981,7 +2983,7 @@ BOSS「そこや！！」
 BOSS「基準は、言い続けた側の中じゃない。受け取った側の当たり前に変わった時に、初めて文化になる」
 
 秘書「急に真面目」</div><div class="judge" data-k="post158"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post159" data-no="159" data-slot="夕" data-series="昔の一喝" id="p159"><div class="phead"><span class="no">159</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『パンのごまが一粒落ちてるだけでプレップ、ゴミと言われた』と」
+<article class="post" data-k="post159" data-no="159" data-slot="昼" data-series="昔の一喝" id="p159"><div class="phead"><span class="no">159</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 若代さん</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『パンのごまが一粒落ちてるだけでプレップ、ゴミと言われた』と」
 
 BOSS「言うた」
 
@@ -3000,7 +3002,7 @@ BOSS「細かいんちゃう。点と点を線にしてるだけや！！」
 秘書「全部つながってるんですね」
 
 BOSS「つながってへんことは、そもそも言わん」</div><div class="judge" data-k="post159"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post160" data-no="160" data-slot="夕" data-series="昔の一喝" id="p160"><div class="phead"><span class="no">160</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 若代さん</span><span class="chip cta">CTA</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『本当に確認の鬼で、いい意味でしつこかった。今でも変わらないですが』と」
+<article class="post" data-k="post160" data-no="160" data-slot="昼" data-series="昔の一喝" id="p160"><div class="phead"><span class="no">160</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 若代さん</span><span class="chip cta">CTA</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『本当に確認の鬼で、いい意味でしつこかった。今でも変わらないですが』と」
 
 BOSS「余計やろ、最後w」
 
@@ -3017,7 +3019,7 @@ BOSS「基準は決めただけじゃ守られへん。確認し続けた分し�
 BOSS「決める会社は多い。貼り出す会社も多い。毎日確認してる会社はほとんどない」
 
 秘書「今日も3回来ました」</div><div class="judge" data-k="post160"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post161" data-no="161" data-slot="夕" data-series="昔の一喝" id="p161"><div class="phead"><span class="no">161</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『水滴ひとつ残さない、床の髪の毛1本も見逃さない』と」
+<article class="post" data-k="post161" data-no="161" data-slot="昼" data-series="昔の一喝" id="p161"><div class="phead"><span class="no">161</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『水滴ひとつ残さない、床の髪の毛1本も見逃さない』と」
 
 BOSS「そらそうや」
 
@@ -3036,7 +3038,7 @@ BOSS「そこまでいったら、もう俺いらんわ」
 秘書「そこがゴールですか」
 
 BOSS「せや。いらんようになるのが一番ええ」</div><div class="judge" data-k="post161"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post162" data-no="162" data-slot="夕" data-series="昔の一喝" id="p162"><div class="phead"><span class="no">162</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>196</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時、BOSSがよく言ってた質問があるそうです」
+<article class="post" data-k="post162" data-no="162" data-slot="昼" data-series="昔の一喝" id="p162"><div class="phead"><span class="no">162</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 木村さん</span></div><span class="stats"><b>196</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時、BOSSがよく言ってた質問があるそうです」
 
 『今の状態、自信持って見せられる？』
 
@@ -3055,7 +3057,7 @@ BOSS「やったかどうかは自分の都合や。見せられるかは相手�
 BOSS「その差で、店の見え方が全部変わる！！」
 
 秘書「使わせてもらいます」</div><div class="judge" data-k="post162"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post163" data-no="163" data-slot="夕" data-series="昔の一喝" id="p163"><div class="phead"><span class="no">163</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>234</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「マック時代の店舗ビジョン、覚えてます？」
+<article class="post" data-k="post163" data-no="163" data-slot="昼" data-series="昔の一喝" id="p163"><div class="phead"><span class="no">163</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>234</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「マック時代の店舗ビジョン、覚えてます？」
 
 BOSS「日本一のQuick Service Restaurant」
 
@@ -3074,7 +3076,7 @@ BOSS「貼っただけの紙に、力はない。一番現場に近い子が自�
 秘書「そこまで持っていくのに何が要りますか」
 
 BOSS「才能でも仕組みでもない。しつこさだけや！！」</div><div class="judge" data-k="post163"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post164" data-no="164" data-slot="夕" data-series="昔の一喝" id="p164"><div class="phead"><span class="no">164</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.394 畑さん</span></div><span class="stats"><b>235</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『できないクルーがある日急にできるようになってて、誰に教わったか聞くと大抵BOSSでした』と」
+<article class="post" data-k="post164" data-no="164" data-slot="昼" data-series="昔の一喝" id="p164"><div class="phead"><span class="no">164</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.394 畑さん</span></div><span class="stats"><b>235</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『できないクルーがある日急にできるようになってて、誰に教わったか聞くと大抵BOSSでした』と」
 
 BOSS「そんな大した話ちゃう」
 
@@ -3091,7 +3093,7 @@ BOSS「ちゃう。できひん子はおらん。合うやり方に、まだ出�
 BOSS「見切った瞬間に、その子の可能性はそこで終わる。それだけは絶対にせえへん！！」
 
 秘書「かっこいいです」</div><div class="judge" data-k="post164"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post165" data-no="165" data-slot="夕" data-series="昔の一喝" id="p165"><div class="phead"><span class="no">165</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.316 畑さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが失敗したって言うのを聞いたことがない』と」
+<article class="post" data-k="post165" data-no="165" data-slot="昼" data-series="昔の一喝" id="p165"><div class="phead"><span class="no">165</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.316 畑さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが失敗したって言うのを聞いたことがない』と」
 
 BOSS「ふーんw」
 
@@ -3110,7 +3112,7 @@ BOSS「ただ、認めへんかったんちゃう。認めてる暇がなかっ�
 秘書「といいますと」
 
 BOSS「悔しいし、どうやって乗り越えるかで頭がいっぱいやったからな」</div><div class="judge" data-k="post165"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post166" data-no="166" data-slot="夕" data-series="昔の一喝" id="p166"><div class="phead"><span class="no">166</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.393 畑さん</span></div><span class="stats"><b>223</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『1つ上、2つ上の目線で仕事してた』と」
+<article class="post" data-k="post166" data-no="166" data-slot="昼" data-series="昔の一喝" id="p166"><div class="phead"><span class="no">166</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.393 畑さん</span></div><span class="stats"><b>223</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『1つ上、2つ上の目線で仕事してた』と」
 
 BOSS「意識してへんわ」
 
@@ -3129,7 +3131,7 @@ BOSS「店長が店長の仕事しかせえへんかったら、その店は店�
 秘書「役職が上限になると」
 
 BOSS「役職は上限じゃなくて下限や。そこから上は自由やぞ」</div><div class="judge" data-k="post166"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post167" data-no="167" data-slot="夕" data-series="昔の一喝" id="p167"><div class="phead"><span class="no">167</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.118 若代さん</span></div><span class="stats"><b>234</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが巡回に出たと聞いたら、真っ先にトイレのエラーを直しに走った』と」
+<article class="post" data-k="post167" data-no="167" data-slot="昼" data-series="昔の一喝" id="p167"><div class="phead"><span class="no">167</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.118 若代さん</span></div><span class="stats"><b>234</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが巡回に出たと聞いたら、真っ先にトイレのエラーを直しに走った』と」
 
 BOSS「知ってる」
 
@@ -3148,7 +3150,7 @@ BOSS「まずは、見られる前に走れる人間になる。順番として�
 秘書「意外と優しいですね」
 
 BOSS「優しないわ。次はもっと厳しなるからな」</div><div class="judge" data-k="post167"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post168" data-no="168" data-slot="夕" data-series="昔の一喝" id="p168"><div class="phead"><span class="no">168</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.118 佐々木さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、1GC1トイレって何ですか」
+<article class="post" data-k="post168" data-no="168" data-slot="昼" data-series="昔の一喝" id="p168"><div class="phead"><span class="no">168</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.118 佐々木さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、1GC1トイレって何ですか」
 
 BOSS「お客様1組帰られるたびに、トイレを1回掃除する」
 
@@ -3167,7 +3169,7 @@ BOSS「覚えられへんルールは、無いのと一緒や！！」
 秘書「当時のクルーも同じこと書いてました」
 
 BOSS「そらそうや。覚えてくれてたということやろ？？」</div><div class="judge" data-k="post168"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post169" data-no="169" data-slot="夕" data-series="昔の一喝" id="p169"><div class="phead"><span class="no">169</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 増尾さん・大川さん</span></div><span class="stats"><b>210</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『伝え続ける徹底性がズバ抜けてる』と書いてました」
+<article class="post" data-k="post169" data-no="169" data-slot="昼" data-series="昔の一喝" id="p169"><div class="phead"><span class="no">169</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 増尾さん・大川さん</span></div><span class="stats"><b>210</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『伝え続ける徹底性がズバ抜けてる』と書いてました」
 
 BOSS「褒められてる気せえへんな」
 
@@ -3186,7 +3188,7 @@ BOSS「そっちで頼むわ」
 秘書「言い方一つですね」
 
 BOSS「一回言うて伝わるなら苦労はない。伝わるまで言うのが仕事や！！」</div><div class="judge" data-k="post169"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post170" data-no="170" data-slot="夕" data-series="今日のBOSS" id="p170"><div class="phead"><span class="no">170</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「うちの開発責任者がこう書いてました」
+<article class="post" data-k="post170" data-no="170" data-slot="昼" data-series="今日のBOSS" id="p170"><div class="phead"><span class="no">170</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「うちの開発責任者がこう書いてました」
 
 『マクド出身じゃないけど、1年9ヶ月一緒に働いて感じたこと。決めたならやる。言ったならやる。形になるまでやる』
 
@@ -3203,7 +3205,7 @@ BOSS「せや。外から来た人間の目にしか、本当の文化は映ら�
 秘書「だから信用すると」
 
 BOSS「身内の自己評価は当てにならん。よそから来た人間の一言が一番正確や！！」</div><div class="judge" data-k="post170"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post171" data-no="171" data-slot="夕" data-series="今日のBOSS" id="p171"><div class="phead"><span class="no">171</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>262</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「開発責任者が『このしつこさを止めた瞬間に、相手の熱は冷める』と書いてました」
+<article class="post" data-k="post171" data-no="171" data-slot="昼" data-series="今日のBOSS" id="p171"><div class="phead"><span class="no">171</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.332 西村</span></div><span class="stats"><b>262</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「開発責任者が『このしつこさを止めた瞬間に、相手の熱は冷める』と書いてました」
 
 BOSS「その通りや！！」
 
@@ -3222,7 +3224,7 @@ BOSS「こういう文章が社内から出てくる会社は、強いで」
 秘書「本人には言わないんですか」
 
 BOSS「言うわ。今から言うてくる」</div><div class="judge" data-k="post171"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post172" data-no="172" data-slot="夕" data-series="BOSS図鑑" id="p172"><div class="phead"><span class="no">172</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">Vol.126 江原さん</span></div><span class="stats"><b>221</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マック時代にマネージャールームの壁に7つの習慣貼ってました？」
+<article class="post" data-k="post172" data-no="172" data-slot="昼" data-series="BOSS図鑑" id="p172"><div class="phead"><span class="no">172</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">Vol.126 江原さん</span></div><span class="stats"><b>221</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、マック時代にマネージャールームの壁に7つの習慣貼ってました？」
 
 BOSS「貼ってたかもな」
 
@@ -3241,7 +3243,7 @@ BOSS「学校もまともに行ってへんかったからな。人より遅れ�
 秘書「自分の意志、信用してないんですね」
 
 BOSS「全然してへん。今も同じや！！」</div><div class="judge" data-k="post172"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post173" data-no="173" data-slot="夕" data-series="今日のBOSS" id="p173"><div class="phead"><span class="no">173</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.290</span></div><span class="stats"><b>205</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、誕生日に本もらってましたよね」
+<article class="post" data-k="post173" data-no="173" data-slot="昼" data-series="今日のBOSS" id="p173"><div class="phead"><span class="no">173</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.290</span></div><span class="stats"><b>205</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、誕生日に本もらってましたよね」
 
 BOSS「もろた」
 
@@ -3260,7 +3262,7 @@ BOSS「そういうことをする人間が、周りにおるということや�
 秘書「嬉しかったですか」
 
 BOSS「嬉しいに決まってるやろ。俺がすごいんちゃう。周りがすごいだけや！！」</div><div class="judge" data-k="post173"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post174" data-no="174" data-slot="夕" data-series="今日のBOSS" id="p174"><div class="phead"><span class="no">174</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">notes全体</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、朝のメッセージに毎回コメントつきますよね」
+<article class="post" data-k="post174" data-no="174" data-slot="昼" data-series="今日のBOSS" id="p174"><div class="phead"><span class="no">174</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">notes全体</span></div><span class="stats"><b>192</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、朝のメッセージに毎回コメントつきますよね」
 
 BOSS「つくなw」
 
@@ -3279,7 +3281,7 @@ BOSS「ちゃう。返ってくるから書けてるだけや！！」
 秘書「続けさせてもらってる、みたいな」
 
 BOSS「そっちの方が正確やな」</div><div class="judge" data-k="post174"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post175" data-no="175" data-slot="夕" data-series="今日のBOSS" id="p175"><div class="phead"><span class="no">175</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>217</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員の方がこう書いてました」
+<article class="post" data-k="post175" data-no="175" data-slot="昼" data-series="今日のBOSS" id="p175"><div class="phead"><span class="no">175</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.413 才木さん</span></div><span class="stats"><b>217</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員の方がこう書いてました」
 
 『中学で団体競技から逃げました。逃げる、イコール楽になる、が癖になってました』
 
@@ -3298,7 +3300,7 @@ BOSS「そこや。過去の弱さが、そのまま強みになってる」
 秘書「本人は財産だと思ってないかもしれません」
 
 BOSS「なら教えたれ。うちの財産やと」</div><div class="judge" data-k="post175"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post176" data-no="176" data-slot="夕" data-series="今日のBOSS" id="p176"><div class="phead"><span class="no">176</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.128 江原さん</span></div><span class="stats"><b>220</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「外の方がうちのメンバーを見て『凄い人の集まりです』と書いてました」
+<article class="post" data-k="post176" data-no="176" data-slot="昼" data-series="今日のBOSS" id="p176"><div class="phead"><span class="no">176</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.128 江原さん</span></div><span class="stats"><b>220</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「外の方がうちのメンバーを見て『凄い人の集まりです』と書いてました」
 
 BOSS「そこや」
 
@@ -3317,7 +3319,7 @@ BOSS「上が凄い会社はいくらでもある。真ん中が凄い会社は�
 秘書「珍しく真面目でした」
 
 BOSS「たまには言わせろ」</div><div class="judge" data-k="post176"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post177" data-no="177" data-slot="夕" data-series="今日のBOSS" id="p177"><div class="phead"><span class="no">177</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.213</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、出店計画を50店舗から25店舗に減らした時、何考えてました？」
+<article class="post" data-k="post177" data-no="177" data-slot="昼" data-series="今日のBOSS" id="p177"><div class="phead"><span class="no">177</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.213</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、出店計画を50店舗から25店舗に減らした時、何考えてました？」
 
 BOSS「スピードを落とす判断やない」
 
@@ -3336,7 +3338,7 @@ BOSS「文化が揃うてへんのに数だけ増やしても、意味がない�
 秘書「急がば回れ、ですか」
 
 BOSS「そういうことや！！」</div><div class="judge" data-k="post177"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post178" data-no="178" data-slot="夕" data-series="BOSS図鑑" id="p178"><div class="phead"><span class="no">178</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>194</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が書いたBOSS図鑑に、こんな一行がありました」
+<article class="post" data-k="post178" data-no="178" data-slot="昼" data-series="BOSS図鑑" id="p178"><div class="phead"><span class="no">178</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>194</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が書いたBOSS図鑑に、こんな一行がありました」
 
 『限界なし。無理とか言わへん』
 
@@ -3357,7 +3359,7 @@ BOSS「気づいた。限界を決めへんのと、限界に気づかへんの�
 秘書「そこは自覚あるんですねw」
 
 BOSS「最近な」</div><div class="judge" data-k="post178"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post179" data-no="179" data-slot="夕" data-series="BOSS図鑑" id="p179"><div class="phead"><span class="no">179</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>210</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑で一番正直な一行です」
+<article class="post" data-k="post179" data-no="179" data-slot="昼" data-series="BOSS図鑑" id="p179"><div class="phead"><span class="no">179</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>210</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑で一番正直な一行です」
 
 『その時は、何無理言うてんの、と思うけど、それが後に理解できる』
 
@@ -3376,7 +3378,7 @@ BOSS「その場で全員が納得することしか言わんかったら、今�
 BOSS「時間がかかるのは構へん。後で理解してもらえるように、やり切るだけや！！」
 
 秘書「後で、が前提なんですね」</div><div class="judge" data-k="post179"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post180" data-no="180" data-slot="夕" data-series="BOSS図鑑" id="p180"><div class="phead"><span class="no">180</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑で一番笑った一行です」
+<article class="post" data-k="post180" data-no="180" data-slot="昼" data-series="BOSS図鑑" id="p180"><div class="phead"><span class="no">180</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>188</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑で一番笑った一行です」
 
 『1番最初に裸で踊り始めるバカになれる』
 
@@ -3395,7 +3397,7 @@ BOSS「誰かが最初に恥をかかんかったら、場は動かへんから�
 BOSS「あれが一番しんどい。せやから俺が最初に行く」
 
 秘書「今日も行ってました」</div><div class="judge" data-k="post180"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post181" data-no="181" data-slot="夕" data-series="BOSS図鑑" id="p181"><div class="phead"><span class="no">181</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>199</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこんな一行が。『もしかしたら姿そのものがイズム、かも』」
+<article class="post" data-k="post181" data-no="181" data-slot="昼" data-series="BOSS図鑑" id="p181"><div class="phead"><span class="no">181</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>199</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこんな一行が。『もしかしたら姿そのものがイズム、かも』」
 
 BOSS「はてな2個ついてるやん！！」
 
@@ -3414,7 +3416,7 @@ BOSS「言葉で伝えられることには限界がある。結局、毎日ど�
 秘書「背中ですか」
 
 BOSS「背中は嘘つかれへんからな」</div><div class="judge" data-k="post181"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post182" data-no="182" data-slot="夕" data-series="BOSS図鑑" id="p182"><div class="phead"><span class="no">182</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>208</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑の一行です。『人を思う気持ち。それをまた見せつけずに出来る』」
+<article class="post" data-k="post182" data-no="182" data-slot="昼" data-series="BOSS図鑑" id="p182"><div class="phead"><span class="no">182</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>208</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑の一行です。『人を思う気持ち。それをまた見せつけずに出来る』」
 
 BOSS「できてるとは思てへん」
 
@@ -3433,7 +3435,7 @@ BOSS「貸しになった時点で、もう思いやりちゃう。ただの取�
 秘書「メモします」
 
 BOSS「やったことは忘れるくらいでちょうどええ」</div><div class="judge" data-k="post182"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post183" data-no="183" data-slot="夕" data-series="BOSS図鑑" id="p183"><div class="phead"><span class="no">183</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>198</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこうあります。『努力してる姿、疲れてる姿、壁を人には見せない』」
+<article class="post" data-k="post183" data-no="183" data-slot="昼" data-series="BOSS図鑑" id="p183"><div class="phead"><span class="no">183</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>198</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこうあります。『努力してる姿、疲れてる姿、壁を人には見せない』」
 
 BOSS「まあなw」
 
@@ -3452,7 +3454,7 @@ BOSS「認める。ただ、上がしんどそうにしてたら、下はもっ�
 秘書「だから見せないと」
 
 BOSS「強いんちゃう。見せる場所を選んでるだけや！！」</div><div class="judge" data-k="post183"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post184" data-no="184" data-slot="夕" data-series="BOSS図鑑" id="p184"><div class="phead"><span class="no">184</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>208</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑に『性善説』と書かれてました」
+<article class="post" data-k="post184" data-no="184" data-slot="昼" data-series="BOSS図鑑" id="p184"><div class="phead"><span class="no">184</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>208</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑に『性善説』と書かれてました」
 
 BOSS「合うてるw」
 
@@ -3471,7 +3473,7 @@ BOSS「サボってるんちゃう。伝わってへんか、やり方が分か�
 秘書「そう見た方が早いと」
 
 BOSS「疑って管理する組織より、信じて任せる組織の方が強い。俺はこっち選ぶ」</div><div class="judge" data-k="post184"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post185" data-no="185" data-slot="夕" data-series="BOSS図鑑" id="p185"><div class="phead"><span class="no">185</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこうあります。『安請け合いのイエスマンではなく、本気で真剣に取り組むイエスマン』」
+<article class="post" data-k="post185" data-no="185" data-slot="昼" data-series="BOSS図鑑" id="p185"><div class="phead"><span class="no">185</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑にこうあります。『安請け合いのイエスマンではなく、本気で真剣に取り組むイエスマン』」
 
 BOSS「正確に見られてんな」
 
@@ -3490,7 +3492,7 @@ BOSS「その場だけ空気がようなって、あとで全部壊れる」
 秘書「じゃあどうすれば」
 
 BOSS「引き受けるか、その場で断るか。どっちかしかない」</div><div class="judge" data-k="post185"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post186" data-no="186" data-slot="夕" data-series="BOSS図鑑" id="p186"><div class="phead"><span class="no">186</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>207</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑、全部読んで気づいたことが」
+<article class="post" data-k="post186" data-no="186" data-slot="昼" data-series="BOSS図鑑" id="p186"><div class="phead"><span class="no">186</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar pB">BOSS図鑑</span><span class="chip src">vol.79</span></div><span class="stats"><b>207</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS図鑑、全部読んで気づいたことが」
 
 BOSS「なんや」
 
@@ -3509,7 +3511,7 @@ BOSS「スキルより先に、イズムを持てるかどうかや！！」
 秘書「スキルは後回しですかw」
 
 BOSS「スキルは後から必ず身につく。姿勢は、後から変えるのが一番しんどいからな」</div><div class="judge" data-k="post186"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post187" data-no="187" data-slot="夕" data-series="今日のBOSS" id="p187"><div class="phead"><span class="no">187</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.396 畑さん</span></div><span class="stats"><b>181</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「朝のメッセージに、社員がこう返してました」
+<article class="post" data-k="post187" data-no="187" data-slot="昼" data-series="今日のBOSS" id="p187"><div class="phead"><span class="no">187</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.396 畑さん</span></div><span class="stats"><b>181</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「朝のメッセージに、社員がこう返してました」
 
 『もっと覚えたい事が山のようにある。のびしろしか無いわ』
 
@@ -3528,7 +3530,7 @@ BOSS「上司のメッセージに歌詞で返してくる人間がおる会社�
 秘書「たしかに珍しいです」
 
 BOSS「そこが一番ええとこや！！」</div><div class="judge" data-k="post187"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post188" data-no="188" data-slot="夕" data-series="今日のBOSS" id="p188"><div class="phead"><span class="no">188</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.411 畑さん</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員がこう書いてました」
+<article class="post" data-k="post188" data-no="188" data-slot="昼" data-series="今日のBOSS" id="p188"><div class="phead"><span class="no">188</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.411 畑さん</span></div><span class="stats"><b>214</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員がこう書いてました」
 
 『リーダーシップはスキル。役職をもらってからでは発揮できない。メンバーのときから訓練しないと無理』
 
@@ -3547,7 +3549,7 @@ BOSS「今まで発揮してきたもんを追認するだけや。順番が逆�
 BOSS「発揮してた人間に、後から肩書きがついてくる。それだけの話や」
 
 秘書「今から鍛えます」</div><div class="judge" data-k="post188"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post189" data-no="189" data-slot="夕" data-series="今日のBOSS" id="p189"><div class="phead"><span class="no">189</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.397 畑さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が『損得を超えるをBOSSが一番体現してる』と書いてました」
+<article class="post" data-k="post189" data-no="189" data-slot="昼" data-series="今日のBOSS" id="p189"><div class="phead"><span class="no">189</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.397 畑さん</span></div><span class="stats"><b>203</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が『損得を超えるをBOSSが一番体現してる』と書いてました」
 
 BOSS「そんな立派なもんちゃうw」
 
@@ -3566,7 +3568,7 @@ BOSS「まあな。結果的にそうなってるだけや！！」
 秘書「十分立派だと思います」
 
 BOSS「言うな」</div><div class="judge" data-k="post189"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post190" data-no="190" data-slot="夕" data-series="今日のBOSS" id="p190"><div class="phead"><span class="no">190</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.125 江原さん</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「現役の店長がこう書いてました」
+<article class="post" data-k="post190" data-no="190" data-slot="昼" data-series="今日のBOSS" id="p190"><div class="phead"><span class="no">190</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.125 江原さん</span></div><span class="stats"><b>218</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「現役の店長がこう書いてました」
 
 『共有できてたら避けられたトラブル。引き継ぎ不足。時間帯マネージャー同士の引き継ぎで防げた廃棄。共有してたら防げた退職』
 
@@ -3585,7 +3587,7 @@ BOSS「報連相は精神論じゃなくて損得の話や。金と人が実際�
 BOSS「出る。廃棄も退職も、全部数字になって返ってくる」
 
 秘書「明日から流します」</div><div class="judge" data-k="post190"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post191" data-no="191" data-slot="夕" data-series="今日のBOSS" id="p191"><div class="phead"><span class="no">191</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.123 江原さん</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、外の方から突然こんな連絡が」
+<article class="post" data-k="post191" data-no="191" data-slot="昼" data-series="今日のBOSS" id="p191"><div class="phead"><span class="no">191</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">Vol.123 江原さん</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、外の方から突然こんな連絡が」
 
 『クルーが成長し、アルバイトで運営できるシステムを作ろうと思っています。完成したら共有させてください』
 
@@ -3604,7 +3606,7 @@ BOSS「止めるわけないやろ。こういう人がおるから会社が進�
 BOSS「頼まれてから動く人間は山ほどおる。頼まれる前に動く人間は、めったにおらん」
 
 秘書「大事にします」</div><div class="judge" data-k="post191"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post192" data-no="192" data-slot="夕" data-series="今日のBOSS" id="p192"><div class="phead"><span class="no">192</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.201</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ここで出してる昔話、ほとんど10年以上前の部下の方の言葉なんですけど」
+<article class="post" data-k="post192" data-no="192" data-slot="昼" data-series="今日のBOSS" id="p192"><div class="phead"><span class="no">192</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.201</span></div><span class="stats"><b>193</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、ここで出してる昔話、ほとんど10年以上前の部下の方の言葉なんですけど」
 
 BOSS「せやなw」
 
@@ -3623,7 +3625,7 @@ BOSS「せやねん！！」
 秘書「素直に認めましたね」
 
 BOSS「この人と働きたい、を自分で言うても意味ない。あの事実の方が、よっぽど強いからな」</div><div class="judge" data-k="post192"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post193" data-no="193" data-slot="夕" data-series="今日のBOSS" id="p193"><div class="phead"><span class="no">193</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">notes全体</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うちの一番の財産って何だと思います？」
+<article class="post" data-k="post193" data-no="193" data-slot="昼" data-series="今日のBOSS" id="p193"><div class="phead"><span class="no">193</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">notes全体</span></div><span class="stats"><b>189</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、うちの一番の財産って何だと思います？」
 
 BOSS「空気やろ」
 
@@ -3642,7 +3644,7 @@ BOSS「戻らん。だから一番気を遣ってる」
 秘書「今日も守れてますかね」
 
 BOSS「それを毎日聞け。聞かんようになった時が、崩れ始めや！！」</div><div class="judge" data-k="post193"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post194" data-no="194" data-slot="夕" data-series="昔の一喝" id="p194"><div class="phead"><span class="no">194</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 コメント群</span></div><span class="stats"><b>207</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「昔の方の文章に、この一行が何回も出てきます。『当時は正直、厳しく感じました』」
+<article class="post" data-k="post194" data-no="194" data-slot="昼" data-series="昔の一喝" id="p194"><div class="phead"><span class="no">194</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 コメント群</span></div><span class="stats"><b>207</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「昔の方の文章に、この一行が何回も出てきます。『当時は正直、厳しく感じました』」
 
 BOSS「やろな」
 
@@ -3661,7 +3663,7 @@ BOSS「知ってる」
 秘書「『続けてるうちに、自分たちの当たり前のラインになっていた』と」
 
 BOSS「そこまで一緒に来てくれた。それが全部や！！」</div><div class="judge" data-k="post194"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post195" data-no="195" data-slot="夕" data-series="昔の一喝" id="p195"><div class="phead"><span class="no">195</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>228</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「今も現役でマックにいる方が、こう振り返ってました」
+<article class="post" data-k="post195" data-no="195" data-slot="昼" data-series="昔の一喝" id="p195"><div class="phead"><span class="no">195</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 江原さん</span></div><span class="stats"><b>228</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「今も現役でマックにいる方が、こう振り返ってました」
 
 『スピードはエリアNo.1の店舗でした。基準をクルーまで浸透させる徹底性が素晴らしかった』
 
@@ -3680,7 +3682,7 @@ BOSS「末端まで届いて、やっと決めたことになる」
 BOSS「決めてへんのと同じや。会議で決まっただけの話は、この世に山ほどある」
 
 秘書「耳が痛いです」</div><div class="judge" data-k="post195"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post196" data-no="196" data-slot="夕" data-series="昔の一喝" id="p196"><div class="phead"><span class="no">196</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 増尾さん</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが常日頃ビジョンを口にして、みんなが何をすればいいか導かれてた』と」
+<article class="post" data-k="post196" data-no="196" data-slot="昼" data-series="昔の一喝" id="p196"><div class="phead"><span class="no">196</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">vol.332 増尾さん</span></div><span class="stats"><b>201</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「当時の方が『BOSSが常日頃ビジョンを口にして、みんなが何をすればいいか導かれてた』と」
 
 BOSS「言い続けただけや！！」
 
@@ -3699,7 +3701,7 @@ BOSS「数えてへん。会うたびに言うてたからなw」
 秘書「今も変わってませんね」
 
 BOSS「変えるつもりもないわ」</div><div class="judge" data-k="post196"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post197" data-no="197" data-slot="夕" data-series="今日のBOSS" id="p197"><div class="phead"><span class="no">197</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.403 畑さん</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が『家族から頑固と言われます。BOSSからも言われました』と書いてました」
+<article class="post" data-k="post197" data-no="197" data-slot="昼" data-series="今日のBOSS" id="p197"><div class="phead"><span class="no">197</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.403 畑さん</span></div><span class="stats"><b>209</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「社員が『家族から頑固と言われます。BOSSからも言われました』と書いてました」
 
 BOSS「言うたな」
 
@@ -3718,7 +3720,7 @@ BOSS「自分の頑固さは見えへんのに、人の頑固さはよう見え�
 秘書「全員そうですか」
 
 BOSS「全員そうや。素直さって、自分が頑固やと知ってるかどうかの差やと思う」</div><div class="judge" data-k="post197"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post198" data-no="198" data-slot="夕" data-series="昔の一喝" id="p198"><div class="phead"><span class="no">198</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">Vol.124 江原さん</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「昔の方が『仕事するBOSSも、遊んでるBOSSも見てきた。楽しく、真剣に。昔から変わらない』と」
+<article class="post" data-k="post198" data-no="198" data-slot="昼" data-series="昔の一喝" id="p198"><div class="phead"><span class="no">198</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p昔">昔の一喝</span><span class="chip src">Vol.124 江原さん</span></div><span class="stats"><b>229</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「昔の方が『仕事するBOSSも、遊んでるBOSSも見てきた。楽しく、真剣に。昔から変わらない』と」
 
 BOSS「変わってへんな」
 
@@ -3737,7 +3739,7 @@ BOSS「せや。笑ってる店は強い。これは間違いない」
 秘書「マックの頃からですかw」
 
 BOSS「チャレンジの日を作ったり、企画で盛り上げたり。ずっとやってたわ」</div><div class="judge" data-k="post198"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post199" data-no="199" data-slot="夕" data-series="今日のBOSS" id="p199"><div class="phead"><span class="no">199</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.290</span></div><span class="stats"><b>227</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今って会社にとってどういう時期ですか」
+<article class="post" data-k="post199" data-no="199" data-slot="昼" data-series="今日のBOSS" id="p199"><div class="phead"><span class="no">199</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.290</span></div><span class="stats"><b>227</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、今って会社にとってどういう時期ですか」
 
 BOSS「大きい岐路やと思てる」
 
@@ -3756,7 +3758,7 @@ BOSS「目先だけ見てて、理想の未来に辿り着いた会社を見た�
 秘書「珍しく長いですね」
 
 BOSS「叶えたい未来があるからや！！」</div><div class="judge" data-k="post199"><button class="jb ok" data-v="ok" type="button">OK</button><button class="jb ng" data-v="ng" type="button">NG</button><button class="jb done" type="button" hidden>投稿した</button><textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div></article>
-<article class="post" data-k="post200" data-no="200" data-slot="夕" data-series="今日のBOSS" id="p200"><div class="phead"><span class="no">200</span><div class="tags"><span class="chip slot sP">夕17時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.79</span></div><span class="stats"><b>170</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、このアカウント本人が書かないんですか」
+<article class="post" data-k="post200" data-no="200" data-slot="昼" data-series="今日のBOSS" id="p200"><div class="phead"><span class="no">200</span><div class="tags"><span class="chip slot sN">昼12時台</span><span class="chip pillar p今">今日のBOSS</span><span class="chip src">vol.79</span></div><span class="stats"><b>170</b>字</span><span class="rank" hidden></span></div><div class="ptext">秘書「BOSS、このアカウント本人が書かないんですか」
 
 BOSS「書かん」
 
@@ -5736,7 +5738,7 @@ BOSS「スキルは後から必ず身につく。姿勢は、後から変える�
 <script>(function () {
   var KEY = 'matsumura-x-stock-v2';
   var N = 302;
-  var SLOTS = {"朝": ["9/3 7:10", "9/4 7:20", "9/5 7:30", "9/6 7:40", "9/7 7:50", "9/8 7:00", "9/9 7:10", "9/10 7:20", "9/11 7:30", "9/12 7:40", "9/13 7:50", "9/14 7:00", "9/15 7:10", "9/16 7:20", "9/17 7:30", "9/18 7:40", "9/19 7:50", "9/20 7:00", "9/21 7:10", "9/22 7:20", "9/23 7:30", "9/24 7:40", "9/25 7:50", "9/26 7:00", "9/27 7:10", "9/28 7:20", "9/29 7:30", "9/30 7:40", "10/1 7:50", "10/2 7:00", "10/3 7:10", "10/4 7:20", "10/5 7:30", "10/6 7:40", "10/7 7:50", "10/8 7:00", "10/9 7:10", "10/10 7:20", "10/11 7:30", "10/12 7:40", "10/13 7:50", "10/14 7:00", "10/15 7:10", "10/16 7:20", "10/17 7:30", "10/18 7:40", "10/19 7:50", "10/20 7:00", "10/21 7:10", "10/22 7:20", "10/23 7:30", "10/24 7:40", "10/25 7:50", "10/26 7:00", "10/27 7:10", "10/28 7:20", "10/29 7:30", "10/30 7:40", "10/31 7:50", "11/1 7:00", "11/2 7:10", "11/3 7:20", "11/4 7:30", "11/5 7:40", "11/6 7:50", "11/7 7:00", "11/8 7:10", "11/9 7:20", "11/10 7:30", "11/11 7:40", "11/12 7:50", "11/13 7:00", "11/14 7:10", "11/15 7:20", "11/16 7:30", "11/17 7:40", "11/18 7:50", "11/19 7:00", "11/20 7:10", "11/21 7:20", "11/22 7:30", "11/23 7:40", "11/24 7:50", "11/25 7:00", "11/26 7:10", "11/27 7:20", "11/28 7:30", "11/29 7:40", "11/30 7:50", "12/1 7:00", "12/2 7:10", "12/3 7:20", "12/4 7:30", "12/5 7:40", "12/6 7:50", "12/7 7:00", "12/8 7:10", "12/9 7:20", "12/10 7:30", "12/11 7:40", "12/12 7:50", "12/13 7:00", "12/14 7:10", "12/15 7:20", "12/16 7:30", "12/17 7:40", "12/18 7:50", "12/19 7:00", "12/20 7:10", "12/21 7:20", "12/22 7:30", "12/23 7:40", "12/24 7:50", "12/25 7:00", "12/26 7:10", "12/27 7:20", "12/28 7:30", "12/29 7:40", "12/30 7:50", "12/31 7:00", "1/1 7:10", "1/2 7:20", "1/3 7:30", "1/4 7:40", "1/5 7:50", "1/6 7:00", "1/7 7:10", "1/8 7:20", "1/9 7:30", "1/10 7:40", "1/11 7:50", "1/12 7:00", "1/13 7:10", "1/14 7:20", "1/15 7:30", "1/16 7:40", "1/17 7:50", "1/18 7:00", "1/19 7:10", "1/20 7:20", "1/21 7:30", "1/22 7:40", "1/23 7:50", "1/24 7:00", "1/25 7:10", "1/26 7:20", "1/27 7:30", "1/28 7:40", "1/29 7:50", "1/30 7:00", "1/31 7:10", "2/1 7:20", "2/2 7:30", "2/3 7:40", "2/4 7:50", "2/5 7:00", "2/6 7:10", "2/7 7:20", "2/8 7:30", "2/9 7:40", "2/10 7:50", "2/11 7:00", "2/12 7:10", "2/13 7:20", "2/14 7:30", "2/15 7:40", "2/16 7:50", "2/17 7:00", "2/18 7:10", "2/19 7:20", "2/20 7:30", "2/21 7:40", "2/22 7:50", "2/23 7:00", "2/24 7:10", "2/25 7:20", "2/26 7:30", "2/27 7:40", "2/28 7:50", "3/1 7:00", "3/2 7:10", "3/3 7:20", "3/4 7:30", "3/5 7:40", "3/6 7:50", "3/7 7:00", "3/8 7:10", "3/9 7:20", "3/10 7:30", "3/11 7:40", "3/12 7:50", "3/13 7:00", "3/14 7:10", "3/15 7:20", "3/16 7:30", "3/17 7:40", "3/18 7:50", "3/19 7:00", "3/20 7:10"], "夕": ["9/2 17:00", "9/3 17:10", "9/4 17:20", "9/5 17:30", "9/6 17:40", "9/7 17:50", "9/8 17:00", "9/9 17:10", "9/10 17:20", "9/11 17:30", "9/12 17:40", "9/13 17:50", "9/14 17:00", "9/15 17:10", "9/16 17:20", "9/17 17:30", "9/18 17:40", "9/19 17:50", "9/20 17:00", "9/21 17:10", "9/22 17:20", "9/23 17:30", "9/24 17:40", "9/25 17:50", "9/26 17:00", "9/27 17:10", "9/28 17:20", "9/29 17:30", "9/30 17:40", "10/1 17:50", "10/2 17:00", "10/3 17:10", "10/4 17:20", "10/5 17:30", "10/6 17:40", "10/7 17:50", "10/8 17:00", "10/9 17:10", "10/10 17:20", "10/11 17:30", "10/12 17:40", "10/13 17:50", "10/14 17:00", "10/15 17:10", "10/16 17:20", "10/17 17:30", "10/18 17:40", "10/19 17:50", "10/20 17:00", "10/21 17:10", "10/22 17:20", "10/23 17:30", "10/24 17:40", "10/25 17:50", "10/26 17:00", "10/27 17:10", "10/28 17:20", "10/29 17:30", "10/30 17:40", "10/31 17:50", "11/1 17:00", "11/2 17:10", "11/3 17:20", "11/4 17:30", "11/5 17:40", "11/6 17:50", "11/7 17:00", "11/8 17:10", "11/9 17:20", "11/10 17:30", "11/11 17:40", "11/12 17:50", "11/13 17:00", "11/14 17:10", "11/15 17:20", "11/16 17:30", "11/17 17:40", "11/18 17:50", "11/19 17:00", "11/20 17:10", "11/21 17:20", "11/22 17:30", "11/23 17:40", "11/24 17:50", "11/25 17:00", "11/26 17:10", "11/27 17:20", "11/28 17:30", "11/29 17:40", "11/30 17:50", "12/1 17:00", "12/2 17:10", "12/3 17:20", "12/4 17:30", "12/5 17:40", "12/6 17:50", "12/7 17:00", "12/8 17:10", "12/9 17:20", "12/10 17:30", "12/11 17:40", "12/12 17:50", "12/13 17:00", "12/14 17:10", "12/15 17:20", "12/16 17:30", "12/17 17:40", "12/18 17:50", "12/19 17:00", "12/20 17:10", "12/21 17:20", "12/22 17:30", "12/23 17:40", "12/24 17:50", "12/25 17:00", "12/26 17:10", "12/27 17:20", "12/28 17:30", "12/29 17:40", "12/30 17:50", "12/31 17:00", "1/1 17:10", "1/2 17:20", "1/3 17:30", "1/4 17:40", "1/5 17:50", "1/6 17:00", "1/7 17:10", "1/8 17:20", "1/9 17:30", "1/10 17:40", "1/11 17:50", "1/12 17:00", "1/13 17:10", "1/14 17:20", "1/15 17:30", "1/16 17:40", "1/17 17:50", "1/18 17:00", "1/19 17:10", "1/20 17:20", "1/21 17:30", "1/22 17:40", "1/23 17:50", "1/24 17:00", "1/25 17:10", "1/26 17:20", "1/27 17:30", "1/28 17:40", "1/29 17:50", "1/30 17:00", "1/31 17:10", "2/1 17:20", "2/2 17:30", "2/3 17:40", "2/4 17:50", "2/5 17:00", "2/6 17:10", "2/7 17:20", "2/8 17:30", "2/9 17:40", "2/10 17:50", "2/11 17:00", "2/12 17:10", "2/13 17:20", "2/14 17:30", "2/15 17:40", "2/16 17:50", "2/17 17:00", "2/18 17:10", "2/19 17:20", "2/20 17:30", "2/21 17:40", "2/22 17:50", "2/23 17:00", "2/24 17:10", "2/25 17:20", "2/26 17:30", "2/27 17:40", "2/28 17:50", "3/1 17:00", "3/2 17:10", "3/3 17:20", "3/4 17:30", "3/5 17:40", "3/6 17:50", "3/7 17:00", "3/8 17:10", "3/9 17:20", "3/10 17:30", "3/11 17:40", "3/12 17:50", "3/13 17:00", "3/14 17:10", "3/15 17:20", "3/16 17:30", "3/17 17:40", "3/18 17:50", "3/19 17:00", "3/20 17:10"]}, SEPCAP = {"朝": 28, "夕": 29}, SEPTOTAL = 57;
+  var SLOTS = {"朝": [{"l": "9/7 7:10", "o": 7398660710, "s": true}, {"l": "9/8 7:20", "o": 7398670720, "s": true}, {"l": "9/9 7:30", "o": 7398680730, "s": true}, {"l": "9/10 7:40", "o": 7398690740, "s": true}, {"l": "9/11 7:50", "o": 7398700750, "s": true}, {"l": "9/12 7:00", "o": 7398710700, "s": true}, {"l": "9/13 7:10", "o": 7398720710, "s": true}, {"l": "9/14 7:20", "o": 7398730720, "s": true}, {"l": "9/15 7:30", "o": 7398740730, "s": true}, {"l": "9/16 7:40", "o": 7398750740, "s": true}, {"l": "9/17 7:50", "o": 7398760750, "s": true}, {"l": "9/18 7:00", "o": 7398770700, "s": true}, {"l": "9/19 7:10", "o": 7398780710, "s": true}, {"l": "9/20 7:20", "o": 7398790720, "s": true}, {"l": "9/21 7:30", "o": 7398800730, "s": true}, {"l": "9/22 7:40", "o": 7398810740, "s": true}, {"l": "9/23 7:50", "o": 7398820750, "s": true}, {"l": "9/24 7:00", "o": 7398830700, "s": true}, {"l": "9/25 7:10", "o": 7398840710, "s": true}, {"l": "9/26 7:20", "o": 7398850720, "s": true}, {"l": "9/27 7:30", "o": 7398860730, "s": true}, {"l": "9/28 7:40", "o": 7398870740, "s": true}, {"l": "9/29 7:50", "o": 7398880750, "s": true}, {"l": "9/30 7:00", "o": 7398890700, "s": true}, {"l": "10/1 7:10", "o": 7398900710, "s": false}, {"l": "10/2 7:20", "o": 7398910720, "s": false}, {"l": "10/3 7:30", "o": 7398920730, "s": false}, {"l": "10/4 7:40", "o": 7398930740, "s": false}, {"l": "10/5 7:50", "o": 7398940750, "s": false}, {"l": "10/6 7:00", "o": 7398950700, "s": false}, {"l": "10/7 7:10", "o": 7398960710, "s": false}, {"l": "10/8 7:20", "o": 7398970720, "s": false}, {"l": "10/9 7:30", "o": 7398980730, "s": false}, {"l": "10/10 7:40", "o": 7398990740, "s": false}, {"l": "10/11 7:50", "o": 7399000750, "s": false}, {"l": "10/12 7:00", "o": 7399010700, "s": false}, {"l": "10/13 7:10", "o": 7399020710, "s": false}, {"l": "10/14 7:20", "o": 7399030720, "s": false}, {"l": "10/15 7:30", "o": 7399040730, "s": false}, {"l": "10/16 7:40", "o": 7399050740, "s": false}, {"l": "10/17 7:50", "o": 7399060750, "s": false}, {"l": "10/18 7:00", "o": 7399070700, "s": false}, {"l": "10/19 7:10", "o": 7399080710, "s": false}, {"l": "10/20 7:20", "o": 7399090720, "s": false}, {"l": "10/21 7:30", "o": 7399100730, "s": false}, {"l": "10/22 7:40", "o": 7399110740, "s": false}, {"l": "10/23 7:50", "o": 7399120750, "s": false}, {"l": "10/24 7:00", "o": 7399130700, "s": false}, {"l": "10/25 7:10", "o": 7399140710, "s": false}, {"l": "10/26 7:20", "o": 7399150720, "s": false}, {"l": "10/27 7:30", "o": 7399160730, "s": false}, {"l": "10/28 7:40", "o": 7399170740, "s": false}, {"l": "10/29 7:50", "o": 7399180750, "s": false}, {"l": "10/30 7:00", "o": 7399190700, "s": false}, {"l": "10/31 7:10", "o": 7399200710, "s": false}, {"l": "11/1 7:20", "o": 7399210720, "s": false}, {"l": "11/2 7:30", "o": 7399220730, "s": false}, {"l": "11/3 7:40", "o": 7399230740, "s": false}, {"l": "11/4 7:50", "o": 7399240750, "s": false}, {"l": "11/5 7:00", "o": 7399250700, "s": false}, {"l": "11/6 7:10", "o": 7399260710, "s": false}, {"l": "11/7 7:20", "o": 7399270720, "s": false}, {"l": "11/8 7:30", "o": 7399280730, "s": false}, {"l": "11/9 7:40", "o": 7399290740, "s": false}, {"l": "11/10 7:50", "o": 7399300750, "s": false}, {"l": "11/11 7:00", "o": 7399310700, "s": false}, {"l": "11/12 7:10", "o": 7399320710, "s": false}, {"l": "11/13 7:20", "o": 7399330720, "s": false}, {"l": "11/14 7:30", "o": 7399340730, "s": false}, {"l": "11/15 7:40", "o": 7399350740, "s": false}, {"l": "11/16 7:50", "o": 7399360750, "s": false}, {"l": "11/17 7:00", "o": 7399370700, "s": false}, {"l": "11/18 7:10", "o": 7399380710, "s": false}, {"l": "11/19 7:20", "o": 7399390720, "s": false}, {"l": "11/20 7:30", "o": 7399400730, "s": false}, {"l": "11/21 7:40", "o": 7399410740, "s": false}, {"l": "11/22 7:50", "o": 7399420750, "s": false}, {"l": "11/23 7:00", "o": 7399430700, "s": false}, {"l": "11/24 7:10", "o": 7399440710, "s": false}, {"l": "11/25 7:20", "o": 7399450720, "s": false}, {"l": "11/26 7:30", "o": 7399460730, "s": false}, {"l": "11/27 7:40", "o": 7399470740, "s": false}, {"l": "11/28 7:50", "o": 7399480750, "s": false}, {"l": "11/29 7:00", "o": 7399490700, "s": false}, {"l": "11/30 7:10", "o": 7399500710, "s": false}, {"l": "12/1 7:20", "o": 7399510720, "s": false}, {"l": "12/2 7:30", "o": 7399520730, "s": false}, {"l": "12/3 7:40", "o": 7399530740, "s": false}, {"l": "12/4 7:50", "o": 7399540750, "s": false}, {"l": "12/5 7:00", "o": 7399550700, "s": false}, {"l": "12/6 7:10", "o": 7399560710, "s": false}, {"l": "12/7 7:20", "o": 7399570720, "s": false}, {"l": "12/8 7:30", "o": 7399580730, "s": false}, {"l": "12/9 7:40", "o": 7399590740, "s": false}, {"l": "12/10 7:50", "o": 7399600750, "s": false}, {"l": "12/11 7:00", "o": 7399610700, "s": false}, {"l": "12/12 7:10", "o": 7399620710, "s": false}, {"l": "12/13 7:20", "o": 7399630720, "s": false}, {"l": "12/14 7:30", "o": 7399640730, "s": false}, {"l": "12/15 7:40", "o": 7399650740, "s": false}, {"l": "12/16 7:50", "o": 7399660750, "s": false}, {"l": "12/17 7:00", "o": 7399670700, "s": false}, {"l": "12/18 7:10", "o": 7399680710, "s": false}, {"l": "12/19 7:20", "o": 7399690720, "s": false}, {"l": "12/20 7:30", "o": 7399700730, "s": false}, {"l": "12/21 7:40", "o": 7399710740, "s": false}, {"l": "12/22 7:50", "o": 7399720750, "s": false}, {"l": "12/23 7:00", "o": 7399730700, "s": false}, {"l": "12/24 7:10", "o": 7399740710, "s": false}, {"l": "12/25 7:20", "o": 7399750720, "s": false}, {"l": "12/26 7:30", "o": 7399760730, "s": false}, {"l": "12/27 7:40", "o": 7399770740, "s": false}, {"l": "12/28 7:50", "o": 7399780750, "s": false}, {"l": "12/29 7:00", "o": 7399790700, "s": false}, {"l": "12/30 7:10", "o": 7399800710, "s": false}, {"l": "12/31 7:20", "o": 7399810720, "s": false}, {"l": "1/1 7:30", "o": 7399820730, "s": false}, {"l": "1/2 7:40", "o": 7399830740, "s": false}, {"l": "1/3 7:50", "o": 7399840750, "s": false}, {"l": "1/4 7:00", "o": 7399850700, "s": false}, {"l": "1/5 7:10", "o": 7399860710, "s": false}, {"l": "1/6 7:20", "o": 7399870720, "s": false}, {"l": "1/7 7:30", "o": 7399880730, "s": false}, {"l": "1/8 7:40", "o": 7399890740, "s": false}, {"l": "1/9 7:50", "o": 7399900750, "s": false}, {"l": "1/10 7:00", "o": 7399910700, "s": false}, {"l": "1/11 7:10", "o": 7399920710, "s": false}, {"l": "1/12 7:20", "o": 7399930720, "s": false}, {"l": "1/13 7:30", "o": 7399940730, "s": false}, {"l": "1/14 7:40", "o": 7399950740, "s": false}, {"l": "1/15 7:50", "o": 7399960750, "s": false}, {"l": "1/16 7:00", "o": 7399970700, "s": false}, {"l": "1/17 7:10", "o": 7399980710, "s": false}, {"l": "1/18 7:20", "o": 7399990720, "s": false}, {"l": "1/19 7:30", "o": 7400000730, "s": false}, {"l": "1/20 7:40", "o": 7400010740, "s": false}, {"l": "1/21 7:50", "o": 7400020750, "s": false}, {"l": "1/22 7:00", "o": 7400030700, "s": false}, {"l": "1/23 7:10", "o": 7400040710, "s": false}, {"l": "1/24 7:20", "o": 7400050720, "s": false}, {"l": "1/25 7:30", "o": 7400060730, "s": false}, {"l": "1/26 7:40", "o": 7400070740, "s": false}, {"l": "1/27 7:50", "o": 7400080750, "s": false}, {"l": "1/28 7:00", "o": 7400090700, "s": false}, {"l": "1/29 7:10", "o": 7400100710, "s": false}, {"l": "1/30 7:20", "o": 7400110720, "s": false}, {"l": "1/31 7:30", "o": 7400120730, "s": false}, {"l": "2/1 7:40", "o": 7400130740, "s": false}, {"l": "2/2 7:50", "o": 7400140750, "s": false}, {"l": "2/3 7:00", "o": 7400150700, "s": false}, {"l": "2/4 7:10", "o": 7400160710, "s": false}, {"l": "2/5 7:20", "o": 7400170720, "s": false}, {"l": "2/6 7:30", "o": 7400180730, "s": false}, {"l": "2/7 7:40", "o": 7400190740, "s": false}, {"l": "2/8 7:50", "o": 7400200750, "s": false}, {"l": "2/9 7:00", "o": 7400210700, "s": false}, {"l": "2/10 7:10", "o": 7400220710, "s": false}, {"l": "2/11 7:20", "o": 7400230720, "s": false}, {"l": "2/12 7:30", "o": 7400240730, "s": false}, {"l": "2/13 7:40", "o": 7400250740, "s": false}, {"l": "2/14 7:50", "o": 7400260750, "s": false}, {"l": "2/15 7:00", "o": 7400270700, "s": false}, {"l": "2/16 7:10", "o": 7400280710, "s": false}, {"l": "2/17 7:20", "o": 7400290720, "s": false}, {"l": "2/18 7:30", "o": 7400300730, "s": false}, {"l": "2/19 7:40", "o": 7400310740, "s": false}, {"l": "2/20 7:50", "o": 7400320750, "s": false}, {"l": "2/21 7:00", "o": 7400330700, "s": false}, {"l": "2/22 7:10", "o": 7400340710, "s": false}, {"l": "2/23 7:20", "o": 7400350720, "s": false}, {"l": "2/24 7:30", "o": 7400360730, "s": false}, {"l": "2/25 7:40", "o": 7400370740, "s": false}, {"l": "2/26 7:50", "o": 7400380750, "s": false}, {"l": "2/27 7:00", "o": 7400390700, "s": false}, {"l": "2/28 7:10", "o": 7400400710, "s": false}, {"l": "3/1 7:20", "o": 7400410720, "s": false}, {"l": "3/2 7:30", "o": 7400420730, "s": false}, {"l": "3/3 7:40", "o": 7400430740, "s": false}, {"l": "3/4 7:50", "o": 7400440750, "s": false}, {"l": "3/5 7:00", "o": 7400450700, "s": false}, {"l": "3/6 7:10", "o": 7400460710, "s": false}, {"l": "3/7 7:20", "o": 7400470720, "s": false}, {"l": "3/8 7:30", "o": 7400480730, "s": false}, {"l": "3/9 7:40", "o": 7400490740, "s": false}, {"l": "3/10 7:50", "o": 7400500750, "s": false}, {"l": "3/11 7:00", "o": 7400510700, "s": false}, {"l": "3/12 7:10", "o": 7400520710, "s": false}, {"l": "3/13 7:20", "o": 7400530720, "s": false}, {"l": "3/14 7:30", "o": 7400540730, "s": false}, {"l": "3/15 7:40", "o": 7400550740, "s": false}, {"l": "3/16 7:50", "o": 7400560750, "s": false}, {"l": "3/17 7:00", "o": 7400570700, "s": false}, {"l": "3/18 7:10", "o": 7400580710, "s": false}, {"l": "3/19 7:20", "o": 7400590720, "s": false}, {"l": "3/20 7:30", "o": 7400600730, "s": false}, {"l": "3/21 7:40", "o": 7400610740, "s": false}, {"l": "3/22 7:50", "o": 7400620750, "s": false}, {"l": "3/23 7:00", "o": 7400630700, "s": false}, {"l": "3/24 7:10", "o": 7400640710, "s": false}], "昼": [{"l": "9/6 12:00", "o": 7398651200, "s": true}, {"l": "9/7 12:10", "o": 7398661210, "s": true}, {"l": "9/8 12:20", "o": 7398671220, "s": true}, {"l": "9/9 12:30", "o": 7398681230, "s": true}, {"l": "9/10 12:40", "o": 7398691240, "s": true}, {"l": "9/11 12:50", "o": 7398701250, "s": true}, {"l": "9/12 12:00", "o": 7398711200, "s": true}, {"l": "9/13 12:10", "o": 7398721210, "s": true}, {"l": "9/14 12:20", "o": 7398731220, "s": true}, {"l": "9/15 12:30", "o": 7398741230, "s": true}, {"l": "9/16 12:40", "o": 7398751240, "s": true}, {"l": "9/17 12:50", "o": 7398761250, "s": true}, {"l": "9/18 12:00", "o": 7398771200, "s": true}, {"l": "9/19 12:10", "o": 7398781210, "s": true}, {"l": "9/20 12:20", "o": 7398791220, "s": true}, {"l": "9/21 12:30", "o": 7398801230, "s": true}, {"l": "9/22 12:40", "o": 7398811240, "s": true}, {"l": "9/23 12:50", "o": 7398821250, "s": true}, {"l": "9/24 12:00", "o": 7398831200, "s": true}, {"l": "9/25 12:10", "o": 7398841210, "s": true}, {"l": "9/26 12:20", "o": 7398851220, "s": true}, {"l": "9/27 12:30", "o": 7398861230, "s": true}, {"l": "9/28 12:40", "o": 7398871240, "s": true}, {"l": "9/29 12:50", "o": 7398881250, "s": true}, {"l": "9/30 12:00", "o": 7398891200, "s": true}, {"l": "10/1 12:10", "o": 7398901210, "s": false}, {"l": "10/2 12:20", "o": 7398911220, "s": false}, {"l": "10/3 12:30", "o": 7398921230, "s": false}, {"l": "10/4 12:40", "o": 7398931240, "s": false}, {"l": "10/5 12:50", "o": 7398941250, "s": false}, {"l": "10/6 12:00", "o": 7398951200, "s": false}, {"l": "10/7 12:10", "o": 7398961210, "s": false}, {"l": "10/8 12:20", "o": 7398971220, "s": false}, {"l": "10/9 12:30", "o": 7398981230, "s": false}, {"l": "10/10 12:40", "o": 7398991240, "s": false}, {"l": "10/11 12:50", "o": 7399001250, "s": false}, {"l": "10/12 12:00", "o": 7399011200, "s": false}, {"l": "10/13 12:10", "o": 7399021210, "s": false}, {"l": "10/14 12:20", "o": 7399031220, "s": false}, {"l": "10/15 12:30", "o": 7399041230, "s": false}, {"l": "10/16 12:40", "o": 7399051240, "s": false}, {"l": "10/17 12:50", "o": 7399061250, "s": false}, {"l": "10/18 12:00", "o": 7399071200, "s": false}, {"l": "10/19 12:10", "o": 7399081210, "s": false}, {"l": "10/20 12:20", "o": 7399091220, "s": false}, {"l": "10/21 12:30", "o": 7399101230, "s": false}, {"l": "10/22 12:40", "o": 7399111240, "s": false}, {"l": "10/23 12:50", "o": 7399121250, "s": false}, {"l": "10/24 12:00", "o": 7399131200, "s": false}, {"l": "10/25 12:10", "o": 7399141210, "s": false}, {"l": "10/26 12:20", "o": 7399151220, "s": false}, {"l": "10/27 12:30", "o": 7399161230, "s": false}, {"l": "10/28 12:40", "o": 7399171240, "s": false}, {"l": "10/29 12:50", "o": 7399181250, "s": false}, {"l": "10/30 12:00", "o": 7399191200, "s": false}, {"l": "10/31 12:10", "o": 7399201210, "s": false}, {"l": "11/1 12:20", "o": 7399211220, "s": false}, {"l": "11/2 12:30", "o": 7399221230, "s": false}, {"l": "11/3 12:40", "o": 7399231240, "s": false}, {"l": "11/4 12:50", "o": 7399241250, "s": false}, {"l": "11/5 12:00", "o": 7399251200, "s": false}, {"l": "11/6 12:10", "o": 7399261210, "s": false}, {"l": "11/7 12:20", "o": 7399271220, "s": false}, {"l": "11/8 12:30", "o": 7399281230, "s": false}, {"l": "11/9 12:40", "o": 7399291240, "s": false}, {"l": "11/10 12:50", "o": 7399301250, "s": false}, {"l": "11/11 12:00", "o": 7399311200, "s": false}, {"l": "11/12 12:10", "o": 7399321210, "s": false}, {"l": "11/13 12:20", "o": 7399331220, "s": false}, {"l": "11/14 12:30", "o": 7399341230, "s": false}, {"l": "11/15 12:40", "o": 7399351240, "s": false}, {"l": "11/16 12:50", "o": 7399361250, "s": false}, {"l": "11/17 12:00", "o": 7399371200, "s": false}, {"l": "11/18 12:10", "o": 7399381210, "s": false}, {"l": "11/19 12:20", "o": 7399391220, "s": false}, {"l": "11/20 12:30", "o": 7399401230, "s": false}, {"l": "11/21 12:40", "o": 7399411240, "s": false}, {"l": "11/22 12:50", "o": 7399421250, "s": false}, {"l": "11/23 12:00", "o": 7399431200, "s": false}, {"l": "11/24 12:10", "o": 7399441210, "s": false}, {"l": "11/25 12:20", "o": 7399451220, "s": false}, {"l": "11/26 12:30", "o": 7399461230, "s": false}, {"l": "11/27 12:40", "o": 7399471240, "s": false}, {"l": "11/28 12:50", "o": 7399481250, "s": false}, {"l": "11/29 12:00", "o": 7399491200, "s": false}, {"l": "11/30 12:10", "o": 7399501210, "s": false}, {"l": "12/1 12:20", "o": 7399511220, "s": false}, {"l": "12/2 12:30", "o": 7399521230, "s": false}, {"l": "12/3 12:40", "o": 7399531240, "s": false}, {"l": "12/4 12:50", "o": 7399541250, "s": false}, {"l": "12/5 12:00", "o": 7399551200, "s": false}, {"l": "12/6 12:10", "o": 7399561210, "s": false}, {"l": "12/7 12:20", "o": 7399571220, "s": false}, {"l": "12/8 12:30", "o": 7399581230, "s": false}, {"l": "12/9 12:40", "o": 7399591240, "s": false}, {"l": "12/10 12:50", "o": 7399601250, "s": false}, {"l": "12/11 12:00", "o": 7399611200, "s": false}, {"l": "12/12 12:10", "o": 7399621210, "s": false}, {"l": "12/13 12:20", "o": 7399631220, "s": false}, {"l": "12/14 12:30", "o": 7399641230, "s": false}, {"l": "12/15 12:40", "o": 7399651240, "s": false}, {"l": "12/16 12:50", "o": 7399661250, "s": false}, {"l": "12/17 12:00", "o": 7399671200, "s": false}, {"l": "12/18 12:10", "o": 7399681210, "s": false}, {"l": "12/19 12:20", "o": 7399691220, "s": false}, {"l": "12/20 12:30", "o": 7399701230, "s": false}, {"l": "12/21 12:40", "o": 7399711240, "s": false}, {"l": "12/22 12:50", "o": 7399721250, "s": false}, {"l": "12/23 12:00", "o": 7399731200, "s": false}, {"l": "12/24 12:10", "o": 7399741210, "s": false}, {"l": "12/25 12:20", "o": 7399751220, "s": false}, {"l": "12/26 12:30", "o": 7399761230, "s": false}, {"l": "12/27 12:40", "o": 7399771240, "s": false}, {"l": "12/28 12:50", "o": 7399781250, "s": false}, {"l": "12/29 12:00", "o": 7399791200, "s": false}, {"l": "12/30 12:10", "o": 7399801210, "s": false}, {"l": "12/31 12:20", "o": 7399811220, "s": false}, {"l": "1/1 12:30", "o": 7399821230, "s": false}, {"l": "1/2 12:40", "o": 7399831240, "s": false}, {"l": "1/3 12:50", "o": 7399841250, "s": false}, {"l": "1/4 12:00", "o": 7399851200, "s": false}, {"l": "1/5 12:10", "o": 7399861210, "s": false}, {"l": "1/6 12:20", "o": 7399871220, "s": false}, {"l": "1/7 12:30", "o": 7399881230, "s": false}, {"l": "1/8 12:40", "o": 7399891240, "s": false}, {"l": "1/9 12:50", "o": 7399901250, "s": false}, {"l": "1/10 12:00", "o": 7399911200, "s": false}, {"l": "1/11 12:10", "o": 7399921210, "s": false}, {"l": "1/12 12:20", "o": 7399931220, "s": false}, {"l": "1/13 12:30", "o": 7399941230, "s": false}, {"l": "1/14 12:40", "o": 7399951240, "s": false}, {"l": "1/15 12:50", "o": 7399961250, "s": false}, {"l": "1/16 12:00", "o": 7399971200, "s": false}, {"l": "1/17 12:10", "o": 7399981210, "s": false}, {"l": "1/18 12:20", "o": 7399991220, "s": false}, {"l": "1/19 12:30", "o": 7400001230, "s": false}, {"l": "1/20 12:40", "o": 7400011240, "s": false}, {"l": "1/21 12:50", "o": 7400021250, "s": false}, {"l": "1/22 12:00", "o": 7400031200, "s": false}, {"l": "1/23 12:10", "o": 7400041210, "s": false}, {"l": "1/24 12:20", "o": 7400051220, "s": false}, {"l": "1/25 12:30", "o": 7400061230, "s": false}, {"l": "1/26 12:40", "o": 7400071240, "s": false}, {"l": "1/27 12:50", "o": 7400081250, "s": false}, {"l": "1/28 12:00", "o": 7400091200, "s": false}, {"l": "1/29 12:10", "o": 7400101210, "s": false}, {"l": "1/30 12:20", "o": 7400111220, "s": false}, {"l": "1/31 12:30", "o": 7400121230, "s": false}, {"l": "2/1 12:40", "o": 7400131240, "s": false}, {"l": "2/2 12:50", "o": 7400141250, "s": false}, {"l": "2/3 12:00", "o": 7400151200, "s": false}, {"l": "2/4 12:10", "o": 7400161210, "s": false}, {"l": "2/5 12:20", "o": 7400171220, "s": false}, {"l": "2/6 12:30", "o": 7400181230, "s": false}, {"l": "2/7 12:40", "o": 7400191240, "s": false}, {"l": "2/8 12:50", "o": 7400201250, "s": false}, {"l": "2/9 12:00", "o": 7400211200, "s": false}, {"l": "2/10 12:10", "o": 7400221210, "s": false}, {"l": "2/11 12:20", "o": 7400231220, "s": false}, {"l": "2/12 12:30", "o": 7400241230, "s": false}, {"l": "2/13 12:40", "o": 7400251240, "s": false}, {"l": "2/14 12:50", "o": 7400261250, "s": false}, {"l": "2/15 12:00", "o": 7400271200, "s": false}, {"l": "2/16 12:10", "o": 7400281210, "s": false}, {"l": "2/17 12:20", "o": 7400291220, "s": false}, {"l": "2/18 12:30", "o": 7400301230, "s": false}, {"l": "2/19 12:40", "o": 7400311240, "s": false}, {"l": "2/20 12:50", "o": 7400321250, "s": false}, {"l": "2/21 12:00", "o": 7400331200, "s": false}, {"l": "2/22 12:10", "o": 7400341210, "s": false}, {"l": "2/23 12:20", "o": 7400351220, "s": false}, {"l": "2/24 12:30", "o": 7400361230, "s": false}, {"l": "2/25 12:40", "o": 7400371240, "s": false}, {"l": "2/26 12:50", "o": 7400381250, "s": false}, {"l": "2/27 12:00", "o": 7400391200, "s": false}, {"l": "2/28 12:10", "o": 7400401210, "s": false}, {"l": "3/1 12:20", "o": 7400411220, "s": false}, {"l": "3/2 12:30", "o": 7400421230, "s": false}, {"l": "3/3 12:40", "o": 7400431240, "s": false}, {"l": "3/4 12:50", "o": 7400441250, "s": false}, {"l": "3/5 12:00", "o": 7400451200, "s": false}, {"l": "3/6 12:10", "o": 7400461210, "s": false}, {"l": "3/7 12:20", "o": 7400471220, "s": false}, {"l": "3/8 12:30", "o": 7400481230, "s": false}, {"l": "3/9 12:40", "o": 7400491240, "s": false}, {"l": "3/10 12:50", "o": 7400501250, "s": false}, {"l": "3/11 12:00", "o": 7400511200, "s": false}, {"l": "3/12 12:10", "o": 7400521210, "s": false}, {"l": "3/13 12:20", "o": 7400531220, "s": false}, {"l": "3/14 12:30", "o": 7400541230, "s": false}, {"l": "3/15 12:40", "o": 7400551240, "s": false}, {"l": "3/16 12:50", "o": 7400561250, "s": false}, {"l": "3/17 12:00", "o": 7400571200, "s": false}, {"l": "3/18 12:10", "o": 7400581210, "s": false}, {"l": "3/19 12:20", "o": 7400591220, "s": false}, {"l": "3/20 12:30", "o": 7400601230, "s": false}, {"l": "3/21 12:40", "o": 7400611240, "s": false}, {"l": "3/22 12:50", "o": 7400621250, "s": false}, {"l": "3/23 12:00", "o": 7400631200, "s": false}, {"l": "3/24 12:10", "o": 7400641210, "s": false}], "夕": [{"l": "9/6 17:00", "o": 7398651700, "s": true}, {"l": "9/7 17:10", "o": 7398661710, "s": true}, {"l": "9/8 17:20", "o": 7398671720, "s": true}, {"l": "9/9 17:30", "o": 7398681730, "s": true}, {"l": "9/10 17:40", "o": 7398691740, "s": true}, {"l": "9/11 17:50", "o": 7398701750, "s": true}, {"l": "9/12 17:00", "o": 7398711700, "s": true}, {"l": "9/13 17:10", "o": 7398721710, "s": true}, {"l": "9/14 17:20", "o": 7398731720, "s": true}, {"l": "9/15 17:30", "o": 7398741730, "s": true}, {"l": "9/16 17:40", "o": 7398751740, "s": true}, {"l": "9/17 17:50", "o": 7398761750, "s": true}, {"l": "9/18 17:00", "o": 7398771700, "s": true}, {"l": "9/19 17:10", "o": 7398781710, "s": true}, {"l": "9/20 17:20", "o": 7398791720, "s": true}, {"l": "9/21 17:30", "o": 7398801730, "s": true}, {"l": "9/22 17:40", "o": 7398811740, "s": true}, {"l": "9/23 17:50", "o": 7398821750, "s": true}, {"l": "9/24 17:00", "o": 7398831700, "s": true}, {"l": "9/25 17:10", "o": 7398841710, "s": true}, {"l": "9/26 17:20", "o": 7398851720, "s": true}, {"l": "9/27 17:30", "o": 7398861730, "s": true}, {"l": "9/28 17:40", "o": 7398871740, "s": true}, {"l": "9/29 17:50", "o": 7398881750, "s": true}, {"l": "9/30 17:00", "o": 7398891700, "s": true}, {"l": "10/1 17:10", "o": 7398901710, "s": false}, {"l": "10/2 17:20", "o": 7398911720, "s": false}, {"l": "10/3 17:30", "o": 7398921730, "s": false}, {"l": "10/4 17:40", "o": 7398931740, "s": false}, {"l": "10/5 17:50", "o": 7398941750, "s": false}, {"l": "10/6 17:00", "o": 7398951700, "s": false}, {"l": "10/7 17:10", "o": 7398961710, "s": false}, {"l": "10/8 17:20", "o": 7398971720, "s": false}, {"l": "10/9 17:30", "o": 7398981730, "s": false}, {"l": "10/10 17:40", "o": 7398991740, "s": false}, {"l": "10/11 17:50", "o": 7399001750, "s": false}, {"l": "10/12 17:00", "o": 7399011700, "s": false}, {"l": "10/13 17:10", "o": 7399021710, "s": false}, {"l": "10/14 17:20", "o": 7399031720, "s": false}, {"l": "10/15 17:30", "o": 7399041730, "s": false}, {"l": "10/16 17:40", "o": 7399051740, "s": false}, {"l": "10/17 17:50", "o": 7399061750, "s": false}, {"l": "10/18 17:00", "o": 7399071700, "s": false}, {"l": "10/19 17:10", "o": 7399081710, "s": false}, {"l": "10/20 17:20", "o": 7399091720, "s": false}, {"l": "10/21 17:30", "o": 7399101730, "s": false}, {"l": "10/22 17:40", "o": 7399111740, "s": false}, {"l": "10/23 17:50", "o": 7399121750, "s": false}, {"l": "10/24 17:00", "o": 7399131700, "s": false}, {"l": "10/25 17:10", "o": 7399141710, "s": false}, {"l": "10/26 17:20", "o": 7399151720, "s": false}, {"l": "10/27 17:30", "o": 7399161730, "s": false}, {"l": "10/28 17:40", "o": 7399171740, "s": false}, {"l": "10/29 17:50", "o": 7399181750, "s": false}, {"l": "10/30 17:00", "o": 7399191700, "s": false}, {"l": "10/31 17:10", "o": 7399201710, "s": false}, {"l": "11/1 17:20", "o": 7399211720, "s": false}, {"l": "11/2 17:30", "o": 7399221730, "s": false}, {"l": "11/3 17:40", "o": 7399231740, "s": false}, {"l": "11/4 17:50", "o": 7399241750, "s": false}, {"l": "11/5 17:00", "o": 7399251700, "s": false}, {"l": "11/6 17:10", "o": 7399261710, "s": false}, {"l": "11/7 17:20", "o": 7399271720, "s": false}, {"l": "11/8 17:30", "o": 7399281730, "s": false}, {"l": "11/9 17:40", "o": 7399291740, "s": false}, {"l": "11/10 17:50", "o": 7399301750, "s": false}, {"l": "11/11 17:00", "o": 7399311700, "s": false}, {"l": "11/12 17:10", "o": 7399321710, "s": false}, {"l": "11/13 17:20", "o": 7399331720, "s": false}, {"l": "11/14 17:30", "o": 7399341730, "s": false}, {"l": "11/15 17:40", "o": 7399351740, "s": false}, {"l": "11/16 17:50", "o": 7399361750, "s": false}, {"l": "11/17 17:00", "o": 7399371700, "s": false}, {"l": "11/18 17:10", "o": 7399381710, "s": false}, {"l": "11/19 17:20", "o": 7399391720, "s": false}, {"l": "11/20 17:30", "o": 7399401730, "s": false}, {"l": "11/21 17:40", "o": 7399411740, "s": false}, {"l": "11/22 17:50", "o": 7399421750, "s": false}, {"l": "11/23 17:00", "o": 7399431700, "s": false}, {"l": "11/24 17:10", "o": 7399441710, "s": false}, {"l": "11/25 17:20", "o": 7399451720, "s": false}, {"l": "11/26 17:30", "o": 7399461730, "s": false}, {"l": "11/27 17:40", "o": 7399471740, "s": false}, {"l": "11/28 17:50", "o": 7399481750, "s": false}, {"l": "11/29 17:00", "o": 7399491700, "s": false}, {"l": "11/30 17:10", "o": 7399501710, "s": false}, {"l": "12/1 17:20", "o": 7399511720, "s": false}, {"l": "12/2 17:30", "o": 7399521730, "s": false}, {"l": "12/3 17:40", "o": 7399531740, "s": false}, {"l": "12/4 17:50", "o": 7399541750, "s": false}, {"l": "12/5 17:00", "o": 7399551700, "s": false}, {"l": "12/6 17:10", "o": 7399561710, "s": false}, {"l": "12/7 17:20", "o": 7399571720, "s": false}, {"l": "12/8 17:30", "o": 7399581730, "s": false}, {"l": "12/9 17:40", "o": 7399591740, "s": false}, {"l": "12/10 17:50", "o": 7399601750, "s": false}, {"l": "12/11 17:00", "o": 7399611700, "s": false}, {"l": "12/12 17:10", "o": 7399621710, "s": false}, {"l": "12/13 17:20", "o": 7399631720, "s": false}, {"l": "12/14 17:30", "o": 7399641730, "s": false}, {"l": "12/15 17:40", "o": 7399651740, "s": false}, {"l": "12/16 17:50", "o": 7399661750, "s": false}, {"l": "12/17 17:00", "o": 7399671700, "s": false}, {"l": "12/18 17:10", "o": 7399681710, "s": false}, {"l": "12/19 17:20", "o": 7399691720, "s": false}, {"l": "12/20 17:30", "o": 7399701730, "s": false}, {"l": "12/21 17:40", "o": 7399711740, "s": false}, {"l": "12/22 17:50", "o": 7399721750, "s": false}, {"l": "12/23 17:00", "o": 7399731700, "s": false}, {"l": "12/24 17:10", "o": 7399741710, "s": false}, {"l": "12/25 17:20", "o": 7399751720, "s": false}, {"l": "12/26 17:30", "o": 7399761730, "s": false}, {"l": "12/27 17:40", "o": 7399771740, "s": false}, {"l": "12/28 17:50", "o": 7399781750, "s": false}, {"l": "12/29 17:00", "o": 7399791700, "s": false}, {"l": "12/30 17:10", "o": 7399801710, "s": false}, {"l": "12/31 17:20", "o": 7399811720, "s": false}, {"l": "1/1 17:30", "o": 7399821730, "s": false}, {"l": "1/2 17:40", "o": 7399831740, "s": false}, {"l": "1/3 17:50", "o": 7399841750, "s": false}, {"l": "1/4 17:00", "o": 7399851700, "s": false}, {"l": "1/5 17:10", "o": 7399861710, "s": false}, {"l": "1/6 17:20", "o": 7399871720, "s": false}, {"l": "1/7 17:30", "o": 7399881730, "s": false}, {"l": "1/8 17:40", "o": 7399891740, "s": false}, {"l": "1/9 17:50", "o": 7399901750, "s": false}, {"l": "1/10 17:00", "o": 7399911700, "s": false}, {"l": "1/11 17:10", "o": 7399921710, "s": false}, {"l": "1/12 17:20", "o": 7399931720, "s": false}, {"l": "1/13 17:30", "o": 7399941730, "s": false}, {"l": "1/14 17:40", "o": 7399951740, "s": false}, {"l": "1/15 17:50", "o": 7399961750, "s": false}, {"l": "1/16 17:00", "o": 7399971700, "s": false}, {"l": "1/17 17:10", "o": 7399981710, "s": false}, {"l": "1/18 17:20", "o": 7399991720, "s": false}, {"l": "1/19 17:30", "o": 7400001730, "s": false}, {"l": "1/20 17:40", "o": 7400011740, "s": false}, {"l": "1/21 17:50", "o": 7400021750, "s": false}, {"l": "1/22 17:00", "o": 7400031700, "s": false}, {"l": "1/23 17:10", "o": 7400041710, "s": false}, {"l": "1/24 17:20", "o": 7400051720, "s": false}, {"l": "1/25 17:30", "o": 7400061730, "s": false}, {"l": "1/26 17:40", "o": 7400071740, "s": false}, {"l": "1/27 17:50", "o": 7400081750, "s": false}, {"l": "1/28 17:00", "o": 7400091700, "s": false}, {"l": "1/29 17:10", "o": 7400101710, "s": false}, {"l": "1/30 17:20", "o": 7400111720, "s": false}, {"l": "1/31 17:30", "o": 7400121730, "s": false}, {"l": "2/1 17:40", "o": 7400131740, "s": false}, {"l": "2/2 17:50", "o": 7400141750, "s": false}, {"l": "2/3 17:00", "o": 7400151700, "s": false}, {"l": "2/4 17:10", "o": 7400161710, "s": false}, {"l": "2/5 17:20", "o": 7400171720, "s": false}, {"l": "2/6 17:30", "o": 7400181730, "s": false}, {"l": "2/7 17:40", "o": 7400191740, "s": false}, {"l": "2/8 17:50", "o": 7400201750, "s": false}, {"l": "2/9 17:00", "o": 7400211700, "s": false}, {"l": "2/10 17:10", "o": 7400221710, "s": false}, {"l": "2/11 17:20", "o": 7400231720, "s": false}, {"l": "2/12 17:30", "o": 7400241730, "s": false}, {"l": "2/13 17:40", "o": 7400251740, "s": false}, {"l": "2/14 17:50", "o": 7400261750, "s": false}, {"l": "2/15 17:00", "o": 7400271700, "s": false}, {"l": "2/16 17:10", "o": 7400281710, "s": false}, {"l": "2/17 17:20", "o": 7400291720, "s": false}, {"l": "2/18 17:30", "o": 7400301730, "s": false}, {"l": "2/19 17:40", "o": 7400311740, "s": false}, {"l": "2/20 17:50", "o": 7400321750, "s": false}, {"l": "2/21 17:00", "o": 7400331700, "s": false}, {"l": "2/22 17:10", "o": 7400341710, "s": false}, {"l": "2/23 17:20", "o": 7400351720, "s": false}, {"l": "2/24 17:30", "o": 7400361730, "s": false}, {"l": "2/25 17:40", "o": 7400371740, "s": false}, {"l": "2/26 17:50", "o": 7400381750, "s": false}, {"l": "2/27 17:00", "o": 7400391700, "s": false}, {"l": "2/28 17:10", "o": 7400401710, "s": false}, {"l": "3/1 17:20", "o": 7400411720, "s": false}, {"l": "3/2 17:30", "o": 7400421730, "s": false}, {"l": "3/3 17:40", "o": 7400431740, "s": false}, {"l": "3/4 17:50", "o": 7400441750, "s": false}, {"l": "3/5 17:00", "o": 7400451700, "s": false}, {"l": "3/6 17:10", "o": 7400461710, "s": false}, {"l": "3/7 17:20", "o": 7400471720, "s": false}, {"l": "3/8 17:30", "o": 7400481730, "s": false}, {"l": "3/9 17:40", "o": 7400491740, "s": false}, {"l": "3/10 17:50", "o": 7400501750, "s": false}, {"l": "3/11 17:00", "o": 7400511700, "s": false}, {"l": "3/12 17:10", "o": 7400521710, "s": false}, {"l": "3/13 17:20", "o": 7400531720, "s": false}, {"l": "3/14 17:30", "o": 7400541730, "s": false}, {"l": "3/15 17:40", "o": 7400551740, "s": false}, {"l": "3/16 17:50", "o": 7400561750, "s": false}, {"l": "3/17 17:00", "o": 7400571700, "s": false}, {"l": "3/18 17:10", "o": 7400581710, "s": false}, {"l": "3/19 17:20", "o": 7400591720, "s": false}, {"l": "3/20 17:30", "o": 7400601730, "s": false}, {"l": "3/21 17:40", "o": 7400611740, "s": false}, {"l": "3/22 17:50", "o": 7400621750, "s": false}, {"l": "3/23 17:00", "o": 7400631700, "s": false}, {"l": "3/24 17:10", "o": 7400641710, "s": false}]}, SEPCAP = {"朝": 24, "昼": 25, "夕": 25}, SEPTOTAL = 74;
   var S = {};
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
@@ -5755,13 +5757,11 @@ BOSS「スキルは後から必ず身につく。姿勢は、後から変える�
   }
   function plan() {
     var out = {};
-    ['朝', '夕'].forEach(function (slot) {
+    ['朝', '昼', '夕'].forEach(function (slot) {
       queue(slot).forEach(function (k, i) {
-        var lab = SLOTS[slot][i];
-        if (!lab) return;
-        var day = (slot === '夕') ? i : i + 1;
-        var hour = (slot === '夕') ? 17 : 7;
-        out[k] = { label: lab, order: day * 100 + hour, sep: i < SEPCAP[slot] };
+        var s = SLOTS[slot][i];
+        if (!s) return;
+        out[k] = { label: s.l, order: s.o, sep: s.s };
       });
     });
     return out;

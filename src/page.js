@@ -20,13 +20,11 @@
   }
   function plan() {
     var out = {};
-    ['朝', '夕'].forEach(function (slot) {
+    ['朝', '昼', '夕'].forEach(function (slot) {
       queue(slot).forEach(function (k, i) {
-        var lab = SLOTS[slot][i];
-        if (!lab) return;
-        var day = (slot === '夕') ? i : i + 1;
-        var hour = (slot === '夕') ? 17 : 7;
-        out[k] = { label: lab, order: day * 100 + hour, sep: i < SEPCAP[slot] };
+        var s = SLOTS[slot][i];
+        if (!s) return;
+        out[k] = { label: s.l, order: s.o, sep: s.s };
       });
     });
     return out;

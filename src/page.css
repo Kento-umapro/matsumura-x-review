@@ -217,3 +217,5 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
 .tab.tab-redo.on { background:var(--ember); border-color:var(--ember); color:#fff; }
 .post.j-ng.has-memo { border-color:var(--ember); }
 .chip.redo { color:var(--ember); border-color:var(--ember); background:var(--ember-soft); font-weight:700; }
+.chip.slot.sN { color:#8a6d1f; border-color:#d8c68a; background:#fdf6e3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.slot.sN { color:#d9b95c; border-color:#4a3f1e; background:#2a2314; } }
