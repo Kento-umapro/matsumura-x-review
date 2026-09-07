@@ -239,6 +239,7 @@ footer code { font-family:var(--mono); font-size:11px; color:var(--ink-2); }
   :root:not([data-theme="light"]) .recoverbar a { color:#f3dfae; } }
 .chip.botsu { color:var(--ink-3); border-color:var(--rule); background:var(--surface-2); }
 .chip.ask { color:#8a6d1f; border-color:#d8c68a; background:#fdf6e3; font-weight:700; }
+.chip.kansai { color:#2f6b57; border-color:#a8ccbd; background:#eef7f2; font-weight:700; }
 .revnote { background:var(--go-soft); border:1px solid var(--go-line); border-radius:2px;
   padding:11px 14px; font-size:13px; color:var(--ink-2); margin:0 0 14px; }
 .revnote[hidden] { display:none; }

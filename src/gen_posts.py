@@ -1238,6 +1238,13 @@ for rec in posts:
     if not rec.get("nopunch"):
         rec["body"] = punch(rec["body"], rec["no"])
 
+# コテコテの関西弁をならす（松村さん指示・2026-09-07）
+from kansai import soften
+for rec in posts:
+    rec["body"], hit = soften(rec["body"])
+    if hit:
+        rec["kansai"] = True
+
 d = json.load(open(os.path.join(HERE, "posts.json")))
 d["posts"] = posts
 d["pin"] = """はじめまして。BOSSの秘書です。

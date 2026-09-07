@@ -37,6 +37,7 @@ def card(p):
     if p.get("rev"): t.append('<span class="chip redo">書き直し済み</span>')
     if p.get("botsu"): t.append('<span class="chip botsu">ボツ</span>')
     if p.get("ask"): t.append('<span class="chip ask">要確認</span>')
+    if p.get("kansai"): t.append('<span class="chip kansai">関西弁ならし済み</span>')
     if p.get("redo"): t.append(f'<span class="chip redo">再提案 #{p["redo"]:03d}</span>')
     if p.get("cta"): t.append('<span class="chip cta">CTA</span>')
     judge = (f'<div class="judge" data-k="post{i}">'
