@@ -14,25 +14,21 @@ e = lambda s: html.escape(s, quote=True)
 
 import sys; sys.path.insert(0, HERE)
 import schedule as SC
-SLOTS = SC.slots()
-SEPCAP = SC.sep_capacity()
-SEPTOTAL = sum(SEPCAP.values())
-cnt = {"朝": 0, "昼": 0, "夕": 0}
+FLAT = SC.flat()
+SEPTOTAL = SC.sep_capacity()
 for p in P:
-    i = cnt[p["slot"]]; cnt[p["slot"]] += 1
-    p["when"] = SC.label(SLOTS[p["slot"]][i])
     p["len"] = len(p["body"].replace("\n", ""))
-SLOTS_JS = json.dumps({k: [{"l": SC.label(x), "o": SC.sortkey(x)[0] * 10000 + SC.sortkey(x)[1] * 100 + SC.sortkey(x)[2],
-                            "s": SC.in_sep(x)} for x in v] for k, v in SLOTS.items()}, ensure_ascii=False)
-SEPCAP_JS = json.dumps(SEPCAP, ensure_ascii=False)
+# 枠は時系列の一本つなぎ。OKを押した順に頭から詰める
+SLOTS_JS = json.dumps([{"l": SC.label(x), "k": x[1],
+                        "o": SC.sortkey(x)[0] * 10000 + SC.sortkey(x)[1] * 100 + SC.sortkey(x)[2],
+                        "s": SC.in_sep(x)} for x in FLAT], ensure_ascii=False)
 
 SERC = Counter(p["series"] for p in P)
 L = [p["len"] for p in P]
 
 def card(p):
-    i, slot, pn = p["no"], p["slot"], p["pillar"][0]
-    t = [f'<span class="chip slot s{ {"朝":"A","昼":"N","夕":"P"}[slot] }">{slot}{SC.HOUR[slot]}時台</span>',
-         f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
+    i, pn = p["no"], p["pillar"][0]
+    t = [f'<span class="chip pillar p{pn}">{e(p["series"])}</span>',
          f'<span class="chip src">{e(p["src"])}</span>']
     if p.get("rev"): t.append('<span class="chip redo">書き直し済み</span>')
     if p.get("botsu"): t.append('<span class="chip botsu">ボツ</span>')
@@ -45,7 +41,7 @@ def card(p):
              '<button class="jb ng" data-v="ng" type="button">NG</button>'
              '<button class="jb done" type="button" hidden>投稿した</button>'
              '<textarea class="memo" rows="2" placeholder="ここに直したいところを書くと、書き直して再提案します。空のままならボツ扱いです"></textarea></div>')
-    return (f'<article class="post" data-k="post{i}" data-no="{i}" data-slot="{slot}" '
+    return (f'<article class="post" data-k="post{i}" data-no="{i}" '
             f'data-series="{e(p["series"])}"'
             + (f' data-rev="{e(p["rev"])}"' if p.get("rev") else "")
             + f' id="p{i}">'
@@ -63,7 +59,7 @@ serchips = " ".join(f'<span class="serchip">{e(k)} {v}</span>' for k, v in SERC.
 
 css = open(os.path.join(HERE, "page.css")).read()
 js = (open(os.path.join(HERE, "page.js")).read()
-      .replace("__SLOTS__", SLOTS_JS).replace("__SEPCAP__", SEPCAP_JS).replace("__SEPTOTAL__", str(SEPTOTAL)).replace("__N__", str(len(P))).replace("__QN__", str(len(CHECKS))).replace("__NAME__", CHOSEN))
+      .replace("__SLOTS__", SLOTS_JS).replace("__SEPTOTAL__", str(SEPTOTAL)).replace("__N__", str(len(P))).replace("__QN__", str(len(CHECKS))).replace("__NAME__", CHOSEN))
 
 HTML = f"""<!doctype html>
 <html lang="ja"><head>
@@ -93,9 +89,10 @@ HTML = f"""<!doctype html>
   <p class="lede">秘書が質問して、BOSSが一言で斬って、秘書が受ける。それだけの一問一答です。<br>
   トーンは<b>面白おかしく、時々まじめに</b>。<b>BOSSのセリフは、すべて松村メッセージ415本の中に実在する言葉です。</b>
   {serchips}<br><br>
-  <b>投稿は今日 9/6 の昼12時台から。翌日以降は 朝7時台・昼12時台・夕方17時台 の1日3本です。</b>
-  9月末まで埋めるには <b>{SEPTOTAL}本</b>（朝{SEPCAP["朝"]}・昼{SEPCAP["昼"]}・夕{SEPCAP["夕"]}）必要で、ここには<b>{len(P)}本</b>あります。<br><br>
-  <b>OKを押した順に、投稿する日時が自動で決まります。</b><br>
+  <b>朝・昼・夕を気にする必要はありません。上から順に見て、OKかNGかだけ決めてください。</b><br>
+  投稿は1日3本（朝7時台・昼12時台・夕17時台）ですが、<b>どれがどの枠に入るかは、OKを押した順に自動で決まります。</b>
+  1本目のOKが朝、2本目が昼、3本目が夕、4本目はまた翌日の朝……という順送りです。<br><br>
+  9月末まで埋めるには <b>{SEPTOTAL}本</b>のOKが必要で、ここには<b>{len(P)}本</b>あります。<br>
   <b>NGにコメントを書くと「再提案」に回ります。</b>そのコメントを見てこちらで書き直し、新しい案として戻します。
   コメントを書かなければ、そのままボツです。<br>
   判定はこの端末に自動保存されるので、途中でやめて後から続けられます。</p>
@@ -113,10 +110,10 @@ HTML = f"""<!doctype html>
 
 <section id="posts">
   <h2>投稿の添削とストック</h2>
-  <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/5 7:30 に投稿」と出ます。<br>
+  <p class="sub"><b>OK</b>を押すと投稿が確定し、<b>押した順に投稿日時が割り振られます</b>。カードの右上に「9/18 7:20 朝 に投稿」と出ます。<br>
   <b>NG</b>を押すと投稿されません。<b>そこにコメントを書けば「再提案」タブに入り、こちらで書き直して戻します。</b>
   コメントなしなら「ボツ」タブに残ります。どちらも消えません。<br>
-  投稿は今日 9/6 の昼から。翌日以降は 朝7時台（気合い）・昼12時台（読み物）・夕17時台（振り返り）の1日3本です。<br>
+  枠は9/8以降を時系列に一本つなぎにしてあります。<b>OKにした順に頭から詰まる</b>ので、朝・昼・夕の振り分けはこちらで考えなくて大丈夫です。<br>
   実際に投稿したら「投稿した」を押すと、投稿済みに移ります。</p>
   <div class="stockbar">
     <div><b id="sepDone2">0</b> / {SEPTOTAL} 本</div>
@@ -158,4 +155,4 @@ HTML = f"""<!doctype html>
 os.makedirs(DOCS, exist_ok=True)
 open(os.path.join(DOCS, "index.html"), "w").write(HTML)
 open(os.path.join(DOCS, ".nojekyll"), "w").write("")
-print(f"written {len(HTML)} bytes ／ {len(P)}本 ／ 朝{cnt['朝']}/夕{cnt['夕']} ／ 平均{sum(L)//len(L)}字")
+print(f"written {len(HTML)} bytes ／ {len(P)}本 ／ 枠{SEPTOTAL}（9月末まで）／ 平均{sum(L)//len(L)}字")

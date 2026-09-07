@@ -1,7 +1,7 @@
 (function () {
   var KEY = 'matsumura-x-stock-v2';
   var N = __N__;
-  var SLOTS = __SLOTS__, SEPCAP = __SEPCAP__, SEPTOTAL = __SEPTOTAL__;
+  var SLOTS = __SLOTS__, SEPTOTAL = __SEPTOTAL__;
   var S = {};
   try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { S = {}; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
@@ -28,7 +28,7 @@
 
   var cards = {};
   document.querySelectorAll('.post').forEach(function (el) {
-    cards[el.dataset.k] = { el: el, slot: el.dataset.slot, no: +el.dataset.no, rev: el.dataset.rev || '' };
+    cards[el.dataset.k] = { el: el, no: +el.dataset.no, rev: el.dataset.rev || '' };
   });
 
   /* REVCHECK 書き直した投稿は、前の判定を外して未確認に戻す */
@@ -48,20 +48,18 @@
     if (n && back) { n.hidden = false; n.textContent = '書き直した ' + back + ' 本を、未確認に戻しました。'; }
   })();
 
-  /* 承認順に投稿枠を割り当てる。夕は当日17時、朝は翌日7時から */
-  function queue(slot) {
+  /* OKを押した順に、時系列の枠へ頭から詰める。朝昼夕は自動で決まる */
+  function queue() {
     return Object.keys(cards)
-      .filter(function (k) { var s = st(k); return s.v === 'ok' && !s.posted && cards[k].slot === slot; })
+      .filter(function (k) { var s = st(k); return s.v === 'ok' && !s.posted; })
       .sort(function (a, b) { return (st(a).t || 0) - (st(b).t || 0); });
   }
   function plan() {
     var out = {};
-    ['朝', '昼', '夕'].forEach(function (slot) {
-      queue(slot).forEach(function (k, i) {
-        var s = SLOTS[slot][i];
-        if (!s) return;
-        out[k] = { label: s.l, order: s.o, sep: s.s };
-      });
+    queue().forEach(function (k, i) {
+      var s = SLOTS[i];
+      if (!s) return;
+      out[k] = { label: s.l, slot: s.k, order: s.o, sep: s.s };
     });
     return out;
   }
@@ -85,7 +83,7 @@
     if (rank) {
       if (s.posted) { rank.textContent = '投稿済み'; rank.className = 'rank done'; rank.hidden = false; }
       else if (s.v === 'ok' && pl[k]) {
-        rank.textContent = pl[k].label + ' に投稿' + (pl[k].sep ? '' : '（10月）');
+        rank.textContent = pl[k].label + ' ' + pl[k].slot + ' に投稿' + (pl[k].sep ? '' : '（10月）');
         rank.className = 'rank' + (pl[k].sep ? '' : ' over');
         rank.hidden = false;
       } else if (s.v === 'ng') {
